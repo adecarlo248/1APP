@@ -3,218 +3,1112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="1APP provides AI automation systems for small businesses, including missed-call text back, booking calendars, voice reception, reminders, review requests, and follow-up." />
   <title>1APP | AI Automation for Small Businesses</title>
-  <meta name="description" content="1APP helps small businesses capture more leads, answer faster, book more appointments, and automate follow-up with AI-powered business systems." />
-  <meta property="og:title" content="1APP | AI Automation for Small Businesses" />
-  <meta property="og:description" content="Missed calls, lead follow-up, booking, reviews, and AI automation — built into one simple business app." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://use1app.com/" />
-  <meta property="og:image" content="https://use1app.com/assets/1app-logo.jpeg" />
-  <link rel="icon" href="assets/1app-logo.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --navy: #08285a;
-      --blue: #178ee8;
-      --gold: #d6a944;
-      --dark: #111827;
-      --muted: #5b6472;
-      --line: #e7edf5;
-      --soft: #f6f9fd;
-      --white: #ffffff;
-      --shadow: 0 24px 70px rgba(8, 40, 90, 0.12);
-      --radius: 22px;
-    }
-
-    * { box-sizing: border-box; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--dark);
-      background: var(--white);
-      line-height: 1.55;
+      padding: 0;
     }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
-    .nav {
-      position: sticky; top: 0; z-index: 10;
+
+    :root {
+      --navy: #062653;
+      --navy-deep: #031a3a;
+      --navy-2: #0b376f;
+      --blue: #1597ff;
+      --gold: #c99a2e;
+      --gold-dark: #936a15;
+      --gold-light: #f4d980;
+      --ink: #142033;
+      --muted: #647084;
+      --line: #dfe5ee;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(6, 38, 83, 0.16);
+      --radius: 8px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, #ffffff, rgba(247,249,252,0.98) 45%, #fff),
+        radial-gradient(circle at 10% 8%, rgba(21,151,255,0.06), transparent 26%),
+        radial-gradient(circle at 86% 10%, rgba(201,154,46,0.12), transparent 28%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(223, 229, 238, 0.9);
+      background: rgba(255,255,255,0.94);
       backdrop-filter: blur(18px);
-      background: rgba(255,255,255,.86);
-      border-bottom: 1px solid rgba(231,237,245,.9);
+      box-shadow: 0 10px 34px rgba(6, 38, 83, 0.04);
     }
-    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; color: var(--navy); letter-spacing: -.04em; }
-    .brand img { width: 58px; height: 42px; object-fit: cover; object-position: left center; border-radius: 6px; }
-    .brand span { font-size: 1.55rem; }
-    .nav-links { display: flex; align-items: center; gap: 24px; font-weight: 700; color: #334155; font-size: .95rem; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 13px 20px; border-radius: 999px; font-weight: 900;
-      background: var(--navy); color: white; box-shadow: 0 14px 30px rgba(8,40,90,.2);
-      transition: transform .2s ease, box-shadow .2s ease;
+
+    .nav {
+      width: min(1180px, calc(100% - 40px));
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin: 0 auto;
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(8,40,90,.26); }
-    .btn.secondary { background: white; color: var(--navy); border: 1px solid var(--line); box-shadow: none; }
 
-    .hero { position: relative; overflow: hidden; padding: 82px 0 56px; background: radial-gradient(circle at top right, rgba(23,142,232,.12), transparent 34%), linear-gradient(180deg, #fff 0%, #f8fbff 100%); }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); background: rgba(23,142,232,.09); padding: 8px 13px; border-radius: 999px; font-weight: 900; font-size: .9rem; }
-    h1 { margin: 18px 0 18px; font-size: clamp(2.55rem, 5.2vw, 5.55rem); line-height: .94; letter-spacing: -.075em; color: var(--navy); }
-    .gold { color: var(--gold); }
-    .lead { font-size: clamp(1.08rem, 2vw, 1.35rem); color: #3d4a5c; max-width: 680px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 34px; }
-    .proof-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 17px; box-shadow: 0 12px 32px rgba(8,40,90,.07); }
-    .proof-card strong { display:block; font-size: 1.25rem; color: var(--navy); }
-    .proof-card span { color: var(--muted); font-weight: 650; font-size: .92rem; }
-    .mockup { background: white; border: 1px solid var(--line); border-radius: 28px; padding: 28px; box-shadow: var(--shadow); transform: rotate(1deg); }
-    .logo-panel { display: grid; place-items: center; min-height: 310px; border-radius: 22px; background: linear-gradient(135deg,#fff,#f5f8fc); border: 1px solid var(--line); overflow: hidden; }
-    .logo-panel img { width: 100%; max-width: 520px; display: block; }
-    .status-strip { margin-top: 18px; display: grid; gap: 10px; }
-    .status { display:flex; justify-content:space-between; gap: 10px; padding: 13px 15px; border-radius: 14px; background: var(--soft); font-weight: 750; color:#334155; }
-    .status b { color: var(--blue); }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
 
-    section { padding: 76px 0; }
-    .section-head { max-width: 760px; margin-bottom: 34px; }
-    .section-head h2 { margin: 0 0 12px; color: var(--navy); font-size: clamp(2rem, 3.8vw, 3.4rem); line-height: 1; letter-spacing: -.06em; }
-    .section-head p { margin: 0; color: var(--muted); font-size: 1.1rem; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: 0 16px 46px rgba(8,40,90,.07); }
-    .icon { width: 46px; height: 46px; border-radius: 15px; display:grid; place-items:center; background: rgba(23,142,232,.1); color: var(--blue); font-weight: 1000; font-size: 1.35rem; margin-bottom: 18px; }
-    .card h3 { margin: 0 0 10px; color: var(--navy); font-size: 1.25rem; letter-spacing: -.025em; }
-    .card p { margin: 0; color: var(--muted); }
+    .brand img {
+      width: 166px;
+      height: auto;
+    }
 
-    .dark { background: var(--navy); color: white; }
-    .dark .section-head h2, .dark .card h3 { color: white; }
-    .dark .section-head p, .dark .card p { color: rgba(255,255,255,.72); }
-    .dark .card { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.12); box-shadow: none; }
-    .dark .icon { background: rgba(214,169,68,.16); color: #ffd16b; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
 
-    .split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 32px; align-items: start; }
-    .checklist { display: grid; gap: 12px; }
-    .check { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: white; }
-    .check b { color: var(--navy); }
-    .tick { flex: 0 0 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; display: grid; place-items: center; font-weight: 1000; }
+    .nav-links a:hover {
+      color: var(--navy);
+    }
 
-    .cta { background: linear-gradient(135deg, var(--navy), #0d3d85); color: white; border-radius: 34px; padding: 44px; display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; box-shadow: var(--shadow); }
-    .cta h2 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -.06em; }
-    .cta p { margin: 0; color: rgba(255,255,255,.78); font-size: 1.08rem; }
-    .cta .btn { background: white; color: var(--navy); box-shadow: none; }
-    footer { padding: 30px 0; color: var(--muted); border-top: 1px solid var(--line); }
-    .footer-inner { display:flex; justify-content:space-between; gap: 14px; flex-wrap: wrap; }
+    .button,
+    .tier-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 24px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
 
-    @media (max-width: 880px) {
-      .nav-links a:not(.btn) { display:none; }
-      .hero-grid, .split, .cta { grid-template-columns: 1fr; }
-      .proof, .grid-3 { grid-template-columns: 1fr; }
-      .mockup { transform: none; }
-      .hero { padding-top: 52px; }
+    .button-primary,
+    .tier-btn {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold) 48%, var(--gold-dark));
+      color: #ffffff;
+      box-shadow: 0 16px 38px rgba(147, 106, 21, 0.28);
+    }
+
+    .button-primary:hover,
+    .tier-btn:hover {
+      box-shadow: 0 18px 44px rgba(147, 106, 21, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: #ffffff;
+      color: var(--navy);
+      box-shadow: 0 12px 34px rgba(6, 38, 83, 0.06);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(21,151,255,0.36);
+      box-shadow: 0 16px 42px rgba(6, 38, 83, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(3,26,58,0.99), rgba(6,38,83,0.98) 58%, rgba(8,49,96,0.98)),
+        var(--navy-deep);
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 19% 18%, rgba(21,151,255,0.22), transparent 30%),
+        radial-gradient(circle at 62% 8%, rgba(244,217,128,0.18), transparent 25%),
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    }
+
+    .hero {
+      position: relative;
+      width: min(1180px, calc(100% - 40px));
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      gap: 60px;
+      align-items: center;
+      margin: 0 auto;
+      padding: 92px 0 86px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      margin-bottom: 22px;
+      padding: 7px 12px;
+      border: 1px solid rgba(21, 151, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+      color: #d8edff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--navy);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin-bottom: 22px;
+      color: #ffffff;
+      font-size: clamp(42px, 5.15vw, 72px);
+      font-weight: 900;
+    }
+
+    .accent {
+      color: var(--gold-light);
+    }
+
+    .section .accent,
+    .wide-section .accent {
+      color: var(--gold-dark);
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin-bottom: 30px;
+      color: rgba(255,255,255,0.78);
+      font-size: clamp(17px, 1.6vw, 20px);
+    }
+
+    .hero-note {
+      max-width: 620px;
+      margin-top: 16px;
+      color: rgba(255,255,255,0.64);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-actions,
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .proof-strip span {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      box-shadow: none;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 34px 100px rgba(0, 0, 0, 0.26);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--blue), var(--navy));
+    }
+
+    .hero-logo {
+      width: min(100%, 500px);
+      margin: 0 auto 28px;
+      border-radius: 10px;
+    }
+
+    .revenue-card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .metric {
+      min-height: 94px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcff;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--navy);
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .system-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcff;
+    }
+
+    .system-card h3 {
+      margin-bottom: 16px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .system-row {
+      display: grid;
+      grid-template-columns: 1fr auto 12px;
+      gap: 14px;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      color: #263247;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .system-row:last-child {
+      border-bottom: 0;
+    }
+
+    .system-row small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(201,154,46,0.12);
+    }
+
+    .section,
+    .wide-section {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 82px 0;
+    }
+
+    .wide-section {
+      width: min(1180px, calc(100% - 40px));
+    }
+
+    .section-band {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.72);
+    }
+
+    .label {
+      margin-bottom: 12px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2.2px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .section h2,
+    .wide-section h2,
+    .cta-section h2 {
+      max-width: 840px;
+      margin: 0 auto 16px;
+      font-size: clamp(30px, 4vw, 50px);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .section-sub {
+      max-width: 720px;
+      margin: 0 auto 46px;
+      color: var(--muted);
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .card-grid,
+    .steps-grid,
+    .pricing-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .card-grid,
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: stretch;
+    }
+
+    .card,
+    .pricing-card,
+    .about-card,
+    .add-ons {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #ffffff;
+      box-shadow: 0 18px 54px rgba(6, 38, 83, 0.07);
+    }
+
+    .card {
+      min-height: 244px;
+      padding: 28px;
+    }
+
+    .card-index,
+    .step-num {
+      color: var(--gold-dark);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .card h3,
+    .step h3 {
+      margin: 12px 0 10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .card p,
+    .step p,
+    .about-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .step {
+      padding: 26px;
+      border-left: 3px solid rgba(201,154,46,0.42);
+      background: #ffffff;
+    }
+
+    .pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 28px;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(201,154,46,0.78);
+      box-shadow: 0 26px 70px rgba(147, 106, 21, 0.16);
+      transform: translateY(-8px);
+    }
+
+    .featured-tag {
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(21,151,255,0.1);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .tier-label {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .tier-title {
+      margin: 9px 0 18px;
+      font-size: 29px;
+      font-weight: 900;
+    }
+
+    .tier-price {
+      color: var(--navy);
+      font-size: 54px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .tier-price sup {
+      color: var(--gold-dark);
+      font-size: 24px;
+    }
+
+    .tier-price sub {
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .setup-note {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tier-desc {
+      margin: 20px 0 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      color: #3f4c61;
+      font-size: 15px;
+    }
+
+    .tier-features {
+      display: grid;
+      gap: 11px;
+      margin-bottom: 28px;
+      list-style: none;
+    }
+
+    .tier-features li {
+      position: relative;
+      padding-left: 22px;
+      color: #263247;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .tier-features li::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .tier-btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .pricing-card:not(.featured) .tier-btn {
+      border-color: var(--line);
+      background: #ffffff;
+      color: var(--navy);
+      box-shadow: none;
+    }
+
+    .pricing-card:not(.featured) .tier-btn:hover {
+      border-color: rgba(201,154,46,0.55);
+      box-shadow: 0 16px 42px rgba(6, 38, 83, 0.1);
+    }
+
+    .add-ons {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: center;
+      margin-top: 24px;
+      padding: 26px;
+    }
+
+    .add-ons h3 {
+      margin-bottom: 6px;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .add-ons p {
+      color: var(--muted);
+    }
+
+    .add-on-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .add-on-list span {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fbfcff;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .brand-visual {
+      display: grid;
+      min-height: 430px;
+      place-items: center;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-visual img {
+      width: min(100%, 460px);
+    }
+
+    .about-card {
+      padding: 34px;
+    }
+
+    .about-card .label,
+    .about-card h2 {
+      text-align: left;
+    }
+
+    .about-card h2 {
+      margin-bottom: 18px;
+      font-size: clamp(28px, 3.4vw, 44px);
+    }
+
+    .about-card p {
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .about-card strong {
+      color: var(--navy);
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .mini-list div {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcff;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .cta-section {
+      padding: 86px 20px;
+      border-top: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(6,38,83,0.96), rgba(11,55,111,0.98)),
+        var(--navy);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .cta-logo {
+      width: min(420px, 86vw);
+      margin: 0 auto 26px;
+      padding: 18px 24px;
+      border-radius: 12px;
+      background: #ffffff;
+      filter: drop-shadow(0 18px 34px rgba(0,0,0,0.18));
+    }
+
+    .cta-section h2 {
+      color: #ffffff;
+    }
+
+    .cta-section .accent {
+      color: var(--gold-light);
+    }
+
+    .cta-section p {
+      max-width: 650px;
+      margin: 0 auto 32px;
+      color: rgba(255,255,255,0.76);
+      font-size: 18px;
+    }
+
+    .cta-actions {
+      justify-content: center;
+    }
+
+    footer {
+      padding: 44px 20px 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .footer-logo {
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo img {
+      width: 270px;
+      margin: 0 auto;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 18px 0 10px;
+    }
+
+    .social-link {
+      min-width: 168px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .social-link:hover {
+      border-color: rgba(21,151,255,0.35);
+      box-shadow: 0 12px 30px rgba(6, 38, 83, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #8b96a8;
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        height: 76px;
+      }
+
+      .brand img {
+        width: 190px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero,
+      .about-grid,
+      .add-ons {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        gap: 34px;
+        padding-top: 66px;
+      }
+
+      .card-grid,
+      .steps-grid,
+      .pricing-grid,
+      .proof-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.featured {
+        transform: none;
+      }
+
+      .about-card .label,
+      .about-card h2 {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        width: min(100% - 28px, 1180px);
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 152px;
+      }
+
+      .nav .button {
+        min-height: 42px;
+        padding: 10px 13px;
+        font-size: 12px;
+      }
+
+      .hero,
+      .section,
+      .wide-section {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .hero {
+        padding: 50px 0 58px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-actions,
+      .cta-actions,
+      .social-links {
+        flex-direction: column;
+      }
+
+      .button,
+      .tier-btn,
+      .social-link {
+        width: 100%;
+      }
+
+      .hero-panel,
+      .system-card,
+      .about-card,
+      .add-ons {
+        padding: 22px;
+      }
+
+      .system-row {
+        grid-template-columns: 1fr 10px;
+      }
+
+      .system-row small {
+        display: none;
+      }
+
+      .section,
+      .wide-section {
+        padding: 64px 0;
+      }
+
+      .brand-visual {
+        min-height: 280px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="1APP home">
-        <img src="assets/1app-logo.jpeg" alt="1APP logo" />
-        <span>1APP</span>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#top" class="brand" aria-label="1APP home">
+        <img src="logo.png" alt="1APP - AI Automation for Small Businesses" />
       </a>
       <div class="nav-links">
-        <a href="#services">What it does</a>
-        <a href="#how">How it works</a>
-        <a href="#contact" class="btn">Book a demo</a>
+        <a href="#systems">Systems</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About 1APP</a>
       </div>
-    </div>
-  </nav>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" rel="noopener" class="button button-primary">Book Free Demo</a>
+    </nav>
+  </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
+    <section class="hero-shell">
+      <div class="hero">
         <div>
-          <div class="eyebrow">AI Automation for Small Businesses</div>
-          <h1>One app to capture leads, book jobs, and follow up faster.</h1>
-          <p class="lead">1APP gives local businesses a simple automation system for missed calls, instant replies, appointment booking, reviews, and lead follow-up — without hiring another admin.</p>
+          <div class="eyebrow">AI automation for small businesses</div>
+          <h1>Stop losing jobs to slow follow-up.</h1>
+          <p class="hero-copy">1APP installs a managed AI follow-up system that answers missed calls, books qualified leads, sends reminders, and asks for reviews, so more of the leads you already paid for become real appointments.</p>
           <div class="hero-actions">
-            <a class="btn" href="mailto:hello@use1app.com?subject=1APP%20Demo%20Request">Request a demo</a>
-            <a class="btn secondary" href="#services">See what it includes</a>
+            <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" rel="noopener" class="button button-primary">Book a Free Demo</a>
+            <a href="#pricing" class="button button-secondary">See Plans</a>
           </div>
-          <div class="proof">
-            <div class="proof-card"><strong>24/7</strong><span>Lead response</span></div>
-            <div class="proof-card"><strong>1 place</strong><span>Calls, texts, bookings</span></div>
-            <div class="proof-card"><strong>Fast</strong><span>Setup for small teams</span></div>
+          <p class="hero-note">Built for trades and service businesses that need faster response without hiring office staff.</p>
+          <div class="proof-strip" aria-label="Core outcomes">
+            <span>Instant missed-call reply</span>
+            <span>Calendar booking flow</span>
+            <span>AI voice reception</span>
+            <span>Review growth system</span>
           </div>
         </div>
-        <div class="mockup" aria-label="1APP preview">
-          <div class="logo-panel"><img src="assets/1app-logo.jpeg" alt="1APP AI Automation for Small Businesses" /></div>
-          <div class="status-strip">
-            <div class="status"><span>Missed call reply</span><b>Active</b></div>
-            <div class="status"><span>Booking reminders</span><b>Active</b></div>
-            <div class="status"><span>Lead follow-up</span><b>Active</b></div>
+
+        <aside class="hero-panel" aria-label="Automation system overview">
+          <img src="logo.png" class="hero-logo" alt="1APP - AI Automation for Small Businesses" />
+          <div class="revenue-card" aria-label="Business outcomes">
+            <div class="metric"><strong>24/7</strong><span>lead response coverage</span></div>
+            <div class="metric"><strong>5 min</strong><span>or less reply window</span></div>
+            <div class="metric"><strong>3-step</strong><span>SMS follow-up sequence</span></div>
+          </div>
+          <div class="system-card">
+            <h3>Your lead flow, handled</h3>
+            <div class="system-row"><span>Missed call captured</span><small>Instant</small><span class="status-dot"></span></div>
+            <div class="system-row"><span>Lead gets a reply</span><small>SMS</small><span class="status-dot"></span></div>
+            <div class="system-row"><span>Appointment booked</span><small>Calendar</small><span class="status-dot"></span></div>
+            <div class="system-row"><span>Reminder sequence sent</span><small>24h + 1h</small><span class="status-dot"></span></div>
+            <div class="system-row"><span>Review request triggered</span><small>After job</small><span class="status-dot"></span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="systems">
+      <div class="section">
+        <div class="label">Why it matters</div>
+        <h2>More leads do not help if the follow-up is broken.</h2>
+        <p class="section-sub">1APP focuses on the revenue moments that usually get missed: unanswered calls, slow replies, forgotten follow-ups, no-shows, and customers who never get asked for a review.</p>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-index">01</div>
+            <h3>Capture every missed call</h3>
+            <p>An instant text goes out, keeps the conversation alive, and moves the lead toward booking instead of calling the next business.</p>
+          </article>
+          <article class="card">
+            <div class="card-index">02</div>
+            <h3>Book leads while you work</h3>
+            <p>Your calendar, confirmations, and reminders handle the admin so booked appointments do not get buried in your phone.</p>
+          </article>
+          <article class="card">
+            <div class="card-index">03</div>
+            <h3>Follow up after the job</h3>
+            <p>Review requests and nurture messages go out automatically, helping you build trust without remembering every small task.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section">
+        <div class="label">How it works</div>
+        <h2>We build it. We connect it. <span class="accent">You use it like it was always there.</span></h2>
+        <p class="section-sub">No tech maze. No dashboard babysitting. You get a practical system installed around how your business already runs.</p>
+        <div class="steps-grid">
+          <article class="step">
+            <div class="step-num">Step 01</div>
+            <h3>Map the lead flow</h3>
+            <p>We look at how calls, messages, bookings, and follow-ups happen now, then clean up the gaps.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">Step 02</div>
+            <h3>Build the workflows</h3>
+            <p>1APP sets up the automations, booking calendar, messages, reminders, and handoff points.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">Step 03</div>
+            <h3>Launch and manage</h3>
+            <p>You get the system live, tested, and supported so you can focus on the work instead of the admin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wide-section" id="pricing">
+      <div class="label">Service tiers</div>
+      <h2>Three clear systems. <span class="accent">Pick the level of follow-up you want handled.</span></h2>
+      <p class="section-sub">Built around missed-call recovery, booking, reminders, voice reception, review requests, and nurture workflows.</p>
+
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <div class="tier-label">Tier 1</div>
+          <h3 class="tier-title">Lead Rescue</h3>
+          <div class="tier-price"><sup>$</sup>197<sub>/mo</sub></div>
+          <p class="setup-note">Recommended setup: $500 one-time</p>
+          <p class="tier-desc">For businesses that mainly need to stop missed calls from going cold.</p>
+          <ul class="tier-features">
+            <li>Missed Call Text Back</li>
+            <li>3-step SMS follow-up sequence</li>
+            <li>Booking calendar setup</li>
+            <li>Appointment confirmation by SMS and email</li>
+            <li>24-hour and 1-hour reminders</li>
+            <li>Workflow stops once the lead books</li>
+          </ul>
+          <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" rel="noopener" class="tier-btn">Start with Lead Rescue</a>
+        </article>
+
+        <article class="pricing-card featured">
+          <div class="featured-tag">Best fit</div>
+          <div class="tier-label">Tier 2</div>
+          <h3 class="tier-title">Booked While Busy</h3>
+          <div class="tier-price"><sup>$</sup>397<sub>/mo</sub></div>
+          <p class="setup-note">Recommended setup: $650 one-time</p>
+          <p class="tier-desc">For owners who cannot answer every call but still want every serious lead handled professionally.</p>
+          <ul class="tier-features">
+            <li>Everything in Lead Rescue</li>
+            <li>24/7 voice receptionist</li>
+            <li>Answers basic questions using your business info</li>
+            <li>Qualifies the caller's need</li>
+            <li>Collects name and callback number</li>
+            <li>Books appointments into your calendar</li>
+          </ul>
+          <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" rel="noopener" class="tier-btn">Build My Booking System</a>
+        </article>
+
+        <article class="pricing-card">
+          <div class="tier-label">Tier 3</div>
+          <h3 class="tier-title">Full Follow-Up Engine</h3>
+          <div class="tier-price"><sup>$</sup>597<sub>/mo</sub></div>
+          <p class="setup-note">Recommended setup: $800 one-time</p>
+          <p class="tier-desc">For businesses that want the full lead, booking, reminder, review, and nurture system managed.</p>
+          <ul class="tier-features">
+            <li>Everything in Booked While Busy</li>
+            <li>Automated Google review requests</li>
+            <li>48-hour lead nurture sequence</li>
+            <li>Cold lead re-engagement workflow</li>
+            <li>Monthly performance report</li>
+            <li>Priority support and workflow tweaks</li>
+          </ul>
+          <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" rel="noopener" class="tier-btn">Run It on Autopilot</a>
+        </article>
+      </div>
+
+      <div class="add-ons">
+        <div>
+          <h3>Need a custom build?</h3>
+          <p>Some businesses need more than the standard tiers. 1APP can scope the workflow and quote it cleanly.</p>
+        </div>
+        <div class="add-on-list">
+          <span>Website builds</span>
+          <span>Invoice follow-up</span>
+          <span>Payment collection</span>
+          <span>Pipeline cleanup</span>
+          <span>Custom automations</span>
+          <span>1-on-1 AI coaching</span>
+          <span>Social content support</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band" id="about">
+      <div class="wide-section about-grid">
+        <div class="brand-visual" aria-label="1APP brand logo">
+          <img src="logo.png" alt="1APP - AI Automation for Small Businesses" />
+        </div>
+        <div class="about-card">
+          <div class="label">About 1APP</div>
+          <h2>AI automation systems for small businesses that need faster follow-up.</h2>
+          <p><strong>1APP is built for tradespeople and local service businesses.</strong> The focus is practical automation: missed-call recovery, booking calendars, reminders, review requests, nurture workflows, and voice reception.</p>
+          <p>The approach is simple: make it easier for a good business to capture the opportunities it already has. No bloated tech stack. No buzzword-heavy setup. Just a clean system that answers faster, follows up consistently, and keeps the owner focused on the work.</p>
+          <div class="mini-list">
+            <div>Built for Ontario trades and local service businesses</div>
+            <div>Built around workflows, booking tools, and simple follow-up systems</div>
+            <div>Managed setup, clear tiers, no tech headaches</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Built for the calls and leads small businesses are already losing.</h2>
-          <p>Most small businesses do not need more software. They need a simple system that responds fast, books cleanly, and keeps leads from disappearing.</p>
-        </div>
-        <div class="grid-3">
-          <div class="card"><div class="icon">1</div><h3>Missed Call Text Back</h3><p>When a call is missed, the lead gets an instant text so the business can recover opportunities before they call a competitor.</p></div>
-          <div class="card"><div class="icon">2</div><h3>Online Booking</h3><p>Give customers a clean way to book appointments, estimates, consultations, and follow-ups directly into the business calendar.</p></div>
-          <div class="card"><div class="icon">3</div><h3>AI Voice & Follow-Up</h3><p>Add AI-powered call handling, reminders, review requests, and nurture campaigns so prospects do not fall through the cracks.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="how" class="dark">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Simple enough for a busy owner. Powerful enough to scale.</h2>
-          <p>We set up the system, connect the business tools, and give owners one place to manage conversations and appointments.</p>
-        </div>
-        <div class="grid-3">
-          <div class="card"><div class="icon">A</div><h3>We map the business</h3><p>Calls, booking flow, lead sources, services, team responsibilities, and follow-up gaps.</p></div>
-          <div class="card"><div class="icon">B</div><h3>We build the automation</h3><p>Calendar, SMS, email, AI voice, reminders, pipelines, and review workflows.</p></div>
-          <div class="card"><div class="icon">C</div><h3>We launch and support</h3><p>The business gets a branded app-style system with ongoing improvements as it grows.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap split">
-        <div class="section-head">
-          <h2>What 1APP helps with</h2>
-          <p>A practical automation foundation for trades, service businesses, local companies, and small teams that need faster response times.</p>
-        </div>
-        <div class="checklist">
-          <div class="check"><span class="tick">✓</span><div><b>Stop losing missed calls.</b><br />Instant SMS follow-up keeps hot leads engaged.</div></div>
-          <div class="check"><span class="tick">✓</span><div><b>Book more appointments.</b><br />Calendar links, confirmations, and reminders reduce back-and-forth.</div></div>
-          <div class="check"><span class="tick">✓</span><div><b>Keep every lead organized.</b><br />Pipelines and conversations stay in one place instead of scattered across phones and inboxes.</div></div>
-          <div class="check"><span class="tick">✓</span><div><b>Automate the follow-up.</b><br />Text and email sequences help businesses stay top-of-mind without manually chasing every lead.</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="cta">
-          <div>
-            <h2>Ready to see what 1APP can do for your business?</h2>
-            <p>Book a demo and we’ll show you how your calls, leads, appointments, and follow-up can work together.</p>
-          </div>
-          <a class="btn" href="mailto:hello@use1app.com?subject=1APP%20Demo%20Request">Book a demo</a>
-        </div>
+    <section class="cta-section" id="contact">
+      <img src="logo.png" class="cta-logo" alt="1APP - AI Automation for Small Businesses" />
+      <h2>If leads are slipping through the cracks, <span class="accent">fix the follow-up first.</span></h2>
+      <p>Book a free demo and 1APP will show you exactly what your lead capture, booking, and follow-up system could look like.</p>
+      <div class="cta-actions">
+        <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" rel="noopener" class="button button-primary">Book Your Free Demo</a>
+        <a href="tel:17052437767" class="button button-secondary">Call (705) 243-7767</a>
+        <a href="mailto:adecarlo@use1app.com" class="button button-secondary">Email 1APP</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap footer-inner">
-      <span>© 2026 1APP. AI Automation for Small Businesses.</span>
-      <span>use1app.com</span>
+    <a href="#top" class="footer-logo" aria-label="1APP home">
+      <img src="logo.png" alt="1APP - AI Automation for Small Businesses" />
+    </a>
+    <p>AI automation and follow-up systems for trades and service businesses.</p>
+    <div class="social-links" aria-label="Follow 1APP on social media">
+      <a href="https://www.instagram.com/tonysbusinesssolutions/" target="_blank" rel="noopener" class="social-link">Follow us on Instagram</a>
+      <a href="https://www.facebook.com/61589778803327" target="_blank" rel="noopener" class="social-link">Follow us on Facebook</a>
     </div>
+    <p>Ontario, Canada | <a href="tel:17052437767">(705) 243-7767</a> | <a href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a></p>
+    <div class="footer-bottom">Copyright 2026 1APP. All rights reserved.</div>
   </footer>
 </body>
 </html>
