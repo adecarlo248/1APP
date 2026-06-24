@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1APP | AI Automation for Small Businesses</title>
+  <meta name="description" content="1APP helps small businesses capture more leads, answer faster, book more appointments, and automate follow-up with AI-powered business systems." />
+  <meta property="og:title" content="1APP | AI Automation for Small Businesses" />
+  <meta property="og:description" content="Missed calls, lead follow-up, booking, reviews, and AI automation — built into one simple business app." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://use1app.com/" />
+  <meta property="og:image" content="https://use1app.com/assets/1app-logo.jpeg" />
+  <link rel="icon" href="assets/1app-logo.jpeg" />
+  <style>
+    :root {
+      --navy: #08285a;
+      --blue: #178ee8;
+      --gold: #d6a944;
+      --dark: #111827;
+      --muted: #5b6472;
+      --line: #e7edf5;
+      --soft: #f6f9fd;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(8, 40, 90, 0.12);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,.86);
+      border-bottom: 1px solid rgba(231,237,245,.9);
+    }
+    .nav-inner { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; color: var(--navy); letter-spacing: -.04em; }
+    .brand img { width: 58px; height: 42px; object-fit: cover; object-position: left center; border-radius: 6px; }
+    .brand span { font-size: 1.55rem; }
+    .nav-links { display: flex; align-items: center; gap: 24px; font-weight: 700; color: #334155; font-size: .95rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 20px; border-radius: 999px; font-weight: 900;
+      background: var(--navy); color: white; box-shadow: 0 14px 30px rgba(8,40,90,.2);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(8,40,90,.26); }
+    .btn.secondary { background: white; color: var(--navy); border: 1px solid var(--line); box-shadow: none; }
+
+    .hero { position: relative; overflow: hidden; padding: 82px 0 56px; background: radial-gradient(circle at top right, rgba(23,142,232,.12), transparent 34%), linear-gradient(180deg, #fff 0%, #f8fbff 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); background: rgba(23,142,232,.09); padding: 8px 13px; border-radius: 999px; font-weight: 900; font-size: .9rem; }
+    h1 { margin: 18px 0 18px; font-size: clamp(2.55rem, 5.2vw, 5.55rem); line-height: .94; letter-spacing: -.075em; color: var(--navy); }
+    .gold { color: var(--gold); }
+    .lead { font-size: clamp(1.08rem, 2vw, 1.35rem); color: #3d4a5c; max-width: 680px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 34px; }
+    .proof-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 17px; box-shadow: 0 12px 32px rgba(8,40,90,.07); }
+    .proof-card strong { display:block; font-size: 1.25rem; color: var(--navy); }
+    .proof-card span { color: var(--muted); font-weight: 650; font-size: .92rem; }
+    .mockup { background: white; border: 1px solid var(--line); border-radius: 28px; padding: 28px; box-shadow: var(--shadow); transform: rotate(1deg); }
+    .logo-panel { display: grid; place-items: center; min-height: 310px; border-radius: 22px; background: linear-gradient(135deg,#fff,#f5f8fc); border: 1px solid var(--line); overflow: hidden; }
+    .logo-panel img { width: 100%; max-width: 520px; display: block; }
+    .status-strip { margin-top: 18px; display: grid; gap: 10px; }
+    .status { display:flex; justify-content:space-between; gap: 10px; padding: 13px 15px; border-radius: 14px; background: var(--soft); font-weight: 750; color:#334155; }
+    .status b { color: var(--blue); }
+
+    section { padding: 76px 0; }
+    .section-head { max-width: 760px; margin-bottom: 34px; }
+    .section-head h2 { margin: 0 0 12px; color: var(--navy); font-size: clamp(2rem, 3.8vw, 3.4rem); line-height: 1; letter-spacing: -.06em; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: 0 16px 46px rgba(8,40,90,.07); }
+    .icon { width: 46px; height: 46px; border-radius: 15px; display:grid; place-items:center; background: rgba(23,142,232,.1); color: var(--blue); font-weight: 1000; font-size: 1.35rem; margin-bottom: 18px; }
+    .card h3 { margin: 0 0 10px; color: var(--navy); font-size: 1.25rem; letter-spacing: -.025em; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .dark { background: var(--navy); color: white; }
+    .dark .section-head h2, .dark .card h3 { color: white; }
+    .dark .section-head p, .dark .card p { color: rgba(255,255,255,.72); }
+    .dark .card { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.12); box-shadow: none; }
+    .dark .icon { background: rgba(214,169,68,.16); color: #ffd16b; }
+
+    .split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 32px; align-items: start; }
+    .checklist { display: grid; gap: 12px; }
+    .check { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+    .check b { color: var(--navy); }
+    .tick { flex: 0 0 26px; height: 26px; border-radius: 50%; background: var(--blue); color: white; display: grid; place-items: center; font-weight: 1000; }
+
+    .cta { background: linear-gradient(135deg, var(--navy), #0d3d85); color: white; border-radius: 34px; padding: 44px; display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; box-shadow: var(--shadow); }
+    .cta h2 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -.06em; }
+    .cta p { margin: 0; color: rgba(255,255,255,.78); font-size: 1.08rem; }
+    .cta .btn { background: white; color: var(--navy); box-shadow: none; }
+    footer { padding: 30px 0; color: var(--muted); border-top: 1px solid var(--line); }
+    .footer-inner { display:flex; justify-content:space-between; gap: 14px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .nav-links a:not(.btn) { display:none; }
+      .hero-grid, .split, .cta { grid-template-columns: 1fr; }
+      .proof, .grid-3 { grid-template-columns: 1fr; }
+      .mockup { transform: none; }
+      .hero { padding-top: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="1APP home">
+        <img src="assets/1app-logo.jpeg" alt="1APP logo" />
+        <span>1APP</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">What it does</a>
+        <a href="#how">How it works</a>
+        <a href="#contact" class="btn">Book a demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">AI Automation for Small Businesses</div>
+          <h1>One app to capture leads, book jobs, and follow up faster.</h1>
+          <p class="lead">1APP gives local businesses a simple automation system for missed calls, instant replies, appointment booking, reviews, and lead follow-up — without hiring another admin.</p>
+          <div class="hero-actions">
+            <a class="btn" href="mailto:hello@use1app.com?subject=1APP%20Demo%20Request">Request a demo</a>
+            <a class="btn secondary" href="#services">See what it includes</a>
+          </div>
+          <div class="proof">
+            <div class="proof-card"><strong>24/7</strong><span>Lead response</span></div>
+            <div class="proof-card"><strong>1 place</strong><span>Calls, texts, bookings</span></div>
+            <div class="proof-card"><strong>Fast</strong><span>Setup for small teams</span></div>
+          </div>
+        </div>
+        <div class="mockup" aria-label="1APP preview">
+          <div class="logo-panel"><img src="assets/1app-logo.jpeg" alt="1APP AI Automation for Small Businesses" /></div>
+          <div class="status-strip">
+            <div class="status"><span>Missed call reply</span><b>Active</b></div>
+            <div class="status"><span>Booking reminders</span><b>Active</b></div>
+            <div class="status"><span>Lead follow-up</span><b>Active</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built for the calls and leads small businesses are already losing.</h2>
+          <p>Most small businesses do not need more software. They need a simple system that responds fast, books cleanly, and keeps leads from disappearing.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><div class="icon">1</div><h3>Missed Call Text Back</h3><p>When a call is missed, the lead gets an instant text so the business can recover opportunities before they call a competitor.</p></div>
+          <div class="card"><div class="icon">2</div><h3>Online Booking</h3><p>Give customers a clean way to book appointments, estimates, consultations, and follow-ups directly into the business calendar.</p></div>
+          <div class="card"><div class="icon">3</div><h3>AI Voice & Follow-Up</h3><p>Add AI-powered call handling, reminders, review requests, and nurture campaigns so prospects do not fall through the cracks.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="dark">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Simple enough for a busy owner. Powerful enough to scale.</h2>
+          <p>We set up the system, connect the business tools, and give owners one place to manage conversations and appointments.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card"><div class="icon">A</div><h3>We map the business</h3><p>Calls, booking flow, lead sources, services, team responsibilities, and follow-up gaps.</p></div>
+          <div class="card"><div class="icon">B</div><h3>We build the automation</h3><p>Calendar, SMS, email, AI voice, reminders, pipelines, and review workflows.</p></div>
+          <div class="card"><div class="icon">C</div><h3>We launch and support</h3><p>The business gets a branded app-style system with ongoing improvements as it grows.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap split">
+        <div class="section-head">
+          <h2>What 1APP helps with</h2>
+          <p>A practical automation foundation for trades, service businesses, local companies, and small teams that need faster response times.</p>
+        </div>
+        <div class="checklist">
+          <div class="check"><span class="tick">✓</span><div><b>Stop losing missed calls.</b><br />Instant SMS follow-up keeps hot leads engaged.</div></div>
+          <div class="check"><span class="tick">✓</span><div><b>Book more appointments.</b><br />Calendar links, confirmations, and reminders reduce back-and-forth.</div></div>
+          <div class="check"><span class="tick">✓</span><div><b>Keep every lead organized.</b><br />Pipelines and conversations stay in one place instead of scattered across phones and inboxes.</div></div>
+          <div class="check"><span class="tick">✓</span><div><b>Automate the follow-up.</b><br />Text and email sequences help businesses stay top-of-mind without manually chasing every lead.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="cta">
+          <div>
+            <h2>Ready to see what 1APP can do for your business?</h2>
+            <p>Book a demo and we’ll show you how your calls, leads, appointments, and follow-up can work together.</p>
+          </div>
+          <a class="btn" href="mailto:hello@use1app.com?subject=1APP%20Demo%20Request">Book a demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 1APP. AI Automation for Small Businesses.</span>
+      <span>use1app.com</span>
+    </div>
+  </footer>
+</body>
+</html>
