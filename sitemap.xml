@@ -4,4 +4,12 @@
     <loc>https://use1app.com/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://use1app.com/privacy-policy.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://use1app.com/terms-and-conditions.html</loc>
+    <priority>0.4</priority>
+  </url>
 </urlset>

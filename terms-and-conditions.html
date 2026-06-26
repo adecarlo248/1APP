@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms and Conditions for using 1APP services, website, demos, automation systems, booking tools, and follow-up workflows." />
+  <title>Terms & Conditions | 1APP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #062653;
+      --navy-deep: #031a3a;
+      --blue: #1597ff;
+      --gold: #c99a2e;
+      --gold-dark: #936a15;
+      --gold-light: #f4d980;
+      --ink: #142033;
+      --muted: #647084;
+      --line: #dfe5ee;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(6, 38, 83, 0.16);
+      --radius: 8px;
+    }
+    body {
+      min-height: 100vh;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, #ffffff, rgba(247,249,252,0.98) 45%, #fff),
+        radial-gradient(circle at 10% 8%, rgba(21,151,255,0.06), transparent 26%),
+        radial-gradient(circle at 86% 10%, rgba(201,154,46,0.12), transparent 28%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(223, 229, 238, 0.9);
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 34px rgba(6, 38, 83, 0.04);
+    }
+    .nav {
+      width: min(1080px, calc(100% - 40px));
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      margin: 0 auto;
+    }
+    .brand img { width: 166px; height: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 14px; font-weight: 800; }
+    .nav-links a:hover { color: var(--navy); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold) 48%, var(--gold-dark));
+      color: #ffffff;
+      box-shadow: 0 16px 38px rgba(147, 106, 21, 0.24);
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(3,26,58,0.99), rgba(6,38,83,0.98) 58%, rgba(8,49,96,0.98));
+      color: #fff;
+      padding: 76px 20px;
+      text-align: center;
+    }
+    .hero-inner { width: min(920px, 100%); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border: 1px solid rgba(21, 151, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+      color: #d8edff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    h1 { font-size: clamp(38px, 6vw, 64px); line-height: 0.98; letter-spacing: -2px; margin-bottom: 20px; }
+    .hero p { color: #d8edff; font-size: 18px; max-width: 760px; margin: 0 auto; }
+    main { width: min(920px, calc(100% - 40px)); margin: 54px auto 70px; }
+    .content-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 5vw, 52px);
+    }
+    .updated { color: var(--muted); font-weight: 800; margin-bottom: 26px; }
+    h2 { color: var(--navy); font-size: 26px; line-height: 1.2; margin: 34px 0 12px; letter-spacing: -0.6px; }
+    h2:first-of-type { margin-top: 0; }
+    p, li { color: #344156; font-size: 16px; }
+    ul { margin: 10px 0 0 22px; }
+    li { margin: 8px 0; }
+    strong { color: var(--navy); }
+    .notice {
+      margin-top: 34px;
+      padding: 18px;
+      border-left: 4px solid var(--gold);
+      background: #fff8e6;
+      color: #4b3a15;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+    footer {
+      padding: 42px 20px 46px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      text-align: center;
+      color: var(--muted);
+    }
+    .footer-logo img { width: 146px; margin: 0 auto 18px; display: block; }
+    footer p { color: var(--muted); margin-bottom: 10px; }
+    footer a { color: var(--navy); font-weight: 800; }
+    .footer-bottom { margin-top: 16px; color: #8a94a5; font-size: 14px; }
+    @media (max-width: 720px) {
+      .nav { height: auto; padding: 18px 0; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="brand" aria-label="1APP home"><img src="logo.png" alt="1APP" /></a>
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="index.html#contact" class="button">Book Demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Terms &amp; Conditions</div>
+      <h1>The rules for using 1APP’s website and services.</h1>
+      <p>These terms explain how demos, automation services, accounts, payments, communication tools, and client responsibilities work.</p>
+    </div>
+  </section>
+
+  <main>
+    <article class="content-card">
+      <p class="updated">Last updated: June 26, 2026</p>
+
+      <h2>1. Agreement to these terms</h2>
+      <p>By using the 1APP website, booking a demo, submitting information, purchasing services, or using any 1APP automation system, you agree to these Terms &amp; Conditions. If you do not agree, do not use the website or services.</p>
+
+      <h2>2. About 1APP</h2>
+      <p>1APP provides AI automation and follow-up systems for trades and local service businesses. Services may include missed-call text back, booking calendars, AI voice reception, appointment reminders, review requests, lead nurture workflows, CRM setup, website builds, and custom automations.</p>
+
+      <h2>3. Services and scope</h2>
+      <p>The exact services, features, pricing, setup work, timelines, and deliverables will be confirmed through a quote, proposal, invoice, onboarding document, written message, or separate agreement. If there is a conflict between these Terms and a signed written agreement, the signed written agreement controls.</p>
+
+      <h2>4. Client responsibilities</h2>
+      <p>Clients are responsible for:</p>
+      <ul>
+        <li>Providing accurate business, contact, calendar, service, pricing, and customer information.</li>
+        <li>Approving workflows, scripts, messages, offers, website copy, and automations before launch.</li>
+        <li>Maintaining access to required third-party accounts, including CRM, phone, email, calendar, payment, domain, or hosting tools.</li>
+        <li>Responding to leads and customers in a professional and lawful manner.</li>
+        <li>Complying with applicable privacy, marketing, SMS, calling, email, consent, industry, and business laws.</li>
+      </ul>
+
+      <h2>5. Payments, setup fees, and subscriptions</h2>
+      <p>Fees may include one-time setup fees, monthly subscriptions, software/platform costs, usage charges, phone or messaging charges, custom build fees, and other approved expenses. Unless agreed otherwise in writing, setup work may begin only after payment or deposit is received.</p>
+      <p>Monthly services are billed on a recurring basis according to the agreed plan. Late or failed payments may result in paused work, suspended services, or account restrictions.</p>
+
+      <h2>6. Cancellations and refunds</h2>
+      <p>Unless otherwise agreed in writing, setup fees and completed custom work are non-refundable once work has started. Monthly subscriptions may be cancelled according to the cancellation terms agreed with the client. Some third-party platform fees may be controlled by the third-party provider and may not be refundable by 1APP.</p>
+
+      <h2>7. Third-party platforms</h2>
+      <p>1APP may use third-party platforms for CRM, booking, calendars, messaging, phone calls, AI voice, email, payments, hosting, analytics, automation, and related services. 1APP is not responsible for outages, pricing changes, policy changes, account restrictions, data loss, or service issues caused by third-party platforms.</p>
+
+      <h2>8. SMS, calls, email, and customer communications</h2>
+      <p>Clients are responsible for ensuring that customer communications comply with applicable laws and consent requirements. This includes automated SMS, calls, emails, appointment reminders, review requests, promotional messages, and follow-ups. Clients must not use 1APP systems for spam, harassment, deceptive messaging, illegal activity, or unauthorized contact.</p>
+
+      <h2>9. No guaranteed results</h2>
+      <p>1APP builds systems designed to improve lead capture, response speed, booking, follow-up, and customer communication. Results depend on the client’s market, offer, reputation, response time, pricing, team, sales process, ad spend, customer demand, and other factors. 1APP does not guarantee specific revenue, leads, bookings, reviews, rankings, or business results.</p>
+
+      <h2>10. Website content and intellectual property</h2>
+      <p>The 1APP website, branding, designs, workflows, templates, copy, systems, and materials are owned by 1APP or its licensors unless otherwise stated. Clients may use approved deliverables for their own business, but may not copy, resell, distribute, or claim ownership of 1APP’s reusable systems, templates, or processes without written permission.</p>
+
+      <h2>11. Acceptable use</h2>
+      <p>You may not use the website or services to break the law, infringe rights, upload malicious code, interfere with systems, scrape data without permission, impersonate others, make false claims, or damage 1APP, its clients, or third-party platforms.</p>
+
+      <h2>12. Limitation of liability</h2>
+      <p>To the maximum extent permitted by law, 1APP is not liable for indirect, incidental, special, consequential, punitive, or lost-profit damages. 1APP’s total liability for any claim related to the website or services will be limited to the amount paid by the client to 1APP for the specific service giving rise to the claim during the three months before the claim.</p>
+
+      <h2>13. Indemnity</h2>
+      <p>You agree to defend and hold 1APP harmless from claims, damages, losses, liabilities, costs, and expenses arising from your use of the services, your business practices, your customer communications, your breach of these Terms, or your violation of applicable laws or third-party rights.</p>
+
+      <h2>14. Changes to these terms</h2>
+      <p>1APP may update these Terms &amp; Conditions from time to time. The updated version will be posted on this page with a revised “Last updated” date. Continued use of the website or services means you accept the updated terms.</p>
+
+      <h2>15. Governing law</h2>
+      <p>These Terms are governed by the laws of Ontario, Canada, and applicable Canadian federal laws. Any disputes will be handled in Ontario unless otherwise required by law or agreed in writing.</p>
+
+      <h2>16. Contact</h2>
+      <p>Questions about these Terms can be sent to <a href="mailto:justin@use1app.com"><strong>justin@use1app.com</strong></a> or <a href="mailto:adecarlo@use1app.com"><strong>adecarlo@use1app.com</strong></a>. You can also call <a href="tel:17052432887"><strong>(705) 243-2887</strong></a>.</p>
+
+      <p class="notice">These terms are a practical business template and should be reviewed by a qualified legal professional before being relied on for legal compliance.</p>
+    </article>
+  </main>
+
+  <footer>
+    <a href="index.html" class="footer-logo" aria-label="1APP home"><img src="logo.png" alt="1APP - AI Automation for Small Businesses" /></a>
+    <p>AI automation and follow-up systems for trades and service businesses.</p>
+    <p>Ontario, Canada | <a href="tel:17052432887">(705) 243-2887</a> | <a href="mailto:justin@use1app.com">justin@use1app.com</a> | <a href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a></p>
+    <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-and-conditions.html">Terms &amp; Conditions</a></p>
+    <div class="footer-bottom">Copyright 2026 1APP. All rights reserved.</div>
+  </footer>
+</body>
+</html>
