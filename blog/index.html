@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Automation Blog for Small Businesses | 1APP</title>
+  <meta name="description" content="AI automation tips, guides, and strategies for small businesses. Learn how to automate leads, follow-ups, and bookings with 1APP." />
+  <meta name="keywords" content="AI automation for small business, small business automation, AI tools for contractors, missed call text back, AI receptionist" />
+  <meta property="og:title" content="AI Automation Blog for Small Businesses | 1APP" />
+  <meta property="og:description" content="AI automation tips, guides, and strategies for small businesses. Learn how to automate leads, follow-ups, and bookings with 1APP." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://use1app.com/blog/" />
+  <meta property="og:image" content="https://use1app.com/assets/social/1app-trades-campaign-2026-07/01-automate-leads-reminders-reviews.jpg" />
+  <link rel="canonical" href="https://use1app.com/blog/" />
+  <link rel="icon" href="/assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #062653;
+      --navy-deep: #031a3a;
+      --blue: #1597ff;
+      --gold: #c99a2e;
+      --gold-dark: #936a15;
+      --gold-light: #f4d980;
+      --ink: #142033;
+      --muted: #647084;
+      --line: #dfe5ee;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(6, 38, 83, 0.16);
+      --radius: 8px;
+    }
+    body {
+      min-height: 100vh;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(223,229,238,0.9);
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 34px rgba(6,38,83,0.04);
+    }
+    .nav {
+      width: min(1080px, calc(100% - 40px));
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    .nav-logo { font-size: 1.4rem; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-dark); }
+
+    /* HERO */
+    .blog-hero {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #0d3a6e 100%);
+      color: var(--white);
+      padding: 72px 20px;
+      text-align: center;
+    }
+    .blog-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin-bottom: 16px; }
+    .blog-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
+
+    /* BLOG GRID */
+    .blog-section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 64px 20px;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .blog-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(6,38,83,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(6,38,83,0.14); }
+    .card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--navy) 0%, #0d3a6e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .card-tag {
+      display: inline-block;
+      background: rgba(201,154,46,0.12);
+      color: var(--gold-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .card-excerpt { color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex: 1; }
+    .card-meta { margin-top: 16px; font-size: 0.8rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+    .card-read-more {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      transition: background 0.2s;
+    }
+    .card-read-more:hover { background: #0d3a6e; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 72px 20px;
+    }
+    .cta-banner h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; margin-bottom: 12px; }
+    .cta-banner p { color: rgba(255,255,255,0.8); margin-bottom: 28px; font-size: 1.05rem; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: var(--radius);
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--gold-dark); }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.875rem;
+    }
+    .site-footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-logo"><span>1APP</span></a>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" class="nav-cta">Book Free Demo</a>
+    </nav>
+  </header>
+
+  <section class="blog-hero">
+    <h1>AI Automation for Small Businesses</h1>
+    <p>Practical guides, tips, and strategies to help contractors and small business owners automate their leads, follow-ups, and bookings.</p>
+  </section>
+
+  <section class="blog-section">
+    <h2 style="font-size:1.5rem;font-weight:800;color:var(--navy);">Latest Articles</h2>
+
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="card-img">🤖</div>
+        <div class="card-body">
+          <span class="card-tag">AI Automation</span>
+          <h2 class="card-title">AI Automation for Small Business: The Complete 2026 Guide</h2>
+          <p class="card-excerpt">Everything you need to know about AI automation for small business — what to automate first, what it costs, and what results you can expect in 2026.</p>
+          <div class="card-meta">
+            <span>July 19, 2026</span>
+            <span>9 min read</span>
+          </div>
+          <a href="/blog/ai-automation-small-business-guide/" class="card-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="card-img">📱</div>
+        <div class="card-body">
+          <span class="card-tag">Lead Recovery</span>
+          <h2 class="card-title">Never Miss Another Lead: How Missed Call Text Back Works</h2>
+          <p class="card-excerpt">Every missed call is a missed job. Learn how missed call text back automation recovers lost leads automatically — and how much revenue it could save your business.</p>
+          <div class="card-meta">
+            <span>July 19, 2026</span>
+            <span>7 min read</span>
+          </div>
+          <a href="/blog/missed-call-text-back/" class="card-read-more">Read More →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="card-img">🔧</div>
+        <div class="card-body">
+          <span class="card-tag">Trades</span>
+          <h2 class="card-title">AI Automation for Contractors: How Trades Businesses Win More Jobs</h2>
+          <p class="card-excerpt">HVAC, plumbing, roofing, electrical — AI automation is changing how trades businesses get and keep customers. Here's how contractors are using it to win more jobs in 2026.</p>
+          <div class="card-meta">
+            <span>July 19, 2026</span>
+            <span>10 min read</span>
+          </div>
+          <a href="/blog/ai-automation-for-contractors/" class="card-read-more">Read More →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <h2>Ready to Automate Your Business?</h2>
+    <p>Stop losing leads to competitors who respond faster. Book a free demo and see 1APP in action.</p>
+    <a href="https://api.leadconnectorhq.com/widget/bookings/tony-decarlo-free-demo" target="_blank" class="cta-btn">Book Your Free Demo →</a>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 2026 1APP Technologies Inc. — Peterborough, Ontario, Canada</p>
+    <p style="margin-top:8px;"><a href="/">Home</a> &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms-and-conditions.html">Terms</a></p>
+  </footer>
+
+</body>
+</html>
