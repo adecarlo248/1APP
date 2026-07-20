@@ -96,6 +96,10 @@
         if (last) last.replaceWith(links); else row.appendChild(links);
       }
     }
+    const desktopNav=document.querySelector('header nav div.hidden');
+    if(desktopNav&&!desktopNav.querySelector('a[href="/blog/"]')){const bl=document.createElement('a');bl.href='/blog/';bl.textContent='Blog';bl.className='text-sm font-medium text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]';desktopNav.appendChild(bl);}
+    const footerProductCol=document.querySelector('footer .flex.flex-col.gap-3');
+    if(footerProductCol&&!footerProductCol.querySelector('a[href="/blog/"]')){const bfl=document.createElement('a');bfl.href='/blog/';bfl.textContent='Blog';bfl.className='text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]';footerProductCol.appendChild(bfl);}
   }
   if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', patch, {once:true}); else patch();
   let runs=0; const id=setInterval(()=>{patch(); if(++runs>=12) clearInterval(id);}, 250);
