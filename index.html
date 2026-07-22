@@ -308,7 +308,7 @@
     btn.textContent = 'Sending…';
     errEl.style.display = 'none';
 
-    fetch('/api/claim-trial', {
+    fetch('https://jovial-otter-58b861.netlify.app/api/claim-trial', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ firstName, lastName, businessName, email, phone }),
