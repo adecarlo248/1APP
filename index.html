@@ -104,8 +104,29 @@
   } else {
     patch();
   }
+    /* ── Free trial button: hero ── */
+    if(!document.getElementById('ft-hero')&&document.querySelector('.hero-grid-bg')){
+      var heroBtn=document.createElement('div');
+      heroBtn.id='ft-hero';
+      heroBtn.style.cssText='margin-top:16px;';
+      heroBtn.innerHTML='<a href="https://api.leadconnectorhq.com/widget/form/vQ2UQ5FjwScLQQJ4DSIG" style="display:inline-block;background:linear-gradient(135deg,#c99a2e,#a07820);color:#fff;font-weight:800;font-size:1rem;padding:14px 32px;border-radius:999px;text-decoration:none;box-shadow:0 4px 20px rgba(201,154,46,0.4);margin-top:4px;">&#127881; Claim Your 30-Day Free Trial &rarr;</a>';
+      var btnRow=document.querySelector('.hero-grid-bg .mt-8');
+      if(btnRow) btnRow.appendChild(heroBtn);
+    }
+    /* ── Free trial button: pricing ── */
+    if(!document.getElementById('ft-pricing')){
+      var pricingEl=Array.from(document.querySelectorAll('p')).find(function(p){return p.textContent.trim()==='Launch pricing';});
+      if(pricingEl&&pricingEl.parentElement){
+        var pricingBtn=document.createElement('div');
+        pricingBtn.id='ft-pricing';
+        pricingBtn.style.cssText='text-align:center;padding-bottom:28px;';
+        pricingBtn.innerHTML='<a href="https://api.leadconnectorhq.com/widget/form/vQ2UQ5FjwScLQQJ4DSIG" style="display:inline-block;background:linear-gradient(135deg,#c99a2e,#a07820);color:#fff;font-weight:800;font-size:1rem;padding:14px 32px;border-radius:999px;text-decoration:none;box-shadow:0 4px 20px rgba(201,154,46,0.4);margin-top:4px;">&#127881; Claim Your 30-Day Free Trial &rarr;</a>';
+        pricingEl.parentElement.parentElement.insertBefore(pricingBtn,pricingEl.parentElement);
+      }
+    }
+  } 
   var runs=0;
-  var timer=setInterval(function(){patch();if(++runs>=12)clearInterval(timer);},250);
+  var timer=setInterval(function(){patch();if(++runs>=20)clearInterval(timer);},200);
 })();
 </script>
 <!-- 1APP Free Trial Popup -->
