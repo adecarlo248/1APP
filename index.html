@@ -1,67 +1,5 @@
-<!-- Free Trial Popup -->
-<div id="trial-overlay" style="
-  display:none; position:fixed; inset:0; z-index:99999;
-  background:rgba(0,0,0,0.72); backdrop-filter:blur(4px);
-  align-items:center; justify-content:center; padding:16px;
-" role="dialog" aria-modal="true" aria-label="Claim your free trial">
-  <div style="
-    background:#0f1117; border:1px solid rgba(255,255,255,0.1);
-    border-radius:16px; max-width:480px; width:100%; padding:32px 32px 24px;
-    position:relative; box-shadow:0 24px 60px rgba(0,0,0,0.5);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    max-height:90vh; overflow-y:auto;
-  ">
-    <button id="trial-close" aria-label="Close" style="
-      position:absolute; top:14px; right:16px; background:none; border:none;
-      color:#888; font-size:22px; cursor:pointer; line-height:1; padding:4px; z-index:1;
-    ">&times;</button>
-    <div style="
-      display:inline-block; background:rgba(99,201,169,0.15);
-      border:1px solid rgba(99,201,169,0.35); color:#63c9a9;
-      font-size:11px; font-weight:700; letter-spacing:0.08em;
-      text-transform:uppercase; border-radius:999px;
-      padding:4px 12px; margin-bottom:14px;
-    ">Limited Time Offer</div>
-    <h2 style="color:#fff; font-size:22px; font-weight:700; margin:0 0 6px; line-height:1.3;">Get 30 Days Free</h2>
-    <p style="color:#a0a8b8; font-size:13px; margin:0 0 20px; line-height:1.6;">No credit card required. We'll set everything up for you and be in touch within 24 hours.</p>
-    <iframe
-      src="https://api.leadconnectorhq.com/widget/form/vQ2UQ5FjwScLQQJ4DSIG"
-      style="width:100%;height:580px;border:none;border-radius:8px;"
-      id="inline-vQ2UQ5FjwScLQQJ4DSIG"
-      data-layout='{"id":"INLINE"}'
-      data-trigger-type="alwaysShow"
-      data-trigger-value=""
-      data-activation-type="alwaysActivated"
-      data-activation-value=""
-      data-deactivation-type="neverDeactivate"
-      data-deactivation-value=""
-      data-form-name="30 day free trial Form"
-      data-height="580"
-      data-layout-iframe-id="inline-vQ2UQ5FjwScLQQJ4DSIG"
-      data-form-id="vQ2UQ5FjwScLQQJ4DSIG"
-      title="30 day free trial Form"
-    ></iframe>
-    <p style="color:#555; font-size:11px; text-align:center; margin:12px 0 0;">No spam. No contracts. Just results.</p>
-  </div>
-</div>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
-<script>
-(function(){
-  var KEY='1app_trial_shown';
-  function show(){var o=document.getElementById('trial-overlay');if(!o)return;o.style.display='flex';document.body.style.overflow='hidden';}
-  function hide(){var o=document.getElementById('trial-overlay');if(!o)return;o.style.display='none';document.body.style.overflow='';}
-  function init(){
-    if(sessionStorage.getItem(KEY)==='submitted')return;
-    setTimeout(show,7000);
-    var c=document.getElementById('trial-close');
-    if(c)c.addEventListener('click',function(){hide();sessionStorage.setItem(KEY,'dismissed');});
-    var o=document.getElementById('trial-overlay');
-    if(o)o.addEventListener('click',function(e){if(e.target===o){hide();sessionStorage.setItem(KEY,'dismissed');}});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'){hide();sessionStorage.setItem(KEY,'dismissed');}});
-  }
-  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
-})();
-</script>
+
+
 <!DOCTYPE html><html lang="en" data-theme="default-light" style="color-scheme:light"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/assets/logo.png"/><link rel="stylesheet" href="/assets/styles--qyy-a2O.css" data-precedence="default"/><title>1APP | AI Automation for Small Businesses</title><meta name="description" content="1APP installs managed automations starting at $299/month or $3,000/year. Text, email, web chat, GMB messaging, missed-call recovery, reputation tools, payments, and launchpad setup are managed in one place."/><meta property="og:title" content="1APP | AI Automation for Small Businesses"/><meta property="og:description" content="1APP installs managed automations starting at $299/month or $3,000/year. Text, email, web chat, GMB messaging, missed-call recovery, reputation tools, payments, and launchpad setup are managed in one place."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@Higgsfield"/><meta property="og:image" content="/assets/hero-bg.png"/><meta name="twitter:image" content="/assets/hero-bg.png"/><link rel="modulepreload" href="/assets/index-BUtlACHm.js"/><link rel="icon" href="/assets/logo.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><script>(function () {
   var currentScript = document.currentScript;
   var styleNonce = currentScript && currentScript.nonce ? currentScript.nonce : "";
@@ -173,62 +111,9 @@
   let runs=0; const id=setInterval(()=>{patch(); if(++runs>=12) clearInterval(id);}, 250);
 })();
 </script>
-<!-- 1APP Free Trial Popup -->
 
 </body></html
-<script>
-(function() {
-  'use strict';
-  var STORAGE_KEY = '1app_trial_shown';
-  var DELAY_MS    = 7000;
-
-  function showPopup() {
-    var overlay = document.getElementById('trial-overlay');
-    if (!overlay) return;
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-
-  function hidePopup() {
-    var overlay = document.getElementById('trial-overlay');
-    if (!overlay) return;
-    overlay.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  function init() {
-    if (sessionStorage.getItem(STORAGE_KEY) === 'submitted') return;
-    setTimeout(showPopup, DELAY_MS);
-
-    var closeBtn = document.getElementById('trial-close');
-    if (closeBtn) closeBtn.addEventListener('click', function() {
-      hidePopup();
-      sessionStorage.setItem(STORAGE_KEY, 'dismissed');
-    });
-
-    var overlay = document.getElementById('trial-overlay');
-    if (overlay) overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) {
-        hidePopup();
-        sessionStorage.setItem(STORAGE_KEY, 'dismissed');
-      }
-    });
-
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        hidePopup();
-        sessionStorage.setItem(STORAGE_KEY, 'dismissed');
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>E html><html lang="en" data-theme="default-light" style="color-scheme:light"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/assets/logo.png"/><link rel="stylesheet" href="/assets/styles--qyy-a2O.css" data-precedence="default"/><title>1APP | AI Automation for Small Businesses</title><meta name="description" content="1APP installs managed automations starting at $299/month or $3,000/year. Text, email, web chat, GMB messaging, missed-call recovery, reputation tools, payments, and launchpad setup are managed in one place."/><meta property="og:title" content="1APP | AI Automation for Small Businesses"/><meta property="og:description" content="1APP installs managed automations starting at $299/month or $3,000/year. Text, email, web chat, GMB messaging, missed-call recovery, reputation tools, payments, and launchpad setup are managed in one place."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@Higgsfield"/><meta property="og:image" content="/assets/hero-bg.png"/><meta name="twitter:image" content="/assets/hero-bg.png"/><link rel="modulepreload" href="/assets/index-BUtlACHm.js"/><link rel="icon" href="/assets/logo.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><script>(function () {
+E html><html lang="en" data-theme="default-light" style="color-scheme:light"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/assets/logo.png"/><link rel="stylesheet" href="/assets/styles--qyy-a2O.css" data-precedence="default"/><title>1APP | AI Automation for Small Businesses</title><meta name="description" content="1APP installs managed automations starting at $299/month or $3,000/year. Text, email, web chat, GMB messaging, missed-call recovery, reputation tools, payments, and launchpad setup are managed in one place."/><meta property="og:title" content="1APP | AI Automation for Small Businesses"/><meta property="og:description" content="1APP installs managed automations starting at $299/month or $3,000/year. Text, email, web chat, GMB messaging, missed-call recovery, reputation tools, payments, and launchpad setup are managed in one place."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@Higgsfield"/><meta property="og:image" content="/assets/hero-bg.png"/><meta name="twitter:image" content="/assets/hero-bg.png"/><link rel="modulepreload" href="/assets/index-BUtlACHm.js"/><link rel="icon" href="/assets/logo.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><script>(function () {
   var currentScript = document.currentScript;
   var styleNonce = currentScript && currentScript.nonce ? currentScript.nonce : "";
 
@@ -339,6 +224,5 @@
   let runs=0; const id=setInterval(()=>{patch(); if(++runs>=12) clearInterval(id);}, 250);
 })();
 </script>
-<!-- 1APP Free Trial Popup -->
 
 </body></html>
