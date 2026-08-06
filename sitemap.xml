@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>https://use1app.com/blog/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -115,6 +115,12 @@
   <url>
     <loc>https://use1app.com/blog/ai-receptionist-electricians/</loc>
     <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://use1app.com/blog/crm-for-contractors-ontario-trades/</loc>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
