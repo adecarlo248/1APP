@@ -36,9 +36,21 @@
     }
     .hero h1 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
     .hero p { color: rgba(255,255,255,0.75); font-size: 1rem; }
+    .trial-details {
+      max-width: 760px; margin: 28px auto 0; padding: 0 16px;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+    }
+    .trial-card {
+      background: #fff; border: 1px solid #dbe3ef; border-radius: 12px;
+      padding: 20px; color: #172033; box-shadow: 0 8px 24px rgba(6,38,83,.06);
+    }
+    .trial-card h2 { color: #062653; font-size: 1.05rem; margin-bottom: 10px; }
+    .trial-card ul { padding-left: 20px; line-height: 1.55; }
+    .trial-note { max-width: 760px; margin: 16px auto 0; padding: 0 16px; color: #526175; line-height: 1.55; text-align: center; }
     .form-wrap {
       max-width: 640px; margin: 32px auto; padding: 0 16px 60px;
     }
+    @media (max-width: 680px) { .trial-details { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -51,8 +63,31 @@
   <div class="hero">
     <div class="badge">⚡ Limited Time</div>
     <h1>Claim Your 14-Day Free Trial</h1>
-    <p>No credit card required — we set everything up for you within 24 hours.</p>
+    <p>No credit card required. Test one approved starter automation built around a specific business problem.</p>
   </div>
+
+  <section class="trial-details" aria-label="14-day free trial details">
+    <div class="trial-card">
+      <h2>What the free trial includes</h2>
+      <ul>
+        <li>One approved starter automation</li>
+        <li>A standard 1APP template configured for your business</li>
+        <li>Launch target of 1–3 business days after complete onboarding and access</li>
+        <li>One agreed success measure and one revision round</li>
+        <li>Eligible starters include missed-call text-back, booking reminders, basic form or chat follow-up, review requests, a simple lead-follow-up sequence, or a basic pipeline</li>
+      </ul>
+    </div>
+    <div class="trial-card">
+      <h2>What requires a custom quote</h2>
+      <ul>
+        <li>AI voice and advanced call flows</li>
+        <li>Custom integrations, APIs, accounting, estimate, or payment connections</li>
+        <li>Data cleanup, migration, custom pages, or multi-location routing</li>
+        <li>Expanded workflows beyond the approved starter automation</li>
+      </ul>
+    </div>
+  </section>
+  <p class="trial-note">Your 14-day trial begins only after the starter automation is live, tested, and ready to use. Starter scope is limited to a standard build requiring no more than four hours of 1APP setup. Trial capacity is limited to four active trials and two new trial launches per week; available launch slots are confirmed after onboarding.</p>
 
   <div class="form-wrap">
     <iframe
