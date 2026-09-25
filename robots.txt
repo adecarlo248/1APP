@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /quote-builder/
+Disallow: /quote-workspace-preview/
 
 Sitemap: https://use1app.com/sitemap.xml

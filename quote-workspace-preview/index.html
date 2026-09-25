@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>1APP Quote Workspace Preview</title>
+  <style>
+    :root{--navy:#07142e;--panel:#102141;--panel2:#14294e;--line:#28436f;--blue:#3b82f6;--cyan:#36d7ff;--ink:#f7fbff;--muted:#9db0ce;--lime:#b8f34a;--gold:#f6c65b;--red:#fb7185}
+    *{box-sizing:border-box}body{margin:0;background:#071127;color:var(--ink);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif}.shell{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.side{background:linear-gradient(180deg,#07142e,#0c1d3b);border-right:1px solid var(--line);padding:25px 18px;display:flex;flex-direction:column;gap:20px;position:sticky;top:0;height:100vh}.logo{font-size:27px;font-weight:900;letter-spacing:-1px}.logo b{color:var(--cyan)}.label{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}.badge{display:inline-flex;align-items:center;gap:7px;padding:7px 10px;border:1px solid #396197;border-radius:999px;color:#cbe5ff;background:#10294c;font-size:11px;font-weight:800}.dot{width:7px;height:7px;border-radius:50%;background:var(--lime)}nav{display:grid;gap:7px}nav button{border:0;background:transparent;color:#b7c6dc;border-radius:9px;padding:11px 12px;text-align:left;font:inherit;font-weight:800;cursor:pointer}nav button:hover,nav button.active{background:#16325d;color:white}.owner{margin-top:auto;border-top:1px solid var(--line);padding-top:16px}.owner b,.owner span{display:block}.owner span{font-size:12px;color:var(--muted)}main{padding:28px 34px 55px;max-width:1400px;width:100%;margin:auto}.preview{display:flex;align-items:center;justify-content:space-between;gap:16px;background:#1a2d0d;border:1px solid #406c17;border-radius:12px;padding:11px 14px;margin-bottom:24px;color:#dfffb9}.preview strong{color:var(--lime)}.cta{background:var(--lime);color:#0b1900;text-decoration:none;padding:9px 13px;border-radius:8px;font-weight:900;white-space:nowrap}.top{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}.eyebrow{font-size:11px;letter-spacing:.14em;color:var(--cyan);font-weight:900}.top h1{font-size:34px;margin:3px 0 0;letter-spacing:-1px}.top p{margin:4px 0 0;color:var(--muted)}.btn{border:0;border-radius:9px;background:var(--blue);color:white;padding:11px 15px;font-weight:900}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}.metric,.panel,.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:13px}.metric{padding:18px}.metric span,.metric small{display:block;color:var(--muted)}.metric b{display:block;font-size:30px;margin:3px 0}.panel{padding:20px}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.panel h2,.card h3{margin:0}.panel-head p,.card p{margin:4px 0;color:var(--muted)}.quote{display:grid;grid-template-columns:1fr 145px 150px 28px;gap:12px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}.quote:first-child{border-top:0}.quote b,.quote span{display:block}.quote span{font-size:12px;color:var(--muted)}.status{display:inline-block!important;width:max-content;padding:5px 9px;border-radius:999px;background:#183e6f;color:#cfe5ff!important;font-weight:800}.status.approved{background:#25490c;color:#dfffba!important}.status.review{background:#553d07;color:#ffe4a3!important}.amount{text-align:right}.chev{font-size:24px;color:var(--muted)}.view{display:none}.view.active{display:block}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}.step{padding:11px;border-radius:10px;background:#0d1d39;border:1px solid var(--line)}.step b{display:block;color:var(--cyan)}.builder{display:grid;grid-template-columns:1fr 320px;gap:16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{background:#0a1932;border:1px solid var(--line);border-radius:9px;padding:12px}.field label{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:800;margin-bottom:5px}.field div{font-weight:700}.wide{grid-column:1/-1}.catalogue{display:grid;gap:9px;margin-top:13px}.service{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:start;padding:12px;border:1px solid var(--line);border-radius:10px;background:#0b1c38}.check{width:19px;height:19px;border-radius:5px;background:var(--blue);display:grid;place-items:center}.service small{display:block;color:var(--muted)}.service strong{text-align:right}.total{padding:20px;position:sticky;top:28px;height:max-content}.total .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}.total .grand{font-size:20px;border:0}.notice{color:#bcd0ec;font-size:12px;margin-top:12px}.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.phase{position:relative;padding:17px}.phase i{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--blue);font-style:normal;font-weight:900;margin-bottom:12px}.phase small{color:var(--muted)}.roles{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.role{padding:18px}.role .role-badge{display:inline-block;padding:5px 8px;background:#163963;border-radius:7px;color:#cae5ff;font-weight:900;font-size:11px}.role ul{padding-left:18px;color:var(--muted)}.security{margin-top:16px;border-left:4px solid var(--gold);background:#33290f;padding:13px 15px;border-radius:8px;color:#ffe6a6}.foot{margin-top:24px;color:var(--muted);font-size:12px}
+    @media(max-width:900px){.shell{grid-template-columns:1fr}.side{position:static;height:auto}.owner{display:none}nav{grid-template-columns:repeat(4,1fr)}nav button{text-align:center}.metrics,.timeline,.roles,.steps{grid-template-columns:1fr 1fr}.builder{grid-template-columns:1fr}.total{position:static}.quote{grid-template-columns:1fr 110px}.quote .amount,.chev{display:none}main{padding:22px 16px}.preview,.top{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr}.wide{grid-column:auto}}
+    @media(max-width:560px){nav,.metrics,.timeline,.roles,.steps{grid-template-columns:1fr}.side{padding-bottom:12px}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="logo">1<b>APP</b></div>
+    <div class="badge"><i class="dot"></i> PUBLIC PREVIEW</div>
+    <div class="label">Founding Price Book v1</div>
+    <nav>
+      <button class="active" data-view="dashboard">Quotes</button>
+      <button data-view="builder">Quote builder</button>
+      <button data-view="approval">Approval flow</button>
+      <button data-view="team">Team access</button>
+    </nav>
+    <div class="owner"><b>Preview visitor</b><span>View-only · Sample data</span></div>
+  </aside>
+  <main>
+    <div class="preview"><div><strong>VIEW-ONLY PREVIEW</strong> — This shows the full workspace design using sample data. It cannot read or change real client records.</div><a class="cta" href="https://use1app.com/quote-builder/">Open working quote builder</a></div>
+
+    <section class="view active" id="dashboard">
+      <div class="top"><div><div class="eyebrow">SALES CONTROL</div><h1>Quotes</h1><p>One current price book. One approval path. No stale files.</p></div><button class="btn" data-jump="builder">＋ New quote</button></div>
+      <div class="metrics"><div class="metric"><span>In progress</span><b>3</b><small>Draft and review</small></div><div class="metric"><span>Approved</span><b>1</b><small>Ready to share</small></div><div class="metric"><span>Accepted</span><b>2</b><small>Client confirmed</small></div></div>
+      <div class="panel"><div class="panel-head"><div><h2>Quote pipeline</h2><p>Sample records only</p></div></div>
+        <div class="quote"><div><b>Northstar Plumbing — Demo</b><span>1APP-20260925-NORTHSTAR-V1 · Rod Norville</span></div><span class="status review">Technical review</span><div class="amount"><b>$1,599</b><span>$499/mo</span></div><span class="chev">›</span></div>
+        <div class="quote"><div><b>Lakeside HVAC — Demo</b><span>1APP-20260924-LAKESIDE-V2 · Rod Norville</span></div><span class="status approved">Approved</span><div class="amount"><b>$999</b><span>$399/mo</span></div><span class="chev">›</span></div>
+        <div class="quote"><div><b>Evergreen Roofing — Demo</b><span>1APP-20260922-EVERGREEN-V1 · Rod Norville</span></div><span class="status">Draft</span><div class="amount"><b>$848</b><span>$248/mo</span></div><span class="chev">›</span></div>
+      </div>
+    </section>
+
+    <section class="view" id="builder">
+      <div class="top"><div><div class="eyebrow">NEW QUOTE</div><h1>Northstar Plumbing — Demo</h1><p>Guided quote creation with pricing and scope controls.</p></div></div>
+      <div class="steps"><div class="step"><b>01</b>Client</div><div class="step"><b>02</b>Scope</div><div class="step"><b>03</b>Value</div><div class="step"><b>04</b>Terms</div></div>
+      <div class="builder"><div class="panel"><div class="grid"><div class="field"><label>Business</label><div>Northstar Plumbing — Demo</div></div><div class="field"><label>Primary contact</label><div>Sample Client</div></div><div class="field wide"><label>Problem</label><div>Missed calls during service work and inconsistent follow-up are allowing existing opportunities to go cold.</div></div><div class="field wide"><label>Approved value category</label><div>Revenue influenced · Capacity recovered</div></div><div class="field"><label>Success measure</label><div>Qualified missed calls contacted within 5 minutes</div></div><div class="field"><label>Trial path</label><div>Starter Trial Eligible</div></div></div>
+        <div class="catalogue"><div class="service"><span class="check">✓</span><div><b>Missed-Call Rescue</b><small>One number, approved SMS, reply owner and stop logic</small></div><strong>$299<small>$99/mo</small></strong></div><div class="service"><span class="check">✓</span><div><b>New-Lead Follow-Up</b><small>One sequence with SMS/email/tasks and stop logic</small></div><strong>$599<small>$199/mo</small></strong></div><div class="service"><span class="check">✓</span><div><b>CRM + Sales Pipeline</b><small>One pipeline, ownership, tasks and basic dashboard</small></div><strong>$599<small>$149/mo</small></strong></div></div></div>
+        <aside class="card total"><div class="eyebrow">LIVE TOTAL</div><h3>Northstar Plumbing</h3><div class="row"><span>Setup</span><b>$1,497</b></div><div class="row"><span>Monthly</span><b>$447</b></div><div class="row"><span>Founding bundle</span><b>-$18</b></div><div class="row grand"><span>Setup before HST</span><b>$1,479</b></div><div class="row grand"><span>Monthly</span><b>$429</b></div><p class="notice">CAD · HST and disclosed usage/pass-through charges shown separately.</p></aside></div>
+    </section>
+
+    <section class="view" id="approval">
+      <div class="top"><div><div class="eyebrow">CONTROLLED HANDOFF</div><h1>Approval flow</h1><p>Sales can prepare the quote. Owners control feasibility and commercial terms.</p></div></div>
+      <div class="timeline"><div class="card phase"><i>1</i><h3>Draft</h3><p>Rod records the problem, baseline, scope and price.</p><small>Sales owner</small></div><div class="card phase"><i>2</i><h3>Technical</h3><p>Tony confirms feasibility, dependencies and delivery capacity.</p><small>Technical approval</small></div><div class="card phase"><i>3</i><h3>Commercial</h3><p>Justin confirms price, discount, terms and quote expiry.</p><small>Pricing approval</small></div><div class="card phase"><i>4</i><h3>Client</h3><p>A secure expiring link supports acceptance or decline.</p><small>Decision recorded</small></div><div class="card phase"><i>5</i><h3>Audit</h3><p>Status changes and approvals remain in the quote history.</p><small>Accountability</small></div></div>
+      <div class="security"><b>Protected in the real app:</b> client data, editable records, role permissions, approval actions, expiring links and audit history remain behind authentication.</div>
+    </section>
+
+    <section class="view" id="team">
+      <div class="top"><div><div class="eyebrow">ROLE-BASED CONTROL</div><h1>Team access</h1><p>Each person receives only the access required for their job.</p></div></div>
+      <div class="roles"><div class="card role"><span class="role-badge">ADMIN</span><h3>Tony</h3><p>Technical owner</p><ul><li>Technical approvals</li><li>Delivery timing</li><li>Team administration</li></ul></div><div class="card role"><span class="role-badge">PRICING</span><h3>Justin</h3><p>Commercial owner</p><ul><li>Pricing approval</li><li>Discount control</li><li>Terms and expiry</li></ul></div><div class="card role"><span class="role-badge">SALES</span><h3>Rod</h3><p>Sales manager</p><ul><li>Create drafts</li><li>Manage pipeline</li><li>Client follow-up</li></ul></div><div class="card role"><span class="role-badge">CLIENT</span><h3>Customer</h3><p>Expiring quote link</p><ul><li>Review quote</li><li>Accept or decline</li><li>No internal access</li></ul></div></div>
+    </section>
+    <div class="foot">1APP Technologies Inc. · Preview contains synthetic sample data only · Not a client quote</div>
+  </main>
+</div>
+<script>
+  const show=id=>{document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})};
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.view)));
+  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.jump)));
+</script>
+</body>
+</html>
