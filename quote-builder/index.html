@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Private 1APP quote builder for approved internal use.">
+  <title>1APP Internal Quote Builder</title>
+  <style>
+    :root { --navy:#0a1733; --blue:#1d63ff; --cyan:#29d4ff; --ink:#172033; --muted:#667085; --line:#d8deea; --soft:#f4f7fb; --ok:#087f5b; --warn:#b54708; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; background:#eaf0f8; color:var(--ink); }
+    .page { max-width:1180px; margin:24px auto; background:white; box-shadow:0 12px 40px rgba(13,30,64,.12); }
+    header { padding:28px 34px; color:white; background:linear-gradient(125deg,var(--navy),#153d86); }
+    header h1 { margin:0 0 6px; font-size:30px; }
+    header p { margin:0; color:#cfe2ff; }
+    main { padding:26px 34px 40px; }
+    .alert { background:#fff6e8; color:#7a3e00; border:1px solid #ffd89a; border-radius:10px; padding:12px 14px; margin-bottom:20px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .span2 { grid-column:1/-1; }
+    label { display:block; font-size:12px; font-weight:800; color:#344054; margin-bottom:5px; text-transform:uppercase; letter-spacing:.04em; }
+    input, textarea, select { width:100%; border:1px solid var(--line); border-radius:8px; padding:10px 11px; font:inherit; color:var(--ink); background:white; }
+    textarea { min-height:76px; resize:vertical; }
+    section { margin-top:26px; }
+    h2 { font-size:20px; margin:0 0 12px; color:var(--navy); }
+    h3 { margin:0 0 5px; font-size:15px; }
+    .bundles { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; }
+    .bundle { border:1px solid var(--line); border-radius:10px; padding:12px; background:var(--soft); }
+    .bundle p { font-size:12px; color:var(--muted); min-height:48px; margin:5px 0 10px; }
+    button { border:0; border-radius:8px; padding:10px 13px; font-weight:800; cursor:pointer; }
+    .primary { color:white; background:var(--blue); }
+    .secondary { color:var(--navy); background:#dfe9fb; }
+    .danger { color:#9b1c1c; background:#fee4e2; }
+    table { width:100%; border-collapse:collapse; font-size:13px; }
+    th, td { padding:9px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:var(--soft); color:#344054; font-size:11px; text-transform:uppercase; letter-spacing:.04em; }
+    td.money, th.money { text-align:right; white-space:nowrap; }
+    .item-check { width:auto; margin-right:7px; }
+    .catalogue { max-height:420px; overflow:auto; border:1px solid var(--line); border-radius:10px; }
+    .summary { display:grid; grid-template-columns:1fr 360px; gap:24px; align-items:start; }
+    .totals { background:var(--navy); color:white; padding:18px; border-radius:12px; }
+    .total-row { display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid rgba(255,255,255,.15); }
+    .total-row.grand { font-size:19px; font-weight:900; border:0; padding-top:13px; }
+    .muted { color:var(--muted); font-size:12px; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+    .quote-preview { border:1px solid var(--line); border-radius:10px; padding:18px; min-height:220px; }
+    .quote-preview h3 { font-size:20px; color:var(--navy); }
+    .quote-preview ul { padding-left:20px; }
+    .approval { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px; }
+    .sign { border-top:1px solid #667085; padding-top:6px; margin-top:30px; font-size:12px; }
+    @media (max-width:900px) { .bundles{grid-template-columns:1fr 1fr}.summary,.grid{grid-template-columns:1fr}.span2{grid-column:auto} }
+    @media print {
+      body { background:white; }
+      .page { margin:0; max-width:none; box-shadow:none; }
+      header { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      .no-print, .catalogue, .bundles, .alert, .actions { display:none!important; }
+      main { padding:18px 26px; }
+      section { break-inside:avoid; }
+      .quote-preview { border:0; padding:0; }
+      @page { size:Letter; margin:12mm; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>1APP Custom Automation Quote Builder</h1>
+    <p>Internal tool · No sign-in · CAD before HST · Owner approval required</p>
+  </header>
+  <main>
+    <div class="alert no-print"><strong>Control rule:</strong> Rod/associates prepare the draft. Tony approves scope and delivery. Justin approves pricing and discounts. Do not send a draft marked unapproved.</div>
+    <div class="alert no-print"><strong>Privacy:</strong> Quote data stays in this browser and is not uploaded or synced by this page. Use Print / Save PDF to create the client copy. Clearing browser data removes the saved draft.</div>
+
+    <section>
+      <h2>Client and quote</h2>
+      <div class="grid">
+        <div><label>Client business</label><input id="client" placeholder="Business name"></div>
+        <div><label>Primary contact</label><input id="contact" placeholder="Name"></div>
+        <div><label>Prepared by</label><input id="preparedBy" value="Rod Norville"></div>
+        <div><label>Quote ID / Version</label><input id="quoteId" placeholder="1APP-YYYYMMDD-CLIENT-V1"></div>
+        <div><label>Quote expiry</label><input id="expiry" type="date"></div>
+        <div><label>Target Ready-to-Build date</label><input id="readyDate" type="date"></div>
+        <div class="span2"><label>Client problem in their words</label><textarea id="problem"></textarea></div>
+        <div class="span2"><label>Current baseline and source/date</label><textarea id="baseline" placeholder="Use the client's or verified operating numbers. Do not invent inputs."></textarea></div>
+        <div><label>Primary value mechanism</label><select id="valueMechanism"><option>Money saved</option><option>Capacity recovered</option><option>Revenue influenced</option><option>Cash-flow improvement</option><option>Risk / visibility value</option></select></div>
+        <div><label>Primary success measure</label><input id="primaryMeasure" placeholder="One metric that proves or disproves value"></div>
+        <div class="span2"><label>Value scenario, formula, and assumptions</label><textarea id="valueScenario" placeholder="Show client-supplied inputs and formula. Label this as an estimate or hypothesis, never a guarantee."></textarea></div>
+        <div class="span2"><label>Variables outside 1APP's control and attribution limits</label><textarea id="outsideVariables" placeholder="Lead quality, demand, staff response, close rate, pricing, availability, seasonality, customer behaviour, etc."></textarea></div>
+        <div><label>Trial path</label><select id="trialPath"><option value="starter">Starter Trial Eligible</option><option value="paid">Paid Implementation Required</option></select></div>
+        <div><label>Approved starter automation</label><input id="starterAutomation" placeholder="One approved starter automation"></div>
+        <div><label>Estimated Tony setup hours</label><input id="setupHours" type="number" min="0" step="0.5" placeholder="Maximum 4 for free trial"></div>
+        <div><label>Confirmed launch slot</label><input id="launchSlot" placeholder="Week of YYYY-MM-DD or paid-project schedule"></div>
+        <div class="span2"><label>14-day trial scope and success measure</label><textarea id="success" placeholder="One measurable result. The clock starts only when the starter automation is live, tested, and usable."></textarea></div>
+      </div>
+      <p class="muted">Starter trial: one approved template-based automation, 1–3 business days after Ready-to-Build, no more than four hours of Tony's hands-on setup, and one revision round. Advanced/custom work requires a paid setup project.</p>
+    </section>
+
+    <section class="no-print">
+      <h2>Recommended solution bundles</h2>
+      <div class="bundles" id="bundles"></div>
+    </section>
+
+    <section class="no-print">
+      <h2>Automation catalogue</h2>
+      <p class="muted">Select individual automations in addition to—or instead of—a bundle. Base prices may be changed only with owner approval.</p>
+      <div class="catalogue"><table><thead><tr><th>Choose</th><th>Automation</th><th>Delivery</th><th class="money">Setup</th><th class="money">Monthly</th></tr></thead><tbody id="catalogue"></tbody></table></div>
+    </section>
+
+    <section class="no-print">
+      <h2>Custom approved line item</h2>
+      <div class="grid">
+        <div><label>Name</label><input id="customName" placeholder="Custom integration"></div>
+        <div><label>Delivery estimate</label><input id="customDays" placeholder="After technical discovery"></div>
+        <div><label>Setup fee</label><input id="customSetup" type="number" min="0" value="0"></div>
+        <div><label>Monthly fee</label><input id="customMonthly" type="number" min="0" value="0"></div>
+        <div class="span2"><label>Scope / dependency</label><input id="customScope" placeholder="Describe approved scope and dependencies"></div>
+      </div>
+      <div class="actions"><button class="secondary" type="button" onclick="addCustom()">Add custom item</button></div>
+    </section>
+
+    <section>
+      <h2>Selected solution</h2>
+      <table><thead><tr><th>Item</th><th>Scope / timing</th><th class="money">Setup</th><th class="money">Monthly</th><th class="no-print"></th></tr></thead><tbody id="selected"></tbody></table>
+    </section>
+
+    <section class="summary">
+      <div class="quote-preview" id="preview"></div>
+      <div class="totals">
+        <div class="total-row"><span>Setup subtotal</span><strong id="setupSubtotal">$0.00</strong></div>
+        <div class="total-row"><span>Setup discount</span><strong id="setupDiscountValue">$0.00</strong></div>
+        <div class="total-row"><span>Setup before HST</span><strong id="setupTotal">$0.00</strong></div>
+        <div class="total-row"><span>Monthly subtotal</span><strong id="monthlySubtotal">$0.00</strong></div>
+        <div class="total-row"><span>Monthly discount</span><strong id="monthlyDiscountValue">$0.00</strong></div>
+        <div class="total-row grand"><span>Monthly after trial</span><strong id="monthlyTotal">$0.00</strong></div>
+        <div style="margin-top:12px"><label style="color:#cfe2ff">Additional owner-approved discount %</label><input id="discount" type="number" min="0" max="10" value="0" oninput="render()"></div>
+        <p style="font-size:11px;color:#cfe2ff">HST and disclosed usage/pass-through charges are extra. Discounts over 10% require written exception and are not supported by this tool.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="grid">
+        <div><label>Usage / pass-through assumptions</label><textarea id="usage" oninput="render()" placeholder="Phone, SMS, email, AI minutes, payment or third-party charges"></textarea></div>
+        <div><label>Client responsibilities / secure access</label><textarea id="responsibilities" oninput="render()"></textarea></div>
+        <div><label>Exclusions</label><textarea id="exclusions" oninput="render()" placeholder="No custom integration, migration, ad spend, content production, etc."></textarea></div>
+        <div><label>Internal notes</label><textarea id="notes" oninput="render()"></textarea></div>
+      </div>
+    </section>
+
+    <section class="approval">
+      <div class="sign">Technical scope/time approved by Tony: __________________ Date: __________</div>
+      <div class="sign">Commercial terms approved by Justin: __________________ Date: __________</div>
+    </section>
+
+    <div class="actions no-print">
+      <button class="primary" onclick="window.print()">Print / Save PDF</button>
+      <button class="secondary" onclick="saveDraft()">Save draft in browser</button>
+      <button class="secondary" onclick="loadDraft()">Load saved draft</button>
+      <button class="danger" onclick="resetQuote()">Reset</button>
+    </div>
+  </main>
+</div>
+
+<script>
+const items = [
+  {id:'missed',name:'Missed-Call Rescue',setup:299,monthly:99,days:'1–2 business days',scope:'One number, approved SMS, reply owner and stop logic; usage extra'},
+  {id:'booking',name:'Booking + Confirmation + Reminders',setup:499,monthly:149,days:'2–4 business days',scope:'One calendar and appointment type'},
+  {id:'capture',name:'Website Form / Chat Lead Capture',setup:399,monthly:129,days:'2–4 business days',scope:'One form/widget placement, routing and basic tracking'},
+  {id:'crm',name:'CRM + Sales Pipeline',setup:599,monthly:149,days:'3–5 business days',scope:'One pipeline, ownership, tasks and basic dashboard'},
+  {id:'leadfollow',name:'New-Lead Follow-Up',setup:599,monthly:199,days:'3–5 business days',scope:'One sequence with SMS/email/tasks and stop logic'},
+  {id:'reviews',name:'Review Request Automation',setup:349,monthly:99,days:'2–3 business days',scope:'One completion trigger and review destination'},
+  {id:'estimates',name:'Estimate / Quote Follow-Up',setup:749,monthly:249,days:'5–7 business days',scope:'One estimate source; standard follow-up and stop logic'},
+  {id:'nurture',name:'Reactivation / Nurture Campaign',setup:499,monthly:149,days:'3–5 business days',scope:'One approved segment and campaign; usage extra'},
+  {id:'invoice',name:'Invoice / Payment Reminder',setup:749,monthly:249,days:'5–7 business days',scope:'One billing source; integration feasibility required'},
+  {id:'voice',name:'AI Voice Receptionist',setup:999,monthly:399,days:'5–10 business days',scope:'One core call flow; phone and AI usage extra'},
+  {id:'reporting',name:'Reporting Dashboard',setup:399,monthly:99,days:'3–5 business days',scope:'Up to five agreed metrics'},
+  {id:'email',name:'Email Marketing Starter',setup:399,monthly:149,days:'3–5 business days',scope:'One list, one template and one monthly campaign'},
+  {id:'social',name:'Social Planner Starter',setup:299,monthly:99,days:'2–3 business days',scope:'Account connection and scheduling; content separate'},
+  {id:'landing',name:'Landing Page / Campaign Page',setup:999,monthly:99,days:'5–10 business days',scope:'One page, one form and basic tracking'}
+];
+const bundles = [
+  {id:'lead-rescue',name:'Lead Rescue',setup:1599,monthly:499,days:'7–10 business days',scope:'Missed-Call Rescue + Form/Chat Capture + CRM Pipeline + New-Lead Follow-Up'},
+  {id:'booking-control',name:'Booking & No-Show Control',setup:1449,monthly:429,days:'6–9 business days',scope:'Booking/Reminders + CRM Pipeline + New-Lead Follow-Up'},
+  {id:'reputation',name:'Reputation & Repeat Business',setup:1399,monthly:429,days:'7–10 business days',scope:'Review Requests + Reactivation/Nurture + Email Marketing + Reporting'},
+  {id:'estimate-recovery',name:'Estimate-to-Deposit Recovery',setup:2099,monthly:649,days:'10–15 business days',scope:'Estimate Follow-Up + Invoice Reminders + CRM Pipeline + Reporting'},
+  {id:'ai-front-desk',name:'AI Front Desk',setup:2499,monthly:849,days:'10–15 business days',scope:'AI Voice + Missed-Call Rescue + Booking/Reminders + CRM + New-Lead Follow-Up'}
+];
+let selected = [];
+const money = n => new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(Number(n)||0);
+const esc = s => String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function init(){
+  document.getElementById('catalogue').innerHTML = items.map(i=>`<tr><td><input class="item-check" type="checkbox" id="pick-${i.id}" onchange="toggleItem('${i.id}')"></td><td><strong>${i.name}</strong><br><span class="muted">${i.scope}</span></td><td>${i.days}</td><td class="money">${money(i.setup)}</td><td class="money">${money(i.monthly)}</td></tr>`).join('');
+  document.getElementById('bundles').innerHTML = bundles.map(b=>`<div class="bundle"><h3>${b.name}</h3><p>${b.scope}</p><strong>${money(b.setup)} + ${money(b.monthly)}/mo</strong><br><button class="primary" style="margin-top:9px" onclick="addBundle('${b.id}')">Add bundle</button></div>`).join('');
+  ['client','contact','preparedBy','quoteId','expiry','readyDate','problem','baseline','valueMechanism','primaryMeasure','valueScenario','outsideVariables','trialPath','starterAutomation','setupHours','launchSlot','success'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+  render();
+}
+function toggleItem(id){
+  const box=document.getElementById(`pick-${id}`); const item=items.find(x=>x.id===id);
+  if(box.checked && !selected.some(x=>x.key==='item-'+id)) selected.push({...item,key:'item-'+id,type:'item'});
+  if(!box.checked) selected=selected.filter(x=>x.key!=='item-'+id);
+  render();
+}
+function addBundle(id){
+  const b=bundles.find(x=>x.id===id); if(!selected.some(x=>x.key==='bundle-'+id)) selected.push({...b,key:'bundle-'+id,type:'bundle'}); render();
+}
+function addCustom(){
+  const name=document.getElementById('customName').value.trim(); if(!name) return alert('Enter a custom item name.');
+  selected.push({key:'custom-'+Date.now(),type:'custom',name,days:document.getElementById('customDays').value||'After approval',setup:+document.getElementById('customSetup').value||0,monthly:+document.getElementById('customMonthly').value||0,scope:document.getElementById('customScope').value||'Custom approved scope'});
+  ['customName','customDays','customScope'].forEach(id=>document.getElementById(id).value=''); document.getElementById('customSetup').value=0; document.getElementById('customMonthly').value=0; render();
+}
+function removeItem(key){
+  const gone=selected.find(x=>x.key===key); selected=selected.filter(x=>x.key!==key);
+  if(gone?.type==='item'){ const box=document.getElementById(`pick-${gone.id}`); if(box) box.checked=false; }
+  render();
+}
+function render(){
+  document.getElementById('selected').innerHTML = selected.length ? selected.map(x=>`<tr><td><strong>${esc(x.name)}</strong>${x.type==='bundle'?'<br><span class="muted">Recommended bundle deal</span>':''}</td><td>${esc(x.scope)}<br><span class="muted">Estimated: ${esc(x.days)} after Ready-to-Build</span></td><td class="money">${money(x.setup)}</td><td class="money">${money(x.monthly)}</td><td class="no-print"><button class="danger" onclick="removeItem('${x.key}')">Remove</button></td></tr>`).join('') : '<tr><td colspan="5" class="muted">No automation selected.</td></tr>';
+  const setup=selected.reduce((s,x)=>s+x.setup,0), monthly=selected.reduce((s,x)=>s+x.monthly,0), rate=Math.min(10,Math.max(0,+document.getElementById('discount').value||0))/100;
+  const sd=setup*rate, md=monthly*rate;
+  document.getElementById('setupSubtotal').textContent=money(setup); document.getElementById('setupDiscountValue').textContent='-'+money(sd); document.getElementById('setupTotal').textContent=money(setup-sd);
+  document.getElementById('monthlySubtotal').textContent=money(monthly); document.getElementById('monthlyDiscountValue').textContent='-'+money(md); document.getElementById('monthlyTotal').textContent=money(monthly-md);
+  const val=id=>esc(document.getElementById(id).value);
+  const starter=document.getElementById('trialPath').value==='starter';
+  const trialRule=starter
+    ? `One approved starter automation (${val('starterAutomation')||'to be confirmed'}), targeted for 1–3 business days after Ready-to-Build, with one revision round. The 14-day clock starts only when the starter automation is live, tested, and usable. Advanced or changed scope requires a paid change request.`
+    : `This solution requires a paid implementation project. Any 14-day trial applies only to a separately approved starter automation, if offered in writing.`;
+  document.getElementById('preview').innerHTML=`<h3>Custom Automation Quote</h3><p><strong>Client:</strong> ${val('client')||'—'}<br><strong>Contact:</strong> ${val('contact')||'—'}<br><strong>Quote:</strong> ${val('quoteId')||'—'} · <strong>Prepared by:</strong> ${val('preparedBy')||'—'}<br><strong>Expires:</strong> ${val('expiry')||'—'}</p><p><strong>Business problem:</strong><br>${val('problem')||'—'}</p><p><strong>Current baseline:</strong><br>${val('baseline')||'—'}</p><p><strong>Value hypothesis:</strong> ${val('valueMechanism')||'—'}<br><strong>Primary success measure:</strong> ${val('primaryMeasure')||'—'}<br>${val('valueScenario')||'—'}</p><p><strong>Assumptions and variables outside 1APP's control:</strong><br>${val('outsideVariables')||'Actual results depend on client operations and customer behaviour. No result is guaranteed.'}</p><p><strong>Recommended solution:</strong></p><ul>${selected.map(x=>`<li><strong>${esc(x.name)}</strong> — ${esc(x.scope)} (${esc(x.days)} after Ready-to-Build)</li>`).join('')||'<li>—</li>'}</ul><p><strong>Trial path:</strong> ${starter?'Starter Trial Eligible':'Paid Implementation Required'}<br><strong>Launch slot:</strong> ${val('launchSlot')||'Subject to onboarding completeness and current capacity'}<br><strong>14-day trial scope/success:</strong><br>${val('success')||'—'}</p><p>${trialRule}</p><p><strong>Usage/pass-through:</strong><br>${esc(document.getElementById('usage').value)||'As disclosed in the accepted quote.'}</p><p><strong>Client responsibilities:</strong><br>${esc(document.getElementById('responsibilities').value)||'Complete onboarding and provide required access/content promptly.'}</p><p><strong>Exclusions:</strong><br>${esc(document.getElementById('exclusions').value)||'Anything not expressly listed.'}</p><p class="muted">Value scenarios are estimates based on disclosed inputs, not guarantees. Delivery estimates begin only after accepted scope, complete handoff, required access/content, and technical queue acceptance. HST and disclosed usage are extra. Paid service begins only after written continuation authorization.</p>`;
+}
+function saveDraft(){
+  const fields={}; ['client','contact','preparedBy','quoteId','expiry','readyDate','problem','baseline','valueMechanism','primaryMeasure','valueScenario','outsideVariables','trialPath','starterAutomation','setupHours','launchSlot','success','usage','responsibilities','exclusions','notes','discount'].forEach(id=>fields[id]=document.getElementById(id).value);
+  localStorage.setItem('oneappQuoteDraft',JSON.stringify({fields,selected})); alert('Draft saved in this browser.');
+}
+function loadDraft(){
+  const raw=localStorage.getItem('oneappQuoteDraft'); if(!raw) return alert('No saved draft found.'); const d=JSON.parse(raw); selected=d.selected||[]; Object.entries(d.fields||{}).forEach(([id,v])=>{if(document.getElementById(id)) document.getElementById(id).value=v}); document.querySelectorAll('.item-check').forEach(b=>b.checked=selected.some(x=>x.key==='item-'+b.id.replace('pick-',''))); render();
+}
+function resetQuote(){ if(!confirm('Reset the current quote?')) return; selected=[]; document.querySelectorAll('input,textarea').forEach(el=>{if(['preparedBy','discount'].includes(el.id)) return; if(el.type==='checkbox') el.checked=false; else el.value='';}); document.getElementById('preparedBy').value='Rod Norville'; document.getElementById('discount').value=0; render(); }
+init();
+</script>
+</body>
+</html>
