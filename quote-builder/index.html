@@ -166,17 +166,90 @@
       </div>
     </section>
 
+    <section>
+      <h2>Business and implementation profile</h2>
+      <p class="muted">Rod completes this during discovery. Use “N/A” where a field genuinely does not apply. Never enter passwords, API keys, card data, verification codes, or other secrets.</p>
+      <div class="grid">
+        <div><label>Legal business name</label><input id="legalBusinessName" placeholder="Registered business name"></div>
+        <div><label>Industry / trade</label><input id="industry" placeholder="Plumbing, HVAC, clinic, etc."></div>
+        <div><label>Contact phone</label><input id="contactPhone" type="tel" placeholder="Client decision-maker phone"></div>
+        <div><label>Contact email</label><input id="contactEmail" type="email" placeholder="Client decision-maker email"></div>
+        <div><label>Website / domain</label><input id="website" placeholder="https://"></div>
+        <div><label>Service area and timezone</label><input id="serviceArea" placeholder="Cities/region · America/Toronto"></div>
+        <div><label>Business hours</label><textarea id="businessHours" placeholder="Hours by day"></textarea></div>
+        <div><label>After-hours policy</label><textarea id="afterHoursPolicy" placeholder="What should happen after hours?"></textarea></div>
+        <div><label>Main services</label><textarea id="servicesOffered" placeholder="Services the client wants promoted or booked"></textarea></div>
+        <div><label>Services not offered</label><textarea id="servicesExcluded" placeholder="Work the business does not accept"></textarea></div>
+        <div><label>Urgent / emergency definition</label><textarea id="urgentDefinition" placeholder="What is urgent and how should it be handled?"></textarea></div>
+        <div><label>Current lead volume</label><textarea id="leadVolume" placeholder="Calls, forms, messages, estimates per week/month"></textarea></div>
+        <div class="span2"><label>Current lead-to-sale process</label><textarea id="currentProcess" placeholder="What happens from first inquiry through booking, estimate, payment, and follow-up today?"></textarea></div>
+        <div><label>Lead sources</label><textarea id="leadSources" placeholder="Google Ads, referrals, website, social, old database, etc."></textarea></div>
+        <div><label>Current systems</label><textarea id="currentSystems" placeholder="Calendar, phone, email, estimating, accounting, payments, website"></textarea></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Routing, calendar, phone, and messaging</h2>
+      <div class="grid">
+        <div><label>Implementation contact</label><input id="implementationContact" placeholder="Name, role, phone, email"></div>
+        <div><label>Reply / conversation owner</label><input id="replyOwner" placeholder="Who monitors and takes over conversations?"></div>
+        <div><label>Escalation contact and method</label><input id="escalationContact" placeholder="Name · call/text/email"></div>
+        <div><label>Notification recipients</label><input id="notificationRecipients" placeholder="Names and approved channels"></div>
+        <div><label>Business / dedicated phone number</label><input id="businessPhone" type="tel" placeholder="Existing, forwarding, or new local number"></div>
+        <div><label>Number status</label><select id="numberStatus"><option>New dedicated 1APP number required</option><option>Existing number will forward/connect</option><option>Existing number stays unchanged</option><option>Technical review required</option></select></div>
+        <div><label>Calendar owner(s)</label><input id="calendarOwners" placeholder="Names and calendar system"></div>
+        <div><label>Appointment type(s)</label><input id="appointmentTypes" placeholder="Estimate, consultation, service call, etc."></div>
+        <div><label>Duration / buffer / minimum notice</label><input id="bookingTiming" placeholder="60 min · 15 min buffer · 24 hr notice"></div>
+        <div><label>Availability / assignment rules</label><textarea id="availabilityRules" placeholder="Days, times, round-robin, service area, team/location rules"></textarea></div>
+        <div><label>Cancellation / reschedule rules</label><textarea id="cancellationRules"></textarea></div>
+        <div><label>Confirmation and reminder timing</label><textarea id="reminderRules" placeholder="Immediate confirmation, 24 hr, 1 hr, etc."></textarea></div>
+        <div class="span2"><label>Approved customer-facing message direction</label><textarea id="messageDirection" placeholder="Tone, offer, sender identity, FAQs, required claims, prohibited claims, business-hours and after-hours wording"></textarea></div>
+        <div><label>Opt-out / stop conditions</label><textarea id="stopRules" placeholder="Reply, booking, opt-out, payment, human takeover, won/lost"></textarea></div>
+        <div><label>Human takeover rules</label><textarea id="takeoverRules" placeholder="When AI/workflow stops and a person takes over"></textarea></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Systems, access status, tracking, and launch readiness</h2>
+      <p class="muted">Record only whether access is required, requested, received, and tested. Credentials must go through the approved secure process—not this form or email.</p>
+      <div class="grid">
+        <div><label>Website / domain access status</label><input id="websiteAccess" placeholder="Not needed / required / requested / received / tested"></div>
+        <div><label>Calendar access status</label><input id="calendarAccess" placeholder="Not needed / required / requested / received / tested"></div>
+        <div><label>Phone access / registration status</label><input id="phoneAccess" placeholder="Not needed / required / requested / received / tested"></div>
+        <div><label>Email sending access status</label><input id="emailAccess" placeholder="Not needed / required / requested / received / tested"></div>
+        <div><label>Estimate / billing / payment access</label><input id="billingAccess" placeholder="System + status; no credentials"></div>
+        <div><label>Reviews / ads / analytics access</label><input id="marketingAccess" placeholder="Systems + status; no credentials"></div>
+        <div><label>Import / data migration required</label><textarea id="importRequirements" placeholder="Source, record count, format, cleanup, dedupe owner"></textarea></div>
+        <div><label>Attribution and reporting requirements</label><textarea id="reportingRequirements" placeholder="Lead source, bookings, estimates, payments, revenue, dashboard cadence"></textarea></div>
+        <div><label>Brand / asset links</label><textarea id="assetLinks" placeholder="Logo, colours, website pages, knowledge docs—links only"></textarea></div>
+        <div><label>Client approver(s)</label><input id="clientApprovers" placeholder="Scope, copy, pricing, technical access"></div>
+        <div><label>Secure access owner</label><input id="accessOwner" placeholder="Client person responsible for access"></div>
+        <div><label>Data / outcome owner</label><input id="dataOwner" placeholder="Client person responsible for data quality/results"></div>
+        <div class="span2"><label>Custom requirements / integrations / data flow</label><textarea id="customRequirements" placeholder="Trigger → actions → systems → volume → success condition → failure handling"></textarea></div>
+        <div><label>Known dependencies</label><textarea id="dependencies"></textarea></div>
+        <div><label>Known blockers / unanswered questions</label><textarea id="blockers"></textarea></div>
+        <div><label>Client content due dates</label><textarea id="contentDueDates" placeholder="Item · owner · due date"></textarea></div>
+        <div><label>Access due dates</label><textarea id="accessDueDates" placeholder="System · owner · due date"></textarea></div>
+        <div><label>Handoff readiness</label><select id="handoffReadiness"><option>Discovery incomplete</option><option>Waiting on client information</option><option>Waiting on secure access</option><option>Ready for Tony technical review</option></select></div>
+        <div><label>Rod reviewed handoff with client?</label><select id="rodReviewed"><option>No</option><option>Yes</option></select></div>
+      </div>
+    </section>
+
     <section class="approval">
       <div class="sign">Technical scope/time approved by Tony: __________________ Date: __________</div>
       <div class="sign">Commercial terms approved by Justin: __________________ Date: __________</div>
     </section>
 
     <div class="actions no-print">
+      <button class="primary" onclick="sendToTony()">Send Handoff to Tony</button>
+      <button class="secondary" onclick="copyHandoff()">Copy Full Handoff</button>
+      <button class="secondary" onclick="downloadHandoff()">Download Handoff</button>
       <button class="primary" onclick="window.print()">Print / Save PDF</button>
       <button class="secondary" onclick="saveDraft()">Save draft in browser</button>
       <button class="secondary" onclick="loadDraft()">Load saved draft</button>
       <button class="danger" onclick="resetQuote()">Reset</button>
     </div>
+    <p class="muted no-print">Send Handoff to Tony opens a fully addressed email in Rod's default mail app. Rod reviews it and presses Send. Copy and Download provide backups if the device blocks a long email body.</p>
   </main>
 </div>
 
@@ -207,11 +280,14 @@ const bundles = [
 let selected = [];
 const money = n => new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(Number(n)||0);
 const esc = s => String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const quoteFieldIds = ['client','contact','preparedBy','quoteId','expiry','readyDate','problem','baseline','valueMechanism','primaryMeasure','valueScenario','outsideVariables','trialPath','starterAutomation','setupHours','launchSlot','success','sprintNiche','avgJobValue','sprintTier','contactCount','feeBasis','successFee','feeCap','attributionDays','successEvent','campaignId','cohortDefinition','outcomeOwner','reconciliation','complianceAttestation','usage','responsibilities','exclusions','notes','discount'];
+const handoffFieldIds = ['legalBusinessName','industry','contactPhone','contactEmail','website','serviceArea','businessHours','afterHoursPolicy','servicesOffered','servicesExcluded','urgentDefinition','leadVolume','currentProcess','leadSources','currentSystems','implementationContact','replyOwner','escalationContact','notificationRecipients','businessPhone','numberStatus','calendarOwners','appointmentTypes','bookingTiming','availabilityRules','cancellationRules','reminderRules','messageDirection','stopRules','takeoverRules','websiteAccess','calendarAccess','phoneAccess','emailAccess','billingAccess','marketingAccess','importRequirements','reportingRequirements','assetLinks','clientApprovers','accessOwner','dataOwner','customRequirements','dependencies','blockers','contentDueDates','accessDueDates','handoffReadiness','rodReviewed'];
+const allDraftFieldIds = [...quoteFieldIds,...handoffFieldIds];
 
 function init(){
   document.getElementById('catalogue').innerHTML = items.map(i=>`<tr><td><input class="item-check" type="checkbox" id="pick-${i.id}" onchange="toggleItem('${i.id}')"></td><td><strong>${i.name}</strong><br><span class="muted">${i.scope}</span></td><td>${i.days}</td><td class="money">${money(i.setup)}</td><td class="money">${money(i.monthly)}</td></tr>`).join('');
   document.getElementById('bundles').innerHTML = bundles.map(b=>`<div class="bundle"><h3>${b.name}</h3><p>${b.scope}</p><strong>${money(b.setup)} + ${money(b.monthly)}/mo</strong><br><button class="primary" style="margin-top:9px" onclick="addBundle('${b.id}')">Add bundle</button></div>`).join('');
-  ['client','contact','preparedBy','quoteId','expiry','readyDate','problem','baseline','valueMechanism','primaryMeasure','valueScenario','outsideVariables','trialPath','starterAutomation','setupHours','launchSlot','success','sprintNiche','avgJobValue','sprintTier','contactCount','feeBasis','successFee','feeCap','attributionDays','successEvent','campaignId','cohortDefinition','outcomeOwner','reconciliation','complianceAttestation'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+  allDraftFieldIds.forEach(id=>document.getElementById(id)?.addEventListener('input',render));
   render();
 }
 function toggleItem(id){
@@ -248,11 +324,99 @@ function render(){
   document.getElementById('preview').innerHTML=`<h3>Custom Automation Quote</h3><p><strong>Client:</strong> ${val('client')||'—'}<br><strong>Contact:</strong> ${val('contact')||'—'}<br><strong>Quote:</strong> ${val('quoteId')||'—'} · <strong>Prepared by:</strong> ${val('preparedBy')||'—'}<br><strong>Expires:</strong> ${val('expiry')||'—'}</p><p><strong>Business problem:</strong><br>${val('problem')||'—'}</p><p><strong>Current baseline:</strong><br>${val('baseline')||'—'}</p><p><strong>Value hypothesis:</strong> ${val('valueMechanism')||'—'}<br><strong>Primary success measure:</strong> ${val('primaryMeasure')||'—'}<br>${val('valueScenario')||'—'}</p><p><strong>Recommended solution:</strong></p><ul>${selected.map(x=>`<li><strong>${esc(x.name)}</strong> — ${esc(x.scope)} (${esc(x.days)} after Ready-to-Build)</li>`).join('')||'<li>—</li>'}</ul><p><strong>Offer path:</strong> ${offerName}<br><strong>Launch slot:</strong> ${val('launchSlot')||'Subject to onboarding completeness and current capacity'}<br><strong>Scope/success event:</strong><br>${val('success')||'—'}</p>${sprintSummary}<p>${offerRule}</p><p><strong>Usage/pass-through:</strong><br>${esc(document.getElementById('usage').value)||'As disclosed in the accepted quote.'}</p><p><strong>Client responsibilities:</strong><br>${esc(document.getElementById('responsibilities').value)||'Complete onboarding, provide required access/content, and report attributed outcomes promptly.'}</p><p><strong>Exclusions:</strong><br>${esc(document.getElementById('exclusions').value)||'Anything not expressly listed.'}</p><p class="muted">Value scenarios are estimates based on disclosed inputs, not guarantees. HST and disclosed usage are extra. Sprint legal/compliance terms require an approved written agreement before launch.</p>`;
 }
 function saveDraft(){
-  const fields={}; ['client','contact','preparedBy','quoteId','expiry','readyDate','problem','baseline','valueMechanism','primaryMeasure','valueScenario','outsideVariables','trialPath','starterAutomation','setupHours','launchSlot','success','sprintNiche','avgJobValue','sprintTier','contactCount','feeBasis','successFee','feeCap','attributionDays','successEvent','campaignId','cohortDefinition','outcomeOwner','reconciliation','complianceAttestation','usage','responsibilities','exclusions','notes','discount'].forEach(id=>fields[id]=document.getElementById(id).value);
+  const fields={}; allDraftFieldIds.forEach(id=>fields[id]=document.getElementById(id)?.value||'');
   localStorage.setItem('oneappQuoteDraft',JSON.stringify({fields,selected})); alert('Draft saved in this browser.');
 }
 function loadDraft(){
   const raw=localStorage.getItem('oneappQuoteDraft'); if(!raw) return alert('No saved draft found.'); const d=JSON.parse(raw); selected=d.selected||[]; Object.entries(d.fields||{}).forEach(([id,v])=>{if(document.getElementById(id)) document.getElementById(id).value=v}); document.querySelectorAll('.item-check').forEach(b=>b.checked=selected.some(x=>x.key==='item-'+b.id.replace('pick-',''))); render();
+}
+function rawVal(id){ return (document.getElementById(id)?.value||'').trim(); }
+function labelled(label,id){ return `${label}: ${rawVal(id)||'—'}`; }
+function buildHandoffText(){
+  const setup=selected.reduce((s,x)=>s+x.setup,0), monthly=selected.reduce((s,x)=>s+x.monthly,0);
+  const rate=Math.min(10,Math.max(0,+rawVal('discount')||0))/100;
+  const selectedText=selected.length?selected.map(x=>`- ${x.name}: ${x.scope} | ${money(x.setup)} setup | ${money(x.monthly)}/month | ${x.days}`).join('\n'):'- No solution items selected';
+  const sprint=rawVal('trialPath')==='sprint';
+  const lines=[
+    '1APP SALES-TO-TECHNICAL HANDOFF',
+    '================================',
+    '',
+    'DEAL CONTROL',
+    labelled('Client/business','client'), labelled('Legal business name','legalBusinessName'), labelled('Industry/trade','industry'),
+    labelled('Primary contact','contact'), labelled('Contact phone','contactPhone'), labelled('Contact email','contactEmail'), labelled('Website','website'), labelled('Service area/timezone','serviceArea'),
+    labelled('Prepared by','preparedBy'), labelled('Quote ID/version','quoteId'), labelled('Quote expiry','expiry'), labelled('Target Ready-to-Build date','readyDate'),
+    `Offer path: ${sprint?'Revenue Reactivation Sprint':'Paid Implementation Required'}`,
+    `Setup subtotal: ${money(setup)} | Setup after discount: ${money(setup*(1-rate))}`,
+    `Monthly subtotal: ${money(monthly)} | Monthly after discount: ${money(monthly*(1-rate))}`,
+    labelled('Usage/pass-through assumptions','usage'), labelled('Implementation/expansion note','starterAutomation'), labelled('Estimated Tony setup hours','setupHours'), labelled('Confirmed launch slot','launchSlot'),
+    '',
+    'BUSINESS CASE',
+    labelled('Problem in client words','problem'), labelled('Current baseline/source/date','baseline'), labelled('Primary value mechanism','valueMechanism'), labelled('Primary success measure','primaryMeasure'),
+    labelled('Value scenario/formula/assumptions','valueScenario'), labelled('Variables outside 1APP control','outsideVariables'), labelled('Offer scope/success event','success'),
+    '',
+    'SELECTED SOLUTION', selectedText,
+    '',
+    ...(sprint?[
+      'REVENUE REACTIVATION SPRINT', labelled('Niche/trade','sprintNiche'), labelled('Average completed job value','avgJobValue'), labelled('Fee tier','sprintTier'), labelled('Approved contacts','contactCount'),
+      labelled('Fee basis','feeBasis'), labelled('Success fee','successFee'), labelled('Hard cap per sale','feeCap'), labelled('Attribution window days','attributionDays'), labelled('Billable success event','successEvent'),
+      labelled('Campaign ID/tag','campaignId'), labelled('Cohort definition/exclusions','cohortDefinition'), labelled('Outcome owner','outcomeOwner'), labelled('Reconciliation cadence/source','reconciliation'), labelled('Compliance attestation','complianceAttestation'), ''
+    ]:[]),
+    'BUSINESS OPERATING PROFILE',
+    labelled('Business hours','businessHours'), labelled('After-hours policy','afterHoursPolicy'), labelled('Main services','servicesOffered'), labelled('Services not offered','servicesExcluded'),
+    labelled('Urgent/emergency definition','urgentDefinition'), labelled('Current lead volume','leadVolume'), labelled('Current lead-to-sale process','currentProcess'), labelled('Lead sources','leadSources'), labelled('Current systems','currentSystems'),
+    '',
+    'ROUTING, CALENDAR, PHONE, AND MESSAGING',
+    labelled('Implementation contact','implementationContact'), labelled('Reply/conversation owner','replyOwner'), labelled('Escalation contact/method','escalationContact'), labelled('Notification recipients','notificationRecipients'),
+    labelled('Business/dedicated phone','businessPhone'), labelled('Number status','numberStatus'), labelled('Calendar owner(s)','calendarOwners'), labelled('Appointment type(s)','appointmentTypes'),
+    labelled('Duration/buffer/minimum notice','bookingTiming'), labelled('Availability/assignment rules','availabilityRules'), labelled('Cancellation/reschedule rules','cancellationRules'), labelled('Confirmation/reminder timing','reminderRules'),
+    labelled('Message direction/tone/claims','messageDirection'), labelled('Opt-out/stop conditions','stopRules'), labelled('Human takeover rules','takeoverRules'),
+    '',
+    'SYSTEMS AND SECURE ACCESS STATUS',
+    labelled('Website/domain','websiteAccess'), labelled('Calendar','calendarAccess'), labelled('Phone/registration','phoneAccess'), labelled('Email sending','emailAccess'), labelled('Estimate/billing/payment','billingAccess'), labelled('Reviews/ads/analytics','marketingAccess'),
+    labelled('Import/data migration','importRequirements'), labelled('Attribution/reporting','reportingRequirements'), labelled('Brand/asset links','assetLinks'),
+    '',
+    'OWNERS, DEPENDENCIES, AND READINESS',
+    labelled('Client approver(s)','clientApprovers'), labelled('Secure access owner','accessOwner'), labelled('Data/outcome owner','dataOwner'), labelled('Custom requirements/integrations/data flow','customRequirements'),
+    labelled('Known dependencies','dependencies'), labelled('Known blockers/unanswered questions','blockers'), labelled('Client content due dates','contentDueDates'), labelled('Access due dates','accessDueDates'),
+    labelled('Handoff readiness','handoffReadiness'), labelled('Rod reviewed handoff with client','rodReviewed'),
+    '',
+    'COMMERCIAL / SCOPE CONTROLS',
+    labelled('Client responsibilities','responsibilities'), labelled('Exclusions','exclusions'), labelled('Internal notes','notes'),
+    '',
+    'SECURITY NOTE: No passwords, API keys, card data, verification codes, or other credentials should appear in this handoff. Secure access must be exchanged separately.',
+    '',
+    `Generated: ${new Date().toLocaleString('en-CA')}`
+  ];
+  return lines.join('\n');
+}
+function validateHandoff(){
+  const required=[['client','Client business'],['contact','Primary contact'],['contactPhone','Contact phone'],['contactEmail','Contact email'],['problem','Client problem'],['servicesOffered','Main services'],['businessHours','Business hours'],['currentProcess','Current lead-to-sale process'],['implementationContact','Implementation contact'],['replyOwner','Reply owner'],['handoffReadiness','Handoff readiness']];
+  const missing=required.filter(([id])=>!rawVal(id)).map(([,label])=>label);
+  if(!selected.length) missing.push('At least one selected solution');
+  if(missing.length){ alert('Complete these handoff fields before sending:\n\n- '+missing.join('\n- ')); return false; }
+  return true;
+}
+function sendToTony(){
+  if(!validateHandoff()) return;
+  saveDraftSilently();
+  const subject=`1APP Technical Handoff — ${rawVal('client')} — ${rawVal('quoteId')||'Draft Quote'}`;
+  const body=buildHandoffText();
+  window.location.href=`mailto:adecarlo@use1app.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+async function copyHandoff(){
+  const text=buildHandoffText();
+  try{ await navigator.clipboard.writeText(text); alert('Full technical handoff copied.'); }
+  catch{ alert('Clipboard access was blocked. Use Download Handoff instead.'); }
+}
+function downloadHandoff(){
+  const text=buildHandoffText();
+  const safe=(rawVal('client')||'client').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').toLowerCase();
+  const blob=new Blob([text],{type:'text/plain;charset=utf-8'}), url=URL.createObjectURL(blob), a=document.createElement('a');
+  a.href=url; a.download=`1APP-technical-handoff-${safe||'client'}.txt`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
+function saveDraftSilently(){
+  const fields={}; allDraftFieldIds.forEach(id=>fields[id]=document.getElementById(id)?.value||'');
+  localStorage.setItem('oneappQuoteDraft',JSON.stringify({fields,selected}));
 }
 function resetQuote(){ if(!confirm('Reset the current quote?')) return; selected=[]; document.querySelectorAll('input,textarea').forEach(el=>{if(['preparedBy','discount'].includes(el.id)) return; if(el.type==='checkbox') el.checked=false; else el.value='';}); document.getElementById('preparedBy').value='Rod Norville'; document.getElementById('discount').value=0; render(); }
 init();

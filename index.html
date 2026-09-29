@@ -308,6 +308,47 @@
 </script>
 <!-- 1APP Revenue Reactivation Sprint Popup -->
 
+<script id="oneapp-rod-contact">
+(function(){
+  var ROD_TEL='tel:+12892759420';
+  var ROD_LABEL='Rod Norville — Sales Manager: (289) 275-9420';
+  function addRodContact(){
+    var footer=document.querySelector('footer');
+    var contactHeading=footer&&Array.from(footer.querySelectorAll('p')).find(function(p){
+      return (p.textContent||'').trim()==='Contact';
+    });
+    var contactColumn=contactHeading&&contactHeading.parentElement;
+    if(contactColumn&&!contactColumn.querySelector('[data-rod-contact]')){
+      var rod=document.createElement('a');
+      rod.href=ROD_TEL;
+      rod.setAttribute('data-rod-contact','footer');
+      rod.className='text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]';
+      rod.innerHTML='<strong>Rod Norville</strong> — Sales Manager<br>(289) 275-9420';
+      var booking=contactColumn.querySelector('a[href="/book-demo/"]');
+      contactColumn.insertBefore(rod,booking||null);
+    }
+    var cta=Array.from(document.querySelectorAll('#cta .mt-8')).find(function(row){
+      return (row.textContent||'').indexOf('Email Justin')>=0;
+    });
+    if(cta&&!cta.querySelector('[data-rod-contact]')){
+      var ctaRod=document.createElement('a');
+      ctaRod.href=ROD_TEL;
+      ctaRod.setAttribute('data-rod-contact','cta');
+      ctaRod.className='transition-colors hover:text-white';
+      ctaRod.textContent=ROD_LABEL;
+      cta.insertBefore(ctaRod,cta.firstChild);
+      var dot=document.createElement('span');
+      dot.className='h-1 w-1 rounded-full bg-white/30';
+      cta.insertBefore(dot,ctaRod.nextSibling);
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',addRodContact,{once:true});
+  else addRodContact();
+  var runs=0;
+  var timer=setInterval(function(){addRodContact();if(++runs>=20)clearInterval(timer);},200);
+})();
+</script>
+
 <!-- 1APP Chat Widget -->
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ab1507a599f010aecbcf135"></script>
 </body></html>
