@@ -235,6 +235,26 @@
       </div>
     </section>
 
+    <section class="no-print" style="border:1px solid #b8c8e2;border-radius:14px;padding:20px;background:#f7f9fd;">
+      <h2>Secure contact-list upload</h2>
+      <p>The client uploads their authorized business contacts through a private 1APP page. Do not ask them to email, text, or WhatsApp the file.</p>
+      <div class="grid">
+        <div><label>Contact-list status</label><select id="contactUploadStatus"><option>Not requested</option><option>Secure link sent to client</option><option>Client needs help exporting</option><option>Uploaded — receipt received</option><option>Reviewed and ready to import</option></select></div>
+        <div><label>Private upload receipt link</label><input id="contactUploadReceipt" placeholder="Paste the private receipt link after the client uploads"></div>
+      </div>
+      <div class="actions">
+        <button class="primary" type="button" onclick="openClientUpload()">Open Client Upload Page</button>
+        <button class="secondary" type="button" onclick="copyClientUploadLink()">Copy Client Upload Link</button>
+      </div>
+      <details style="margin-top:14px;">
+        <summary style="cursor:pointer;font-weight:800;color:#0a2d62;">Rod: simple explanation to read to the client</summary>
+        <blockquote style="margin-top:12px;">“We need only the past leads and customers your business is allowed to contact—not your whole personal phone book. I’ll send you a secure 1APP upload link. If your contacts are on Android or Google, export the selected contacts as a CSV. If they are on an iPhone, export them from iCloud Contacts as a vCard. Open the link, choose the file, check the two confirmation boxes, and press Upload. If you get stuck, stop there and I’ll walk you through it.”</blockquote>
+        <p><strong>Android/Google:</strong> Go to contacts.google.com → create a label named “1APP Reactivation” → add eligible contacts → Export → Google CSV.</p>
+        <p><strong>iPhone:</strong> Go to icloud.com/contacts on a computer → select eligible contacts → Export vCard → upload the .vcf file.</p>
+        <p><strong>Rod must repeat:</strong> remove personal contacts, employees, active opportunities, recent estimates, and anyone who opted out.</p>
+      </details>
+    </section>
+
     <section class="approval">
       <div class="sign">Technical scope/time approved by Tony: __________________ Date: __________</div>
       <div class="sign">Commercial terms approved by Justin: __________________ Date: __________</div>
@@ -281,7 +301,7 @@ let selected = [];
 const money = n => new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(Number(n)||0);
 const esc = s => String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const quoteFieldIds = ['client','contact','preparedBy','quoteId','expiry','readyDate','problem','baseline','valueMechanism','primaryMeasure','valueScenario','outsideVariables','trialPath','starterAutomation','setupHours','launchSlot','success','sprintNiche','avgJobValue','sprintTier','contactCount','feeBasis','successFee','feeCap','attributionDays','successEvent','campaignId','cohortDefinition','outcomeOwner','reconciliation','complianceAttestation','usage','responsibilities','exclusions','notes','discount'];
-const handoffFieldIds = ['legalBusinessName','industry','contactPhone','contactEmail','website','serviceArea','businessHours','afterHoursPolicy','servicesOffered','servicesExcluded','urgentDefinition','leadVolume','currentProcess','leadSources','currentSystems','implementationContact','replyOwner','escalationContact','notificationRecipients','businessPhone','numberStatus','calendarOwners','appointmentTypes','bookingTiming','availabilityRules','cancellationRules','reminderRules','messageDirection','stopRules','takeoverRules','websiteAccess','calendarAccess','phoneAccess','emailAccess','billingAccess','marketingAccess','importRequirements','reportingRequirements','assetLinks','clientApprovers','accessOwner','dataOwner','customRequirements','dependencies','blockers','contentDueDates','accessDueDates','handoffReadiness','rodReviewed'];
+const handoffFieldIds = ['legalBusinessName','industry','contactPhone','contactEmail','website','serviceArea','businessHours','afterHoursPolicy','servicesOffered','servicesExcluded','urgentDefinition','leadVolume','currentProcess','leadSources','currentSystems','implementationContact','replyOwner','escalationContact','notificationRecipients','businessPhone','numberStatus','calendarOwners','appointmentTypes','bookingTiming','availabilityRules','cancellationRules','reminderRules','messageDirection','stopRules','takeoverRules','websiteAccess','calendarAccess','phoneAccess','emailAccess','billingAccess','marketingAccess','importRequirements','reportingRequirements','assetLinks','clientApprovers','accessOwner','dataOwner','customRequirements','dependencies','blockers','contentDueDates','accessDueDates','handoffReadiness','rodReviewed','contactUploadStatus','contactUploadReceipt'];
 const allDraftFieldIds = [...quoteFieldIds,...handoffFieldIds];
 
 function init(){
@@ -373,7 +393,7 @@ function buildHandoffText(){
     '',
     'SYSTEMS AND SECURE ACCESS STATUS',
     labelled('Website/domain','websiteAccess'), labelled('Calendar','calendarAccess'), labelled('Phone/registration','phoneAccess'), labelled('Email sending','emailAccess'), labelled('Estimate/billing/payment','billingAccess'), labelled('Reviews/ads/analytics','marketingAccess'),
-    labelled('Import/data migration','importRequirements'), labelled('Attribution/reporting','reportingRequirements'), labelled('Brand/asset links','assetLinks'),
+    labelled('Import/data migration','importRequirements'), labelled('Contact-list status','contactUploadStatus'), labelled('Private contact-list receipt','contactUploadReceipt'), labelled('Attribution/reporting','reportingRequirements'), labelled('Brand/asset links','assetLinks'),
     '',
     'OWNERS, DEPENDENCIES, AND READINESS',
     labelled('Client approver(s)','clientApprovers'), labelled('Secure access owner','accessOwner'), labelled('Data/outcome owner','dataOwner'), labelled('Custom requirements/integrations/data flow','customRequirements'),
@@ -413,6 +433,18 @@ function downloadHandoff(){
   const safe=(rawVal('client')||'client').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'').toLowerCase();
   const blob=new Blob([text],{type:'text/plain;charset=utf-8'}), url=URL.createObjectURL(blob), a=document.createElement('a');
   a.href=url; a.download=`1APP-technical-handoff-${safe||'client'}.txt`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
+function clientUploadUrl(){
+  const url=new URL('https://oneapp-clientflow.higgsfield.app/contact-upload');
+  const business=rawVal('legalBusinessName')||rawVal('client'), email=rawVal('contactEmail');
+  if(business) url.searchParams.set('business',business);
+  if(email) url.searchParams.set('email',email);
+  return url.toString();
+}
+function openClientUpload(){ window.open(clientUploadUrl(),'_blank','noopener,noreferrer'); }
+async function copyClientUploadLink(){
+  try{ await navigator.clipboard.writeText(clientUploadUrl()); alert('Secure client upload link copied.'); }
+  catch{ prompt('Copy this secure client upload link:',clientUploadUrl()); }
 }
 function saveDraftSilently(){
   const fields={}; allDraftFieldIds.forEach(id=>fields[id]=document.getElementById(id)?.value||'');
