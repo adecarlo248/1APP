@@ -107,7 +107,7 @@
         <div><label>Calculated recommended fee / estimate</label><input id="recommendedEstimateFee" readonly value="$0.00"></div>
         <div><label>Approved dormant contacts</label><input id="contactCount" type="number" min="0"></div>
         <div><label>Fee basis</label><select id="feeBasis"><option>Fixed fee per verified estimate issued</option><option>Fixed fee per kept qualified appointment — owner exception</option></select></div>
-        <div><label>Approved fee per verified estimate</label><input id="successFee" type="number" min="0" step="25" placeholder="CAD"></div>
+        <div><label>Approved fee per verified estimate</label><input id="successFee" type="number" min="0" step="25" placeholder="CAD"><button class="secondary" type="button" style="margin-top:8px" onclick="applyRecommendedEstimateFee()">Use recommended fee</button></div>
         <div><label>Campaign fee ceiling (optional)</label><input id="feeCap" type="number" min="0" step="100" placeholder="CAD"></div>
         <div><label>Attribution window (days)</label><input id="attributionDays" type="number" min="1" max="180" value="60"></div>
         <div><label>Billable success event</label><select id="successEvent"><option>Kept qualified appointment followed by a written estimate issued</option></select></div>
@@ -334,6 +334,12 @@ function addCustom(){
 function removeItem(key){
   const gone=selected.find(x=>x.key===key); selected=selected.filter(x=>x.key!==key);
   if(gone?.type==='item'){ const box=document.getElementById(`pick-${gone.id}`); if(box) box.checked=false; }
+  render();
+}
+function applyRecommendedEstimateFee(){
+  const amount=Number((document.getElementById('recommendedEstimateFee').value||'').replace(/[^0-9.]/g,''))||0;
+  if(!amount) return alert('Enter the average job value, margin, and close rate first.');
+  document.getElementById('successFee').value=amount;
   render();
 }
 function render(){
