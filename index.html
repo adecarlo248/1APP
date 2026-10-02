@@ -324,12 +324,15 @@
   .oneapp-team-person+.oneapp-team-person{border-top:1px solid rgba(255,255,255,.12)}
   .oneapp-team-name{display:block;font-size:.95rem;font-weight:800;color:#fff}
   .oneapp-team-role,.oneapp-team-detail{display:block;margin-top:2px;font-size:.8rem;line-height:1.45;color:rgba(255,255,255,.64)}
+  a.oneapp-team-detail:hover{color:#fff}
   .oneapp-team-note{grid-column:1/-1;margin:2px 0 0;text-align:center;font-size:.8rem;color:rgba(255,255,255,.5)}
   .oneapp-footer-team{display:grid;gap:14px;margin:2px 0 4px}
   .oneapp-footer-group{border-left:3px solid var(--brand-gold);padding:2px 0 2px 12px}
   .oneapp-footer-group-title{margin:0 0 7px;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-navy)}
   .oneapp-footer-person{display:block;margin-top:7px;color:var(--brand-text-secondary);font-size:.82rem;line-height:1.4;text-decoration:none}
   .oneapp-footer-person strong{color:var(--brand-navy)}
+  .oneapp-footer-link{color:var(--brand-text-secondary);text-decoration:none}
+  .oneapp-footer-link:hover{color:var(--brand-navy)}
   @media(max-width:640px){.oneapp-team-grid{grid-template-columns:1fr}.oneapp-team-card{padding:16px}}
 </style>
 <script id="oneapp-team-contact">
@@ -337,7 +340,7 @@
   var TEAM_MARKUP=
     '<div class="oneapp-team-card">'+
       '<p class="oneapp-team-kicker">Sales</p>'+
-      '<a class="oneapp-team-person" href="tel:+12892759420"><span class="oneapp-team-name">Rod Norville</span><span class="oneapp-team-role">Sales Manager</span><span class="oneapp-team-detail">(289) 275-9420</span></a>'+
+      '<div class="oneapp-team-person"><a class="oneapp-team-name" href="mailto:rodnorville@use1app.com">Rod Norville</a><span class="oneapp-team-role">Sales Manager</span><a class="oneapp-team-detail" href="tel:+12892759420">(289) 275-9420</a><a class="oneapp-team-detail" href="mailto:rodnorville@use1app.com">rodnorville@use1app.com</a></div>'+
       '<a class="oneapp-team-person" href="mailto:justin@use1app.com"><span class="oneapp-team-name">Justin Roffey</span><span class="oneapp-team-role">Sales &amp; Business Development</span><span class="oneapp-team-detail">justin@use1app.com</span></a>'+
     '</div>'+
     '<div class="oneapp-team-card">'+
@@ -348,7 +351,7 @@
     '<p class="oneapp-team-note">No long-term contracts</p>';
   var FOOTER_MARKUP=
     '<div class="oneapp-footer-group"><p class="oneapp-footer-group-title">Sales</p>'+
-      '<a class="oneapp-footer-person" href="tel:+12892759420"><strong>Rod Norville</strong><br>Sales Manager · (289) 275-9420</a>'+
+      '<div class="oneapp-footer-person"><strong>Rod Norville</strong><br>Sales Manager · <a class="oneapp-footer-link" href="tel:+12892759420">(289) 275-9420</a><br><a class="oneapp-footer-link" href="mailto:rodnorville@use1app.com">rodnorville@use1app.com</a></div>'+
       '<a class="oneapp-footer-person" href="mailto:justin@use1app.com"><strong>Justin Roffey</strong><br>Sales &amp; Business Development · justin@use1app.com</a></div>'+
     '<div class="oneapp-footer-group"><p class="oneapp-footer-group-title">Technical Support &amp; Service</p>'+
       '<a class="oneapp-footer-person" href="tel:+17052432887"><strong>Tony DeCarlo</strong><br>Technical Support &amp; Service · (705) 243-2887</a>'+
