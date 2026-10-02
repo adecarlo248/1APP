@@ -316,44 +316,69 @@
 </script>
 <!-- 1APP Revenue Reactivation Sprint Popup -->
 
-<script id="oneapp-rod-contact">
+<style id="oneapp-team-contact-styles">
+  .oneapp-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;max-width:760px;margin:2rem auto 0;text-align:left}
+  .oneapp-team-card{border:1px solid rgba(255,255,255,.15);border-radius:16px;background:rgba(255,255,255,.055);padding:18px 20px}
+  .oneapp-team-kicker{margin:0 0 12px;font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#f4d980}
+  .oneapp-team-person{display:block;color:#fff;text-decoration:none;padding:8px 0}
+  .oneapp-team-person+.oneapp-team-person{border-top:1px solid rgba(255,255,255,.12)}
+  .oneapp-team-name{display:block;font-size:.95rem;font-weight:800;color:#fff}
+  .oneapp-team-role,.oneapp-team-detail{display:block;margin-top:2px;font-size:.8rem;line-height:1.45;color:rgba(255,255,255,.64)}
+  .oneapp-team-note{grid-column:1/-1;margin:2px 0 0;text-align:center;font-size:.8rem;color:rgba(255,255,255,.5)}
+  .oneapp-footer-team{display:grid;gap:14px;margin:2px 0 4px}
+  .oneapp-footer-group{border-left:3px solid var(--brand-gold);padding:2px 0 2px 12px}
+  .oneapp-footer-group-title{margin:0 0 7px;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-navy)}
+  .oneapp-footer-person{display:block;margin-top:7px;color:var(--brand-text-secondary);font-size:.82rem;line-height:1.4;text-decoration:none}
+  .oneapp-footer-person strong{color:var(--brand-navy)}
+  @media(max-width:640px){.oneapp-team-grid{grid-template-columns:1fr}.oneapp-team-card{padding:16px}}
+</style>
+<script id="oneapp-team-contact">
 (function(){
-  var ROD_TEL='tel:+12892759420';
-  var ROD_LABEL='Rod Norville — Sales Manager: (289) 275-9420';
-  function addRodContact(){
+  var TEAM_MARKUP=
+    '<div class="oneapp-team-card">'+
+      '<p class="oneapp-team-kicker">Sales</p>'+
+      '<a class="oneapp-team-person" href="tel:+12892759420"><span class="oneapp-team-name">Rod Norville</span><span class="oneapp-team-role">Sales Manager</span><span class="oneapp-team-detail">(289) 275-9420</span></a>'+
+      '<a class="oneapp-team-person" href="mailto:justin@use1app.com"><span class="oneapp-team-name">Justin Roffey</span><span class="oneapp-team-role">Sales &amp; Business Development</span><span class="oneapp-team-detail">justin@use1app.com</span></a>'+
+    '</div>'+
+    '<div class="oneapp-team-card">'+
+      '<p class="oneapp-team-kicker">Technical Support &amp; Service</p>'+
+      '<a class="oneapp-team-person" href="tel:+17052432887"><span class="oneapp-team-name">Tony DeCarlo</span><span class="oneapp-team-role">Technical Support &amp; Service</span><span class="oneapp-team-detail">(705) 243-2887</span></a>'+
+      '<a class="oneapp-team-person" href="mailto:adecarlo@use1app.com"><span class="oneapp-team-detail">adecarlo@use1app.com</span></a>'+
+    '</div>'+
+    '<p class="oneapp-team-note">No long-term contracts</p>';
+  var FOOTER_MARKUP=
+    '<div class="oneapp-footer-group"><p class="oneapp-footer-group-title">Sales</p>'+
+      '<a class="oneapp-footer-person" href="tel:+12892759420"><strong>Rod Norville</strong><br>Sales Manager · (289) 275-9420</a>'+
+      '<a class="oneapp-footer-person" href="mailto:justin@use1app.com"><strong>Justin Roffey</strong><br>Sales &amp; Business Development · justin@use1app.com</a></div>'+
+    '<div class="oneapp-footer-group"><p class="oneapp-footer-group-title">Technical Support &amp; Service</p>'+
+      '<a class="oneapp-footer-person" href="tel:+17052432887"><strong>Tony DeCarlo</strong><br>Technical Support &amp; Service · (705) 243-2887</a>'+
+      '<a class="oneapp-footer-person" href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a></div>';
+  function organizeTeam(){
+    var cta=Array.from(document.querySelectorAll('#cta .mt-8')).find(function(row){
+      var text=(row.textContent||'');
+      return text.indexOf('Email Justin')>=0&&text.indexOf('Email Tony')>=0;
+    });
+    if(cta&&!cta.matches('[data-oneapp-team-cta]')){
+      cta.setAttribute('data-oneapp-team-cta','true');
+      cta.className='oneapp-team-grid mt-8';
+      cta.innerHTML=TEAM_MARKUP;
+    }
     var footer=document.querySelector('footer');
     var contactHeading=footer&&Array.from(footer.querySelectorAll('p')).find(function(p){
       return (p.textContent||'').trim()==='Contact';
     });
     var contactColumn=contactHeading&&contactHeading.parentElement;
-    if(contactColumn&&!contactColumn.querySelector('[data-rod-contact]')){
-      var rod=document.createElement('a');
-      rod.href=ROD_TEL;
-      rod.setAttribute('data-rod-contact','footer');
-      rod.className='text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]';
-      rod.innerHTML='<strong>Rod Norville</strong> — Sales Manager<br>(289) 275-9420';
+    if(contactColumn&&!contactColumn.querySelector('[data-oneapp-footer-team]')){
       var booking=contactColumn.querySelector('a[href="/book-demo/"]');
-      contactColumn.insertBefore(rod,booking||null);
-    }
-    var cta=Array.from(document.querySelectorAll('#cta .mt-8')).find(function(row){
-      return (row.textContent||'').indexOf('Email Justin')>=0;
-    });
-    if(cta&&!cta.querySelector('[data-rod-contact]')){
-      var ctaRod=document.createElement('a');
-      ctaRod.href=ROD_TEL;
-      ctaRod.setAttribute('data-rod-contact','cta');
-      ctaRod.className='transition-colors hover:text-white';
-      ctaRod.textContent=ROD_LABEL;
-      cta.insertBefore(ctaRod,cta.firstChild);
-      var dot=document.createElement('span');
-      dot.className='h-1 w-1 rounded-full bg-white/30';
-      cta.insertBefore(dot,ctaRod.nextSibling);
+      var socials=Array.from(contactColumn.children).find(function(el){return el.querySelector&&el.querySelector('a[href*="facebook.com"]');});
+      contactColumn.innerHTML='<p class="text-sm font-bold text-[var(--brand-navy)]">Contact</p><div class="oneapp-footer-team" data-oneapp-footer-team="true">'+FOOTER_MARKUP+'</div><a href="/book-demo/" class="text-sm font-semibold text-[var(--brand-navy)] transition-colors hover:text-[var(--brand-gold)]">Book Your Free Quote / Demo</a>';
+      if(socials) contactColumn.appendChild(socials);
     }
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',addRodContact,{once:true});
-  else addRodContact();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',organizeTeam,{once:true});
+  else organizeTeam();
   var runs=0;
-  var timer=setInterval(function(){addRodContact();if(++runs>=20)clearInterval(timer);},200);
+  var timer=setInterval(function(){organizeTeam();if(++runs>=25)clearInterval(timer);},200);
 })();
 </script>
 
