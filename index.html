@@ -438,6 +438,25 @@
 })();
 </script>
 
+<!-- Pricing page navigation patch -->
+<script id="oneapp-pricing-link-patch">
+(function(){
+  function linkPricingPage(){
+    document.querySelectorAll('a[href="#pricing"],a[href="index.html#pricing"]').forEach(function(link){
+      link.setAttribute('href','/pricing/');
+      if((link.textContent||'').trim()==='Services') link.textContent='Pricing';
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',linkPricingPage,{once:true});
+  else linkPricingPage();
+  var pricingLinkRuns=0;
+  var pricingLinkTimer=setInterval(function(){
+    linkPricingPage();
+    if(++pricingLinkRuns>=25) clearInterval(pricingLinkTimer);
+  },200);
+})();
+</script>
+
 <!-- 1APP Chat Widget -->
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a983c9507a2e8b0275404d7" data-source="WEB_USER"></script>
 </body></html>
