@@ -317,6 +317,36 @@
 <!-- 1APP Revenue Reactivation Sprint Popup -->
 
 <style id="oneapp-team-contact-styles">
+  .oneapp-trust-section{position:relative;overflow:hidden;padding:88px 24px;background:linear-gradient(180deg,#f8fafc 0%,#fff 100%);border-top:1px solid var(--brand-border)}
+  .oneapp-trust-section:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,31,63,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,31,63,.035) 1px,transparent 1px);background-size:42px 42px;pointer-events:none}
+  .oneapp-trust-inner{position:relative;z-index:1;max-width:1120px;margin:0 auto}
+  .oneapp-trust-eyebrow{margin:0 0 12px;text-align:center;font-size:.74rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#9b7419}
+  .oneapp-trust-title{max-width:760px;margin:0 auto;text-align:center;font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:clamp(2rem,4vw,3.25rem);line-height:1.08;color:var(--brand-navy)}
+  .oneapp-trust-lead{max-width:760px;margin:18px auto 0;text-align:center;font-size:1.03rem;line-height:1.72;color:var(--brand-text-secondary)}
+  .oneapp-profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px}
+  .oneapp-profile-card{overflow:hidden;border:1px solid var(--brand-border);border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(0,31,63,.08);transition:transform .25s ease,box-shadow .25s ease}
+  .oneapp-profile-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,31,63,.13)}
+  .oneapp-profile-photo{position:relative;overflow:hidden;aspect-ratio:1/1;background:#e8edf3}
+  .oneapp-profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .oneapp-profile-photo img.photo-justin{transform:scale(1.22)}
+  .oneapp-profile-photo img.photo-rod{object-position:42% 50%}
+  .oneapp-profile-photo img.photo-tony{object-position:40% 42%;transform:scale(1.08)}
+  .oneapp-profile-body{padding:24px}
+  .oneapp-profile-role{margin:0 0 7px;font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#9b7419}
+  .oneapp-profile-name{margin:0;font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:1.28rem;line-height:1.25;color:var(--brand-navy)}
+  .oneapp-profile-bio{margin:13px 0 18px;font-size:.91rem;line-height:1.65;color:var(--brand-text-secondary)}
+  .oneapp-profile-contact{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+  .oneapp-profile-contact a{color:var(--brand-navy);font-size:.84rem;font-weight:700;text-decoration:none;overflow-wrap:anywhere}
+  .oneapp-profile-contact a:hover{color:#9b7419;text-decoration:underline}
+  .oneapp-process{margin-top:48px;padding:30px;border:1px solid var(--brand-border);border-radius:22px;background:var(--brand-navy);box-shadow:0 18px 44px rgba(0,31,63,.15)}
+  .oneapp-process-title{margin:0 0 22px;text-align:center;font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:1.35rem;color:#fff}
+  .oneapp-process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+  .oneapp-process-step{position:relative;padding:17px 16px;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.055)}
+  .oneapp-process-number{display:flex;width:28px;height:28px;align-items:center;justify-content:center;margin-bottom:11px;border-radius:999px;background:var(--brand-gold);color:var(--brand-navy);font-size:.78rem;font-weight:900}
+  .oneapp-process-step strong{display:block;color:#fff;font-size:.91rem}
+  .oneapp-process-step span{display:block;margin-top:5px;color:rgba(255,255,255,.68);font-size:.78rem;line-height:1.5}
+  .oneapp-trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:24px 0 0}
+  .oneapp-trust-strip span{padding:8px 12px;border:1px solid var(--brand-border);border-radius:999px;background:#fff;color:var(--brand-navy);font-size:.76rem;font-weight:800}
   .oneapp-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;max-width:760px;margin:2rem auto 0;text-align:left}
   .oneapp-team-card{border:1px solid rgba(255,255,255,.15);border-radius:16px;background:rgba(255,255,255,.055);padding:18px 20px}
   .oneapp-team-kicker{margin:0 0 12px;font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#f4d980}
@@ -333,22 +363,43 @@
   .oneapp-footer-person strong{color:var(--brand-navy)}
   .oneapp-footer-link{color:var(--brand-text-secondary);text-decoration:none}
   .oneapp-footer-link:hover{color:var(--brand-navy)}
-  @media(max-width:640px){.oneapp-team-grid{grid-template-columns:1fr}.oneapp-team-card{padding:16px}}
+  @media(max-width:900px){.oneapp-profile-grid{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}.oneapp-profile-card{display:grid;grid-template-columns:minmax(180px,42%) 1fr}.oneapp-process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:640px){.oneapp-trust-section{padding:64px 18px}.oneapp-profile-card{display:block}.oneapp-profile-photo{aspect-ratio:4/3}.oneapp-profile-photo img.photo-rod{object-position:42% 32%}.oneapp-profile-body{padding:21px}.oneapp-process{padding:22px 16px}.oneapp-process-grid{grid-template-columns:1fr}.oneapp-team-grid{grid-template-columns:1fr}.oneapp-team-card{padding:16px}}
 </style>
 <script id="oneapp-team-contact">
 (function(){
-  var TEAM_MARKUP=
-    '<div class="oneapp-team-card">'+
-      '<p class="oneapp-team-kicker">Sales</p>'+
-      '<div class="oneapp-team-person"><a class="oneapp-team-name" href="mailto:rodnorville@use1app.com">Rod Norville</a><span class="oneapp-team-role">Sales Manager</span><a class="oneapp-team-detail" href="tel:+12892759420">(289) 275-9420</a><a class="oneapp-team-detail" href="mailto:rodnorville@use1app.com">rodnorville@use1app.com</a></div>'+
-      '<a class="oneapp-team-person" href="mailto:justin@use1app.com"><span class="oneapp-team-name">Justin Roffey</span><span class="oneapp-team-role">Sales &amp; Business Development</span><span class="oneapp-team-detail">justin@use1app.com</span></a>'+
-    '</div>'+
-    '<div class="oneapp-team-card">'+
-      '<p class="oneapp-team-kicker">Technical Support &amp; Service</p>'+
-      '<a class="oneapp-team-person" href="tel:+17052432887"><span class="oneapp-team-name">Tony DeCarlo</span><span class="oneapp-team-role">Technical Support &amp; Service</span><span class="oneapp-team-detail">(705) 243-2887</span></a>'+
-      '<a class="oneapp-team-person" href="mailto:adecarlo@use1app.com"><span class="oneapp-team-detail">adecarlo@use1app.com</span></a>'+
-    '</div>'+
-    '<p class="oneapp-team-note">No long-term contracts</p>';
+  var TRUST_SECTION=
+    '<section class="oneapp-trust-section" id="team" data-oneapp-trust-section="true" aria-labelledby="oneapp-team-title">'+
+      '<div class="oneapp-trust-inner">'+
+        '<p class="oneapp-trust-eyebrow">Meet the 1APP team</p>'+
+        '<h2 class="oneapp-trust-title" id="oneapp-team-title">Real people build and support your 1APP system.</h2>'+
+        '<p class="oneapp-trust-lead">You will not be handed software and left to figure it out. Our Ontario-based team guides the sale, builds the system around your business, tests it before launch, and supports it afterward.</p>'+
+        '<div class="oneapp-profile-grid">'+
+          '<article class="oneapp-profile-card">'+
+            '<div class="oneapp-profile-photo"><img class="photo-justin" src="/assets/team/justin-roffey.jpg" alt="Justin Roffey, Sales and Business Development at 1APP" loading="lazy" width="530" height="332"></div>'+
+            '<div class="oneapp-profile-body"><p class="oneapp-profile-role">Sales &amp; Business Development</p><h3 class="oneapp-profile-name">Justin Roffey</h3><p class="oneapp-profile-bio">Justin helps business owners choose the right starting point, understand the commercial value, and keep the proposed solution aligned with their goals.</p><div class="oneapp-profile-contact"><a href="mailto:justin@use1app.com" aria-label="Email Justin Roffey">justin@use1app.com</a></div></div>'+
+          '</article>'+
+          '<article class="oneapp-profile-card">'+
+            '<div class="oneapp-profile-photo"><img class="photo-rod" src="/assets/team/rod-norville.jpg" alt="Rod Norville, Sales Manager at 1APP" loading="lazy" width="1155" height="838"></div>'+
+            '<div class="oneapp-profile-body"><p class="oneapp-profile-role">Sales Manager</p><h3 class="oneapp-profile-name">Rod Norville</h3><p class="oneapp-profile-bio">Rod identifies where leads and follow-up are breaking down, guides the sales conversation, and makes sure every recommendation is clear and practical.</p><div class="oneapp-profile-contact"><a href="tel:+12892759420" aria-label="Call Rod Norville at 289 275 9420">(289) 275-9420</a><a href="mailto:rodnorville@use1app.com" aria-label="Email Rod Norville">rodnorville@use1app.com</a></div></div>'+
+          '</article>'+
+          '<article class="oneapp-profile-card">'+
+            '<div class="oneapp-profile-photo"><img class="photo-tony" src="/assets/team/tony-decarlo.jpg" alt="Tony DeCarlo, Technical Support and Service at 1APP" loading="lazy" width="574" height="538"></div>'+
+            '<div class="oneapp-profile-body"><p class="oneapp-profile-role">Technical Support &amp; Service</p><h3 class="oneapp-profile-name">Tony DeCarlo</h3><p class="oneapp-profile-bio">Tony designs, configures, tests, and supports each 1APP system—from technical setup and integrations through launch and ongoing service.</p><div class="oneapp-profile-contact"><a href="tel:+17052432887" aria-label="Call Tony DeCarlo at 705 243 2887">(705) 243-2887</a><a href="mailto:adecarlo@use1app.com" aria-label="Email Tony DeCarlo">adecarlo@use1app.com</a></div></div>'+
+          '</article>'+
+        '</div>'+
+        '<div class="oneapp-process">'+
+          '<h3 class="oneapp-process-title">What happens after you book</h3>'+
+          '<div class="oneapp-process-grid">'+
+            '<div class="oneapp-process-step"><span class="oneapp-process-number">1</span><strong>Discovery call</strong><span>We identify the lead, follow-up, booking, or communication problem costing you opportunities.</span></div>'+
+            '<div class="oneapp-process-step"><span class="oneapp-process-number">2</span><strong>Written scope &amp; pricing</strong><span>You see what is included, what it costs, and what success means before work begins.</span></div>'+
+            '<div class="oneapp-process-step"><span class="oneapp-process-number">3</span><strong>Setup &amp; testing</strong><span>Tony configures the system, connects the required tools, and tests the complete customer journey.</span></div>'+
+            '<div class="oneapp-process-step"><span class="oneapp-process-number">4</span><strong>Launch &amp; support</strong><span>We monitor the launch, make agreed adjustments, and remain available when your team needs help.</span></div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="oneapp-trust-strip" aria-label="1APP trust commitments"><span>Ontario-based team</span><span>Written scope and pricing</span><span>Secure onboarding</span><span>Human support</span></div>'+
+      '</div>'+
+    '</section>';
   var FOOTER_MARKUP=
     '<div class="oneapp-footer-group"><p class="oneapp-footer-group-title">Sales</p>'+
       '<div class="oneapp-footer-person"><strong>Rod Norville</strong><br>Sales Manager · <a class="oneapp-footer-link" href="tel:+12892759420">(289) 275-9420</a><br><a class="oneapp-footer-link" href="mailto:rodnorville@use1app.com">rodnorville@use1app.com</a></div>'+
@@ -357,14 +408,16 @@
       '<a class="oneapp-footer-person" href="tel:+17052432887"><strong>Tony DeCarlo</strong><br>Technical Support &amp; Service · (705) 243-2887</a>'+
       '<a class="oneapp-footer-person" href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a></div>';
   function organizeTeam(){
+    var ctaSection=document.getElementById('cta');
+    if(ctaSection&&!document.querySelector('[data-oneapp-trust-section]')) ctaSection.insertAdjacentHTML('beforebegin',TRUST_SECTION);
     var cta=Array.from(document.querySelectorAll('#cta .mt-8')).find(function(row){
       var text=(row.textContent||'');
       return text.indexOf('Email Justin')>=0&&text.indexOf('Email Tony')>=0;
     });
     if(cta&&!cta.matches('[data-oneapp-team-cta]')){
       cta.setAttribute('data-oneapp-team-cta','true');
-      cta.className='oneapp-team-grid mt-8';
-      cta.innerHTML=TEAM_MARKUP;
+      cta.className='oneapp-trust-strip mt-8';
+      cta.innerHTML='<span>Ontario-based team</span><span>Written scope and pricing</span><span>Secure onboarding</span><span>Human support</span>';
     }
     var footer=document.querySelector('footer');
     var contactHeading=footer&&Array.from(footer.querySelectorAll('p')).find(function(p){
