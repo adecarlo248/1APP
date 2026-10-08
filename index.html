@@ -286,8 +286,8 @@
     /* ── Revenue Reactivation Sprint explainer: hero ── */
     var heroHeading=document.querySelector('.hero-grid-bg h1');
     var heroLead=heroHeading&&heroHeading.nextElementSibling;
-    if(heroHeading) heroHeading.textContent='Your old leads could be your next booked jobs.';
-    if(heroLead&&heroLead.tagName==='P') heroLead.textContent='Already have at least 50 past leads or customers your business can contact? 1APP re-engages them, qualifies interested replies, and books new estimate opportunities into your calendar.';
+    if(heroHeading) heroHeading.textContent='Your contact list could hold your next booked jobs.';
+    if(heroLead&&heroLead.tagName==='P') heroLead.textContent='Already have at least 50 past leads or customers your business can contact? 1APP re-engages them with a client-approved offer, qualifies interested replies, and books new estimate opportunities into your calendar.';
     var oldSprintLink=Array.from(document.querySelectorAll('.hero-grid-bg a')).find(function(a){
       return (a.textContent||'').indexOf('Dormant List Qualifies')>=0;
     });
@@ -295,7 +295,7 @@
       var sprintPanel=oldSprintLink.parentElement;
       sprintPanel.setAttribute('data-sprint-panel','true');
       sprintPanel.style.cssText='position:relative;z-index:6;margin:8px 0 18px;padding:22px;border-radius:20px;background:linear-gradient(145deg,#062653,#0a4b7a);box-shadow:0 18px 46px rgba(6,38,83,.28);text-align:left;color:#fff;';
-      sprintPanel.innerHTML='<div style="font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#7edcff;">14-Day Revenue Reactivation Sprint</div><div style="font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.08;font-weight:900;margin-top:8px;">Turn old leads into new estimate opportunities.</div><p style="font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.76);margin:10px 0 16px;">We re-engage at least 50 authorized past leads or customers, qualify interested replies, and book them into your calendar.</p><div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;"><span style="padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750;">50+ contacts</span><span style="padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750;">$0 upfront setup</span><span style="padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750;">Pay per verified estimate</span></div><a href="/revenue-reactivation-sprint/" style="display:block;background:linear-gradient(135deg,#ffd24d,#d49b19);color:#071d3d;font-weight:900;font-size:1rem;padding:14px 20px;border-radius:11px;text-decoration:none;text-align:center;box-shadow:0 7px 20px rgba(212,167,44,.3);">Reactivate My Old Leads &rarr;</a>';
+      sprintPanel.innerHTML='<div style="font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#7edcff;">14-Day Revenue Reactivation Sprint</div><div style="font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.08;font-weight:900;margin-top:8px;">Turn old leads and past customers into new estimate opportunities.</div><p style="font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.76);margin:10px 0 16px;">We re-engage at least 50 authorized past leads and customers with timely offers—unfinished estimates, winter inspections, maintenance, or new services—then qualify replies and book estimate opportunities into your calendar.</p><div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;"><span style="padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750;">50+ authorized contacts</span><span style="padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750;">$0 upfront setup</span><span style="padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750;">Pay per verified estimate</span></div><a href="/revenue-reactivation-sprint/" style="display:block;background:linear-gradient(135deg,#ffd24d,#d49b19);color:#071d3d;font-weight:900;font-size:1rem;padding:14px 20px;border-radius:11px;text-decoration:none;text-align:center;box-shadow:0 7px 20px rgba(212,167,44,.3);">Reactivate My Contact List &rarr;</a>';
     }
     /* ── Revenue Reactivation Sprint button: services ── */
     if(!document.getElementById('ft-pricing')){
@@ -304,7 +304,7 @@
         var pricingBtn=document.createElement('div');
         pricingBtn.id='ft-pricing';
         pricingBtn.style.cssText='text-align:center;padding-bottom:28px;';
-        pricingBtn.innerHTML='<a href="/revenue-reactivation-sprint/" style="display:inline-block;background:linear-gradient(135deg,#c99a2e,#a07820);color:#fff;font-weight:800;font-size:1rem;padding:14px 32px;border-radius:999px;text-decoration:none;box-shadow:0 4px 20px rgba(201,154,46,0.4);margin-top:4px;">Reactivate My Old Leads &rarr;</a>';
+        pricingBtn.innerHTML='<a href="/revenue-reactivation-sprint/" style="display:inline-block;background:linear-gradient(135deg,#c99a2e,#a07820);color:#fff;font-weight:800;font-size:1rem;padding:14px 32px;border-radius:999px;text-decoration:none;box-shadow:0 4px 20px rgba(201,154,46,0.4);margin-top:4px;">Reactivate My Contact List &rarr;</a>';
         pricingEl.parentElement.parentElement.insertBefore(pricingBtn,pricingEl.parentElement);
       }
     }
