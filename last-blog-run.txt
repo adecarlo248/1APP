@@ -1,1 +1,1 @@
-SUCCESS | 2026-10-19 | appointment-scheduling-automation-service-businesses | Appointment Scheduling Automation for Service Businesses
+SUCCESS | 2026-10-26 | review-automation-service-businesses | Automated Review Requests for Service Businesses: A Practical Guide
