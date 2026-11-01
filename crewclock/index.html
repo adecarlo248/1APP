@@ -12,10 +12,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1APP CrewClock | GPS Time Clock & Payroll Hours for Trades Crews</title>
-  <meta name="description" content="CrewClock is the GPS time clock for trades and service crews. GPS-stamped punches, forgotten-punch reminders, overtime, gross-pay estimates and one-tap timesheets. One company subscription from CA$29.99/month.">
+  <meta name="description" content="CrewClock is the GPS time clock for trades and service crews. Owners set up the company and subscribe on the web. GPS-stamped punches, forgotten-punch reminders, overtime, gross-pay estimates and one-tap timesheets. One company subscription from CA$29.99/month.">
   <link rel="canonical" href="https://use1app.com/crewclock/">
   <meta property="og:title" content="1APP CrewClock — The time clock your crew will actually use">
-  <meta property="og:description" content="GPS-stamped punches, forgotten-punch reminders, overtime and payroll-ready timesheets. One subscription for the whole crew.">
+  <meta property="og:description" content="Owners set up the company and subscribe on the web. GPS-stamped punches, forgotten-punch reminders, overtime and payroll-ready timesheets. One subscription for the whole crew.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://use1app.com/crewclock/">
   <meta property="og:image" content="https://use1app.com/assets/crewclock/og.jpg">
@@ -34,7 +34,7 @@
     "name":"1APP CrewClock",
     "applicationCategory":"BusinessApplication",
     "operatingSystem":"Web, iOS, Android",
-    "description":"GPS time clock, payroll hours and crew messaging for trades and service businesses.",
+    "description":"GPS time clock for trades and service crews. The business subscribes and sets up the company on the web. Employees sign in with a crew code, name and 4-digit PIN.",
     "publisher":{"@type":"Organization","name":"1APP Technologies Inc.","url":"https://use1app.com/"},
     "offers":[
       {"@type":"Offer","name":"Crew","price":"29.99","priceCurrency":"CAD","description":"Up to 5 users per company, billed monthly"},
@@ -51,8 +51,8 @@
       --grad:linear-gradient(135deg,var(--gold-hi),var(--gold) 45%,var(--gold-lo));
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+    body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%}
     img{max-width:100%;display:block}
     a{color:inherit}
     h1,h2,h3,.display{font-family:Sora,Inter,sans-serif;line-height:1.1;letter-spacing:-.02em}
@@ -62,7 +62,7 @@
     .label::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
 
     /* Buttons */
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:1rem;text-decoration:none;border-radius:14px;padding:16px 26px;transition:transform .15s ease,box-shadow .2s ease,background .2s;cursor:pointer;border:0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:1rem;text-decoration:none;border-radius:14px;padding:16px 26px;transition:transform .15s ease,box-shadow .2s ease,background .2s;cursor:pointer;border:0;max-width:100%;text-align:center}
     .btn-gold{background:var(--grad);color:#1a1204;box-shadow:0 10px 30px -10px rgba(232,181,58,.65),inset 0 1px 0 rgba(255,255,255,.45)}
     .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(232,181,58,.8),inset 0 1px 0 rgba(255,255,255,.45)}
     .btn-ghost{background:rgba(255,255,255,.04);color:var(--text);border:1px solid rgba(255,255,255,.16)}
@@ -71,7 +71,7 @@
 
     /* Nav */
     .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(7,10,20,.72);border-bottom:1px solid var(--line)}
-    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:70px;height:auto;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
     .brand img{width:38px;height:38px;border-radius:10px}
     .brand .mark{font-family:Sora;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
@@ -82,7 +82,7 @@
     .nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.93rem}
     .nav-links a:hover{color:var(--text)}
     .nav-links a.btn-gold{color:#1a1204}
-    .nav .btn{padding:11px 18px;font-size:.92rem;border-radius:11px}
+    .nav .btn{padding:11px 18px;font-size:.92rem;border-radius:11px;white-space:nowrap}
     @media(max-width:880px){.nav-links .hide-sm{display:none}}
     @media(max-width:520px){.brand .div,.brand .prod{display:none}.nav-links{gap:14px}.nav-links .signin{display:none}}
 
@@ -96,7 +96,11 @@
     .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
     .hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);font-weight:800;margin:18px 0 22px}
     .hero p.lead{font-size:clamp(1.05rem,1.6vw,1.25rem);color:#c6cde3;max-width:560px}
-    .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;max-width:100%}
+    .cta-row .btn{min-width:0}
+    .soon{margin-top:18px;max-width:540px;color:var(--muted);font-size:.95rem;font-weight:600}
+    .how-note{margin-top:28px;text-align:center;color:var(--muted);font-size:.98rem;max-width:720px;margin-left:auto;margin-right:auto}
+    .soon a,.how-note a,details a{color:var(--gold-hi);overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
     .trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--muted);font-size:.9rem;font-weight:600}
     .trust span::before{content:"✓";color:var(--green);margin-right:7px;font-weight:900}
     @media(max-width:920px){.hero .wrap{grid-template-columns:1fr}.hero{padding:56px 0 80px}}
@@ -114,7 +118,7 @@
     .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-right:7px;box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:ping 2s infinite}
     @keyframes ping{0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}80%,100%{box-shadow:0 0 0 10px rgba(52,211,153,0)}}
     @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    @media(max-width:520px){.fc-1{left:0;top:8%}.fc-2{right:0}}
+    @media(max-width:920px){.fc-1{left:0}.fc-2{right:0}}
 
     /* Sections */
     section{position:relative}
@@ -151,12 +155,12 @@
     @media(max-width:880px){.feature{grid-template-columns:1fr;gap:34px}.feature.flip .f-media{order:0}}
 
     /* Gallery */
-    .gallery{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
-    .rail{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 22px 30px;scrollbar-width:thin;scrollbar-color:var(--gold-lo) transparent}
+    .gallery{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:clip}
+    .rail{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 22px 30px;scrollbar-width:thin;scrollbar-color:var(--gold-lo) transparent;max-width:100%;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
     .rail figure{flex:0 0 220px;scroll-snap-align:center;text-align:center}
     .rail .phone{width:220px;border-radius:34px;padding:7px}
     .rail .phone img{border-radius:28px}
-    .rail figcaption{margin-top:14px;font-weight:700;font-size:.92rem;color:var(--muted)}
+    .rail figcaption{margin-top:14px;font-weight:700;font-size:.92rem;color:var(--muted);text-wrap:balance}
     @media(min-width:1180px){.rail{justify-content:center;gap:18px}.rail figure{flex-basis:148px}.rail .phone{width:148px;border-radius:26px;padding:5px}.rail .phone img{border-radius:22px}.rail figcaption{font-size:.82rem}}
 
     /* Steps */
@@ -219,6 +223,48 @@
     footer a:hover{color:var(--text)}
     .disclaimer{max-width:1180px;margin:22px auto 0;padding:0 22px;font-size:.8rem;color:#6f7a99}
 
+    /* Phones and small tablets: keep the desktop hero, but stop cards covering the phone */
+    @media(max-width:640px){
+      .wrap{padding-left:16px;padding-right:16px}
+      .nav .wrap{padding-top:10px;padding-bottom:10px;gap:10px}
+      .nav .btn{padding:10px 14px}
+      .brand{gap:10px}
+      .hero{padding:36px 0 48px}
+      .hero-bg{opacity:.16;background-position:70% bottom;background-size:auto 70%}
+      .hero::before{background:linear-gradient(180deg,rgba(7,10,20,.94) 0%,rgba(7,10,20,.9) 46%,rgba(7,10,20,.96) 100%)}
+      .hero h1{font-size:clamp(2.05rem,8.4vw,2.55rem)}
+      .cta-row{flex-direction:column;align-items:stretch}
+      .cta-row .btn{width:100%}
+      .phone-stage{flex-direction:column;align-items:center;gap:12px;width:100%}
+      .phone.tilt{transform:none}
+      .phone{width:min(280px,84%)}
+      .float-card{position:static;animation:none;width:min(320px,100%);max-width:320px}
+      .fc-1,.fc-2{left:auto;right:auto;top:auto;bottom:auto}
+      .sec{padding:64px 0}
+      .sec-head{margin-bottom:32px}
+      .sec-head p{font-size:1rem}
+      .feature{gap:22px;padding:28px 0}
+      .f-media .phone{width:min(250px,72%)}
+      .pain-card,.step{padding:22px 18px}
+      .privacy-band{padding:22px 18px;gap:16px}
+      .rail{padding-left:16px;padding-right:16px}
+      .plan{padding:28px 18px}
+      .plan .amt{font-size:2.65rem}
+      .final{padding:24px 0 72px}
+      .final-card{padding:40px 16px;border-radius:22px}
+      .final-card h2{font-size:clamp(1.75rem,7.4vw,2.2rem)}
+      .final-card p{font-size:1rem}
+      details{padding:0 16px}
+      summary{font-size:1rem;padding-top:18px;padding-bottom:18px}
+      .disclaimer{padding-left:16px;padding-right:16px}
+      footer .wrap{padding-left:16px;padding-right:16px}
+    }
+    @media(max-width:390px){
+      .plan .amt{font-size:2.4rem}
+      .float-card{font-size:.8rem;padding:12px}
+      .float-card b{font-size:.98rem}
+    }
+
     /* Reveal */
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
     .reveal.in{opacity:1;transform:none}
@@ -240,7 +286,7 @@
         <a href="#how" class="hide-sm">How it works</a>
         <a href="#pricing" class="hide-sm">Pricing</a>
         <a href="https://1app-crewclock.higgsfield.app/" class="signin">Sign in</a>
-        <a href="#pricing" class="btn btn-gold">Start free trial</a>
+        <a href="#pricing" class="btn btn-gold">Set up company</a>
       </nav>
     </div>
   </header>
@@ -254,13 +300,15 @@
           <span class="label">GPS time clock for trades crews</span>
           <h1>Stop paying for hours <span class="gold">nobody can prove.</span></h1>
           <p class="lead">CrewClock puts a GPS-stamped punch clock in every crew member's pocket. Hours, overtime and pay estimates add themselves up — and the weekly timesheet lands with your payroll person in one tap.</p>
+          <p class="soon">You set up the company and subscribe on the web. Employees only sign in on the phone app with your crew code, their name and a 4-digit PIN. Coming soon to iPhone and Android — not on the App Store or Google Play yet.</p>
+          <p class="soon">Employees can use CrewClock in their phone browser today. Sign in at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
           <div class="cta-row">
-            <a href="#pricing" class="btn btn-gold">Start your 14-day free trial →</a>
+            <a href="#pricing" class="btn btn-gold">Set up your company</a>
             <a href="#features" class="btn btn-ghost">See it in action</a>
           </div>
           <div class="trust">
             <span>One price for the whole company</span>
-            <span>Crew joins with a code + PIN</span>
+            <span>Crew signs in with a code + PIN</span>
             <span>No background tracking</span>
           </div>
         </div>
@@ -309,7 +357,7 @@
         <div class="sec-head reveal">
           <span class="label">Built for the job site</span>
           <h2>Everything your crew needs. <span class="gold">Nothing they'll fight you on.</span></h2>
-          <p>Big buttons, plain language, works on any phone. If they can send a text, they can run CrewClock.</p>
+          <p>Big buttons and plain language. If they can send a text, they can run CrewClock.</p>
         </div>
 
         <div class="feature reveal">
@@ -407,14 +455,15 @@
     <section class="sec" id="how">
       <div class="wrap">
         <div class="sec-head center reveal">
-          <span class="label">Up and running today</span>
+          <span class="label">Owners start on the web</span>
           <h2>Three steps. No IT guy required.</h2>
         </div>
         <div class="steps">
-          <div class="step reveal"><h3>Pick your plan</h3><p>Choose the plan that fits your crew size and start your trial through secure Stripe checkout.</p></div>
+          <div class="step reveal"><h3>Subscribe on the web</h3><p>Choose the plan that fits your crew and start your trial through secure Stripe checkout on the CrewClock website.</p></div>
           <div class="step reveal"><h3>Create your company</h3><p>Come back to CrewClock in the same browser, set up your company, and get your crew code.</p></div>
-          <div class="step reveal"><h3>Crew joins in seconds</h3><p>Add your people, share the code, and each person signs in with their name and a 4-digit PIN.</p></div>
+          <div class="step reveal"><h3>Crew signs in on the app</h3><p>Add your people and share the code. Each person signs in on the phone app with your crew code, their name and a 4-digit PIN. They don't create a company or pay in the app.</p></div>
         </div>
+        <p class="how-note">Coming soon to iPhone and Android. The crew apps are not on the App Store or Google Play yet, so this page has no store badges or store links. Employees can use CrewClock in their phone browser today. Sign in at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
 
         <div class="privacy-band reveal" style="margin-top:46px">
           <div class="shield" aria-hidden="true">🛡️</div>
@@ -432,7 +481,7 @@
         <div class="sec-head center reveal">
           <span class="label">Simple pricing</span>
           <h2>One subscription. <span class="gold">Your whole crew.</span></h2>
-          <p>The business pays once. Employees never pay or enter a card. Every plan includes every feature — you only choose crew size.</p>
+          <p>The business pays once, on the web. Employees never pay, never enter a card, and don't create a company in the app. Every plan includes every feature — you only choose crew size.</p>
         </div>
         <div class="price-grid">
           <div class="plan reveal">
@@ -479,7 +528,7 @@
             <a class="btn btn-ghost js-plan" data-plan="company" href="https://1app-crewclock.higgsfield.app/pricing">Start Company trial</a>
           </div>
         </div>
-        <p class="price-foot"><b>14-day free trial, card required.</b> You won't be charged until the trial ends; cancel any time before then. User limits include the owner. Prices in Canadian dollars, plus applicable taxes. Checkout is handled securely by Stripe.</p>
+        <p class="price-foot"><b>14-day free trial, card required.</b> You won't be charged until the trial ends; cancel any time before then. User limits include the owner. Prices in Canadian dollars, plus applicable taxes. Plans and checkout stay on the CrewClock website, handled securely by Stripe. The phone apps don't show prices.</p>
       </div>
     </section>
 
@@ -491,13 +540,13 @@
           <h2>Straight answers.</h2>
         </div>
         <div class="faq">
-          <details class="reveal"><summary>Do my employees need to pay or enter a card?</summary><p>No. The company subscription covers everyone. Employees join with your crew code and their own PIN and count toward your plan's user limit.</p></details>
+          <details class="reveal"><summary>Do my employees need to pay or enter a card?</summary><p>No. The company subscribes once on the web. Employees never pay, never enter a card, and don't create a company account. They sign in with your crew code, their name and a 4-digit PIN, and they count toward your plan's user limit.</p></details>
           <details class="reveal"><summary>Does CrewClock track my crew's location all day?</summary><p>No. Location is only recorded at the moment someone clocks in or out (if they allow location permission), or when a manager deliberately captures a job-site location. There's no continuous or background tracking.</p></details>
           <details class="reveal"><summary>Does the owner count as a user?</summary><p>Yes. The 5, 10 and 20 user limits include every active user, including the owner.</p></details>
-          <details class="reveal"><summary>How does the free trial work?</summary><p>Checkout currently includes a 14-day trial with a card required. After checkout, return to CrewClock in the same browser to create your company — we verify your subscription with Stripe before opening access. Please don't pay twice; if anything looks off, contact support.</p></details>
+          <details class="reveal"><summary>How does the free trial work?</summary><p>Checkout on the CrewClock website currently includes a 14-day trial with a card required. After checkout, return to CrewClock in the same browser to create your company — we verify your subscription with Stripe before opening access. Please don't pay twice; if anything looks off, contact support. The phone apps don't show prices or take payment.</p></details>
           <details class="reveal"><summary>Can I cancel or change plans?</summary><p>Yes. Owners can open Manage billing from the CrewClock web app to update or cancel the existing subscription. Cancellation takes effect at the end of the current billing or trial period.</p></details>
           <details class="reveal"><summary>Does CrewClock replace my payroll software?</summary><p>No. CrewClock organizes accurate hours, overtime and gross-pay estimates and sends timesheets to your payroll person. Your payroll provider or bookkeeper still handles deductions, remittances and paying your team.</p></details>
-          <details class="reveal"><summary>What phones does it work on?</summary><p>CrewClock runs in any modern phone browser today, so iPhone and Android crews can both use it right away.</p></details>
+          <details class="reveal"><summary>What phones does it work on?</summary><p>The iPhone and Android apps are coming soon. They are not on the App Store or Google Play yet. Employees can use CrewClock in their phone browser today by signing in at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN. When the apps are released, they sign in the same way. Company setup, plans and billing stay on the CrewClock website.</p></details>
         </div>
       </div>
     </section>
@@ -508,9 +557,9 @@
         <div class="final-card reveal">
           <span class="label">Your crew. Your hours. Your proof.</span>
           <h2>Make this the last Friday you guess at payroll.</h2>
-          <p>Set up your company in minutes and have the crew clocking in by tomorrow morning.</p>
+          <p>Set up your company on the web and get a crew code. Employees sign in on the phone app with that code, their name and a 4-digit PIN.</p>
           <div class="cta-row">
-            <a href="#pricing" class="btn btn-gold">Start your 14-day free trial →</a>
+            <a href="#pricing" class="btn btn-gold">Set up your company</a>
             <a href="/book-demo/" class="btn btn-ghost">Talk to the 1APP team</a>
           </div>
         </div>
@@ -527,6 +576,8 @@
         <a href="https://1app-crewclock.higgsfield.app/support">Support</a>
         <a href="https://1app-crewclock.higgsfield.app/privacy">CrewClock Privacy</a>
         <a href="https://1app-crewclock.higgsfield.app/terms">CrewClock Terms</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms-and-conditions.html">Terms and Conditions</a>
         <a href="https://1app-crewclock.higgsfield.app/delete-account">Delete account</a>
       </nav>
     </div>
