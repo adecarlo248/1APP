@@ -344,6 +344,7 @@
   @media(max-width:900px){.oneapp-profile-grid{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}.oneapp-profile-card{display:grid;grid-template-columns:minmax(180px,42%) 1fr}.oneapp-process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
   .oneapp-story-section{position:relative;overflow:hidden;padding:88px 24px;background:#fff;border-top:1px solid var(--brand-border)}
   .oneapp-story-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:28px;margin-top:36px;align-items:stretch}
+  .oneapp-story-player{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:22px;background:#062653}
   .oneapp-story-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;height:100%;min-height:320px;padding:28px 22px;border:2px dashed #c9a24a;border-radius:22px;background:linear-gradient(180deg,#fffaf0,#f8fafc);text-align:center;color:var(--brand-navy)}
   .oneapp-story-kicker{display:inline-block;margin-bottom:4px;padding:4px 10px;border-radius:999px;background:#fff3d1;color:#7a5b10;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
   .oneapp-story-play{display:flex;width:64px;height:64px;align-items:center;justify-content:center;margin-bottom:6px;border-radius:999px;background:var(--brand-navy);color:#fff;font-size:1.15rem}
@@ -404,13 +405,9 @@
         '<p class="oneapp-trust-lead">Justin Roffey owns Peterborough Waterproofing. He is also a part-owner and partner in 1APP. That relationship is stated here so the story is clear.</p>'+
         '<div class="oneapp-story-grid">'+
           '<div class="oneapp-story-video">'+
-            '<!-- TODO(Tony): No owner-story video is in the repo. Add the file at /assets/team/justin-owner-story.mp4 or send the video URL, and this placeholder can be replaced with the player. -->'+
-            '<div class="oneapp-story-placeholder" role="img" aria-label="Video placeholder. The Justin owner story video has not been added yet.">'+
-              '<span class="oneapp-story-kicker">Video placeholder</span>'+
-              '<span class="oneapp-story-play" aria-hidden="true">&#9654;</span>'+
-              '<strong>Justin owner story</strong>'+
-              '<p>The video is not on the site yet. This box is waiting for the owner-story file.</p>'+
-            '</div>'+
+            '<video class="oneapp-story-player" controls preload="metadata" playsinline poster="/assets/team/justin-owner-story.webp" aria-label="Justin Roffey owner story">'+
+              '<source src="/assets/team/justin-owner-story.mp4" type="video/mp4">'+
+            '</video>'+
           '</div>'+
           '<div class="oneapp-story-facts">'+
             '<div class="oneapp-story-person"><img src="/assets/team/justin-roffey-profile.jpg" alt="Justin Roffey" width="144" height="144"><div><h3>Justin Roffey</h3><p class="role">Owner, Peterborough Waterproofing</p></div></div>'+
@@ -421,7 +418,7 @@
               '<li><span>Also</span>Part-owner and partner in 1APP</li>'+
             '</ul>'+
             '<p class="oneapp-story-disclosure">Disclosure: Justin is a part-owner and partner in 1APP, and he owns Peterborough Waterproofing. He is not an outside customer.</p>'+
-            '<p class="oneapp-story-note">No quote or results are shown here. Those will come from the video once the file is added.</p>'+
+            '<p class="oneapp-story-note">The story is in the video, which already includes captions. No extra quote or results are written beside it.</p>'+
           '</div>'+
         '</div>'+
       '</div>'+
