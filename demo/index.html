@@ -4,17 +4,17 @@
   <script src="/assets/google-tag.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Talk to 1APP's AI Receptionist, Live | 1APP</title>
-  <meta name="description" content="Talk to 1APP's AI receptionist live in your browser. It answers calls 24/7, qualifies the job, captures details, and books appointments. No phone call needed.">
+  <title>Talk or Chat with 1APP's AI, Live | 1APP</title>
+  <meta name="description" content="Talk or chat with 1APP's AI receptionist in your browser. It answers 24/7, qualifies the job, captures details, and books appointments. Nothing is really booked.">
   <link rel="canonical" href="https://use1app.com/demo/">
-  <meta property="og:title" content="Talk to 1APP's AI Receptionist, Live">
-  <meta property="og:description" content="Talk to 1APP's AI receptionist in your browser. It answers calls 24/7, qualifies the job, captures details, and books appointments. Nothing is really booked.">
+  <meta property="og:title" content="Talk or Chat with 1APP's AI, Live">
+  <meta property="og:description" content="Talk or chat with 1APP's AI receptionist in your browser. Ask about pricing or role-play a homeowner with a leaky pipe. Nothing is really booked.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://use1app.com/demo/">
   <meta property="og:image" content="https://use1app.com/assets/hero-bg.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Talk to 1APP's AI Receptionist, Live">
-  <meta name="twitter:description" content="Talk to 1APP's AI receptionist in your browser. It answers calls 24/7, qualifies the job, captures details, and books appointments.">
+  <meta name="twitter:title" content="Talk or Chat with 1APP's AI, Live">
+  <meta name="twitter:description" content="Talk or chat with 1APP's AI receptionist in your browser. Nothing is really booked.">
   <meta name="twitter:image" content="https://use1app.com/assets/hero-bg.png">
   <link rel="icon" href="/assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,31 +31,29 @@
     .demo-nav a{color:var(--brand-text-secondary);font-size:.875rem;font-weight:600;text-decoration:none;white-space:nowrap}
     .demo-nav a:hover,.demo-nav a[aria-current="page"]{color:var(--brand-navy)}
     .demo-nav a[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--brand-gold)}
-    .demo-main{padding-bottom:108px}
-    .demo-hero{padding:72px 0 28px}
+    .demo-main{padding-bottom:120px}
+    .demo-hero{padding:64px 0 12px}
     .demo-kicker{display:inline-flex;align-items:center;gap:8px;margin:0;color:#9b7419;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
     .demo-kicker:before{content:"";width:8px;height:8px;border-radius:999px;background:#10b981;box-shadow:0 0 0 6px rgba(16,185,129,.14)}
-    .demo-hero h1{max-width:16ch;margin:14px 0 0;color:var(--brand-navy);font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.05}
-    .demo-lead{max-width:62ch;margin:18px 0 0;color:var(--brand-text-secondary);font-size:1.05rem;line-height:1.7}
-    .demo-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:28px}
-    .demo-status{max-width:58ch;margin:14px 0 0;color:var(--brand-text-secondary);font-size:.92rem;line-height:1.55}
+    .demo-hero h1{max-width:18ch;margin:14px 0 0;color:var(--brand-navy);font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.05}
+    .demo-lead{max-width:68ch;margin:16px 0 0;color:var(--brand-text-secondary);font-size:1.05rem;line-height:1.7}
+    .demo-choices{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .demo-choice{display:flex;flex-direction:column;padding:24px;border:1px solid var(--brand-border);border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(0,31,63,.06)}
+    .demo-choice.is-current{border-color:rgba(212,175,55,.9);box-shadow:0 16px 40px rgba(212,175,55,.16)}
+    .demo-choice-kicker{margin:0;color:#9b7419;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .demo-choice h2{margin:8px 0 0;color:var(--brand-navy);font-size:1.55rem;line-height:1.15}
+    .demo-choice p{margin:12px 0 0;color:var(--brand-text-secondary);font-size:.96rem;line-height:1.6}
+    .demo-choice-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .demo-status{margin:14px 0 0;color:var(--brand-text-secondary);font-size:.9rem;line-height:1.55}
     .demo-status strong{color:var(--brand-navy)}
-    .demo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start;margin-top:36px}
-    .demo-panel{border:1px solid var(--brand-border);border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(0,31,63,.06)}
-    .demo-capabilities{padding:8px}
-    .demo-capabilities li{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:center;padding:16px;list-style:none}
-    .demo-capabilities li+li{border-top:1px solid var(--brand-border)}
-    .demo-capabilities span{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--brand-bg-alt);color:var(--brand-navy);font-family:Sora,Plus Jakarta Sans,sans-serif;font-weight:800}
-    .demo-capabilities strong{display:block;color:var(--brand-navy);font-size:.98rem}
-    .demo-capabilities small{display:block;margin-top:2px;color:var(--brand-text-secondary);font-size:.84rem;line-height:1.45}
-    .demo-steps{padding:8px 0 36px}
+    .demo-steps{padding:28px 0 20px}
     .demo-steps h2,.demo-note h2,.demo-cta h2{color:var(--brand-navy);font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.15}
     .demo-step-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0 0;padding:0;list-style:none}
     .demo-step-list li{padding:22px;border:1px solid var(--brand-border);border-radius:18px;background:#fff}
     .demo-step-list em{display:block;margin-bottom:8px;color:#9b7419;font-style:normal;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
     .demo-step-list strong{display:block;color:var(--brand-navy);font-size:1.05rem}
     .demo-step-list p{margin:8px 0 0;color:var(--brand-text-secondary);font-size:.92rem;line-height:1.55}
-    .demo-note{margin:8px 0 36px;padding:22px 24px;border:1px solid #ead7a1;border-radius:18px;background:#fff8e8}
+    .demo-note{margin:8px 0 28px;padding:22px 24px;border:1px solid #ead7a1;border-radius:18px;background:#fff8e8}
     .demo-note h2{font-size:1.25rem}
     .demo-note p{margin:8px 0 0;color:#5c4810;font-size:.98rem;line-height:1.6}
     .demo-cta{padding:36px;border-radius:24px;background:linear-gradient(135deg,#001f3f,#0a3155);color:#fff}
@@ -73,25 +71,28 @@
     .demo-footer-bottom{display:flex;justify-content:space-between;gap:16px;margin-top:28px;padding-top:18px;border-top:1px solid var(--brand-border);color:var(--brand-text-muted);font-size:.75rem}
     .demo-footer-bottom div{display:flex;gap:14px}
     .demo-footer-bottom a{display:inline;margin:0;color:inherit}
-    .demo-start:focus-visible,.demo-nav a:focus-visible,.demo-footer a:focus-visible,.demo-header .btn-gold:focus-visible{outline:3px solid var(--brand-gold);outline-offset:3px}
+    .demo-choice button:focus-visible,.demo-choice a:focus-visible,.demo-nav a:focus-visible,.demo-footer a:focus-visible,.demo-header .btn-gold:focus-visible{outline:3px solid var(--brand-gold);outline-offset:3px}
     @media(max-width:980px){
       .demo-nav{display:none}
-      .demo-grid,.demo-step-list,.demo-footer-grid{grid-template-columns:1fr}
-      .demo-hero{padding-top:48px}
+      .demo-step-list,.demo-footer-grid{grid-template-columns:1fr}
+      .demo-hero{padding-top:40px}
       .demo-hero h1{max-width:none}
+    }
+    @media(max-width:760px){
+      .demo-choices{grid-template-columns:1fr}
     }
     @media(max-width:640px){
       .demo-header-inner,.demo-wrap{width:min(100% - 28px,1120px)}
-      .demo-header-inner{min-height:64px;align-items:center}
+      .demo-header-inner{min-height:64px}
       .demo-brand img{height:42px}
       .demo-header .btn-gold{padding:.7rem .9rem;font-size:.82rem;text-align:center}
-      .demo-cta,.demo-note,.demo-step-list li{padding:18px}
-      .demo-actions .btn-gold,.demo-cta .btn-gold{width:100%;justify-content:center}
+      .demo-cta,.demo-note,.demo-step-list li,.demo-choice{padding:18px}
+      .demo-choice .btn-gold,.demo-choice .btn-outline,.demo-cta .btn-gold{width:100%;justify-content:center}
       .demo-footer-bottom{flex-direction:column}
     }
   </style>
 </head>
-<body>
+<body data-demo="voice">
   <header class="demo-header">
     <div class="demo-header-inner">
       <a class="demo-brand" href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
@@ -111,21 +112,28 @@
     <div class="demo-wrap">
       <section class="demo-hero" aria-labelledby="demo-title">
         <p class="demo-kicker">Try 1APP's AI</p>
-        <div class="demo-grid">
-          <div>
-            <h1 id="demo-title">Talk to 1APP's AI receptionist, live</h1>
-            <p class="demo-lead">It answers calls 24/7, qualifies the job, captures the details, and books appointments. This demo happens in your browser, so you do not need to place a phone call.</p>
-            <div class="demo-actions">
-              <button type="button" class="btn-gold demo-start" id="start-demo">Start the demo</button>
+        <h1 id="demo-title">Talk or chat with 1APP's AI, live</h1>
+        <p class="demo-lead">Same receptionist either way. It answers 24/7, qualifies the job, captures the details, and books appointments. Pick voice or typing. This stays in your browser.</p>
+        <div class="demo-choices">
+          <article class="demo-choice is-current" id="voice-demo" aria-labelledby="voice-title">
+            <p class="demo-choice-kicker">Voice · this page</p>
+            <h2 id="voice-title">Talk to 1APP's AI</h2>
+            <p>Press the button, allow your mic, then ask about pricing or role-play as a homeowner with a leaky pipe. The phone button in the bottom corner opens this same demo.</p>
+            <div class="demo-choice-actions">
+              <button type="button" class="btn-gold" id="start-voice">Start voice demo</button>
             </div>
-            <p class="demo-status" id="demo-status" role="status">The phone button in the <strong>bottom corner</strong> opens this same demo. Press <strong>Call us here</strong> in that window, then allow your mic.</p>
-          </div>
-          <ul class="demo-panel demo-capabilities" aria-label="What the receptionist does">
-            <li><span>1</span><div><strong>Answers 24/7</strong><small>It picks up when the office cannot, including after hours.</small></div></li>
-            <li><span>2</span><div><strong>Qualifies the job</strong><small>It asks what is going on before anyone is sent out.</small></div></li>
-            <li><span>3</span><div><strong>Captures details and books</strong><small>It collects the caller's information and offers an appointment.</small></div></li>
-          </ul>
+          </article>
+          <article class="demo-choice" id="chat-with-our-ai" aria-labelledby="chat-title">
+            <p class="demo-choice-kicker">Chat</p>
+            <h2 id="chat-title">Chat with 1APP's AI</h2>
+            <p>Typing instead of talking. Ask about pricing, or role-play as a homeowner with a leaky pipe. Made-up details are fine. Nothing is really booked.</p>
+            <div class="demo-choice-actions">
+              <button type="button" class="btn-outline" id="start-chat">Start chat demo</button>
+              <a class="btn-outline" href="/book-demo/">Book a demo</a>
+            </div>
+          </article>
         </div>
+        <p class="demo-status" id="demo-status" role="status">Voice is loaded on this page. Press <strong>Call us here</strong> in the window, then allow your mic.</p>
       </section>
 
       <section class="demo-steps" aria-labelledby="demo-steps-title">
@@ -134,7 +142,7 @@
           <li>
             <em>Step 1</em>
             <strong>Click the button</strong>
-            <p>Press Start the demo, or the phone button in the bottom corner of this page.</p>
+            <p>Press Start voice demo, or the phone button in the bottom corner of this page.</p>
           </li>
           <li>
             <em>Step 2</em>
@@ -160,18 +168,6 @@
         <a class="btn-gold" href="/book-demo/">Book a demo</a>
       </section>
     </div>
-
-    <!--
-      FUTURE PLACEHOLDER — hidden, not decided, not rendered.
-      "Chat with our AI" card.
-      A text chat beside this voice demo has not been chosen yet.
-      Leave this commented out. Do not add a second widget script on this page.
-      <aside id="chat-with-our-ai" hidden aria-hidden="true">
-        <h2>Chat with our AI</h2>
-        <p>Text chat with 1APP's AI will go here once that experience is ready.</p>
-        <button type="button">Chat with our AI</button>
-      </aside>
-    -->
   </main>
 
   <footer class="demo-footer">
@@ -209,7 +205,9 @@
 
   <script>
     (function () {
-      var button = document.getElementById('start-demo');
+      var mode = document.body.getAttribute('data-demo');
+      var voiceBtn = document.getElementById('start-voice');
+      var chatBtn = document.getElementById('start-chat');
       var status = document.getElementById('demo-status');
       var pending = false;
 
@@ -217,64 +215,82 @@
         status.textContent = message;
       }
 
-      function widgetRoot() {
+      function isOpen() {
+        var api = window.leadConnector && window.leadConnector.chatWidget;
+        if (api && typeof api.isActive === 'function' && api.isActive()) return true;
         var widget = document.querySelector('chat-widget');
-        return widget && widget.shadowRoot;
+        return !!(widget && widget.getAttribute('data-active') === 'true');
       }
 
-      function openDemo() {
+      function openWidget() {
+        if (isOpen()) return 'opened';
         var api = window.leadConnector && window.leadConnector.chatWidget;
-        var active = api && typeof api.isActive === 'function' && api.isActive();
         if (api && typeof api.openWidget === 'function') {
-          if (!active) {
-            try { api.openWidget(); } catch (err) {}
-          }
-          return (api.isActive && api.isActive()) ? 'opened' : 'present';
+          try { api.openWidget(); } catch (err) {}
+          if (isOpen()) return 'opened';
         }
-        var root = widgetRoot();
-        var bubble = root && root.querySelector('.lc_text-widget--bubble');
+        var widget = document.querySelector('chat-widget');
+        var bubble = widget && widget.shadowRoot && widget.shadowRoot.querySelector('.lc_text-widget--bubble');
         if (bubble) {
-          bubble.click();
-          return 'opened';
+          var label = bubble.getAttribute('aria-label') || '';
+          if (label.toLowerCase().indexOf('close') === -1) bubble.click();
+          if (isOpen()) return 'opened';
         }
-        return root ? 'present' : 'missing';
+        return widget || api ? 'waiting' : 'missing';
       }
 
       function finish(result) {
         pending = false;
-        button.disabled = false;
-        button.textContent = 'Start the demo';
-        if (result === 'opened' || result === 'present') {
-          setStatus('The receptionist window is open. Press Call us here, then allow your mic. Made-up details are fine, and nothing is really booked.');
+        voiceBtn.disabled = false;
+        chatBtn.disabled = false;
+        voiceBtn.textContent = 'Start voice demo';
+        chatBtn.textContent = 'Start chat demo';
+        if (result === 'opened') {
+          setStatus(mode === 'chat'
+            ? 'The chat window is open in the bottom corner. Type a message there. Made-up details are fine, and nothing is really booked.'
+            : 'The receptionist window is open. Press Call us here, then allow your mic. Made-up details are fine, and nothing is really booked.');
           return;
         }
-        setStatus('Use the phone button in the bottom corner of this page. Then press Call us here and allow your mic.');
+        setStatus(mode === 'chat'
+          ? 'Use the chat button in the bottom corner of this page, then type your message.'
+          : 'Use the phone button in the bottom corner of this page. Then press Call us here and allow your mic.');
       }
 
-      button.addEventListener('click', function () {
-        var result = openDemo();
-        if (result !== 'missing') {
-          finish(result);
-          return;
-        }
+      function begin() {
         if (pending) return;
         pending = true;
-        button.disabled = true;
-        button.textContent = 'Opening the demo…';
-        setStatus('The demo is still loading. You can also use the phone button in the bottom corner of this page.');
+        var btn = mode === 'chat' ? chatBtn : voiceBtn;
+        btn.disabled = true;
+        btn.textContent = 'Opening…';
+        setStatus(mode === 'chat'
+          ? 'The chat is still loading. It will open in the bottom corner.'
+          : 'The voice demo is still loading. You can also use the phone button in the bottom corner.');
         var attempts = 0;
         var timer = setInterval(function () {
           attempts += 1;
-          var next = openDemo();
-          if (next !== 'missing' || attempts >= 20) {
+          var next = openWidget();
+          if (next === 'opened' || attempts >= 50) {
             clearInterval(timer);
             finish(next);
           }
         }, 300);
+      }
+
+      voiceBtn.addEventListener('click', function () {
+        if (mode === 'voice') begin();
+        else location.href = '/demo/#voice';
       });
+      chatBtn.addEventListener('click', function () {
+        if (mode === 'chat') begin();
+        else location.href = '/demo/chat/#chat';
+      });
+
+      if ((mode === 'voice' && location.hash === '#voice') || (mode === 'chat' && location.hash === '#chat')) {
+        begin();
+      }
     })();
   </script>
-  <!-- Voice demo only. Do not also load the site-wide contact chat widget on this page. -->
+  <!-- One widget per page. Voice lives here. Chat lives at /demo/chat/. -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ae88aaa4a1ccfe789bf23be"></script>
 </body>
 </html>

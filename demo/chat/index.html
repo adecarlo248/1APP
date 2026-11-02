@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default-light" style="color-scheme:light">
+<head>
+  <script src="/assets/google-tag.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with 1APP's AI | 1APP</title>
+  <meta name="description" content="Chat with 1APP's AI by typing in your browser. Ask about pricing or role-play a homeowner with a leaky pipe. Made-up details are fine. Nothing is really booked.">
+  <link rel="canonical" href="https://use1app.com/demo/chat/">
+  <meta property="og:title" content="Chat with 1APP's AI">
+  <meta property="og:description" content="Type to 1APP's AI in your browser. Ask about pricing or role-play a homeowner with a leaky pipe. Nothing is really booked.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://use1app.com/demo/chat/">
+  <meta property="og:image" content="https://use1app.com/assets/hero-bg.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chat with 1APP's AI">
+  <meta name="twitter:description" content="Type to 1APP's AI in your browser. Nothing is really booked.">
+  <meta name="twitter:image" content="https://use1app.com/assets/hero-bg.png">
+  <link rel="icon" href="/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles--qyy-a2O.css">
+  <style>
+    button,input{font-family:inherit}
+    .demo-header{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--brand-border);background:rgba(250,251,252,.92);backdrop-filter:blur(16px)}
+    .demo-header-inner,.demo-wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+    .demo-header-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .demo-brand img{display:block;height:48px;width:auto}
+    .demo-nav{display:flex;align-items:center;gap:22px}
+    .demo-nav a{color:var(--brand-text-secondary);font-size:.875rem;font-weight:600;text-decoration:none;white-space:nowrap}
+    .demo-nav a:hover,.demo-nav a[aria-current="page"]{color:var(--brand-navy)}
+    .demo-nav a[aria-current="page"]{box-shadow:inset 0 -2px 0 var(--brand-gold)}
+    .demo-main{padding-bottom:120px}
+    .demo-hero{padding:64px 0 12px}
+    .demo-kicker{display:inline-flex;align-items:center;gap:8px;margin:0;color:#9b7419;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .demo-kicker:before{content:"";width:8px;height:8px;border-radius:999px;background:#10b981;box-shadow:0 0 0 6px rgba(16,185,129,.14)}
+    .demo-hero h1{max-width:18ch;margin:14px 0 0;color:var(--brand-navy);font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.05}
+    .demo-lead{max-width:68ch;margin:16px 0 0;color:var(--brand-text-secondary);font-size:1.05rem;line-height:1.7}
+    .demo-choices{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .demo-choice{display:flex;flex-direction:column;padding:24px;border:1px solid var(--brand-border);border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(0,31,63,.06)}
+    .demo-choice.is-current{border-color:rgba(212,175,55,.9);box-shadow:0 16px 40px rgba(212,175,55,.16)}
+    .demo-choice-kicker{margin:0;color:#9b7419;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .demo-choice h2{margin:8px 0 0;color:var(--brand-navy);font-size:1.55rem;line-height:1.15}
+    .demo-choice p{margin:12px 0 0;color:var(--brand-text-secondary);font-size:.96rem;line-height:1.6}
+    .demo-choice-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .demo-status{margin:14px 0 0;color:var(--brand-text-secondary);font-size:.9rem;line-height:1.55}
+    .demo-status strong{color:var(--brand-navy)}
+    .demo-steps{padding:28px 0 20px}
+    .demo-steps h2,.demo-note h2,.demo-cta h2{color:var(--brand-navy);font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.15}
+    .demo-step-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:22px 0 0;padding:0;list-style:none}
+    .demo-step-list li{padding:22px;border:1px solid var(--brand-border);border-radius:18px;background:#fff}
+    .demo-step-list em{display:block;margin-bottom:8px;color:#9b7419;font-style:normal;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .demo-step-list strong{display:block;color:var(--brand-navy);font-size:1.05rem}
+    .demo-step-list p{margin:8px 0 0;color:var(--brand-text-secondary);font-size:.92rem;line-height:1.55}
+    .demo-note{margin:8px 0 28px;padding:22px 24px;border:1px solid #ead7a1;border-radius:18px;background:#fff8e8}
+    .demo-note h2{font-size:1.25rem}
+    .demo-note p{margin:8px 0 0;color:#5c4810;font-size:.98rem;line-height:1.6}
+    .demo-cta{padding:36px;border-radius:24px;background:linear-gradient(135deg,#001f3f,#0a3155);color:#fff}
+    .demo-cta h2{color:#fff}
+    .demo-cta p{max-width:58ch;margin:12px 0 0;color:rgba(255,255,255,.75);line-height:1.65}
+    .demo-cta .btn-gold{margin-top:22px}
+    .demo-footer{border-top:1px solid var(--brand-border);background:#fff;padding:42px 0 28px}
+    .demo-footer-grid{display:grid;grid-template-columns:1.3fr .7fr 1fr;gap:32px}
+    .demo-footer img{height:48px;width:auto}
+    .demo-footer p,.demo-footer a{color:var(--brand-text-secondary);font-size:.875rem;line-height:1.55;text-decoration:none}
+    .demo-footer strong{display:block;margin-bottom:8px;color:var(--brand-navy);font-size:.875rem}
+    .demo-footer a{display:block;margin-top:8px}
+    .demo-footer a:hover{color:var(--brand-navy)}
+    .demo-footer-brand p{max-width:34ch;margin-top:12px}
+    .demo-footer-bottom{display:flex;justify-content:space-between;gap:16px;margin-top:28px;padding-top:18px;border-top:1px solid var(--brand-border);color:var(--brand-text-muted);font-size:.75rem}
+    .demo-footer-bottom div{display:flex;gap:14px}
+    .demo-footer-bottom a{display:inline;margin:0;color:inherit}
+    .demo-choice button:focus-visible,.demo-choice a:focus-visible,.demo-nav a:focus-visible,.demo-footer a:focus-visible,.demo-header .btn-gold:focus-visible{outline:3px solid var(--brand-gold);outline-offset:3px}
+    @media(max-width:980px){
+      .demo-nav{display:none}
+      .demo-step-list,.demo-footer-grid{grid-template-columns:1fr}
+      .demo-hero{padding-top:40px}
+      .demo-hero h1{max-width:none}
+    }
+    @media(max-width:760px){
+      .demo-choices{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .demo-header-inner,.demo-wrap{width:min(100% - 28px,1120px)}
+      .demo-header-inner{min-height:64px}
+      .demo-brand img{height:42px}
+      .demo-header .btn-gold{padding:.7rem .9rem;font-size:.82rem;text-align:center}
+      .demo-cta,.demo-note,.demo-step-list li,.demo-choice{padding:18px}
+      .demo-choice .btn-gold,.demo-choice .btn-outline,.demo-cta .btn-gold{width:100%;justify-content:center}
+      .demo-footer-bottom{flex-direction:column}
+    }
+  </style>
+</head>
+<body data-demo="chat">
+  <header class="demo-header">
+    <div class="demo-header-inner">
+      <a class="demo-brand" href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
+      <nav class="demo-nav" aria-label="Primary">
+        <a href="/#features">Features</a>
+        <a href="/#how-it-works">How It Works</a>
+        <a href="/demo/" aria-current="page">Live demo</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <a class="btn-gold" href="/book-demo/">Book a free 15-minute audit</a>
+    </div>
+  </header>
+
+  <main class="demo-main">
+    <div class="demo-wrap">
+      <section class="demo-hero" aria-labelledby="demo-title">
+        <p class="demo-kicker">Try 1APP's AI</p>
+        <h1 id="demo-title">Talk or chat with 1APP's AI, live</h1>
+        <p class="demo-lead">Same receptionist either way. It answers 24/7, qualifies the job, captures the details, and books appointments. Pick voice or typing. This stays in your browser.</p>
+        <div class="demo-choices">
+          <article class="demo-choice" id="voice-demo" aria-labelledby="voice-title">
+            <p class="demo-choice-kicker">Voice</p>
+            <h2 id="voice-title">Talk to 1APP's AI</h2>
+            <p>Press Start voice demo to open the voice page. Allow your mic, then ask about pricing or role-play as a homeowner with a leaky pipe.</p>
+            <div class="demo-choice-actions">
+              <button type="button" class="btn-outline" id="start-voice">Start voice demo</button>
+            </div>
+          </article>
+          <article class="demo-choice is-current" id="chat-with-our-ai" aria-labelledby="chat-title">
+            <p class="demo-choice-kicker">Chat · this page</p>
+            <h2 id="chat-title">Chat with 1APP's AI</h2>
+            <p>Typing instead of talking. Ask about pricing, or role-play as a homeowner with a leaky pipe. Made-up details are fine. Nothing is really booked.</p>
+            <div class="demo-choice-actions">
+              <button type="button" class="btn-gold" id="start-chat">Start chat demo</button>
+              <a class="btn-outline" href="/book-demo/">Book a demo</a>
+            </div>
+          </article>
+        </div>
+        <p class="demo-status" id="demo-status" role="status">Chat is loaded on this page. The window opens in the <strong>bottom corner</strong>. Type a message there.</p>
+      </section>
+
+      <section class="demo-steps" aria-labelledby="demo-steps-title">
+        <h2 id="demo-steps-title">Three steps</h2>
+        <ol class="demo-step-list">
+          <li>
+            <em>Step 1</em>
+            <strong>Click the button</strong>
+            <p>Press Start chat demo, or the chat button in the bottom corner of this page.</p>
+          </li>
+          <li>
+            <em>Step 2</em>
+            <strong>Type a message</strong>
+            <p>Typing instead of talking. Send a message in the chat window.</p>
+          </li>
+          <li>
+            <em>Step 3</em>
+            <strong>Try a question</strong>
+            <p>Ask about pricing, or role-play as a homeowner with a leaky pipe.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="demo-note" aria-labelledby="demo-note-title">
+        <h2 id="demo-note-title">Made-up details are fine</h2>
+        <p>Use a pretend name, address, or phone number. This is a practice conversation. Nothing is really booked.</p>
+      </section>
+
+      <section class="demo-cta" aria-labelledby="demo-cta-title">
+        <h2 id="demo-cta-title">Want this answering your business line?</h2>
+        <p>Book a free 15-minute audit. We will look at missed calls and follow-up, then show you how 1APP would set the receptionist up for your business.</p>
+        <a class="btn-gold" href="/book-demo/">Book a demo</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="demo-footer">
+    <div class="demo-wrap">
+      <div class="demo-footer-grid">
+        <div class="demo-footer-brand">
+          <img src="/assets/logo.png" alt="1APP">
+          <p>AI automation for small businesses. Missed-call recovery, booking, reminders, reviews, and voice reception.</p>
+        </div>
+        <div>
+          <strong>Product</strong>
+          <a href="/#features">Features</a>
+          <a href="/#how-it-works">How It Works</a>
+          <a href="/demo/" aria-current="page">Live demo</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/blog/">Blog</a>
+        </div>
+        <div>
+          <strong>Contact</strong>
+          <a href="tel:17052432887">(705) 243-2887</a>
+          <a href="/book-demo/">Book a free 15-minute audit</a>
+          <a href="mailto:justin@use1app.com">Email Justin</a>
+          <a href="mailto:adecarlo@use1app.com">Email Tony</a>
+        </div>
+      </div>
+      <div class="demo-footer-bottom">
+        <span>1APP. AI Automation for Small Businesses.</span>
+        <div>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var mode = document.body.getAttribute('data-demo');
+      var voiceBtn = document.getElementById('start-voice');
+      var chatBtn = document.getElementById('start-chat');
+      var status = document.getElementById('demo-status');
+      var pending = false;
+
+      function setStatus(message) {
+        status.textContent = message;
+      }
+
+      function isOpen() {
+        var api = window.leadConnector && window.leadConnector.chatWidget;
+        if (api && typeof api.isActive === 'function' && api.isActive()) return true;
+        var widget = document.querySelector('chat-widget');
+        return !!(widget && widget.getAttribute('data-active') === 'true');
+      }
+
+      function openWidget() {
+        if (isOpen()) return 'opened';
+        var api = window.leadConnector && window.leadConnector.chatWidget;
+        if (api && typeof api.openWidget === 'function') {
+          try { api.openWidget(); } catch (err) {}
+          if (isOpen()) return 'opened';
+        }
+        var widget = document.querySelector('chat-widget');
+        var bubble = widget && widget.shadowRoot && widget.shadowRoot.querySelector('.lc_text-widget--bubble');
+        if (bubble) {
+          var label = bubble.getAttribute('aria-label') || '';
+          if (label.toLowerCase().indexOf('close') === -1) bubble.click();
+          if (isOpen()) return 'opened';
+        }
+        return widget || api ? 'waiting' : 'missing';
+      }
+
+      function finish(result) {
+        pending = false;
+        voiceBtn.disabled = false;
+        chatBtn.disabled = false;
+        voiceBtn.textContent = 'Start voice demo';
+        chatBtn.textContent = 'Start chat demo';
+        if (result === 'opened') {
+          setStatus(mode === 'chat'
+            ? 'The chat window is open in the bottom corner. Type a message there. Made-up details are fine, and nothing is really booked.'
+            : 'The receptionist window is open. Press Call us here, then allow your mic. Made-up details are fine, and nothing is really booked.');
+          return;
+        }
+        setStatus(mode === 'chat'
+          ? 'Use the chat button in the bottom corner of this page, then type your message.'
+          : 'Use the phone button in the bottom corner of this page. Then press Call us here and allow your mic.');
+      }
+
+      function begin() {
+        if (pending) return;
+        pending = true;
+        var btn = mode === 'chat' ? chatBtn : voiceBtn;
+        btn.disabled = true;
+        btn.textContent = 'Opening…';
+        setStatus(mode === 'chat'
+          ? 'The chat is still loading. It will open in the bottom corner.'
+          : 'The voice demo is still loading. You can also use the phone button in the bottom corner.');
+        var attempts = 0;
+        var timer = setInterval(function () {
+          attempts += 1;
+          var next = openWidget();
+          if (next === 'opened' || attempts >= 50) {
+            clearInterval(timer);
+            finish(next);
+          }
+        }, 300);
+      }
+
+      voiceBtn.addEventListener('click', function () {
+        if (mode === 'voice') begin();
+        else location.href = '/demo/#voice';
+      });
+      chatBtn.addEventListener('click', function () {
+        if (mode === 'chat') begin();
+        else location.href = '/demo/chat/#chat';
+      });
+
+      if ((mode === 'voice' && location.hash === '#voice') || (mode === 'chat' && location.hash === '#chat')) {
+        begin();
+      }
+    })();
+  </script>
+  <!-- One widget per page. Chat lives here. Voice lives at /demo/. -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ae89dc2974a1d7b12e93555"></script>
+</body>
+</html>
