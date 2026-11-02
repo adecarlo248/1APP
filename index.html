@@ -489,6 +489,13 @@
   .oneapp-live-demo h2{margin:0;color:var(--brand-navy);font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.15}
   .oneapp-live-demo p{max-width:62ch;margin:8px 0 0;color:var(--brand-text-secondary);font-size:.98rem;line-height:1.6}
   .oneapp-live-demo .btn-gold{flex-shrink:0}
+  .oneapp-hero-demo{display:none;align-items:center;gap:12px;width:100%;max-width:100%;margin-top:14px;padding:12px 14px;border:1px solid rgba(212,175,55,.7);border-radius:14px;background:linear-gradient(180deg,#fff,#fffaf0);box-shadow:0 8px 22px rgba(0,31,63,.06);color:var(--brand-navy);text-decoration:none}
+  .oneapp-hero-demo-live{flex:0 0 auto;width:8px;height:8px;border-radius:999px;background:#10b981;box-shadow:0 0 0 5px rgba(16,185,129,.14)}
+  .oneapp-hero-demo strong{display:block;font-size:.98rem;line-height:1.2;color:var(--brand-navy)}
+  .oneapp-hero-demo small{display:block;margin-top:2px;color:var(--brand-text-secondary);font-size:.78rem;line-height:1.35}
+  .oneapp-hero-demo-go{margin-left:auto;color:var(--brand-navy);font-weight:800;font-size:1.05rem}
+  .oneapp-hero-demo:focus-visible{outline:3px solid var(--brand-gold);outline-offset:3px}
+  @media(max-width:1023px){.oneapp-hero-demo{display:flex}}
   @media(max-width:760px){.oneapp-live-demo{padding:20px 16px 4px}.oneapp-live-demo-inner{flex-direction:column;align-items:flex-start;padding:20px 18px}.oneapp-live-demo .btn-gold{width:100%;justify-content:center}}
   @media(max-width:1023px){a[data-oneapp-live-demo-nav]{display:none!important}}
 </style>
@@ -505,7 +512,30 @@
         '<a class="btn-gold" href="/demo/">Try the live demo</a>'+
       '</div>'+
     '</section>';
+  var HERO_DEMO=
+    '<a class="oneapp-hero-demo" href="/demo/" data-oneapp-hero-demo="true">'+
+      '<span class="oneapp-hero-demo-live" aria-hidden="true"></span>'+
+      '<span><strong>Try our AI live</strong><small>Talk to 1APP\'s receptionist in your browser</small></span>'+
+      '<span class="oneapp-hero-demo-go" aria-hidden="true">→</span>'+
+    '</a>';
+  function mountHeroDemo(){
+    if(document.querySelector('[data-oneapp-hero-demo]')) return;
+    var hero=document.querySelector('section.hero-grid-bg');
+    if(!hero) return;
+    var nodes=hero.querySelectorAll('div');
+    var badge=null;
+    for(var i=0;i<nodes.length;i++){
+      var el=nodes[i];
+      var cls=(el.className||'')+'';
+      if(cls.indexOf('rounded-full')>=0 && (el.textContent||'').indexOf('AI Automation for Small Businesses')>=0){
+        badge=el;
+        break;
+      }
+    }
+    if(badge) badge.insertAdjacentHTML('afterend',HERO_DEMO);
+  }
   function mount(){
+    mountHeroDemo();
     var pricing=document.getElementById('pricing');
     var how=document.getElementById('how-it-works');
     if(pricing&&how&&!document.querySelector('[data-oneapp-live-demo]')){
@@ -528,7 +558,7 @@
   var timer=setInterval(function(){mount();if(++runs>=40)clearInterval(timer);},200);
   if(window.MutationObserver){
     var observer=new MutationObserver(function(){
-      if(!document.querySelector('[data-oneapp-live-demo]')||!document.querySelector('a[data-oneapp-live-demo-nav]')) mount();
+      if(!document.querySelector('[data-oneapp-live-demo]')||!document.querySelector('a[data-oneapp-live-demo-nav]')||!document.querySelector('[data-oneapp-hero-demo]')) mount();
     });
     observer.observe(document.documentElement,{childList:true,subtree:true});
   }
