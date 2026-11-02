@@ -276,13 +276,69 @@
     patch();
   }
   function patchSprintHero(){
-    /* Sprint copy stays in the services section, not the hero. */
+    /* Restores the 14-Day Revenue Reactivation Sprint card above the pipeline.
+       Removed in f5437d5 (#1) when the hero copy changed. Does not rewrite the headline or audit button. */
+    var hero=document.querySelector('.hero-grid-bg');
+    if(!hero) return;
+    var label=Array.from(hero.querySelectorAll('span')).find(function(el){
+      return (el.textContent||'').trim()==='1APP Automation Pipeline';
+    });
+    if(!label) return;
+    var card=label;
+    while(card&&(String(card.className||'').indexOf('rounded-2xl')<0)) card=card.parentElement;
+    var column=card&&card.parentElement;
+    if(!column) return;
+    if(!column.querySelector('[data-sprint-panel]')){
+      var panel=document.createElement('aside');
+      panel.className='oneapp-sprint-hero';
+      panel.setAttribute('data-sprint-panel','true');
+      panel.setAttribute('aria-label','14-Day Revenue Reactivation Sprint');
+      panel.innerHTML='<p class="oneapp-sprint-kicker">14-Day Revenue Reactivation Sprint</p><p class="oneapp-sprint-title">Turn old leads and past customers into new estimate opportunities.</p><p class="oneapp-sprint-copy">We re-engage at least 50 authorized past leads and customers with timely offers—unfinished estimates, winter inspections, maintenance, or new services—then qualify replies and book estimate opportunities into your calendar.</p><div class="oneapp-sprint-pills"><span>50+ authorized contacts</span><span>$0 upfront setup</span><span>Pay per verified estimate</span></div><a class="oneapp-sprint-cta" href="/revenue-reactivation-sprint/">Reactivate My Contact List →</a>';
+      column.insertBefore(panel, card);
+    }
+    if(!column.querySelector('[data-oneapp-hero-ai]')){
+      var promo=document.createElement('aside');
+      promo.className='oneapp-hero-ai';
+      promo.setAttribute('data-oneapp-hero-ai','true');
+      promo.setAttribute('aria-label','Try 1APP AI live');
+      promo.innerHTML='<div class="oneapp-hero-ai-head"><span class="oneapp-hero-ai-live">Live</span><strong>Try 1APP\'s AI live</strong></div><div class="oneapp-hero-ai-actions"><a href="/demo/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 1 3 3v7a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>Talk to our AI</a><a href="/demo/chat/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chat with our AI</a></div>';
+      column.appendChild(promo);
+    }
   }
   patchSprintHero();
   var runs=0;
   var timer=setInterval(function(){patch();patchSprintHero();if(++runs>=20)clearInterval(timer);},200);
+  if(window.MutationObserver){
+    var sprintObserver=new MutationObserver(function(){
+      var hero=document.querySelector('.hero-grid-bg');
+      if(hero&&(!hero.querySelector('[data-sprint-panel]')||!hero.querySelector('[data-oneapp-hero-ai]'))) patchSprintHero();
+    });
+    sprintObserver.observe(document.documentElement,{childList:true,subtree:true});
+  }
 })();
 </script>
+<style id="oneapp-sprint-hero-styles">
+  .oneapp-sprint-hero{position:relative;z-index:6;margin:0 0 18px;padding:22px;border-radius:20px;background:linear-gradient(145deg,#062653,#0a4b7a);box-shadow:0 18px 46px rgba(6,38,83,.28);text-align:left;color:#fff}
+  .oneapp-sprint-kicker{margin:0;font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#7edcff}
+  .oneapp-sprint-title{margin:8px 0 0;font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.08;font-weight:900;color:#fff}
+  .oneapp-sprint-copy{margin:10px 0 0;font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.76)}
+  .oneapp-sprint-pills{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
+  .oneapp-sprint-pills span{padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750}
+  .oneapp-sprint-cta{display:block;background:linear-gradient(135deg,#ffd24d,#d49b19);color:#071d3d;font-weight:900;font-size:1rem;padding:14px 20px;border-radius:11px;text-decoration:none;text-align:center;box-shadow:0 7px 20px rgba(212,167,44,.3)}
+  .oneapp-sprint-cta:hover{color:#071d3d}
+  .oneapp-hero-ai{display:none}
+  .oneapp-hero-ai-head{display:flex;align-items:center;gap:8px}
+  .oneapp-hero-ai-head strong{color:#fff;font-size:.92rem;line-height:1.2}
+  .oneapp-hero-ai-live{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;background:rgba(16,185,129,.16);color:#b7f5d8;font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .oneapp-hero-ai-live:before{content:"";width:6px;height:6px;border-radius:999px;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.22)}
+  .oneapp-hero-ai-actions{display:flex;gap:8px;margin-top:8px}
+  .oneapp-hero-ai-actions a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;padding:7px 8px;border-radius:10px;background:linear-gradient(135deg,#ffd24d,#d49b19);color:#071d3d;font-size:.82rem;font-weight:800;line-height:1.1;text-decoration:none;white-space:nowrap}
+  .oneapp-hero-ai-actions a:hover{color:#071d3d}
+  @media(min-width:1024px){
+    .hero-grid-bg .grid.items-center{align-items:start}
+    .oneapp-hero-ai{display:block;position:absolute;z-index:6;left:0;right:0;top:calc(100% + 12px);padding:10px 12px 12px;border-radius:16px;background:linear-gradient(145deg,#062653,#0a4b7a);box-shadow:0 14px 34px rgba(6,38,83,.22)}
+  }
+</style>
 <!-- 1APP Revenue Reactivation Sprint Popup -->
 
 <style id="oneapp-team-contact-styles">
