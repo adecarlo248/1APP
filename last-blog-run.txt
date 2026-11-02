@@ -1,1 +1,1 @@
-SUCCESS | 2026-10-26 | review-automation-service-businesses | Automated Review Requests for Service Businesses: A Practical Guide
+SUCCESS | 2026-11-02 | crm-automation-home-service-businesses | CRM Automation for Home Services: From New Lead to Completed Job
