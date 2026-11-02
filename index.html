@@ -481,6 +481,59 @@
 })();
 </script>
 
+<style id="oneapp-live-demo-styles">
+  .oneapp-live-demo{padding:28px 20px 8px;background:#fff}
+  .oneapp-live-demo-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:26px 28px;border:1px solid var(--brand-border);border-radius:22px;background:radial-gradient(circle at 100% 0%,rgba(212,175,55,.18),transparent 42%),linear-gradient(180deg,#fff,#f8fafc);box-shadow:0 14px 40px rgba(0,31,63,.06)}
+  .oneapp-live-demo-eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 8px;color:#9b7419;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .oneapp-live-demo-eyebrow:before{content:"";width:8px;height:8px;border-radius:999px;background:#10b981;box-shadow:0 0 0 5px rgba(16,185,129,.14)}
+  .oneapp-live-demo h2{margin:0;color:var(--brand-navy);font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.15}
+  .oneapp-live-demo p{max-width:62ch;margin:8px 0 0;color:var(--brand-text-secondary);font-size:.98rem;line-height:1.6}
+  .oneapp-live-demo .btn-gold{flex-shrink:0}
+  @media(max-width:760px){.oneapp-live-demo{padding:20px 16px 4px}.oneapp-live-demo-inner{flex-direction:column;align-items:flex-start;padding:20px 18px}.oneapp-live-demo .btn-gold{width:100%;justify-content:center}}
+  @media(max-width:1023px){a[data-oneapp-live-demo-nav]{display:none!important}}
+</style>
+<script id="oneapp-live-demo">
+(function(){
+  var SECTION=
+    '<section id="try-ai-live" class="oneapp-live-demo" data-oneapp-live-demo="true" aria-labelledby="oneapp-live-demo-title">'+
+      '<div class="oneapp-live-demo-inner">'+
+        '<div>'+
+          '<p class="oneapp-live-demo-eyebrow">Try our AI live</p>'+
+          '<h2 id="oneapp-live-demo-title">Talk to 1APP\'s receptionist in your browser.</h2>'+
+          '<p>No phone call. Hear how the AI answers 24/7, qualifies the job, captures the details, and books the next step.</p>'+
+        '</div>'+
+        '<a class="btn-gold" href="/demo/">Try the live demo</a>'+
+      '</div>'+
+    '</section>';
+  function mount(){
+    var pricing=document.getElementById('pricing');
+    var how=document.getElementById('how-it-works');
+    if(pricing&&how&&!document.querySelector('[data-oneapp-live-demo]')){
+      pricing.insertAdjacentHTML('beforebegin',SECTION);
+    }
+    if(document.querySelector('a[data-oneapp-live-demo-nav]')) return;
+    var pricingLink=document.querySelector('header a[href="/pricing/"]');
+    if(!pricingLink||!pricingLink.parentElement) return;
+    var link=document.createElement('a');
+    link.href='/demo/';
+    link.textContent='Live demo';
+    link.setAttribute('data-oneapp-live-demo-nav','true');
+    link.className=pricingLink.className;
+    link.style.whiteSpace='nowrap';
+    pricingLink.parentElement.insertBefore(link,pricingLink);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',mount,{once:true});
+  else mount();
+  var runs=0;
+  var timer=setInterval(function(){mount();if(++runs>=40)clearInterval(timer);},200);
+  if(window.MutationObserver){
+    var observer=new MutationObserver(function(){
+      if(!document.querySelector('[data-oneapp-live-demo]')||!document.querySelector('a[data-oneapp-live-demo-nav]')) mount();
+    });
+    observer.observe(document.documentElement,{childList:true,subtree:true});
+  }
+})();
+</script>
 <!-- 1APP Chat Widget -->
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a983c9507a2e8b0275404d7" data-source="WEB_USER"></script>
 </body></html>
