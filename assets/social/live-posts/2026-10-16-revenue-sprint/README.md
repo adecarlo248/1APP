@@ -21,7 +21,7 @@ The **1APP Revenue Reactivation Sprint** helps you reconnect with at least 50 cl
 - Book estimate appointments into your calendar
 - Let your team monitor conversations and take over anytime
 
-There is **no upfront setup fee**. Texting and messaging during the Sprint are included at no charge, and there is no usage fee. You pay a fixed fee only when a qualified appointment is kept and your business issues a documented written estimate, up to a written maximum agreed before launch. Appointments booked during the Sprint stay active after day 14.
+There is **no upfront setup fee**. Texting and messaging during the Sprint are included at no charge, and there is no usage fee. The Sprint free trial never bills automatically. You pay a fixed fee only when a qualified appointment is kept and your business issues a documented written estimate, up to a written maximum agreed before launch. Appointments booked during the Sprint stay active after day 14.
 
 See whether your contact list qualifies.
 
