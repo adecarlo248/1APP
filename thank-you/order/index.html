@@ -36,6 +36,8 @@
     .soon{padding:8px 4px 4px}
     .todo{display:inline-block;margin:0 0 8px;padding:3px 8px;border-radius:999px;background:#fff3d1;color:#7a5b10;font-size:.72rem;font-weight:800;letter-spacing:.08em}
     .soon p{margin:8px 0 0;color:#586a81}
+    .call-rod{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:14px;padding:12px 16px;border-radius:11px;background:linear-gradient(135deg,#f2cd57,#d4a72c);color:#062653;font-weight:800;text-decoration:none}
+    @media(max-width:414px){.call-rod{width:100%}}
     .booking-frame{display:block;width:100%;max-width:100%;min-height:720px;border:0;border-radius:12px;background:#f7f9fc}
     footer{border-top:1px solid #dce4ee;background:#fff;padding:28px 16px 40px}
     footer p{width:min(880px,100%);margin:0 auto;color:#586a81;font-size:1rem}
@@ -80,15 +82,21 @@
     <section aria-labelledby="book-title">
       <h2 id="book-title">Book your setup call</h2>
       <div class="panel">
-        <!-- TO CONFIRM: 1APP setup-call calendar DlDFOui0Uy5bkNIiFy6o -->
-        <iframe class="booking-frame" src="https://api.leadconnectorhq.com/widget/booking/DlDFOui0Uy5bkNIiFy6o" title="Book your 1APP setup call"></iframe>
+        <!-- TODO: set BOOKING_CALENDAR_ID to the setup-call calendar. Do not use the free-demo calendar. -->
+        <div id="setup-booking">
+          <div class="soon">
+            <p class="todo">TODO</p>
+            <h3>We'll email you a link to book your setup call</h3>
+            <p>The setup calendar will appear here once it is ready.</p>
+            <a class="call-rod" href="tel:+12892759420">Call Rod, Sales: (289) 275-9420</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
   <footer>
     <p>Questions? <a href="tel:+12892759420">Call Rod, Sales: (289) 275-9420</a></p>
   </footer>
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <script>
     (function () {
       var ITEMS = {
@@ -122,6 +130,13 @@
       // TODO: set FORM_ID to the single 1APP onboarding form id.
       var FORM_ID = '';
 
+      function ensureFormEmbed() {
+        if (document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]')) return;
+        var embed = document.createElement('script');
+        embed.src = 'https://link.msgsndr.com/js/form_embed.js';
+        document.body.appendChild(embed);
+      }
+
       function loadOnboardingForm(formId, itemSlug) {
         if (!formId) return;
         var box = document.getElementById('onboarding-form');
@@ -134,9 +149,27 @@
         frame.style.border = '0';
         box.textContent = '';
         box.appendChild(frame);
+        ensureFormEmbed();
       }
 
       loadOnboardingForm(FORM_ID, slug);
+
+      // TODO: set BOOKING_CALENDAR_ID when the setup-call calendar is confirmed.
+      var BOOKING_CALENDAR_ID = '';
+
+      function loadBookingCalendar(calendarId) {
+        if (!calendarId) return;
+        var box = document.getElementById('setup-booking');
+        var frame = document.createElement('iframe');
+        frame.className = 'booking-frame';
+        frame.title = 'Book your 1APP setup call';
+        frame.src = 'https://api.leadconnectorhq.com/widget/booking/' + encodeURIComponent(calendarId);
+        box.textContent = '';
+        box.appendChild(frame);
+        ensureFormEmbed();
+      }
+
+      loadBookingCalendar(BOOKING_CALENDAR_ID);
     })();
   </script>
 </body>
