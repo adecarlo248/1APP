@@ -37,8 +37,10 @@
     .todo{display:inline-block;margin:0 0 8px;padding:3px 8px;border-radius:999px;background:#fff3d1;color:#7a5b10;font-size:.72rem;font-weight:800;letter-spacing:.08em}
     .soon p{margin:8px 0 0;color:#586a81}
     .booking-note{margin:0 0 12px;color:#586a81;font-size:.98rem;line-height:1.5}
-    .booking-slot{width:100%;max-width:100%;overflow:hidden}
-    .booking-frame{display:block;width:100%;max-width:100%;min-height:640px;border:none;overflow:hidden;background:#f7f9fc}
+    #onboarding-form,.booking-slot{width:100%;max-width:100%;overflow:hidden}
+    .onboarding-frame,.booking-frame{display:block;width:100%;max-width:100%;border:none;overflow:hidden}
+    .onboarding-frame{min-height:520px;border-radius:12px;background:#fff}
+    .booking-frame{min-height:640px;background:#f7f9fc}
     .call-rod{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:16px;padding:12px 16px;border-radius:11px;border:1.5px solid #062653;background:#fff;color:#062653;font-weight:800;text-decoration:none}
     @media(max-width:414px){.call-rod{width:100%}}
     footer{border-top:1px solid #dce4ee;background:#fff;padding:28px 16px 40px}
@@ -70,14 +72,7 @@
     <section aria-labelledby="form-title">
       <h2 id="form-title">Tell us about your business</h2>
       <div class="panel">
-        <!-- TODO: one 1APP onboarding form. Set FORM_ID below when the form id is ready. -->
-        <div id="onboarding-form">
-          <div class="soon">
-            <p class="todo">TODO</p>
-            <h3>Onboarding form coming soon</h3>
-            <p>One 1APP form will load here. It takes about 5 minutes and covers how your business answers, books, and follows up.</p>
-          </div>
-        </div>
+        <div id="onboarding-form"></div>
       </div>
     </section>
 
@@ -123,8 +118,7 @@
       if (name) heading.textContent = "You're in. Thanks for ordering " + name + '.';
       document.title = (name ? name + ' order' : 'Thanks for your order') + ' | 1APP';
 
-      // TODO: set FORM_ID to the single 1APP onboarding form id.
-      var FORM_ID = '';
+      var FORM_ID = 'PvJud6C8sXjsJPS97Fbj';
 
       function ensureFormEmbed() {
         if (document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]')) return;
@@ -133,22 +127,51 @@
         document.body.appendChild(embed);
       }
 
-      function loadOnboardingForm(formId, itemSlug) {
-        if (!formId) return;
-        var box = document.getElementById('onboarding-form');
-        var frame = document.createElement('iframe');
-        frame.title = '1APP onboarding form';
-        frame.src = 'https://api.leadconnectorhq.com/widget/form/' + encodeURIComponent(formId) + '?item=' + encodeURIComponent(itemSlug || '');
-        frame.style.width = '100%';
-        frame.style.maxWidth = '100%';
-        frame.style.minHeight = '640px';
-        frame.style.border = '0';
-        box.textContent = '';
-        box.appendChild(frame);
-        ensureFormEmbed();
+      function formQuery() {
+        var parts = [];
+        params.forEach(function (value, key) {
+          parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+        });
+        return parts.length ? '?' + parts.join('&') : '';
       }
 
-      loadOnboardingForm(FORM_ID, slug);
+      function showFormFallback() {
+        var box = document.getElementById('onboarding-form');
+        box.innerHTML = '<div class="soon"><p class="todo">TODO</p><h3>Onboarding form coming soon</h3><p>One 1APP form will load here. It takes about 5 minutes and covers how your business answers, books, and follows up.</p></div>';
+      }
+
+      function loadOnboardingForm(formId) {
+        var box = document.getElementById('onboarding-form');
+        if (!formId) {
+          showFormFallback();
+          return;
+        }
+        var frameId = 'inline-' + formId;
+        var frame = document.createElement('iframe');
+        frame.id = frameId;
+        frame.className = 'onboarding-frame';
+        frame.title = '1APP onboarding form';
+        frame.setAttribute('scrolling', 'no');
+        frame.style.width = '100%';
+        frame.style.border = 'none';
+        frame.style.overflow = 'hidden';
+        frame.src = 'https://api.leadconnectorhq.com/widget/form/' + encodeURIComponent(formId) + formQuery();
+        frame.setAttribute('data-layout', '{"id":"INLINE"}');
+        frame.setAttribute('data-trigger-type', 'alwaysShow');
+        frame.setAttribute('data-trigger-value', '');
+        frame.setAttribute('data-activation-type', 'alwaysActivated');
+        frame.setAttribute('data-activation-value', '');
+        frame.setAttribute('data-deactivation-type', 'neverDeactivate');
+        frame.setAttribute('data-deactivation-value', '');
+        frame.setAttribute('data-form-name', '1APP onboarding form');
+        frame.setAttribute('data-height', '640');
+        frame.setAttribute('data-layout-iframe-id', frameId);
+        frame.setAttribute('data-form-id', formId);
+        box.textContent = '';
+        box.appendChild(frame);
+      }
+
+      loadOnboardingForm(FORM_ID);
 
       var BOOKING_CALENDAR_ID = 'X6hlzdw5iBClzm8yGBNz';
 
@@ -169,10 +192,10 @@
         frame.src = 'https://api.leadconnectorhq.com/widget/booking/' + encodeURIComponent(calendarId);
         box.textContent = '';
         box.appendChild(frame);
-        ensureFormEmbed();
       }
 
       loadBookingCalendar(BOOKING_CALENDAR_ID);
+      ensureFormEmbed();
     })();
   </script>
 </body>
