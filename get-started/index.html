@@ -23,6 +23,9 @@
     .trial-btn { box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 18px; padding: 12px 19px; border-radius: 11px; background: linear-gradient(135deg,#f2cd57,#d4a72c); color: #062653; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(212,167,44,.28); }
     @media (max-width: 700px) { .trial-btn { width: 100%; } }
     .form-wrap { max-width: 640px; margin: 24px auto 32px; padding: 0 16px 60px; }
+    .form-help{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .form-help p{margin:0;color:#526175;font-size:.95rem;line-height:1.45}
+    .form-jump{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;padding:10px 14px;border:1.5px solid #062653;border-radius:11px;background:#fff;color:#062653;font:800 .95rem Inter,Arial,sans-serif;cursor:pointer}
   </style>
 </head>
 <body>
@@ -56,6 +59,10 @@
       data-oneapp-conversion-source="get-started-lead"
       title="Get Started with 1APP"
     ></iframe>
+    <div class="form-help">
+      <p>If nothing happens when you tap Submit, scroll up to see what's missing.</p>
+      <button type="button" class="form-jump">Jump to top of form</button>
+    </div>
   </div>
   <footer style="padding:24px 16px 40px;text-align:center;color:#667085;font-size:.875rem;">
     <a href="/privacy-policy.html" style="color:#062653;font-weight:700;">Privacy Policy</a>
@@ -64,6 +71,20 @@
   </footer>
   <script src="/assets/google-ads-conversions.js"></script>
   <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+  <script>
+    document.querySelectorAll('.form-help').forEach(function (help) {
+      var frame = help.previousElementSibling;
+      var button = help.querySelector('.form-jump');
+      if (!frame || !button) return;
+      button.addEventListener('click', function () {
+        var header = document.querySelector('.nav');
+        var sticky = header && getComputedStyle(header).position === 'sticky';
+        var gap = sticky ? header.getBoundingClientRect().height + 12 : 12;
+        var top = frame.getBoundingClientRect().top + window.pageYOffset - gap;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      });
+    });
+  </script>
   <!-- 1APP Chat Widget -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a983c9507a2e8b0275404d7" data-source="WEB_USER"></script>
 </body>
