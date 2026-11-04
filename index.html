@@ -636,6 +636,36 @@
   }
 })();
 </script>
+<script id="oneapp-order-online">
+(function(){
+  function mount(){
+    if(document.querySelector('[data-oneapp-order-online]')) return;
+    var hero=document.querySelector('.hero-grid-bg');
+    if(!hero) return;
+    var book=hero.querySelector('a.btn-gold[href="/book-demo/"], a.btn-gold[href^="/book-demo/"]');
+    if(!book||!book.parentElement) return;
+    var link=document.createElement('a');
+    link.href='/pricing/#bundles';
+    link.className='btn-outline';
+    link.setAttribute('data-oneapp-order-online','true');
+    link.textContent='Order online';
+    book.insertAdjacentElement('afterend', link);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', mount, {once:true});
+  else mount();
+  var runs=0;
+  var timer=setInterval(function(){ mount(); if(++runs>=40) clearInterval(timer); }, 200);
+  if(window.MutationObserver){
+    var observer=new MutationObserver(function(){
+      if(!document.querySelector('[data-oneapp-order-online]')) mount();
+    });
+    observer.observe(document.documentElement,{childList:true,subtree:true});
+  }
+})();
+</script>
+<style id="oneapp-order-online-styles">
+  a[data-oneapp-order-online]{min-height:44px}
+</style>
 <!-- 1APP Chat Widget -->
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a983c9507a2e8b0275404d7" data-source="WEB_USER"></script>
 </body></html>

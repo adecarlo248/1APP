@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/assets/google-tag.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Thanks for your order | 1APP</title>
+  <meta name="description" content="Your 1APP order is in. Tell us about your business, then book your setup call. We build it for you.">
+  <link rel="icon" href="/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;max-width:100%;overflow-x:hidden}
+    body{background:#f5f8fc;color:#13233d;font-family:"Plus Jakarta Sans",Arial,sans-serif;line-height:1.5}
+    h1,h2,h3{font-family:Sora,"Plus Jakarta Sans",sans-serif;letter-spacing:-.02em}
+    a{color:inherit}
+    .nav{position:sticky;top:0;z-index:20;border-bottom:1px solid #dce4ee;background:rgba(255,255,255,.94);backdrop-filter:blur(12px)}
+    .nav-inner{width:min(880px,calc(100% - 32px));margin:0 auto;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .nav img{height:42px;width:auto;display:block}
+    .nav a.book{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border-radius:11px;background:linear-gradient(135deg,#f2cd57,#d4a72c);color:#062653;font-weight:800;text-decoration:none}
+    main{width:min(880px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}
+    .kicker{margin:0;color:#9b7419;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:10px 0 0;color:#062653;font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.12}
+    .lead{margin:14px 0 0;color:#586a81;font-size:1.05rem}
+    .steps{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
+    .steps li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:16px;border:1px solid #dce4ee;border-radius:16px;background:#fff}
+    .num{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#062653;color:#f2cd57;font-weight:800}
+    .steps strong{display:block;color:#062653;font-size:1.05rem}
+    .steps span{display:block;margin-top:4px;color:#586a81;font-size:.95rem}
+    section{margin-top:28px}
+    h2{margin:0;color:#062653;font-size:1.45rem}
+    .panel{margin-top:12px;padding:18px;border:1px solid #dce4ee;border-radius:18px;background:#fff}
+    .soon{padding:8px 4px 4px}
+    .todo{display:inline-block;margin:0 0 8px;padding:3px 8px;border-radius:999px;background:#fff3d1;color:#7a5b10;font-size:.72rem;font-weight:800;letter-spacing:.08em}
+    .soon p{margin:8px 0 0;color:#586a81}
+    .booking-frame{display:block;width:100%;max-width:100%;min-height:720px;border:0;border-radius:12px;background:#f7f9fc}
+    footer{border-top:1px solid #dce4ee;background:#fff;padding:28px 16px 40px}
+    footer p{width:min(880px,100%);margin:0 auto;color:#586a81;font-size:1rem}
+    footer a{color:#062653;font-weight:800;text-decoration:none}
+    @media(max-width:414px){
+      .nav-inner,main{width:min(100% - 28px,880px)}
+      .nav a.book{padding:10px 12px;font-size:.9rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
+      <a class="book" href="/book-demo/">Book a demo</a>
+    </div>
+  </header>
+  <main>
+    <p class="kicker">Order received</p>
+    <h1 id="thanks">Thanks for your order.</h1>
+    <p class="lead">This is a done-for-you 1APP build. Finish the short form, then book the setup call. We build it and walk you through it.</p>
+    <ol class="steps">
+      <li><span class="num">1</span><div><strong>Tell us about your business</strong><span>The form below. About 5 minutes.</span></div></li>
+      <li><span class="num">2</span><div><strong>Book your setup call</strong><span>Pick a time that works. We use it to build around how you already work.</span></div></li>
+      <li><span class="num">3</span><div><strong>We build it and walk you through it</strong><span>1APP sets it up, tests it, and shows you the finished system.</span></div></li>
+    </ol>
+
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Tell us about your business</h2>
+      <div class="panel">
+        <!-- TODO: one 1APP onboarding form. Set FORM_ID below when the form id is ready. -->
+        <div id="onboarding-form">
+          <div class="soon">
+            <p class="todo">TODO</p>
+            <h3>Onboarding form coming soon</h3>
+            <p>One 1APP form will load here. It takes about 5 minutes and covers how your business answers, books, and follows up.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="book-title">
+      <h2 id="book-title">Book your setup call</h2>
+      <div class="panel">
+        <!-- TO CONFIRM: 1APP setup-call calendar DlDFOui0Uy5bkNIiFy6o -->
+        <iframe class="booking-frame" src="https://api.leadconnectorhq.com/widget/booking/DlDFOui0Uy5bkNIiFy6o" title="Book your 1APP setup call"></iframe>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Questions? <a href="tel:+12892759420">Call Rod, Sales: (289) 275-9420</a></p>
+  </footer>
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <script>
+    (function () {
+      var ITEMS = {
+        'ai-front-desk': 'AI Front Desk',
+        'lead-rescue': 'Lead Rescue',
+        'booking-no-show': 'Booking & No-Show Control',
+        'reputation-repeat': 'Reputation & Repeat Business',
+        'estimate-deposit': 'Estimate-to-Deposit Recovery',
+        'missed-call-rescue': 'Missed-Call Rescue',
+        'booking-reminders': 'Booking + Confirmations + Reminders',
+        'lead-capture': 'Website Form / Chat Lead Capture',
+        'crm-pipeline': 'CRM + Sales Pipeline',
+        'new-lead-follow-up': 'New-Lead Follow-Up',
+        'review-requests': 'Review Request Automation',
+        'quote-follow-up': 'Estimate / Quote Follow-Up',
+        'reactivation-nurture': 'Reactivation / Nurture Campaign',
+        'invoice-reminders': 'Invoice / Payment Reminders',
+        'ai-voice-receptionist': 'AI Voice Receptionist',
+        'reporting-dashboard': 'Reporting Dashboard',
+        'email-marketing': 'Email Marketing Starter',
+        'social-planner': 'Social Planner Starter',
+        'landing-page': 'Landing / Campaign Page'
+      };
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('item') || '';
+      var name = ITEMS[slug];
+      var heading = document.getElementById('thanks');
+      if (name) heading.textContent = "You're in. Thanks for ordering " + name + '.';
+      document.title = (name ? name + ' order' : 'Thanks for your order') + ' | 1APP';
+
+      // TODO: set FORM_ID to the single 1APP onboarding form id.
+      var FORM_ID = '';
+
+      function loadOnboardingForm(formId, itemSlug) {
+        if (!formId) return;
+        var box = document.getElementById('onboarding-form');
+        var frame = document.createElement('iframe');
+        frame.title = '1APP onboarding form';
+        frame.src = 'https://api.leadconnectorhq.com/widget/form/' + encodeURIComponent(formId) + '?item=' + encodeURIComponent(itemSlug || '');
+        frame.style.width = '100%';
+        frame.style.maxWidth = '100%';
+        frame.style.minHeight = '640px';
+        frame.style.border = '0';
+        box.textContent = '';
+        box.appendChild(frame);
+      }
+
+      loadOnboardingForm(FORM_ID, slug);
+    })();
+  </script>
+</body>
+</html>
