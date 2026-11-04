@@ -37,7 +37,8 @@
     .todo{display:inline-block;margin:0 0 8px;padding:3px 8px;border-radius:999px;background:#fff3d1;color:#7a5b10;font-size:.72rem;font-weight:800;letter-spacing:.08em}
     .soon p{margin:8px 0 0;color:#586a81}
     .booking-note{margin:0 0 12px;color:#586a81;font-size:.98rem;line-height:1.5}
-    #onboarding-form,.booking-slot{width:100%;max-width:100%;overflow:hidden}
+    #onboarding-form,#upload-form,.booking-slot{width:100%;max-width:100%;overflow:hidden}
+    #upload-section[hidden]{display:none}
     .onboarding-frame,.booking-frame{display:block;width:100%;max-width:100%;border:none;overflow:hidden}
     .onboarding-frame{min-height:520px;border-radius:12px;background:#fff}
     .booking-frame{min-height:640px;background:#f7f9fc}
@@ -76,6 +77,13 @@
       </div>
     </section>
 
+    <section id="upload-section" aria-labelledby="upload-title" hidden>
+      <h2 id="upload-title">Upload your contact list</h2>
+      <div class="panel">
+        <div id="upload-form"></div>
+      </div>
+    </section>
+
     <section aria-labelledby="book-title">
       <h2 id="book-title">Book your setup call</h2>
       <div class="panel">
@@ -109,16 +117,41 @@
         'reporting-dashboard': 'Reporting Dashboard',
         'email-marketing': 'Email Marketing Starter',
         'social-planner': 'Social Planner Starter',
-        'landing-page': 'Landing / Campaign Page'
+        'landing-page': 'Landing / Campaign Page',
+        'revenue-reactivation-sprint': 'Revenue Reactivation Sprint'
       };
+      var FORMS = {
+        'missed-call-rescue': 'IiEZWwciTr2kaYfeIsRO',
+        'booking-reminders': 'lxe39JxgphgHvNklXPWy',
+        'lead-capture': 'SOCIxv9DXfw17S5eRs5j',
+        'crm-pipeline': 'aeZyga2kKINm2LbbbVNh',
+        'new-lead-follow-up': 'qD3QuuyV15qW3KMSTOiq',
+        'review-requests': 'QN4SutgzMW80NP0WqwKT',
+        'quote-follow-up': 'Q2ZlEtxMblD1cwYepqf2',
+        'reactivation-nurture': 'soX9I8XZh0HDWyiR3gOR',
+        'invoice-reminders': 'JCsMexX45qPTOaHPOitz',
+        'ai-voice-receptionist': 'gKpS6Bi35Jgs5YHz0Bfk',
+        'reporting-dashboard': '36XzH2Myk5nyTLqsbKuG',
+        'email-marketing': 'DUdjTrASAbud0cQgj3xv',
+        'social-planner': 'stmWu8IXu7FQj4o25mn0',
+        'landing-page': 'hyJrcVJkiNK0oCHUAM2L',
+        'lead-rescue': 'eoH4QrkmyUBDLLwBZVtL',
+        'booking-no-show': 'FZFCk0imfgQWV1m46PHC',
+        'reputation-repeat': 'YTtCvaIiNX4jMTTl7t4F',
+        'estimate-deposit': '7jwKWsLgtT8zqaaux5IB',
+        'ai-front-desk': 'Wix9PWVFeJPglQk6ULv1',
+        'revenue-reactivation-sprint': 'QnUSNve57MezdYOWuzxx'
+      };
+      var FALLBACK_FORM_ID = 'PvJud6C8sXjsJPS97Fbj';
+      var SPRINT_UPLOAD_FORM_ID = 'HXjurL7Xh1rvsBlaQbRU';
       var params = new URLSearchParams(window.location.search);
       var slug = params.get('item') || '';
-      var name = ITEMS[slug];
+      var name = Object.prototype.hasOwnProperty.call(ITEMS, slug) ? ITEMS[slug] : '';
       var heading = document.getElementById('thanks');
       if (name) heading.textContent = "You're in. Thanks for ordering " + name + '.';
       document.title = (name ? name + ' order' : 'Thanks for your order') + ' | 1APP';
 
-      var FORM_ID = 'PvJud6C8sXjsJPS97Fbj';
+      var FORM_ID = Object.prototype.hasOwnProperty.call(FORMS, slug) ? FORMS[slug] : FALLBACK_FORM_ID;
 
       function ensureFormEmbed() {
         if (document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]')) return;
@@ -135,22 +168,20 @@
         return parts.length ? '?' + parts.join('&') : '';
       }
 
-      function showFormFallback() {
-        var box = document.getElementById('onboarding-form');
+      function showFormFallback(box) {
         box.innerHTML = '<div class="soon"><p class="todo">TODO</p><h3>Onboarding form coming soon</h3><p>One 1APP form will load here. It takes about 5 minutes and covers how your business answers, books, and follows up.</p></div>';
       }
 
-      function loadOnboardingForm(formId) {
-        var box = document.getElementById('onboarding-form');
+      function loadOnboardingForm(box, formId, title) {
         if (!formId) {
-          showFormFallback();
+          showFormFallback(box);
           return;
         }
         var frameId = 'inline-' + formId;
         var frame = document.createElement('iframe');
         frame.id = frameId;
         frame.className = 'onboarding-frame';
-        frame.title = '1APP onboarding form';
+        frame.title = title;
         frame.setAttribute('scrolling', 'no');
         frame.style.width = '100%';
         frame.style.border = 'none';
@@ -163,7 +194,7 @@
         frame.setAttribute('data-activation-value', '');
         frame.setAttribute('data-deactivation-type', 'neverDeactivate');
         frame.setAttribute('data-deactivation-value', '');
-        frame.setAttribute('data-form-name', '1APP onboarding form');
+        frame.setAttribute('data-form-name', title);
         frame.setAttribute('data-height', '640');
         frame.setAttribute('data-layout-iframe-id', frameId);
         frame.setAttribute('data-form-id', formId);
@@ -171,7 +202,13 @@
         box.appendChild(frame);
       }
 
-      loadOnboardingForm(FORM_ID);
+      loadOnboardingForm(document.getElementById('onboarding-form'), FORM_ID, '1APP onboarding form');
+
+      if (slug === 'revenue-reactivation-sprint') {
+        var uploadSection = document.getElementById('upload-section');
+        uploadSection.hidden = false;
+        loadOnboardingForm(document.getElementById('upload-form'), SPRINT_UPLOAD_FORM_ID, 'Upload your contact list');
+      }
 
       var BOOKING_CALENDAR_ID = 'X6hlzdw5iBClzm8yGBNz';
 
