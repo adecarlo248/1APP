@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/assets/google-tag.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Thanks for your order | 1APP</title>
+  <meta name="description" content="Your 1APP order is in. Tell us about your business, then book your setup call. We build it for you.">
+  <link rel="icon" href="/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;max-width:100%;overflow-x:hidden}
+    body{background:#f5f8fc;color:#13233d;font-family:"Plus Jakarta Sans",Arial,sans-serif;line-height:1.5}
+    h1,h2,h3{font-family:Sora,"Plus Jakarta Sans",sans-serif;letter-spacing:-.02em}
+    a{color:inherit}
+    .nav{position:sticky;top:0;z-index:20;border-bottom:1px solid #dce4ee;background:rgba(255,255,255,.94);backdrop-filter:blur(12px)}
+    .nav-inner{width:min(880px,calc(100% - 32px));margin:0 auto;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .nav img{height:42px;width:auto;display:block}
+    .nav a.book{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border-radius:11px;background:linear-gradient(135deg,#f2cd57,#d4a72c);color:#062653;font-weight:800;text-decoration:none}
+    main{width:min(880px,calc(100% - 32px));margin:0 auto;padding:28px 0 48px}
+    .kicker{margin:0;color:#9b7419;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:10px 0 0;color:#062653;font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.12}
+    .lead{margin:14px 0 0;color:#586a81;font-size:1.05rem}
+    .steps{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
+    .steps li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:16px;border:1px solid #dce4ee;border-radius:16px;background:#fff}
+    .num{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#062653;color:#f2cd57;font-weight:800}
+    .steps strong{display:block;color:#062653;font-size:1.05rem}
+    .steps span{display:block;margin-top:4px;color:#586a81;font-size:.95rem}
+    section{margin-top:28px}
+    h2{margin:0;color:#062653;font-size:1.45rem}
+    .panel{margin-top:12px;padding:18px;border:1px solid #dce4ee;border-radius:18px;background:#fff}
+    .soon{padding:8px 4px 4px}
+    .todo{display:inline-block;margin:0 0 8px;padding:3px 8px;border-radius:999px;background:#fff3d1;color:#7a5b10;font-size:.72rem;font-weight:800;letter-spacing:.08em}
+    .soon p{margin:8px 0 0;color:#586a81}
+    .booking-note{margin:0 0 12px;color:#586a81;font-size:.98rem;line-height:1.5}
+    #onboarding-form,#upload-form,.booking-slot{width:100%;max-width:100%;overflow:hidden}
+    #upload-section[hidden]{display:none}
+    .onboarding-frame,.booking-frame{display:block;width:100%;max-width:100%;border:none;overflow:hidden}
+    .onboarding-frame{min-height:520px;border-radius:12px;background:#fff}
+    .booking-frame{min-height:640px;background:#f7f9fc}
+    .call-rod{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:16px;padding:12px 16px;border-radius:11px;border:1.5px solid #062653;background:#fff;color:#062653;font-weight:800;text-decoration:none}
+    @media(max-width:414px){.call-rod{width:100%}}
+    footer{border-top:1px solid #dce4ee;background:#fff;padding:28px 16px 40px}
+    footer p{width:min(880px,100%);margin:0 auto;color:#586a81;font-size:1rem}
+    footer a{color:#062653;font-weight:800;text-decoration:none}
+    @media(max-width:414px){
+      .nav-inner,main{width:min(100% - 28px,880px)}
+      .nav a.book{padding:10px 12px;font-size:.9rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
+      <a class="book" href="/book-demo/">Book a demo</a>
+    </div>
+  </header>
+  <main>
+    <p class="kicker">Order received</p>
+    <h1 id="thanks">Thanks for your order.</h1>
+    <p class="lead">This is a done-for-you 1APP build. Finish the short form, then book the setup call. We build it and walk you through it.</p>
+    <ol class="steps">
+      <li><span class="num">1</span><div><strong>Tell us about your business</strong><span>The form below. About 5 minutes.</span></div></li>
+      <li><span class="num">2</span><div><strong>Book your setup call</strong><span>Pick a time that works. We use it to build around how you already work.</span></div></li>
+      <li><span class="num">3</span><div><strong>We build it and walk you through it</strong><span>1APP sets it up, tests it, and shows you the finished system.</span></div></li>
+    </ol>
+
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Tell us about your business</h2>
+      <div class="panel">
+        <div id="onboarding-form"></div>
+      </div>
+    </section>
+
+    <section id="upload-section" aria-labelledby="upload-title" hidden>
+      <h2 id="upload-title">Upload your contact list</h2>
+      <div class="panel">
+        <div id="upload-form"></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="book-title">
+      <h2 id="book-title">Book your setup call</h2>
+      <div class="panel">
+        <p class="booking-note">Setup calls are 30 minutes on Google Meet, weekdays 9 AM to 5 PM Eastern. They're booked at least one business day out so we can review your answers first.</p>
+        <div class="booking-slot" id="setup-booking"></div>
+        <a class="call-rod" href="tel:+12892759420">Call Rod, Sales: (289) 275-9420</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Questions? <a href="tel:+12892759420">Call Rod, Sales: (289) 275-9420</a></p>
+  </footer>
+  <script>
+    (function () {
+      var ITEMS = {
+        'ai-front-desk': 'AI Front Desk',
+        'lead-rescue': 'Lead Rescue',
+        'booking-no-show': 'Booking & No-Show Control',
+        'reputation-repeat': 'Reputation & Repeat Business',
+        'estimate-deposit': 'Estimate-to-Deposit Recovery',
+        'missed-call-rescue': 'Missed-Call Rescue',
+        'booking-reminders': 'Booking + Confirmations + Reminders',
+        'lead-capture': 'Website Form / Chat Lead Capture',
+        'crm-pipeline': 'CRM + Sales Pipeline',
+        'new-lead-follow-up': 'New-Lead Follow-Up',
+        'review-requests': 'Review Request Automation',
+        'quote-follow-up': 'Estimate / Quote Follow-Up',
+        'reactivation-nurture': 'Reactivation / Nurture Campaign',
+        'invoice-reminders': 'Invoice / Payment Reminders',
+        'ai-voice-receptionist': 'AI Voice Receptionist',
+        'reporting-dashboard': 'Reporting Dashboard',
+        'email-marketing': 'Email Marketing Starter',
+        'social-planner': 'Social Planner Starter',
+        'landing-page': 'Landing / Campaign Page',
+        'revenue-reactivation-sprint': 'Revenue Reactivation Sprint'
+      };
+      var FORMS = {
+        'missed-call-rescue': 'IiEZWwciTr2kaYfeIsRO',
+        'booking-reminders': 'lxe39JxgphgHvNklXPWy',
+        'lead-capture': 'SOCIxv9DXfw17S5eRs5j',
+        'crm-pipeline': 'aeZyga2kKINm2LbbbVNh',
+        'new-lead-follow-up': 'qD3QuuyV15qW3KMSTOiq',
+        'review-requests': 'QN4SutgzMW80NP0WqwKT',
+        'quote-follow-up': 'Q2ZlEtxMblD1cwYepqf2',
+        'reactivation-nurture': 'soX9I8XZh0HDWyiR3gOR',
+        'invoice-reminders': 'JCsMexX45qPTOaHPOitz',
+        'ai-voice-receptionist': 'gKpS6Bi35Jgs5YHz0Bfk',
+        'reporting-dashboard': '36XzH2Myk5nyTLqsbKuG',
+        'email-marketing': 'DUdjTrASAbud0cQgj3xv',
+        'social-planner': 'stmWu8IXu7FQj4o25mn0',
+        'landing-page': 'hyJrcVJkiNK0oCHUAM2L',
+        'lead-rescue': 'eoH4QrkmyUBDLLwBZVtL',
+        'booking-no-show': 'FZFCk0imfgQWV1m46PHC',
+        'reputation-repeat': 'YTtCvaIiNX4jMTTl7t4F',
+        'estimate-deposit': '7jwKWsLgtT8zqaaux5IB',
+        'ai-front-desk': 'Wix9PWVFeJPglQk6ULv1',
+        'revenue-reactivation-sprint': 'QnUSNve57MezdYOWuzxx'
+      };
+      var FALLBACK_FORM_ID = 'PvJud6C8sXjsJPS97Fbj';
+      var SPRINT_UPLOAD_FORM_ID = 'HXjurL7Xh1rvsBlaQbRU';
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('item') || '';
+      var name = Object.prototype.hasOwnProperty.call(ITEMS, slug) ? ITEMS[slug] : '';
+      var heading = document.getElementById('thanks');
+      if (name) heading.textContent = "You're in. Thanks for ordering " + name + '.';
+      document.title = (name ? name + ' order' : 'Thanks for your order') + ' | 1APP';
+
+      var FORM_ID = Object.prototype.hasOwnProperty.call(FORMS, slug) ? FORMS[slug] : FALLBACK_FORM_ID;
+
+      function ensureFormEmbed() {
+        if (document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]')) return;
+        var embed = document.createElement('script');
+        embed.src = 'https://link.msgsndr.com/js/form_embed.js';
+        document.body.appendChild(embed);
+      }
+
+      function formQuery() {
+        var parts = [];
+        params.forEach(function (value, key) {
+          parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
+        });
+        return parts.length ? '?' + parts.join('&') : '';
+      }
+
+      function showFormFallback(box) {
+        box.innerHTML = '<div class="soon"><p class="todo">TODO</p><h3>Onboarding form coming soon</h3><p>One 1APP form will load here. It takes about 5 minutes and covers how your business answers, books, and follows up.</p></div>';
+      }
+
+      function loadOnboardingForm(box, formId, title) {
+        if (!formId) {
+          showFormFallback(box);
+          return;
+        }
+        var frameId = 'inline-' + formId;
+        var frame = document.createElement('iframe');
+        frame.id = frameId;
+        frame.className = 'onboarding-frame';
+        frame.title = title;
+        frame.setAttribute('scrolling', 'no');
+        frame.style.width = '100%';
+        frame.style.border = 'none';
+        frame.style.overflow = 'hidden';
+        frame.src = 'https://api.leadconnectorhq.com/widget/form/' + encodeURIComponent(formId) + formQuery();
+        frame.setAttribute('data-layout', '{"id":"INLINE"}');
+        frame.setAttribute('data-trigger-type', 'alwaysShow');
+        frame.setAttribute('data-trigger-value', '');
+        frame.setAttribute('data-activation-type', 'alwaysActivated');
+        frame.setAttribute('data-activation-value', '');
+        frame.setAttribute('data-deactivation-type', 'neverDeactivate');
+        frame.setAttribute('data-deactivation-value', '');
+        frame.setAttribute('data-form-name', title);
+        frame.setAttribute('data-height', '640');
+        frame.setAttribute('data-layout-iframe-id', frameId);
+        frame.setAttribute('data-form-id', formId);
+        box.textContent = '';
+        box.appendChild(frame);
+      }
+
+      loadOnboardingForm(document.getElementById('onboarding-form'), FORM_ID, '1APP onboarding form');
+
+      if (slug === 'revenue-reactivation-sprint') {
+        var uploadSection = document.getElementById('upload-section');
+        uploadSection.hidden = false;
+        loadOnboardingForm(document.getElementById('upload-form'), SPRINT_UPLOAD_FORM_ID, 'Upload your contact list');
+      }
+
+      var BOOKING_CALENDAR_ID = 'X6hlzdw5iBClzm8yGBNz';
+
+      function loadBookingCalendar(calendarId) {
+        var box = document.getElementById('setup-booking');
+        if (!calendarId) {
+          box.innerHTML = '<div class="soon"><h3>We\'ll email you a link to book your setup call</h3></div>';
+          return;
+        }
+        var frame = document.createElement('iframe');
+        frame.id = calendarId + '_1';
+        frame.className = 'booking-frame';
+        frame.title = 'Book your 1APP setup call';
+        frame.setAttribute('scrolling', 'no');
+        frame.style.width = '100%';
+        frame.style.border = 'none';
+        frame.style.overflow = 'hidden';
+        frame.src = 'https://api.leadconnectorhq.com/widget/booking/' + encodeURIComponent(calendarId);
+        box.textContent = '';
+        box.appendChild(frame);
+      }
+
+      loadBookingCalendar(BOOKING_CALENDAR_ID);
+      ensureFormEmbed();
+    })();
+  </script>
+</body>
+</html>
