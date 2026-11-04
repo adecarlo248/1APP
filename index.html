@@ -65,7 +65,8 @@
 
 <!-- Revenue Reactivation Sprint CTA -->
 <div style="text-align:center;padding-bottom:32px;">
-  <a href="/revenue-reactivation-sprint/" class="btn-gold" style="margin-top:4px;">&#127881; Start a Revenue Reactivation Sprint</a>
+  <a href="https://buy.stripe.com/fZuaEWgXZ8DqgRM6Mv6oo0m" class="btn-gold oneapp-sprint-trial" data-oneapp-sprint-trial="true" style="margin-top:4px;">Start free 14-day trial</a>
+  <p class="oneapp-sprint-section-note" data-oneapp-sprint-note="true">Free 14-day trial. Card saved on file; you're only billed for what you approve.</p>
 </div>
 
 <!-- Section header -->
@@ -309,7 +310,7 @@
       panel.className='oneapp-sprint-hero';
       panel.setAttribute('data-sprint-panel','true');
       panel.setAttribute('aria-label','14-Day Revenue Reactivation Sprint');
-      panel.innerHTML='<p class="oneapp-sprint-kicker">14-Day Revenue Reactivation Sprint</p><p class="oneapp-sprint-title">Turn old leads and past customers into new estimate opportunities.</p><p class="oneapp-sprint-copy">We re-engage at least 50 authorized past leads and customers with timely offers—unfinished estimates, winter inspections, maintenance, or new services—then qualify replies and book estimate opportunities into your calendar.</p><div class="oneapp-sprint-pills"><span>50+ authorized contacts</span><span>$0 upfront setup</span><span>Pay per verified estimate</span></div><a class="oneapp-sprint-cta" href="/revenue-reactivation-sprint/">Reactivate My Contact List →</a>';
+      panel.innerHTML='<p class="oneapp-sprint-kicker">14-Day Revenue Reactivation Sprint</p><p class="oneapp-sprint-title">Turn old leads and past customers into new estimate opportunities.</p><p class="oneapp-sprint-copy">We re-engage at least 50 authorized past leads and customers with timely offers—unfinished estimates, winter inspections, maintenance, or new services—then qualify replies and book estimate opportunities into your calendar.</p><div class="oneapp-sprint-pills"><span>50+ authorized contacts</span><span>$0 setup</span><span>Texting included</span><span>Pay per verified estimate</span></div><p class="oneapp-sprint-note">Free 14-day trial. Card saved on file; you\'re only billed for what you approve.</p><a class="oneapp-sprint-cta" href="https://buy.stripe.com/fZuaEWgXZ8DqgRM6Mv6oo0m">Start free 14-day trial</a>';
       column.insertBefore(panel, card);
     }
     if(!column.querySelector('[data-oneapp-hero-ai]')){
@@ -340,8 +341,12 @@
   .oneapp-sprint-copy{margin:10px 0 0;font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.76)}
   .oneapp-sprint-pills{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0}
   .oneapp-sprint-pills span{padding:6px 9px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:.72rem;font-weight:750}
-  .oneapp-sprint-cta{display:block;background:linear-gradient(135deg,#ffd24d,#d49b19);color:#071d3d;font-weight:900;font-size:1rem;padding:14px 20px;border-radius:11px;text-decoration:none;text-align:center;box-shadow:0 7px 20px rgba(212,167,44,.3)}
-  .oneapp-sprint-cta:hover{color:#071d3d}
+  .oneapp-sprint-note{margin:0 0 12px;font-size:.9rem;line-height:1.45;font-weight:700;color:rgba(255,255,255,.9)}
+  .oneapp-sprint-cta{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;background:linear-gradient(135deg,#f2cd57,#d4a72c);color:#062653;font-weight:800;font-size:.95rem;padding:12px 19px;border-radius:11px;text-decoration:none;text-align:center;box-shadow:0 8px 24px rgba(212,167,44,.28)}
+  .oneapp-sprint-cta:hover{color:#062653}
+  .oneapp-sprint-section-note{margin:12px auto 0;max-width:36rem;color:var(--brand-text-secondary);font-size:.95rem;line-height:1.45;font-weight:700}
+  a.oneapp-sprint-trial{box-sizing:border-box;min-height:48px;justify-content:center}
+  @media(max-width:700px){#pricing a.oneapp-sprint-trial{display:flex;width:100%}}
   .oneapp-hero-ai{display:none}
   .oneapp-hero-ai-head{display:flex;align-items:center;gap:8px}
   .oneapp-hero-ai-head strong{color:#fff;font-size:.92rem;line-height:1.2}
@@ -634,6 +639,38 @@
     });
     observer.observe(document.documentElement,{childList:true,subtree:true});
   }
+})();
+</script>
+<script id="oneapp-sprint-trial">
+(function(){
+  var HREF='https://buy.stripe.com/fZuaEWgXZ8DqgRM6Mv6oo0m';
+  var LABEL='Start free 14-day trial';
+  var NOTE="Free 14-day trial. Card saved on file; you're only billed for what you approve.";
+  function mount(){
+    var pricing=document.getElementById('pricing');
+    if(!pricing) return;
+    var links=pricing.querySelectorAll('a.btn-gold');
+    for(var i=0;i<links.length;i++){
+      var link=links[i];
+      var text=(link.textContent||'').replace(/\s+/g,' ').trim();
+      if(text.indexOf('Revenue Reactivation Sprint')<0 && text.indexOf(LABEL)<0) continue;
+      link.href=HREF;
+      link.textContent=LABEL;
+      link.classList.add('oneapp-sprint-trial');
+      link.setAttribute('data-oneapp-sprint-trial','true');
+      if(!link.parentElement.querySelector('[data-oneapp-sprint-note]')){
+        var note=document.createElement('p');
+        note.className='oneapp-sprint-section-note';
+        note.setAttribute('data-oneapp-sprint-note','true');
+        note.textContent=NOTE;
+        link.insertAdjacentElement('afterend', note);
+      }
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', mount, {once:true});
+  else mount();
+  var runs=0;
+  var timer=setInterval(function(){mount(); if(++runs>=40) clearInterval(timer);},200);
 })();
 </script>
 <script id="oneapp-order-online">

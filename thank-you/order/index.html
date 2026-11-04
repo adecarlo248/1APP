@@ -148,8 +148,13 @@
       var slug = params.get('item') || '';
       var name = Object.prototype.hasOwnProperty.call(ITEMS, slug) ? ITEMS[slug] : '';
       var heading = document.getElementById('thanks');
-      if (name) heading.textContent = "You're in. Thanks for ordering " + name + '.';
-      document.title = (name ? name + ' order' : 'Thanks for your order') + ' | 1APP';
+      if (slug === 'revenue-reactivation-sprint') {
+        heading.textContent = "Thanks for starting your Revenue Reactivation Sprint trial.";
+        document.title = "Revenue Reactivation Sprint trial | 1APP";
+      } else {
+        if (name) heading.textContent = "You're in. Thanks for ordering " + name + '.';
+        document.title = (name ? name + ' order' : 'Thanks for your order') + ' | 1APP';
+      }
 
       var FORM_ID = Object.prototype.hasOwnProperty.call(FORMS, slug) ? FORMS[slug] : FALLBACK_FORM_ID;
 
