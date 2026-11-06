@@ -13,7 +13,7 @@
   --underbill:#00603b;     /* trademark green underbill */
   --green:#1fae6a;         /* legible accent on dark */
   --green-soft:rgba(31,174,106,.14);
-  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --mono:"Onest","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif; /* unified with sans — Tony asked same font on mobile */
   --sans:"Onest","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
   --radius:14px;
   --max:1240px;
@@ -154,8 +154,8 @@ section{position:relative}
 .mission{background:var(--field);border-block:1px solid var(--green);overflow:hidden}
 .mission-inner{display:grid;gap:36px;padding:72px 0;align-items:center}
 @media(min-width:900px){.mission-inner{grid-template-columns:auto 1fr auto;gap:56px}}
-.big-pct{font-weight:900;font-size:clamp(96px,16vw,200px);line-height:.85;letter-spacing:-.05em;color:#fff}
-.big-pct sup{font-size:.42em;vertical-align:top;color:var(--green)}
+.big-pct{font-family:var(--sans);font-weight:900;font-size:clamp(96px,16vw,200px);line-height:.85;letter-spacing:-.05em;color:#fff;display:inline-block}
+.big-pct sup{font-size:.38em;vertical-align:super;color:var(--green);margin-left:.06em;font-weight:800;line-height:1}
 .mission .mark{width:140px;opacity:.9;display:none}
 @media(min-width:900px){.mission .mark{display:block}}
 
@@ -365,10 +365,22 @@ textarea{min-height:140px;resize:vertical}
   .inline-form .input,.inline-form .btn{width:100%;flex:none;border-radius:999px}
   .form-card,.info-card{padding:22px}
   .pillars{grid-template-columns:1fr}
-  .mission-inner{padding:48px 0}
-  .big-pct{font-size:clamp(80px,28vw,140px)}
+  .mission-inner{padding:40px 0;gap:22px}
+  .big-pct{font-size:clamp(72px,22vw,112px);line-height:.9;letter-spacing:-.04em}
+  .big-pct sup{font-size:.36em;margin-left:.08em}
+  .mission .h2{font-size:clamp(28px,7vw,40px);margin:10px 0 12px !important}
+  .mission .lead{font-size:15.5px;line-height:1.55}
+  .mission .eyebrow{font-size:11px;letter-spacing:.16em}
+  .mission .btn{width:100%}
+  .mission div[style*="display:flex"]{flex-direction:column !important;gap:10px !important;margin-top:20px !important}
   .letter{padding:28px 20px}
-  .footer-bottom{padding-bottom:84px}
+  .footer-top{gap:28px;padding:48px 0 32px}
+  .footer-top img{height:36px;margin-bottom:12px}
+  .footer-top h4{font-family:var(--sans);font-size:12px;letter-spacing:.14em;margin-bottom:12px}
+  .footer-top ul{gap:10px}
+  .footer-top p{font-size:15px;line-height:1.55}
+  .footer-bottom{padding:16px 0 84px;font-family:var(--sans);font-size:11px;letter-spacing:.08em;gap:8px;line-height:1.5}
+  .tag{font-size:10px;padding:7px 11px;letter-spacing:.1em;max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .demo-badge{font-size:10px;padding:7px 10px;left:10px;bottom:10px}
   .size-opt{min-height:44px;padding:12px 0}
   .filter{padding:12px 16px}
@@ -378,6 +390,7 @@ textarea{min-height:140px;resize:vertical}
   .grid{gap:12px}
   .card-body{padding:12px}
   .card-name{font-size:14.5px}
-  .card-line{font-size:10px}
+  .card-line{font-size:10px;letter-spacing:.1em}
   .price{font-size:12.5px}
+  .tag{top:10px;left:10px;font-size:9.5px;padding:6px 9px}
 }
