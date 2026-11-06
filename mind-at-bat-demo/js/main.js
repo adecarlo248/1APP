@@ -109,36 +109,46 @@
 
   /* ---------- product card ---------- */
   function swatch(c){ return c.split ? `background:linear-gradient(135deg,${c.split[0]} 50%,${c.split[1]} 50%)` : `background:${c.hex}`; }
+  function typeLabel(p){
+    if(p.type==='tee') return 'Rally · Tee';
+    if(p.type==='hoodie') return 'Rally · Hoodie';
+    if(p.slug && p.slug.startsWith('trucker')) return 'Underdog · Trucker';
+    return 'Underdog · Flat peak';
+  }
   function card(p){
-    const alt = p.images[1] ? `<img class="alt" src="${p.images[1]}" alt="" loading="lazy">` : '';
+    const coming = p.status==='coming';
+    const alt = (!coming && p.images[1]) ? `<img class="alt" src="${p.images[1]}" alt="" loading="lazy">` : '';
     const sw = p.colors.length ? `<div class="swatches">${p.colors.map(c=>`<span class="sw" title="${esc(c.name)}" style="${swatch(c)}"></span>`).join('')}</div>` : '';
-    const label = p.type==='tee' ? 'Rally · Tee' : 'Underdog · Snapback';
-    return `<a class="card reveal" href="product.html?slug=${p.slug}">
-      <div class="card-media"><img src="${p.images[0]}" alt="${esc(p.name)}" loading="lazy">${alt}<span class="tag ${p.edition==='OG'?'green':''}">${esc(p.edition)}</span></div>
-      <div class="card-body"><span class="card-line">${label}</span><span class="card-name">${esc(p.name)}</span>
-      <div class="card-foot"><span class="price">${p.type==='tee'?'<small>From</small>':''}${money(p.priceFrom)}</span>${sw}</div></div></a>`;
+    const price = coming ? '<span class="price muted">Coming soon</span>' : `<span class="price">${p.type==='tee'?'<small>From</small>':''}${money(p.priceFrom)}</span>`;
+    const tag = coming ? 'Coming' : p.edition;
+    const tagClass = coming ? 'amber' : (p.edition==='OG'?'green':'');
+    return `<a class="card reveal ${coming?'is-coming':''}" href="product.html?slug=${p.slug}">
+      <div class="card-media"><img src="${p.images[0]}" alt="${esc(p.name)}" loading="lazy">${alt}<span class="tag ${tagClass}">${esc(tag)}</span></div>
+      <div class="card-body"><span class="card-line">${typeLabel(p)}</span><span class="card-name">${esc(p.name)}</span>
+      <div class="card-foot">${price}${sw}</div></div></a>`;
   }
   window.MAB.card = card;
 
   /* ---------- page inits ---------- */
   if(page==='home'){
-    const feat=['unisex-t-shirt','flat-bill-cap','unisex-t-shirt-1','underdog-classic','rally-heritage-t-shirt','underdog-heritage'];
-    $('#featured').innerHTML = feat.map(s=>card(bySlug(s))).join('');
+    const feat=['unisex-t-shirt','flat-bill-cap','rally-heritage-t-shirt','underdog-heritage','rally-pink-tee','punk-hoodie'];
+    $('#featured').innerHTML = feat.map(s=>bySlug(s)).filter(Boolean).map(card).join('');
   }
 
   if(page==='shop'){
     const grid=$('#shopGrid'); const params=new URLSearchParams(location.search);
     let f=params.get('f')||'all', sort='featured';
-    const counts={all:C.length,tee:C.filter(p=>p.type==='tee').length,cap:C.filter(p=>p.type==='cap').length};
-    $$('.filter').forEach(b=>{ b.querySelector('.n').textContent=counts[b.dataset.f]; });
+    const counts={all:C.length,tee:C.filter(p=>p.type==='tee').length,cap:C.filter(p=>p.type==='cap').length,hoodie:C.filter(p=>p.type==='hoodie').length};
+    $$('.filter').forEach(b=>{ const n=b.querySelector('.n'); if(n) n.textContent=counts[b.dataset.f]||0; });
     function draw(){
       let list=C.filter(p=>f==='all'||p.type===f);
-      if(sort==='low') list=[...list].sort((a,b)=>a.priceFrom-b.priceFrom);
-      if(sort==='high') list=[...list].sort((a,b)=>b.priceFrom-a.priceFrom);
+      const priceOr=(p,d)=>p.priceFrom==null?d:p.priceFrom;
+      if(sort==='low') list=[...list].sort((a,b)=>priceOr(a,9999)-priceOr(b,9999));
+      if(sort==='high') list=[...list].sort((a,b)=>priceOr(b,-1)-priceOr(a,-1));
       if(sort==='az') list=[...list].sort((a,b)=>a.name.localeCompare(b.name));
       grid.innerHTML=list.map(card).join('');
       $$('.filter').forEach(b=>b.classList.toggle('active',b.dataset.f===f));
-      $('#resultCount').textContent=`${list.length} product${list.length>1?'s':''}`;
+      $('#resultCount').textContent=`${list.length} product${list.length===1?'':'s'}`;
       observe();
     }
     $$('.filter').forEach(b=>b.onclick=()=>{f=b.dataset.f;history.replaceState(null,'',f==='all'?'shop.html':`shop.html?f=${f}`);draw();});
@@ -157,14 +167,22 @@
     main.alt=p.name; const start=color&&color.image?Math.max(0,p.images.indexOf(color.image)):0; main.src=p.images[start];
     $('#thumbs').innerHTML=p.images.map((src,i)=>`<button class="thumb ${i===start?'active':''}" data-i="${i}" aria-label="Image ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('');
     $$('.thumb').forEach(t=>t.onclick=()=>show(+t.dataset.i));
-    $('#pLine').textContent = p.type==='tee' ? 'Rally Collection · Unisex Tee' : 'Underdog Collection · Snapback';
+    $('#pLine').textContent = p.type==='tee' ? 'Rally Collection · Unisex Tee' : p.type==='hoodie' ? 'Rally Collection · Hoodie' : (p.slug&&p.slug.startsWith('trucker') ? 'Underdog Collection · Trucker' : 'Underdog Collection · Flat peak');
+    if(p.status==='coming'){
+      const note = document.createElement('p');
+      note.className = 'coming-banner';
+      note.textContent = 'Coming next — Belinda photos, art, and price not in yet. Demo slot only.';
+      $('#pName').after(note);
+      const add=$('#addBtn'); if(add){ add.disabled=true; add.textContent='Coming soon'; }
+      const priceEl=$('#pPrice'); if(priceEl) priceEl.innerHTML='Coming soon <small>CAD TBD</small>';
+    }
     $('#pName').textContent=p.name;
     $('#pHook').textContent=p.hook;
     $('#pBody').innerHTML=p.body.map(t=>`<p>${esc(t)}</p>`).join('');
     $('#pFeatures').innerHTML=p.features.map(t=>`<li>${esc(t)}</li>`).join('');
     const unavailable=new Set(p.unavailable||[]);
     function price(){ return size && p.sizePrices[size] ? p.sizePrices[size] : p.priceFrom; }
-    function drawPrice(){ $('#pPrice').innerHTML = money(price()) + (p.type==='tee' && !size ? '<small>from</small>' : '') + '<small>CAD</small>'; }
+    function drawPrice(){ if(p.status==='coming'||p.priceFrom==null){ $('#pPrice').innerHTML='Coming soon <small>CAD TBD</small>'; return; } $('#pPrice').innerHTML = money(price()) + (p.type==='tee' && !size ? '<small>from</small>' : '') + '<small>CAD</small>'; }
     // colours
     if(p.colors.length){
       $('#colorWrap').hidden=false;
@@ -192,12 +210,13 @@
     $('#qMinus').onclick=()=>{qty=Math.max(1,qty-1);$('#qVal').textContent=qty;};
     $('#qPlus').onclick=()=>{qty=Math.min(10,qty+1);$('#qVal').textContent=qty;};
     $('#addBtn').onclick=()=>{
+      if(p.status==='coming'){toast('Coming soon — waiting on Belinda\'s assets.');return;}
       if(p.sizes.length&&!size){toast('Pick a size first.');return;}
       const variant=[color&&color.name,size].filter(Boolean).join(' / ')||'One size';
       MAB.addToCart({slug:p.slug,name:p.name,variant,qty,price:price(),img:(color&&color.image)||p.images[0]});
       toast(`Added ${p.name} (${variant}) — demo cart`); 
     };
-    $('#liveLink').href=p.liveUrl;
+    if(p.liveUrl){ $('#liveLink').href=p.liveUrl; } else { const ll=$('#liveLink'); if(ll) ll.hidden=true; }
     $('#related').innerHTML=C.filter(x=>x.slug!==p.slug&&x.type===p.type).concat(C.filter(x=>x.type!==p.type).slice(0,1)).slice(0,3).map(card).join('');
   }
 
