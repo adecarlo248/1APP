@@ -1,4 +1,4 @@
-/* Mind At Bat catalog — pulled from live Wix Stores product pages (www.mindatbat.ca), Nov 6 2026. Prices CAD. */
+/* Mind At Bat catalog — live Wix base + Justin Nov 6 2026 direction. Coming SKUs = Belinda assets pending. Prices CAD when live. */
 window.MAB_CATALOG = [
  {
   "slug": "rally-heritage-t-shirt",
@@ -49,86 +49,6 @@ window.MAB_CATALOG = [
    "assets/products/rally-heritage-t-shirt-2.jpg"
   ],
   "liveUrl": "https://www.mindatbat.ca/product-page/rally-heritage-t-shirt"
- },
- {
-  "slug": "unisex-t-shirt-1",
-  "name": "Rally Classic T-Shirt",
-  "type": "tee",
-  "line": "Rally",
-  "edition": "Classic",
-  "priceFrom": 36,
-  "sizePrices": {
-   "XS": 36,
-   "S": 36,
-   "M": 36,
-   "L": 36,
-   "XL": 36,
-   "2XL": 40,
-   "3XL": 45,
-   "4XL": 49,
-   "5XL": 53
-  },
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "2XL",
-   "3XL",
-   "4XL",
-   "5XL"
-  ],
-  "colors": [
-   {
-    "name": "Red",
-    "hex": "#C61515",
-    "split": null,
-    "image": "assets/products/unisex-t-shirt-1-2.jpg"
-   },
-   {
-    "name": "True Royal",
-    "hex": "#01408d",
-    "split": null,
-    "image": "assets/products/unisex-t-shirt-1-4.jpg"
-   },
-   {
-    "name": "Aqua",
-    "hex": "#008db5",
-    "split": null,
-    "image": "assets/products/unisex-t-shirt-1-1.jpg"
-   },
-   {
-    "name": "Athletic Heather",
-    "hex": "#cececc",
-    "split": null,
-    "image": "assets/products/unisex-t-shirt-1-5.jpg"
-   }
-  ],
-  "unavailable": [
-   "Aqua|5XL"
-  ],
-  "hook": "Some things never go out of style.",
-  "body": [
-   "The Rally Classic T-Shirt is built on the idea that showing up matters. Featuring the signature Mind At Bat logo, this tee combines timeless style with a message that reaches beyond the game.",
-   "Available in Red, Blue, Aqua, and Grey, the Rally Classic delivers a clean, comfortable look designed for everyday wear. Whether you're spending time with friends, supporting your team, or taking on life's daily challenges, this tee is a reminder that resilience isn't measured by wins and losses.",
-   "Because the strongest players aren't always the ones in the spotlight."
-  ],
-  "features": [
-   "Soft, comfortable everyday fit",
-   "Lightweight and breathable fabric",
-   "Retail-style unisex fit",
-   "Ribbed crew neck",
-   "Side-seamed construction for lasting shape"
-  ],
-  "images": [
-   "assets/products/unisex-t-shirt-1-1.jpg",
-   "assets/products/unisex-t-shirt-1-2.jpg",
-   "assets/products/unisex-t-shirt-1-3.jpg",
-   "assets/products/unisex-t-shirt-1-4.jpg",
-   "assets/products/unisex-t-shirt-1-5.jpg"
-  ],
-  "liveUrl": "https://www.mindatbat.ca/product-page/unisex-t-shirt-1"
  },
  {
   "slug": "unisex-t-shirt",
@@ -205,7 +125,7 @@ window.MAB_CATALOG = [
  },
  {
   "slug": "underdog-heritage",
-  "name": "Underdog Heritage",
+  "name": "Underdog Heritage \u2014 White Flat Peak",
   "type": "cap",
   "line": "Underdog",
   "edition": "Heritage",
@@ -217,7 +137,7 @@ window.MAB_CATALOG = [
   "hook": "Some stories stand the test of time.",
   "body": [
    "The Underdog Heritage brings a clean, timeless look to the collection while staying true to the message behind Mind At Bat. Featuring a crisp white design, bold black logo, and the signature green underbill, this snapback was built for those who understand that strength isn't always loud and resilience isn't always visible.",
-   "Simple, versatile, and easy to wear, the Heritage pairs classic style with a purpose that goes beyond the game. Whether you're heading out for the day, meeting friends, or supporting from the sidelines, it's a reminder that every battle matters and nobody should have to face theirs alone.",
+   "White flat peak stays. Per Justin's Nov 2026 direction, flat peaks are white and black only.",
    "Because some messages never go out of style."
   ],
   "features": [
@@ -236,61 +156,8 @@ window.MAB_CATALOG = [
   "liveUrl": "https://www.mindatbat.ca/product-page/underdog-heritage"
  },
  {
-  "slug": "underdog-classic",
-  "name": "Underdog Classic",
-  "type": "cap",
-  "line": "Underdog",
-  "edition": "Classic",
-  "priceFrom": 35,
-  "sizePrices": {},
-  "sizes": [],
-  "colors": [
-   {
-    "name": "Royal Blue",
-    "hex": "#004074",
-    "split": null,
-    "image": "assets/products/underdog-classic-3.jpg"
-   },
-   {
-    "name": "Red",
-    "hex": "#C61515",
-    "split": null,
-    "image": "assets/products/underdog-classic-1.jpg"
-   },
-   {
-    "name": "Grey",
-    "hex": "#9d9ca1",
-    "split": null,
-    "image": "assets/products/underdog-classic-5.jpg"
-   }
-  ],
-  "unavailable": [],
-  "hook": "Some things never go out of style.",
-  "body": [
-   "The Underdog Classic is inspired by the timeless look of the game while carrying a message that extends far beyond it. Featuring the signature Mind At Bat logo and the collection's trademark green underbill, this snapback blends traditional baseball style with everyday purpose.",
-   "Available in blue, grey, and red, the Classic is designed for those who understand that resilience isn't measured by the scoreboard. Whether you're heading to the ballpark, meeting friends, or taking on another day, it's a reminder that every battle deserves to be acknowledged.",
-   "Because the strongest players aren't always the ones in the spotlight."
-  ],
-  "features": [
-   "Structured five-panel construction",
-   "High-profile fit",
-   "Signature green underbill",
-   "Adjustable snapback closure",
-   "One size fits most"
-  ],
-  "images": [
-   "assets/products/underdog-classic-1.jpg",
-   "assets/products/underdog-classic-2.jpg",
-   "assets/products/underdog-classic-3.jpg",
-   "assets/products/underdog-classic-4.jpg",
-   "assets/products/underdog-classic-5.jpg",
-   "assets/products/underdog-classic-6.jpg"
-  ],
-  "liveUrl": "https://www.mindatbat.ca/product-page/underdog-classic"
- },
- {
   "slug": "flat-bill-cap",
-  "name": "Underdog OG",
+  "name": "Underdog OG \u2014 Black Flat Peak",
   "type": "cap",
   "line": "Underdog",
   "edition": "OG",
@@ -298,24 +165,6 @@ window.MAB_CATALOG = [
   "sizePrices": {},
   "sizes": [],
   "colors": [
-   {
-    "name": "Black/Grey",
-    "hex": "#24292f",
-    "split": [
-     "#1d1d1d",
-     "#9d9ca1"
-    ],
-    "image": "assets/products/flat-bill-cap-5.jpg"
-   },
-   {
-    "name": "Black/Red",
-    "hex": "#2a2a2a",
-    "split": [
-     "#1d1d1d",
-     "#C61515"
-    ],
-    "image": "assets/products/flat-bill-cap-7.jpg"
-   },
    {
     "name": "Black",
     "hex": "#404040",
@@ -327,7 +176,7 @@ window.MAB_CATALOG = [
   "hook": "Not every battle gets a scoreboard.",
   "body": [
    "The Underdog OG is the original of the collection. Built for those who keep showing up, keep grinding, and keep moving forward when nobody's watching. Featuring the signature Mind At Bat logo and our trademark green underbill, this snapback blends classic ballfield style with a message that matters.",
-   "Available in black, black/grey, and black/red, the OG is bold, versatile, and made for everyday wear, whether you're headed to the game, the gym, or taking on whatever the day throws your way.",
+   "Now offered in black flat peak only \u2014 white and black flat peaks are the keepers; coloured and red colourways are being dropped per Justin's Nov 2026 direction.",
    "Because being the underdog isn't a weakness. It's a mindset."
   ],
   "features": [
@@ -341,12 +190,137 @@ window.MAB_CATALOG = [
    "assets/products/flat-bill-cap-1.jpg",
    "assets/products/flat-bill-cap-2.jpg",
    "assets/products/flat-bill-cap-3.jpg",
-   "assets/products/flat-bill-cap-4.jpg",
-   "assets/products/flat-bill-cap-5.jpg",
-   "assets/products/flat-bill-cap-6.jpg",
-   "assets/products/flat-bill-cap-7.jpg",
-   "assets/products/flat-bill-cap-8.jpg"
+   "assets/products/flat-bill-cap-4.jpg"
   ],
   "liveUrl": "https://www.mindatbat.ca/product-page/flat-bill-cap"
+ },
+ {
+  "slug": "trucker-white",
+  "name": "Trucker Hat \u2014 White",
+  "type": "cap",
+  "line": "Underdog",
+  "edition": "Coming",
+  "status": "coming",
+  "priceFrom": null,
+  "sizePrices": {},
+  "sizes": [],
+  "colors": [
+   {
+    "name": "White",
+    "hex": "#f5f5f5",
+    "split": null,
+    "image": null
+   }
+  ],
+  "unavailable": [],
+  "hook": "White trucker \u2014 waiting on Belinda's photos.",
+  "body": [
+   "Justin directed white and black trucker hats for the next drop.",
+   "Demo placeholder only \u2014 product shots, copy, and price land when Belinda sends them."
+  ],
+  "features": [
+   "Trucker mesh back",
+   "White colourway",
+   "Photos + price TBD with Belinda"
+  ],
+  "images": [
+   "assets/hero.jpg"
+  ],
+  "liveUrl": ""
+ },
+ {
+  "slug": "trucker-black",
+  "name": "Trucker Hat \u2014 Black",
+  "type": "cap",
+  "line": "Underdog",
+  "edition": "Coming",
+  "status": "coming",
+  "priceFrom": null,
+  "sizePrices": {},
+  "sizes": [],
+  "colors": [
+   {
+    "name": "Black",
+    "hex": "#1d1d1d",
+    "split": null,
+    "image": null
+   }
+  ],
+  "unavailable": [],
+  "hook": "Black trucker \u2014 waiting on Belinda's photos.",
+  "body": [
+   "Justin directed white and black trucker hats for the next drop.",
+   "Demo placeholder only \u2014 product shots, copy, and price land when Belinda sends them."
+  ],
+  "features": [
+   "Trucker mesh back",
+   "Black colourway",
+   "Photos + price TBD with Belinda"
+  ],
+  "images": [
+   "assets/hero.jpg"
+  ],
+  "liveUrl": ""
+ },
+ {
+  "slug": "rally-pink-tee",
+  "name": "Rally Pink Tee (Girl-back graphic)",
+  "type": "tee",
+  "line": "Rally",
+  "edition": "Coming",
+  "status": "coming",
+  "priceFrom": null,
+  "sizePrices": {},
+  "sizes": [],
+  "colors": [
+   {
+    "name": "Pink",
+    "hex": "#e8a0bf",
+    "split": null,
+    "image": null
+   }
+  ],
+  "unavailable": [],
+  "hook": "Pink tee with girl-in-photo graphic on the back.",
+  "body": [
+   "Replaces the coloured Rally Classic shirt colourways.",
+   "Needs Belinda's pink mockups (front + girl-on-back art) before this becomes a real product card."
+  ],
+  "features": [
+   "Pink colourway",
+   "Girl photo graphic on back",
+   "Photos + price TBD with Belinda"
+  ],
+  "images": [
+   "assets/hero.jpg"
+  ],
+  "liveUrl": ""
+ },
+ {
+  "slug": "punk-hoodie",
+  "name": "Punk Hoodie",
+  "type": "hoodie",
+  "line": "Rally",
+  "edition": "Coming",
+  "status": "coming",
+  "priceFrom": null,
+  "sizePrices": {},
+  "sizes": [],
+  "colors": [],
+  "unavailable": [],
+  "hook": "New hoodie SKU Justin asked for.",
+  "body": [
+   "Punk hoodie added to the roadmap Nov 6 2026.",
+   "Name, art, photos, and price TBD with Belinda \u2014 demo slot only."
+  ],
+  "features": [
+   "Hoodie",
+   "Punk direction",
+   "Photos + price TBD with Belinda"
+  ],
+  "images": [
+   "assets/hero.jpg"
+  ],
+  "liveUrl": ""
  }
 ];
