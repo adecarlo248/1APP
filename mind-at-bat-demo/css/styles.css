@@ -97,13 +97,41 @@ h1,h2,h3{font-weight:800;line-height:1.02;letter-spacing:-.02em}
 .hero-meta div{display:flex;align-items:center;gap:10px}
 .hero-meta i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-soft)}
 @media(max-width:600px){
-  .hero{min-height:min(calc(100svh - 100px),720px)}
-  .hero-inner{padding:48px 0 40px}
-  .hero .lead{margin:16px 0 24px}
-  .hero-ctas{flex-direction:column}
-  .hero-ctas .btn{width:100%}
-  .hero-meta{margin-top:28px;gap:14px 18px;flex-direction:column;align-items:flex-start}
-  .display{font-size:clamp(36px,11vw,56px)}
+  .wrap{padding:0 18px}
+  .section{padding:56px 0}
+  .section-head{margin-bottom:24px}
+  .newsletter{padding:28px 18px;border-radius:18px}
+  .inline-form{flex-direction:column}
+  .inline-form .input,.inline-form .btn{width:100%;flex:none;border-radius:999px}
+  .form-card,.info-card{padding:22px}
+  .pillars{grid-template-columns:1fr}
+  /* mission — real breathing room */
+  .mission-inner{padding:36px 0 44px;gap:8px;align-items:start}
+  .big-pct{font-size:clamp(56px,18vw,84px);line-height:.92;letter-spacing:-.03em;margin:0 0 4px}
+  .big-pct sup{font-size:.34em;margin-left:.1em}
+  .mission-copy .eyebrow{font-size:11px;letter-spacing:.14em;margin-top:8px}
+  .mission-copy .h2{font-size:clamp(26px,7.2vw,34px);margin:12px 0 14px !important;line-height:1.08}
+  .mission-copy .lead{font-size:15px;line-height:1.55;max-width:none;margin:0}
+  .mission-ctas{margin-top:22px;flex-direction:column;gap:10px;width:100%}
+  .mission-ctas .btn{width:100%;padding:15px 20px}
+  .letter{padding:28px 20px}
+  /* footer — less crush */
+  .footer-top{gap:32px;padding:40px 0 28px}
+  .footer-top img{height:32px;margin-bottom:14px;opacity:.95}
+  .footer-top > div:first-child p{margin-top:0}
+  .footer-top > div:first-child p.mono{margin-top:10px;font-size:11px;letter-spacing:.12em;line-height:1.5}
+  .footer-top h4{margin-bottom:14px;font-size:11.5px}
+  .footer-top ul{gap:14px}
+  .footer-top ul a{display:block;padding:2px 0;font-size:16px;line-height:1.35}
+  .footer-top p{font-size:15px;line-height:1.6}
+  .footer-bottom{padding:18px 0 96px;flex-direction:column;align-items:flex-start;gap:10px;font-size:11px;letter-spacing:.06em;line-height:1.55}
+  .footer-meta,.footer-copy{display:block}
+  .demo-badge{font-size:10px;padding:8px 12px;left:12px;bottom:max(12px,env(safe-area-inset-bottom));max-width:min(260px,calc(100vw - 24px))}
+  .tag{font-size:10px;padding:7px 11px;letter-spacing:.1em;max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .size-opt{min-height:44px;padding:12px 0}
+  .filter{padding:12px 16px}
+  .announce{font-size:10.5px;padding:8px 10px;letter-spacing:.1em}
+  .btn{padding:15px 22px}
 }
 
 /* marquee */
@@ -158,6 +186,9 @@ section{position:relative}
 .big-pct sup{font-size:.38em;vertical-align:super;color:var(--green);margin-left:.06em;font-weight:800;line-height:1}
 .mission .mark{width:140px;opacity:.9;display:none}
 @media(min-width:900px){.mission .mark{display:block}}
+.mission-copy .h2{margin:14px 0 14px}
+.mission-ctas{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.mission-ctas .btn{flex:0 1 auto}
 
 /* collections tiles */
 .tiles{display:grid;gap:18px}
