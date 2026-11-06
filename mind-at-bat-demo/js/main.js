@@ -51,8 +51,8 @@
       </div>
     </div>
     <div class="wrap footer-bottom">
-      <span>WWW.MINDATBAT.CA · support@mindatbat.com · Serving Canada</span>
-      <span>© 2026 Mind At Bat</span>
+      <span class="footer-meta">www.mindatbat.ca<br>support@mindatbat.com</span>
+      <span class="footer-copy">© 2026 Mind At Bat · Serving Canada</span>
     </div>
   </footer>
   <div class="overlay" id="overlay"></div>
