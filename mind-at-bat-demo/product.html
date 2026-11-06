@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="assets/mark.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Onest:wght@400;500;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css?v=4">
+<title>Product | Mind At Bat — Demo</title></head>
+<body data-page="product">
+<main class="wrap">
+  <nav class="crumbs"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="crumbName"></span></nav>
+  <div class="pdp">
+    <div>
+      <div class="gallery-main"><img id="galleryMain" alt=""></div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="pdp-info">
+      <span class="eyebrow" id="pLine"></span>
+      <h1 id="pName"></h1>
+      <div class="pdp-price" id="pPrice"></div>
+      <p class="hook" id="pHook"></p>
+      <div id="colorWrap" class="opt" hidden><div class="opt-label"><span>Colour</span><b id="colorName"></b></div><div class="color-opts" id="colorOpts"></div></div>
+      <div id="sizeWrap" class="opt" hidden><div class="opt-label"><span>Size</span><b id="sizeName"></b></div><div class="size-opts" id="sizeOpts"></div></div>
+      <div id="fitNote" class="opt" hidden><div class="opt-label"><span>Size</span><b>One size fits most · Adjustable snapback</b></div></div>
+      <div class="qty-row">
+        <div class="qty"><button id="qMinus" aria-label="Decrease">−</button><span id="qVal">1</span><button id="qPlus" aria-label="Increase">+</button></div>
+        <button class="btn btn-white" id="addBtn">Add to Cart</button>
+      </div>
+      <div class="callout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>
+        <div><b>10% of every purchase</b> supports men's mental health initiatives, awareness, and programs that encourage conversations, connection, and support.</div></div>
+      <div class="perks"><div class="perk"><b>Made to order</b>Ships in 2–7 business days</div><div class="perk"><b>Canada-wide</b>Tracking when available</div><div class="perk"><b>Support</b>Replies in 1–2 business days</div></div>
+      <div class="acc">
+        <details open><summary>Description</summary><div class="acc-body" id="pBody"></div></details>
+        <details><summary>Features</summary><div class="acc-body"><ul class="feat-list" id="pFeatures"></ul></div></details>
+        <details id="sizeGuide" hidden><summary>Size &amp; Pricing</summary><div class="acc-body"><p>Retail-style unisex fit. Extended sizes are priced separately.</p><table class="size-table" id="sizeTable"></table></div></details>
+        <details><summary>Shipping &amp; Returns</summary><div class="acc-body">
+          <p>All Mind At Bat products are made to order. Orders are typically processed within 2–7 business days before shipment. Customers will receive tracking information when available.</p>
+          <p>Because all products are made to order, we do not accept returns or exchanges for incorrect size selection, buyer remorse, preference changes, or accidental orders. We will gladly replace or refund orders that arrive damaged, contain manufacturing defects, or are incorrectly fulfilled — contact support@mindatbat.com within 5 business days with photos.</p></div></details>
+      </div>
+      <p class="form-note" style="margin-top:18px">Demo page · compare with the <a class="green" id="liveLink" target="_blank" rel="noopener">current live listing ↗</a></p>
+    </div>
+  </div>
+  <section style="padding:40px 0 100px">
+    <div class="section-head"><div><span class="eyebrow">Same Game. Different Battles.</span><h2 class="h2">You may also like</h2></div></div>
+    <div class="grid" id="related"></div>
+  </section>
+</main>
+<script src="js/catalog.js"></script><script src="js/main.js"></script>
+</body></html>
