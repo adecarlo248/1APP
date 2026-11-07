@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <script src="/assets/google-tag.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#f6efe4">
+  <title>Sample booking | The Hub Sauce Co. concept</title>
+  <meta name="description" content="An illustrative booking walkthrough for The Hub Sauce Co. No appointment is created.">
+  <link rel="icon" href="/hub-sauce-demo/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,680;1,9..144,560&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/hub-sauce-demo/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stack">
+    <header class="site-header">
+      <p class="demo-banner">Concept demo by 1APP — not the live store. <a href="https://www.thehubsauceco.com/">thehubsauceco.com</a></p>
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co."></a>
+        <button type="button" class="icon-btn cart-toggle" data-open-cart>Basket <span class="count" id="cart-count">0</span></button>
+        <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <div class="nav-links" id="site-nav">
+          <a href="/hub-sauce-demo/shop/" class="">The lineup</a><a href="/hub-sauce-demo/pairings/" class="">Pairings</a><a href="/hub-sauce-demo/story/" class="">Story</a><a href="/hub-sauce-demo/book/" class="btn" aria-current="page">Sample booking</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+  <main id="main">
+
+    <section class="book-shell">
+      <div class="wrap">
+        <p class="kicker">Sample booking experience</p>
+        <h1>A request, on paper. <em>Not a calendar.</em></h1>
+        <p class="lede">The live site has no bookable service. Pickup and tastings are not offered here. This sample is not Square checkout and does not order sauce. Every reason, date, and time below is illustrative, pending the owner’s confirmation.</p>
+        <ol class="progress" aria-label="Booking steps">
+          <li><button type="button" data-goto="1">1 Reason</button></li>
+          <li><button type="button" data-goto="2">2 Day</button></li>
+          <li><button type="button" data-goto="3">3 Time</button></li>
+          <li><button type="button" data-goto="4">4 Note</button></li>
+          <li><button type="button" data-goto="5">5 Review</button></li>
+        </ol>
+        <form id="book-form" class="book-card" action="#" autocomplete="off">
+          <p id="book-error" class="error" role="alert"></p>
+          <section class="step" data-step="1">
+            <h2 tabindex="-1">What is the sample about?</h2>
+            <p>These are not services on the menu. They are sample reasons so the flow can be tried.</p>
+            <div class="choices" role="radiogroup" aria-label="Sample reason">
+              <button type="button" class="choice" data-type="sauce" role="radio" aria-checked="false"><strong>A question about a sauce on the shop</strong><small>Illustrative. Name Canadian Cue, Da Kine, Twister Sister, Gold Metal Mustard, or Pixie Dust in the note if you want.</small></button>
+              <button type="button" class="choice" data-type="set" role="radio" aria-checked="false"><strong>A question about the Starter Set</strong><small>Illustrative. The set lists Gold Metal Mustard, Twister Sister, Canadian Cue, Pixie Dust, and SPG+.</small></button>
+              <button type="button" class="choice" data-type="lineup" role="radio" aria-checked="false"><strong>Another question about the lineup</strong><small>Illustrative. Not catering, not a tasting, not a pickup.</small></button>
+            </div>
+            <div class="book-nav"><span></span><button type="button" class="btn" data-next>Continue</button></div>
+          </section>
+          <section class="step" data-step="2" hidden>
+            <h2 tabindex="-1">Pick an illustrative day</h2>
+            <p class="note">These are the next weekdays on this device’s clock, inside the Monday–Friday shape of the location record. They are not openings. Pending owner confirmation.</p>
+            <div id="date-choices" class="date-grid" role="radiogroup" aria-label="Illustrative dates"></div>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Continue</button></div>
+          </section>
+          <section class="step" data-step="3" hidden>
+            <h2 tabindex="-1">Pick an illustrative time</h2>
+            <p class="note">Sample times inside the 9:00–17:00 window printed on the location record. Not a slot anyone is holding.</p>
+            <div id="time-choices" class="time-grid" role="radiogroup" aria-label="Illustrative times"></div>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Continue</button></div>
+          </section>
+          <section class="step" data-step="4" hidden>
+            <h2 tabindex="-1">A note, if you want one</h2>
+            <p>Contact is optional. The fields start with example data. Nothing is sent or stored.</p>
+            <div class="inline-actions">
+              <button type="button" class="btn-ghost" data-example>Use example details</button>
+              <button type="button" class="text-btn" data-clear-contact>Leave contact blank</button>
+            </div>
+            <div class="field"><label for="guest-name">Name</label><input id="guest-name" name="name" autocomplete="off" value="Alex Example"></div>
+            <div class="field"><label for="guest-email">Email</label><input id="guest-email" name="email" type="email" autocomplete="off" inputmode="email" value="alex@example.com"></div>
+            <div class="field"><label for="guest-phone">Phone</label><input id="guest-phone" name="phone" type="tel" autocomplete="off" value="555-0100"></div>
+            <div class="field"><label for="guest-note">Question</label><textarea id="guest-note" name="note">Example question: which sauce is the maple one?</textarea></div>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Review</button></div>
+          </section>
+          <section class="step" data-step="5" hidden>
+            <h2 tabindex="-1">Review the sample</h2>
+            <div class="summary">
+              <article><div><strong>Reason</strong><div id="sum-type"></div></div><button type="button" class="text-btn" data-edit="1">Edit</button></article>
+              <article><div><strong>Day</strong><div id="sum-date"></div></div><button type="button" class="text-btn" data-edit="2">Edit</button></article>
+              <article><div><strong>Time</strong><div id="sum-time"></div></div><button type="button" class="text-btn" data-edit="3">Edit</button></article>
+              <article><div><strong>Name</strong><div id="sum-name"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+              <article><div><strong>Email</strong><div id="sum-email"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+              <article><div><strong>Phone</strong><div id="sum-phone"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+              <article><div><strong>Question</strong><div id="sum-note"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+            </div>
+            <p class="note">Finishing keeps this on the screen only. No email, no calendar, no saved contact.</p>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-finish>Finish demo</button></div>
+          </section>
+          <section class="step" data-step="6" hidden>
+            <div class="final">
+              <p class="kicker">End of the sample</p>
+              <h2 tabindex="-1">Demo complete — no booking made</h2>
+              <p id="done-copy" tabindex="-1"></p>
+            </div>
+            <div class="summary">
+              <article><div><strong>Reason</strong><div id="done-type"></div></div></article>
+              <article><div><strong>Day</strong><div id="done-date"></div></div></article>
+              <article><div><strong>Time</strong><div id="done-time"></div></div></article>
+              <article><div><strong>Name</strong><div id="done-name"></div></div></article>
+              <article><div><strong>Email</strong><div id="done-email"></div></div></article>
+              <article><div><strong>Phone</strong><div id="done-phone"></div></div></article>
+              <article><div><strong>Question</strong><div id="done-note"></div></div></article>
+            </div>
+            <div class="book-nav"><button type="button" class="btn" data-restart>Start the sample again</button><a class="btn-ghost" href="/hub-sauce-demo/shop/">Back to the lineup</a></div>
+          </section>
+        </form>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="160">
+        <p>Box 566, Hastings, ON K0L 1Y0. That line is printed on a label image in the public shop.</p>
+        <p class="fine">Concept demo by 1APP — not the live store. No orders are taken here.</p>
+      </div>
+      <div>
+        <h2>Visit</h2>
+        <p><a href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a></p>
+        <p><a href="https://www.instagram.com/thehubsauceco/">Instagram @thehubsauceco</a></p>
+        <p><a href="mailto:yetismicrofarm@gmail.com">yetismicrofarm@gmail.com</a></p>
+        <p class="fine">That email is the one selected on the current website. This demo does not send mail.</p>
+      </div>
+      <div>
+        <h2>In this demo</h2>
+        <p><a href="/hub-sauce-demo/shop/">Six published products</a></p>
+        <p><a href="/hub-sauce-demo/pairings/">Serving notes</a></p>
+        <p><a href="/hub-sauce-demo/story/">What the site actually says</a></p>
+        <p><a href="/hub-sauce-demo/book/">Sample booking experience</a></p>
+      </div>
+    </div>
+  </footer>
+  
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <h2 id="drawer-title" tabindex="-1" style="margin:0;font-size:36px">Preview basket</h2>
+      <button type="button" class="text-btn" data-close-drawer>Close</button>
+    </div>
+    <p class="note">Local preview only. Square is not connected. Nothing in this basket is submitted or paid.</p>
+    <p id="cart-empty">The basket is empty.</p>
+    <div id="cart-lines"></div>
+    <p><strong>Preview total</strong> <span id="cart-total">$0.00 CAD</span></p>
+    <p class="fine">Prices are the published shop prices in Canadian dollars. This demo does not calculate shipping or talk to Square.</p>
+    <button type="button" class="btn" id="preview-stop">Show Square handoff</button>
+    <div id="preview-message" class="handoff" hidden>
+      <h3>Ordering would continue securely with Square</h3>
+      <p>This is a preview of that handoff. No order was sent, and this demo has no Square login, payment, or catalog sync.</p>
+      <p>The next step on his real shop is the Square Order Online page already published on his site. Opening it leaves the demo. A real order can be placed there.</p>
+      <a class="btn-ghost" href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a>
+      <p class="fine">Published Square page: thehubsauceco.com/s/order. The product list is at thehubsauceco.com/s/shop. Sample booking, elsewhere on this demo, is not an order.</p>
+    </div>
+  </div>
+</div>
+<dialog id="quick" aria-labelledby="quick-title">
+  <div class="quick">
+    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="">
+    <div>
+      <p class="stamp" data-q-heat></p>
+      <h2 id="quick-title" data-q-name tabindex="-1" style="margin:8px 0"></h2>
+      <p class="price" data-q-price></p>
+        <p data-q-blurb></p>
+      <p class="badge" data-q-badge></p>
+      <p class="fine">Preview only. This does not start a Square order.</p>
+      <div class="inline-actions">
+        <button type="button" class="btn" data-q-add>Add to preview</button>
+        <a class="btn-ghost" data-q-link href="/hub-sauce-demo/shop/">Full page</a>
+        <button type="button" class="text-btn" onclick="document.getElementById('quick').close()">Close</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+  <script src="/hub-sauce-demo/js/catalog.js"></script>
+<script src="/hub-sauce-demo/js/site.js"></script>
+<script src="/hub-sauce-demo/js/book.js"></script>
+</body>
+</html>

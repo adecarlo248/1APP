@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <script src="/assets/google-tag.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#f6efe4">
+  <title>The lineup | The Hub Sauce Co. concept</title>
+  <meta name="description" content="Filter The Hub Sauce Co. lineup by sauce, seasoning, set, and the heat scales printed on the live shop.">
+  <link rel="icon" href="/hub-sauce-demo/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,680;1,9..144,560&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/hub-sauce-demo/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="stack">
+    <header class="site-header">
+      <p class="demo-banner">Concept demo by 1APP — not the live store. <a href="https://www.thehubsauceco.com/">thehubsauceco.com</a></p>
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co."></a>
+        <button type="button" class="icon-btn cart-toggle" data-open-cart>Basket <span class="count" id="cart-count">0</span></button>
+        <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <div class="nav-links" id="site-nav">
+          <a href="/hub-sauce-demo/shop/" class="" aria-current="page">The lineup</a><a href="/hub-sauce-demo/pairings/" class="">Pairings</a><a href="/hub-sauce-demo/story/" class="">Story</a><a href="/hub-sauce-demo/book/" class="btn">Sample booking</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+  <main id="main">
+
+    <section class="section" style="padding-top:28px">
+      <div class="wrap">
+        <p class="kicker">The public shop</p>
+        <h1>Six things they <em>actually</em> list.</h1>
+        <p class="lede">Filter by the kind of product, or by the heat scale printed on the page. The Starter Set has no heat scale. Adding a jar fills a preview basket only. Square checkout is a separate handoff, not a booking.</p>
+        <div class="filters" role="group" aria-label="Product kind">
+          <button type="button" data-filter-kind="all" aria-pressed="true">All</button>
+          <button type="button" data-filter-kind="sauce" aria-pressed="false">Sauces</button>
+          <button type="button" data-filter-kind="seasoning" aria-pressed="false">Seasoning</button>
+          <button type="button" data-filter-kind="set" aria-pressed="false">Set</button>
+        </div>
+        <div class="filters" role="group" aria-label="Heat scale">
+          <button type="button" data-filter-heat="all" aria-pressed="true">Any heat</button>
+          <button type="button" data-filter-heat="2" aria-pressed="false">2/10</button>
+          <button type="button" data-filter-heat="3" aria-pressed="false">3/10</button>
+          <button type="button" data-filter-heat="5" aria-pressed="false">5/10</button>
+          <button type="button" data-filter-heat="none" aria-pressed="false">Not listed</button>
+        </div>
+        <div class="sorts">
+          <label for="sort">Sort</label>
+          <select id="sort">
+            <option value="shop">Shop order</option>
+            <option value="name">Name</option>
+            <option value="price-asc">Price, low to high</option>
+            <option value="price-desc">Price, high to low</option>
+            <option value="heat">Heat scale</option>
+          </select>
+        </div>
+        <div class="grid" data-shop>
+
+<article class="card" data-kind="sauce" data-heat="5" data-name="gold metal mustard" data-price="15.00" data-order="1" data-id="gold-metal-mustard">
+  <a class="card-media" href="/hub-sauce-demo/product/gold-metal-mustard/"><img src="/hub-sauce-demo/assets/gold.webp" alt="Illustrated sugar skull with a yellow rose, the picture published for Gold Metal Mustard."></a>
+  <div class="card-body">
+    <p class="stamp">Their heat scale 5/10</p>
+    <h2><a href="/hub-sauce-demo/product/gold-metal-mustard/">Gold Metal Mustard</a></h2>
+    <p class="price">$15.00 CAD</p>
+    <p class="blurb">Their flagship, and the first sauce they say they released. Tangy, sweet, and spicy.</p>
+    <p class="badge">Catalog badge on 7 Nov 2026: sold out</p>
+    <div class="card-actions">
+      <button type="button" class="text-btn" data-quick="gold-metal-mustard">Quick view</button>
+      <button type="button" class="btn" data-add="gold-metal-mustard">Add to preview</button>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-kind="sauce" data-heat="2" data-name="da kine!" data-price="15.00" data-order="2" data-id="da-kine">
+  <a class="card-media" href="/hub-sauce-demo/product/da-kine/"><img src="/hub-sauce-demo/assets/dakine.webp" alt="Illustrated cowboy in a hat with hibiscus flowers, the picture published for Da Kine."></a>
+  <div class="card-body">
+    <p class="stamp">Their heat scale 2/10</p>
+    <h2><a href="/hub-sauce-demo/product/da-kine/">Da Kine!</a></h2>
+    <p class="price">$15.00 CAD</p>
+    <p class="blurb">Pineapple cowboy candy. They call it a low-heat treat.</p>
+    <p class="badge">Catalog badge on 7 Nov 2026: sold out</p>
+    <div class="card-actions">
+      <button type="button" class="text-btn" data-quick="da-kine">Quick view</button>
+      <button type="button" class="btn" data-add="da-kine">Add to preview</button>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-kind="seasoning" data-heat="3" data-name="pixie dust" data-price="12.00" data-order="3" data-id="pixie-dust">
+  <a class="card-media" href="/hub-sauce-demo/product/pixie-dust/"><img src="/hub-sauce-demo/assets/pixie.webp" alt="Pixie Dust label art with a fairy, the words Spicy Everything Bagel Seasoning, and 100g."></a>
+  <div class="card-body">
+    <p class="stamp">Their heat scale 3/10</p>
+    <h2><a href="/hub-sauce-demo/product/pixie-dust/">Pixie Dust</a></h2>
+    <p class="price">$12.00 CAD</p>
+    <p class="blurb">Everything-bagel seasoning with cayenne. The label art reads 100g.</p>
+    <p class="badge">Catalog badge on 7 Nov 2026: sold out</p>
+    <div class="card-actions">
+      <button type="button" class="text-btn" data-quick="pixie-dust">Quick view</button>
+      <button type="button" class="btn" data-add="pixie-dust">Add to preview</button>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-kind="sauce" data-heat="3" data-name="twister sister" data-price="15.00" data-order="4" data-id="twister-sister">
+  <a class="card-media" href="/hub-sauce-demo/product/twister-sister/"><img src="/hub-sauce-demo/assets/twister.webp" alt="Illustrated twin profiles with flowers, the picture published for Twister Sister."></a>
+  <div class="card-body">
+    <p class="stamp">Their heat scale 3/10</p>
+    <h2><a href="/hub-sauce-demo/product/twister-sister/">Twister Sister</a></h2>
+    <p class="price">$15.00 CAD</p>
+    <p class="blurb">The first sauce in their candy line. Pineapple sweetness, fresh jalapeños.</p>
+    
+    <div class="card-actions">
+      <button type="button" class="text-btn" data-quick="twister-sister">Quick view</button>
+      <button type="button" class="btn" data-add="twister-sister">Add to preview</button>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-kind="sauce" data-heat="3" data-name="canadian cue!" data-price="15.00" data-order="5" data-id="canadian-cue">
+  <a class="card-media" href="/hub-sauce-demo/product/canadian-cue/"><img src="/hub-sauce-demo/assets/canadian.webp" alt="Illustrated portrait in orange and brown, the picture published for Canadian Cue."></a>
+  <div class="card-body">
+    <p class="stamp">Their heat scale 3/10</p>
+    <h2><a href="/hub-sauce-demo/product/canadian-cue/">Canadian Cue!</a></h2>
+    <p class="price">$15.00 CAD</p>
+    <p class="blurb">A BBQ-flavoured maple syrup, in their words. It began as a Father’s Day gift from a son.</p>
+    <p class="badge">Catalog badge on 7 Nov 2026: sold out</p>
+    <div class="card-actions">
+      <button type="button" class="text-btn" data-quick="canadian-cue">Quick view</button>
+      <button type="button" class="btn" data-add="canadian-cue">Add to preview</button>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-kind="set" data-heat="none" data-name="starter set" data-price="100.00" data-order="6" data-id="starter-set">
+  <a class="card-media" href="/hub-sauce-demo/product/starter-set/"><img src="/hub-sauce-demo/assets/starter.webp" alt="The Hub Sauce Co. gold wordmark, which is the image published for the Starter Set."></a>
+  <div class="card-body">
+    <p class="stamp">No heat scale listed</p>
+    <h2><a href="/hub-sauce-demo/product/starter-set/">Starter Set</a></h2>
+    <p class="price">$100.00 CAD</p>
+    <p class="blurb">Includes Gold Metal Mustard, Twister Sister, Canadian Cue, Pixie Dust, and SPG+.</p>
+    <p class="badge">Catalog badge on 7 Nov 2026: low stock</p>
+    <div class="card-actions">
+      <button type="button" class="text-btn" data-quick="starter-set">Quick view</button>
+      <button type="button" class="btn" data-add="starter-set">Add to preview</button>
+    </div>
+  </div>
+</article>
+        </div>
+        <p id="shop-empty" class="empty" hidden>Nothing in the lineup matches those filters.</p>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="160">
+        <p>Box 566, Hastings, ON K0L 1Y0. That line is printed on a label image in the public shop.</p>
+        <p class="fine">Concept demo by 1APP — not the live store. No orders are taken here.</p>
+      </div>
+      <div>
+        <h2>Visit</h2>
+        <p><a href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a></p>
+        <p><a href="https://www.instagram.com/thehubsauceco/">Instagram @thehubsauceco</a></p>
+        <p><a href="mailto:yetismicrofarm@gmail.com">yetismicrofarm@gmail.com</a></p>
+        <p class="fine">That email is the one selected on the current website. This demo does not send mail.</p>
+      </div>
+      <div>
+        <h2>In this demo</h2>
+        <p><a href="/hub-sauce-demo/shop/">Six published products</a></p>
+        <p><a href="/hub-sauce-demo/pairings/">Serving notes</a></p>
+        <p><a href="/hub-sauce-demo/story/">What the site actually says</a></p>
+        <p><a href="/hub-sauce-demo/book/">Sample booking experience</a></p>
+      </div>
+    </div>
+  </footer>
+  
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <h2 id="drawer-title" tabindex="-1" style="margin:0;font-size:36px">Preview basket</h2>
+      <button type="button" class="text-btn" data-close-drawer>Close</button>
+    </div>
+    <p class="note">Local preview only. Square is not connected. Nothing in this basket is submitted or paid.</p>
+    <p id="cart-empty">The basket is empty.</p>
+    <div id="cart-lines"></div>
+    <p><strong>Preview total</strong> <span id="cart-total">$0.00 CAD</span></p>
+    <p class="fine">Prices are the published shop prices in Canadian dollars. This demo does not calculate shipping or talk to Square.</p>
+    <button type="button" class="btn" id="preview-stop">Show Square handoff</button>
+    <div id="preview-message" class="handoff" hidden>
+      <h3>Ordering would continue securely with Square</h3>
+      <p>This is a preview of that handoff. No order was sent, and this demo has no Square login, payment, or catalog sync.</p>
+      <p>The next step on his real shop is the Square Order Online page already published on his site. Opening it leaves the demo. A real order can be placed there.</p>
+      <a class="btn-ghost" href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a>
+      <p class="fine">Published Square page: thehubsauceco.com/s/order. The product list is at thehubsauceco.com/s/shop. Sample booking, elsewhere on this demo, is not an order.</p>
+    </div>
+  </div>
+</div>
+<dialog id="quick" aria-labelledby="quick-title">
+  <div class="quick">
+    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="">
+    <div>
+      <p class="stamp" data-q-heat></p>
+      <h2 id="quick-title" data-q-name tabindex="-1" style="margin:8px 0"></h2>
+      <p class="price" data-q-price></p>
+        <p data-q-blurb></p>
+      <p class="badge" data-q-badge></p>
+      <p class="fine">Preview only. This does not start a Square order.</p>
+      <div class="inline-actions">
+        <button type="button" class="btn" data-q-add>Add to preview</button>
+        <a class="btn-ghost" data-q-link href="/hub-sauce-demo/shop/">Full page</a>
+        <button type="button" class="text-btn" onclick="document.getElementById('quick').close()">Close</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+  <script src="/hub-sauce-demo/js/catalog.js"></script>
+<script src="/hub-sauce-demo/js/site.js"></script>
+</body>
+</html>
