@@ -80,6 +80,10 @@ Not built, and still needing the owner if they want a connected shop: Square OAu
 
 Sample booking is a separate illustrative flow. The location record does not enable pickup or scheduled ordering.
 
+## Homepage wording
+
+A later copy pass removed research narration from prominent homepage headings. These points stay here, not in that pitch: product images are the shop’s own illustrations or label art (the Starter Set image is the wordmark); Instagram’s public page did not return posts or a biography, so no feed is embedded; award contests are unnamed; pickup and delivery are not enabled; catalog sold-out and low-stock badges are not repeated on the homepage cards; the live site’s selected Instagram handle is still `yetis_micro_farm`. The homepage still uses only sourced lines: the Canadian Cue origin quote, the location description “multi award winning artisan hot sauce and condiments,” Gold Metal Mustard as the flagship and first sauce, printed heat scales, serving notes including the spelling “creaser,” the label address, and the link to @thehubsauceco. Sample booking on the homepage is labeled illustrative and does not claim a real appointment service.
+
 ## Demo behaviour
 
 - Path `/hub-sauce-demo/` only. `noindex` on every page. Basket uses `sessionStorage` for product id and quantity. Booking contact stays in the page until finish, then the inputs are cleared. Nothing is posted.
