@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <script src="/assets/google-tag.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#180d0d">
+  <title>Pantry Refill | The Hub Sauce Co.</title>
+  <meta name="description" content="A proposed Pantry Refill concept. No subscription is started.">
+  <link rel="icon" href="/hub-sauce-demo/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,560&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/hub-sauce-demo/css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <p class="demo-banner">Concept demo by 1APP — not the live store. <a href="https://www.thehubsauceco.com/">thehubsauceco.com</a></p>
+    <div class="nav">
+      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co."></a>
+      <button type="button" class="icon-btn" data-open-cart>Basket <span class="count" id="cart-count">0</span></button>
+      <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav-panel" aria-label="Primary" hidden>
+        <button type="button" class="menu-toggle nav-close" data-menu-close>Close</button>
+        <a href="/hub-sauce-demo/shop/">Shop</a><a href="/hub-sauce-demo/pairings/">Pairings</a><a href="/hub-sauce-demo/story/">Our story</a><a href="/hub-sauce-demo/events/">Find us next</a><a href="/hub-sauce-demo/subscribe/" aria-current="page">Pantry Refill</a><a class="square-link" href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="band-chilli" style="padding-bottom:18px">
+      <div class="wrap">
+        <p class="kicker">Proposed concept</p>
+        <h1>Pantry Refill</h1>
+        <p class="lede">The same sauce, sent again on a rhythm you pick. Pricing to be confirmed. Nothing here enrols you.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <ol class="progress" aria-label="Pantry Refill steps">
+          <li><button type="button" data-sub-goto="1">1 Way</button></li>
+          <li><button type="button" data-sub-goto="2">2 Sauce</button></li>
+          <li><button type="button" data-sub-goto="3">3 Rhythm</button></li>
+          <li><button type="button" data-sub-goto="4">4 Review</button></li>
+          <li><button type="button" data-sub-goto="5">5 Done</button></li>
+        </ol>
+        <form id="sub-form" class="flow-card" action="#" autocomplete="off">
+          <p id="sub-error" class="error" role="alert"></p>
+          <section data-sub-step="1">
+            <h2 tabindex="-1">How do you want it?</h2>
+            <p>Neither path is selected. Pantry Refill is a concept, not a live plan.</p>
+            <div class="choices" role="radiogroup" aria-label="Purchase path">
+              <button type="button" class="choice" data-mode="once" role="radio" aria-checked="false"><strong>One-time</strong><small>Order in the live Square store. This basket does not transfer.</small></button>
+              <button type="button" class="choice" data-mode="repeat" role="radio" aria-checked="false"><strong>Pantry Refill</strong><small>Proposed. Same item, illustrative cadence. Pricing to be confirmed.</small></button>
+            </div>
+            <div class="flow-nav"><span></span><button type="button" class="btn" data-sub-next>Continue</button></div>
+          </section>
+          <section data-sub-step="2" hidden>
+            <h2 tabindex="-1">Choose the sauce</h2>
+            <p>No product is preselected.</p>
+            <div id="sub-products" class="choices" role="radiogroup" aria-label="Product"></div>
+            <p style="display:flex;align-items:center;gap:8px">Quantity <span class="qty"><button type="button" data-qty-dec aria-label="Decrease quantity">−</button><span id="sub-qty">1</span><button type="button" data-qty-inc aria-label="Increase quantity">+</button></span></p>
+            <div class="flow-nav"><button type="button" class="btn-ghost" data-sub-back>Back</button><button type="button" class="btn" data-sub-next>Continue</button></div>
+          </section>
+          <section data-sub-step="3" hidden>
+            <h2 tabindex="-1">Pick a rhythm</h2>
+            <p class="note">Illustrative only. Neither cadence is preselected. Pricing to be confirmed.</p>
+            <div class="choices" role="radiogroup" aria-label="Illustrative cadence">
+              <button type="button" class="choice" data-cadence="monthly" role="radio" aria-checked="false"><strong>Monthly</strong><small>Illustrative. Not a confirmed plan.</small></button>
+              <button type="button" class="choice" data-cadence="bimonthly" role="radio" aria-checked="false"><strong>Every two months</strong><small>Illustrative. Not a confirmed plan.</small></button>
+            </div>
+            <div class="flow-nav"><button type="button" class="btn-ghost" data-sub-back>Back</button><button type="button" class="btn" data-sub-next>Review</button></div>
+          </section>
+          <section data-sub-step="4" hidden>
+            <h2 tabindex="-1">Review the concept</h2>
+            <div class="summary">
+              <article><div><strong>Path</strong><div id="sum-mode"></div></div><button type="button" class="text-btn" data-sub-edit="1">Edit</button></article>
+              <article><div><strong>Sauce</strong><div id="sum-item"></div></div><button type="button" class="text-btn" data-sub-edit="2">Edit</button></article>
+              <article><div><strong>Quantity</strong><div id="sum-qty"></div></div><button type="button" class="text-btn" data-sub-edit="2">Edit</button></article>
+              <article><div><strong>Rhythm</strong><div id="sum-cadence"></div></div><button type="button" class="text-btn" data-sub-edit="3">Edit</button></article>
+              <article><div><strong>Shelf price</strong><div id="sum-shelf"></div></div></article>
+              <article><div><strong>Recurring price</strong><div id="sum-recurring"></div></div></article>
+              <article><div><strong>Shipping and tax</strong><div id="sum-ship"></div></div></article>
+              <article><div><strong>First charge</strong><div id="sum-first"></div></div></article>
+            </div>
+            <p class="note">A fixed shipped item is the kind of repeat Square can run. Pickup and a rotating box are not assumed. This page does not enrol you, discount anything, or promise you can cancel on terms that have not been set.</p>
+            <div class="flow-nav"><button type="button" class="btn-ghost" data-sub-back>Back</button><button type="button" class="btn" data-sub-finish>Finish demo</button></div>
+          </section>
+          <section data-sub-step="5" hidden>
+            <h2 tabindex="-1">One-time stays in Square</h2>
+            <p>Orders continue in the live Square shop. This preview basket does not transfer, and Pantry Refill was not started.</p>
+            <p><a class="btn" href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a></p>
+            <div class="flow-nav"><button type="button" class="btn-ghost" data-sub-back>Back</button><button type="button" class="btn" data-sub-finish>Finish demo</button></div>
+          </section>
+          <section data-sub-step="6" hidden>
+            <p class="kicker">End of the concept</p>
+            <h2 tabindex="-1">Demo complete — no subscription started</h2>
+            <p id="sub-done-copy" tabindex="-1"></p>
+            <div class="summary">
+              <article><div><strong>Path</strong><div id="done-mode"></div></div></article>
+              <article><div><strong>Sauce</strong><div id="done-item"></div></div></article>
+              <article><div><strong>Quantity</strong><div id="done-qty"></div></div></article>
+              <article><div><strong>Rhythm</strong><div id="done-cadence"></div></div></article>
+              <article><div><strong>Shelf price</strong><div id="done-shelf"></div></div></article>
+              <article><div><strong>Recurring price</strong><div id="done-recurring"></div></div></article>
+              <article><div><strong>Shipping and tax</strong><div id="done-ship"></div></div></article>
+              <article><div><strong>First charge</strong><div id="done-first"></div></div></article>
+            </div>
+            <div class="flow-nav"><button type="button" class="btn" data-sub-restart>Start again</button><a class="btn-ghost" href="/hub-sauce-demo/shop/">Shop sauces</a></div>
+          </section>
+        </form>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="140">
+        <p>Box 566, Hastings, ON K0L 1Y0</p>
+        <p class="fine">Mailing line from their label, not a market address. Concept demo by 1APP — not the live store. No orders are taken here.</p>
+      </div>
+      <div>
+        <h2>Order</h2>
+        <p><a href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a></p>
+        <p><a href="https://www.instagram.com/thehubsauceco/">Instagram @thehubsauceco</a></p>
+        <p><a href="mailto:yetismicrofarm@gmail.com">yetismicrofarm@gmail.com</a></p>
+        <p class="fine">Email published on the current site. This demo does not send mail.</p>
+      </div>
+      <div>
+        <h2>Look around</h2>
+        <p><a href="/hub-sauce-demo/shop/">Shop</a></p>
+        <p><a href="/hub-sauce-demo/subscribe/">Pantry Refill concept</a></p>
+        <p><a href="/hub-sauce-demo/events/">Find us next</a></p>
+        <p><a href="/hub-sauce-demo/book/">Sample booking (demo only)</a></p>
+      </div>
+    </div>
+  </footer>
+  
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <h2 id="drawer-title" tabindex="-1" style="font-size:36px">Preview basket</h2>
+      <button type="button" class="text-btn" data-close-drawer>Close</button>
+    </div>
+    <p class="note">Local preview only. This basket does not transfer to Square, and nothing here is paid.</p>
+    <p id="cart-empty">The basket is empty.</p>
+    <div id="cart-lines"></div>
+    <p><strong>Preview total</strong> <span id="cart-total">$0.00 CAD</span></p>
+    <p class="fine">Shelf prices in Canadian dollars. Shipping is not calculated.</p>
+    <button type="button" class="btn" id="preview-stop">Show Square handoff</button>
+    <div id="preview-message" class="handoff" hidden>
+      <h3>Ordering would continue securely with Square</h3>
+      <p>This basket stays in this browser. It does not transfer to the live shop, and no order is sent.</p>
+      <a class="btn" href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a>
+    </div>
+  </div>
+</div>
+<dialog id="quick" aria-labelledby="quick-title">
+  <div class="quick">
+    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="">
+    <div>
+      <p class="heat" data-q-heat></p>
+      <h2 id="quick-title" data-q-name tabindex="-1"></h2>
+      <p class="price" data-q-price></p>
+      <p data-q-blurb></p>
+      <p class="fine" data-q-size></p>
+      <p class="fine">Preview only. This basket does not start a Square order.</p>
+      <div class="stack-actions">
+        <button type="button" class="btn" data-q-add>Add to preview</button>
+        <a class="btn-ghost" data-q-live href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a>
+        <a class="text-btn" data-q-link href="/hub-sauce-demo/shop/">Full page</a>
+        <button type="button" class="text-btn" onclick="document.getElementById('quick').close()">Close</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+  
+  <script src="/hub-sauce-demo/js/catalog.js"></script>
+<script src="/hub-sauce-demo/js/site.js"></script>
+<script src="/hub-sauce-demo/js/subscribe.js"></script>
+</body>
+</html>
