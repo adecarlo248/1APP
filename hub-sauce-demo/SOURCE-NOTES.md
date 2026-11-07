@@ -84,6 +84,12 @@ Sample booking is a separate illustrative flow. The location record does not ena
 
 A later copy pass removed research narration from prominent homepage headings. These points stay here, not in that pitch: product images are the shop’s own illustrations or label art (the Starter Set image is the wordmark); Instagram’s public page did not return posts or a biography, so no feed is embedded; award contests are unnamed; pickup and delivery are not enabled; catalog sold-out and low-stock badges are not repeated on the homepage cards; the live site’s selected Instagram handle is still `yetis_micro_farm`. The homepage still uses only sourced lines: the Canadian Cue origin quote, the location description “multi award winning artisan hot sauce and condiments,” Gold Metal Mustard as the flagship and first sauce, printed heat scales, serving notes including the spelling “creaser,” the label address, and the link to @thehubsauceco. Sample booking on the homepage is labeled illustrative and does not claim a real appointment service.
 
+## Flagship redesign boundaries
+
+Visual rebuild keeps the 7 Nov 2026 catalog. Campaign line “Big flavour. Pull up a chair.” is proposed copy, not a Hub quotation. Pantry Refill is a proposed name. No cadence, price, shipping, tax, or cancellation terms are confirmed, so the flow shows “Pricing to be confirmed” and ends with “Demo complete — no subscription started.” Nothing is preselected. No discount and no “cancel anytime” line. Square’s published docs allow fixed shipped item subscriptions; this demo does not connect to Square, and pickup or a rotating box is not assumed. Preview basket contents do not transfer. Live orders use https://www.thehubsauceco.com/s/order and each product’s published URL.
+
+Events: no Hub date after 7 Nov 2026 was verified. Confirmed list is empty. The dashed panel is labeled illustrative, with directions and calendar disabled. Box 566 is a mailing line, not a venue. Sample booking remains at `/hub-sauce-demo/book/` and is not a primary shop action. Sold-out badges are not used as urgency.
+
 ## Demo behaviour
 
 - Path `/hub-sauce-demo/` only. `noindex` on every page. Basket uses `sessionStorage` for product id and quantity. Booking contact stays in the page until finish, then the inputs are cleared. Nothing is posted.

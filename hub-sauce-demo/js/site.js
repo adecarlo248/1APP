@@ -112,9 +112,22 @@
     var menu = event.target.closest("[data-menu]");
     if (menu) {
       var links = document.getElementById("site-nav");
-      var open = !links.classList.contains("open");
-      links.classList.toggle("open", open);
+      var open = links.hidden;
+      links.hidden = !open;
       menu.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        var close = links.querySelector(".nav-close");
+        if (close) close.focus();
+      }
+    }
+    if (event.target.closest("[data-menu-close]")) {
+      var panel = document.getElementById("site-nav");
+      var opener = document.querySelector("[data-menu]");
+      if (panel) panel.hidden = true;
+      if (opener) {
+        opener.setAttribute("aria-expanded", "false");
+        opener.focus();
+      }
     }
   });
 
@@ -129,6 +142,12 @@
       closeDrawer();
       var dialog = document.getElementById("quick");
       if (dialog && dialog.open) dialog.close();
+      var panel = document.getElementById("site-nav");
+      var opener = document.querySelector("[data-menu]");
+      if (panel && !panel.hidden && window.matchMedia("(max-width: 979px)").matches) {
+        panel.hidden = true;
+        if (opener) opener.setAttribute("aria-expanded", "false");
+      }
     }
   });
 
@@ -153,7 +172,10 @@
     dialog.querySelector("[data-q-price]").textContent = money(product.price);
     dialog.querySelector("[data-q-heat]").textContent = product.heatLabel;
     dialog.querySelector("[data-q-blurb]").textContent = product.blurb;
-    dialog.querySelector("[data-q-badge]").textContent = product.badge || "";
+    var sizeNode = dialog.querySelector("[data-q-size]");
+    if (sizeNode) sizeNode.textContent = product.size ? product.size : "";
+    var live = dialog.querySelector("[data-q-live]");
+    if (live && product.live) live.href = product.live;
     dialog.querySelector("[data-q-link]").href = product.href;
     dialog.querySelector("[data-q-add]").setAttribute("data-add", product.id);
     if (typeof dialog.showModal === "function") {
@@ -218,6 +240,18 @@
       });
     }
     apply();
+  }
+
+  var heroShop = document.getElementById("hero-shop");
+  var shopSticky = document.getElementById("shop-sticky");
+  if (heroShop && shopSticky && "IntersectionObserver" in window) {
+    var heroWatch = new IntersectionObserver(function (entries) {
+      var show = !entries[0].isIntersecting && window.matchMedia("(max-width: 719px)").matches;
+      shopSticky.hidden = !show;
+      document.body.classList.toggle("show-shop-sticky", show);
+    }, { threshold: 0.15 });
+    heroWatch.observe(heroShop);
+    shopSticky.hidden = true;
   }
 
   var sticky = document.querySelector(".sticky-action");
