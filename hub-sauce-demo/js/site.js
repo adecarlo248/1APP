@@ -242,29 +242,33 @@
     apply();
   }
 
-  var heroShop = document.getElementById("hero-shop");
-  var shopSticky = document.getElementById("shop-sticky");
-  if (heroShop && shopSticky && "IntersectionObserver" in window) {
-    var heroWatch = new IntersectionObserver(function (entries) {
-      var show = !entries[0].isIntersecting && window.matchMedia("(max-width: 719px)").matches;
-      shopSticky.hidden = !show;
-      document.body.classList.toggle("show-shop-sticky", show);
-    }, { threshold: 0.15 });
-    heroWatch.observe(heroShop);
-    shopSticky.hidden = true;
+  var narrow = window.matchMedia("(max-width: 719px)");
+  function placeBar(bar, past, bodyClass) {
+    var on = narrow.matches && past;
+    bar.hidden = !on;
+    document.body.classList.toggle(bodyClass, on);
+    if (!on) return;
+    var reserve = Math.ceil(bar.getBoundingClientRect().height + 20);
+    document.documentElement.style.setProperty("--sticky-reserve", reserve + "px");
   }
-
-  var sticky = document.querySelector(".sticky-action");
-  var inlineAdd = document.getElementById("product-actions");
-  if (sticky && inlineAdd && "IntersectionObserver" in window) {
-    var watch = new IntersectionObserver(function (entries) {
-      var show = !entries[0].isIntersecting && window.matchMedia("(max-width: 719px)").matches;
-      sticky.hidden = !show;
-      document.body.classList.toggle("show-sticky", show);
-    }, { threshold: 0.2 });
-    watch.observe(inlineAdd);
-    sticky.hidden = true;
+  function bindRevealBar(bar, sentinel, bodyClass) {
+    if (!bar || !sentinel) return;
+    function sync() {
+      placeBar(bar, sentinel.getBoundingClientRect().bottom <= 0, bodyClass);
+    }
+    if ("IntersectionObserver" in window) {
+      var watch = new IntersectionObserver(sync, { threshold: [0, 1] });
+      watch.observe(sentinel);
+    }
+    narrow.addEventListener("change", sync);
+    window.addEventListener("resize", sync);
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("load", sync);
+    bar.hidden = true;
+    sync();
   }
+  bindRevealBar(document.getElementById("shop-sticky"), document.getElementById("hero"), "show-shop-sticky");
+  bindRevealBar(document.querySelector(".sticky-action"), document.getElementById("product-hero"), "show-sticky");
 
   renderCart();
 })();

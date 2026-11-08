@@ -31,9 +31,11 @@
   <main id="main">
 <section class="book-shell">
       <div class="wrap">
-        <p class="kicker">Sample booking experience</p>
+        <div class="page-intro">
+        <p class="kicker">Sample booking</p>
         <h1>A request, on paper. <em>Not a calendar.</em></h1>
-        <p class="lede">The live site has no bookable service. Pickup and tastings are not offered here. This sample is not Square checkout and does not order sauce. Every reason, date, and time below is illustrative, pending the owner’s confirmation.</p>
+        <p class="lede">Illustrative sample only. Pickup and tastings are not offered. This is not Square checkout and does not order sauce. No appointment is confirmed.</p>
+        </div>
         <ol class="progress" aria-label="Booking steps">
           <li><button type="button" data-goto="1">1 Reason</button></li>
           <li><button type="button" data-goto="2">2 Day</button></li>
@@ -45,7 +47,7 @@
           <p id="book-error" class="error" role="alert"></p>
           <section class="step" data-step="1">
             <h2 tabindex="-1">What is the sample about?</h2>
-            <p>These are not services on the menu. They are sample reasons so the flow can be tried.</p>
+            <p>Sample reasons only, so this flow can be tried. Not a menu of services.</p>
             <div class="choices" role="radiogroup" aria-label="Sample reason">
               <button type="button" class="choice" data-type="sauce" role="radio" aria-checked="false"><strong>A question about a sauce on the shop</strong><small>Illustrative. Name Canadian Cue, Da Kine, Twister Sister, Gold Metal Mustard, or Pixie Dust in the note if you want.</small></button>
               <button type="button" class="choice" data-type="set" role="radio" aria-checked="false"><strong>A question about the Starter Set</strong><small>Illustrative. The set lists Gold Metal Mustard, Twister Sister, Canadian Cue, Pixie Dust, and SPG+.</small></button>
@@ -55,13 +57,13 @@
           </section>
           <section class="step" data-step="2" hidden>
             <h2 tabindex="-1">Pick an illustrative day</h2>
-            <p class="note">These are the next weekdays on this device’s clock, inside the Monday–Friday shape of the location record. They are not openings. Pending owner confirmation.</p>
+            <p class="note">Illustrative weekdays only. These are not openings, and nothing is confirmed.</p>
             <div id="date-choices" class="date-grid" role="radiogroup" aria-label="Illustrative dates"></div>
             <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Continue</button></div>
           </section>
           <section class="step" data-step="3" hidden>
             <h2 tabindex="-1">Pick an illustrative time</h2>
-            <p class="note">Sample times inside the 9:00–17:00 window printed on the location record. Not a slot anyone is holding.</p>
+            <p class="note">Illustrative times between 9:00 and 17:00. No time is held.</p>
             <div id="time-choices" class="time-grid" role="radiogroup" aria-label="Illustrative times"></div>
             <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Continue</button></div>
           </section>
@@ -120,15 +122,16 @@
     <div class="wrap footer-grid">
       <div>
         <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="140">
+        <p class="footer-label">Mail</p>
         <p>Box 566, Hastings, ON K0L 1Y0</p>
-        <p class="fine">Mailing line from their label, not a market address. Concept demo by 1APP — not the live store. No orders are taken here.</p>
+        <p class="fine">Concept demo by 1APP — not the live store. No orders are taken here.</p>
       </div>
       <div>
         <h2>Order</h2>
         <p><a href="https://www.thehubsauceco.com/s/order" target="_blank" rel="noopener noreferrer">Open current live Square store</a></p>
         <p><a href="https://www.instagram.com/thehubsauceco/">Instagram @thehubsauceco</a></p>
         <p><a href="mailto:yetismicrofarm@gmail.com">yetismicrofarm@gmail.com</a></p>
-        <p class="fine">Email published on the current site. This demo does not send mail.</p>
+        <p class="fine">This demo does not send mail.</p>
       </div>
       <div>
         <h2>Look around</h2>

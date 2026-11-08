@@ -76,7 +76,7 @@
         item: name,
         qty: String(state.qty),
         cadence: state.mode === "repeat" ? cadenceLabel() : "Not a refill",
-        shelf: state.mode === "repeat" ? shelf + " published shelf price" : "See the live Square shop",
+        shelf: state.mode === "repeat" ? shelf : "See the live Square shop",
         recurring: "Pricing to be confirmed",
         ship: "Pricing to be confirmed",
         first: "Pricing to be confirmed"

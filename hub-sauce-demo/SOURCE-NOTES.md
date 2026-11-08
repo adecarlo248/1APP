@@ -90,6 +90,10 @@ Visual rebuild keeps the 7 Nov 2026 catalog. Campaign line “Big flavour. Pull 
 
 Events: no Hub date after 7 Nov 2026 was verified. Confirmed list is empty. The dashed panel is labeled illustrative, with directions and calendar disabled. Box 566 is a mailing line, not a venue. Sample booking remains at `/hub-sauce-demo/book/` and is not a primary shop action. Sold-out badges are not used as urgency.
 
+## Customer-facing copy
+
+Research notes stay in this file. On the pages, Box 566 is listed under a Mail label with no explanation of how it was read. The line “Multi award winning artisan hot sauce and condiments.” is quoted and attributed to The Hub Sauce Co., because the award names are not verified. Ingredient lists keep the shop’s wording. Demo, illustrative booking, and illustrative Pantry Refill labels stay on those flows.
+
 ## Demo behaviour
 
 - Path `/hub-sauce-demo/` only. `noindex` on every page. Basket uses `sessionStorage` for product id and quantity. Booking contact stays in the page until finish, then the inputs are cleared. Nothing is posted.
