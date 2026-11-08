@@ -30,7 +30,6 @@ window.HUB_eventUpcoming = function (event, now) {
       "<p class=\"date-block\">" + start.toLocaleString("en-CA", { timeZone: event.timezone || "America/Toronto", month: "short", day: "numeric" }) + "</p>" +
       "<div><h2>" + event.name + "</h2><p>" + (event.venue || "") + (event.town ? " · " + event.town : "") + "</p><p>" + when + " · " + (event.timezone || "America/Toronto") + "</p>" +
       (event.note ? "<p>" + event.note + "</p>" : "") +
-      (event.sourceUrl ? "<p class=\"fine\">Checked " + (event.verifiedOn || "") + ". <a href=\"" + event.sourceUrl + "\">Source</a></p>" : "") +
       "</div>";
     mount.appendChild(card);
   });
