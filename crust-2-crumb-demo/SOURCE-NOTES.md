@@ -127,7 +127,8 @@ Placeholders, not policies: deposit amount and shape, notice days, truck duratio
 - Facebook is the official page already used in the footer.
 - Review link stays `/r/crust2crumb/`. That folder was not edited.
 - Phone, location, and hours are shown as `[PLACEHOLDER]` with the line that they were not published. No sample number or address was added. The PEC Glass & Window trailer details were not used.
-- The contact form has no `method="post"` and the submit handler calls `preventDefault`. Finish shows “Demo complete — no message sent.” Nothing is emailed, charged, or saved. A catering topic points at the existing Inquire flow, including Christmas party catering.
+- The contact form fields came from Andrew Parks, forwarded by Tony on 10 Nov 2026: Name, Phone number, Email, Details of event, Location of event, Time and date, Allergies or dietary concerns. Name, phone, and email are required. Details, location, and time and date are required too. Allergies can be left blank. The same message also asked how to update an events calendar for 2027. This demo does not add that calendar.
+- The contact form has no `method="post"` and the submit handler calls `preventDefault`. Finish shows “Demo complete — no message sent.” Nothing is emailed, charged, or saved. The page still points a full booking, including Christmas party catering, at Inquire.
 
 ## Demo behaviour
 

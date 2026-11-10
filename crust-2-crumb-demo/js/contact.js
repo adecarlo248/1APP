@@ -2,29 +2,17 @@
   var form = document.getElementById("contact-form");
   var done = document.getElementById("contact-done");
   var error = document.getElementById("contact-error");
-  var note = document.getElementById("catering-note");
-  var topic = "";
-
-  function setTopic(value) {
-    topic = value;
-    Array.prototype.forEach.call(document.querySelectorAll("[data-topic]"), function (button) {
-      button.setAttribute("aria-checked", button.getAttribute("data-topic") === value ? "true" : "false");
-    });
-    note.hidden = value !== "catering";
-  }
-
-  document.body.addEventListener("click", function (event) {
-    var choice = event.target.closest("[data-topic]");
-    if (choice) setTopic(choice.getAttribute("data-topic"));
-  });
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     var name = document.getElementById("contact-name").value.trim();
+    var phone = document.getElementById("contact-phone").value.trim();
     var email = document.getElementById("contact-email").value.trim();
-    var message = document.getElementById("contact-message").value.trim();
-    if (!name || !email || !message || !topic) {
-      error.textContent = "Add your name, email, a topic, and a message.";
+    var details = document.getElementById("contact-details").value.trim();
+    var location = document.getElementById("contact-location").value.trim();
+    var when = document.getElementById("contact-when").value.trim();
+    if (!name || !phone || !email || !details || !location || !when) {
+      error.textContent = "Add your name, phone number, email, event details, location, and time and date.";
       return;
     }
     if (email.indexOf("@") < 1) {

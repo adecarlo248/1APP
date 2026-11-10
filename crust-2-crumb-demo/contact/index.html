@@ -40,7 +40,7 @@
         <div class="page-intro">
           <p class="kicker">Crust 2 Crumb Food Truck</p>
           <h1>Contact Us</h1>
-          <p class="lede">A question, a hello, a “save us a sandwich.” General notes land here. A party still goes through Inquire.</p>
+          <p class="lede">Tell us about the event. A full booking still goes through Inquire, including <a href="../book/?plan=christmas">Christmas party catering</a>. This page does not send that note.</p>
           <p style="margin:18px 0 8px;font-weight:800">Published email</p>
           <p><a href="mailto:Crust2crumbft@gmail.com">Crust2crumbft@gmail.com</a></p>
           <p class="fine">Printed on the 14 Sep 2026 mac-and-cheese poster. That poster said orders for the pans were taken through email only. That line was for that offer, not a rule for every order. This preview does not send email.</p>
@@ -60,22 +60,28 @@
               <input id="contact-name" name="name" autocomplete="name" required>
             </div>
             <div class="field">
+              <label for="contact-phone">Phone number</label>
+              <input id="contact-phone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
               <label for="contact-email">Email</label>
               <input id="contact-email" name="email" type="email" autocomplete="email" required>
             </div>
             <div class="field">
-              <label for="contact-phone">Phone <span class="fine">(optional)</span></label>
-              <input id="contact-phone" name="phone" type="tel" autocomplete="tel">
+              <label for="contact-details">Details of event</label>
+              <textarea id="contact-details" name="details" required></textarea>
             </div>
-            <p style="margin:8px 0">What’s this about?</p>
-            <div class="chips" role="radiogroup" aria-label="What’s this about">
-              <button type="button" class="chip" data-topic="question" role="radio" aria-checked="false">A question</button>
-              <button type="button" class="chip" data-topic="catering" role="radio" aria-checked="false">Catering or a party</button>
-            </div>
-            <p class="fine" id="catering-note" hidden style="margin-top:10px">Parties are booked in Inquire, including <a href="../book/?plan=christmas">Christmas party catering</a>. This note still is not sent.</p>
             <div class="field">
-              <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="message" required></textarea>
+              <label for="contact-location">Location of event</label>
+              <input id="contact-location" name="location" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <label for="contact-when">Time and date</label>
+              <input id="contact-when" name="when" autocomplete="off" required>
+            </div>
+            <div class="field">
+              <label for="contact-allergies">Allergies or dietary concerns <span class="fine">(optional)</span></label>
+              <textarea id="contact-allergies" name="allergies"></textarea>
             </div>
             <button class="btn" type="submit">Send message (demo)</button>
           </form>
