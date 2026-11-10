@@ -183,18 +183,18 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
 .hero-photo {
   position: relative;
   background: var(--brown);
-  height: 58vw;
-  max-height: 320px;
+  height: auto;
+  max-height: none;
   overflow: hidden;
+  padding-bottom: 40px;
 }
 .hero-photo img {
-  position: absolute;
-  width: 168%;
-  max-width: none;
+  position: static;
+  display: block;
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  left: -6%;
-  top: 46%;
-  transform: translateY(-46%);
+  object-fit: contain;
 }
 .hero-card {
   margin: -40px 0 0;
@@ -738,8 +738,8 @@ body.is-booking { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px))
   .feast .wide { grid-column: auto; grid-row: span 2; }
   .feast .wide img { height: 100%; min-height: 520px; }
   .feast img { height: 256px; }
-  .hero-photo { border-radius: 22px 22px 0 0; height: auto; min-height: 560px; max-height: none; }
-  .hero-photo img { width: 150%; left: -4%; top: 42%; transform: translateY(-42%); }
+  .hero-photo { border-radius: 22px 22px 0 0; height: auto; min-height: 0; max-height: none; padding-bottom: 0; }
+  .hero-photo img { width: 100%; max-width: 100%; height: auto; object-fit: contain; }
   .hero-card { margin: 0; align-content: center; box-shadow: none; background: transparent; border-radius: 0; padding: 8px 0 36px; }
   .stack { flex-direction: row; flex-wrap: wrap; }
   .stack .btn, .stack .btn-ghost { width: auto; }
