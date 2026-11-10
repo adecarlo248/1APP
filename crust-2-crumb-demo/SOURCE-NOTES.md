@@ -51,7 +51,9 @@ Tony: “Here is photos Jesse sent over for the site.” Jesse is the sender’s
 |---|---|
 | `gourmet-sandwiches-menu.jpg` | Menu source of truth. Displayed and transcribed. |
 | `sandwich-tray.jpg` | Sandwich-tray photo. No price or serving size invented. |
-| `charcuterie-board.jpg` | Charcuterie photo. No price or formal item list invented. |
+| `charcuterie-board.jpg` | Charcuterie photo. Shown in full in the wide mosaic slot. No price or formal item list invented. |
+| `veggie-cups.jpg` | Individual vegetable cups. Shown in full in a smaller mosaic tile. Photo label only. No package name or price. |
+| `sliced-steak.jpg` | On 10 Nov 2026 Tony identified this photo as pork, not steak. Caption and alt text say “Sliced pork.” Filename unchanged. Photo label only. No official dish name and no price. |
 | `veggie-board.jpg` | Vegetable / crudité board, 2048×1536. Tony asked for the tray rotated so the celery glass is at the top. The file is Jesse’s photo turned 90° counter-clockwise and shown uncropped. Not the meat-and-cheese charcuterie board. No price or package name. |
 | `truck-event.jpg` | Hero and catering truck/event photo. |
 | `chef-portrait.jpg` | Same portrait as the Wix “Our Chef” section. Captioned Chef Andrew. |
@@ -103,7 +105,7 @@ Not on the public Facebook page as of that date:
 
 ## Look
 
-Food photos are grouped once per page: Trays & Boards (veggie board full and uncropped, sandwich tray, charcuterie, veggie cups) and From the plate (steak, sliced steak, fish, tart). Plate labels are photo labels only. The veggie board file is 2048×1536, celery glass at the top. The Catering heading sits 96px below the chef band.
+Food photos are grouped once per page: Trays & Boards (veggie board full and uncropped in the tall feature, sandwich trays and veggie cups as tiles, charcuterie in the wide slot) and From the plate (steak, sliced pork, fish, tart). Tray and board photos use object-fit: contain inside the same slot sizes, so the whole product shows on the dark brown background instead of a tight crop. Plate photos stay cover-cropped. Plate labels are photo labels only. The veggie board file is 2048×1536, celery glass at the top, and was not replaced. The Catering heading sits 96px below the chef band from 720px up, and 72px on smaller screens.
 
 ## Booking demo (rebuilt)
 
