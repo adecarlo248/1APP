@@ -52,7 +52,7 @@ Tony: “Here is photos Jesse sent over for the site.” Jesse is the sender’s
 | `gourmet-sandwiches-menu.jpg` | Menu source of truth. Displayed and transcribed. |
 | `sandwich-tray.jpg` | Sandwich-tray photo. No price or serving size invented. |
 | `charcuterie-board.jpg` | Charcuterie photo. No price or formal item list invented. |
-| `veggie-board.jpg`, `veggie-cups.jpg`, `chocolate-tart.jpg`, `plated-fish.jpg`, `plated-steak.jpg`, `sliced-steak.jpg` | Catering gallery. Captions say no dish name or price was provided. |
+| `veggie-board.jpg` | Full vegetable / crudité board, shown uncropped. Not the meat-and-cheese charcuterie board. No price or package name. |
 | `truck-event.jpg` | Hero and catering truck/event photo. |
 | `chef-portrait.jpg` | Same portrait as the Wix “Our Chef” section. Captioned Chef Andrew. |
 
@@ -74,7 +74,7 @@ The OPEN A-frame in the truck photos is part of those photos. It is not treated 
 
 Tony: “This is what he had on his wix site so make sure the information stays consistent but on the crust 2 crumb food truck them.” Phone photos of a Wix Editor X site preview. The editor URL was visible and was not opened or edited. Wix stock photos were not reused: no bakery loaves, no black stock truck, no stock mac bowl, smash burger, or doughnut photos. Signature Specials use the official names Mac & Cheese, Get Smashed, and Sweet Tooth, with prices from Jesse’s menu graphic, and the menu graphic itself. There is no official doughnut photo.
 
-Sections kept, in the client’s wording except the edits below: Our Signature Specials; Elevate Your Private Events; Born on the Streets, Crafted for the Soul; Our Chef; Private Parties; Corporate Catering; Custom Menus; Inquire or Book Now (demo booking). Nav is Home, Menus, Catering, plus Inquire. Christmas party catering stays the primary call to action. It is not on these Wix screenshots.
+Sections kept, in the client’s wording except the edits below: Our Signature Specials; Elevate Your Private Events; Born on the Streets, Crafted for the Soul; Our Chef; Private Parties; Corporate Catering; Custom Menus; Inquire or Book Now (demo booking). Nav is Home, Menus, Catering, Our Chef, plus Inquire. Our Chef links to `#chef`, where the portrait sits with the story and the three bio paragraphs follow. Christmas party catering stays the primary call to action. It is not on these Wix screenshots.
 
 Story paragraph 1 is cut off in the screenshot after “steaming tray of”. The missing words were not invented. The page ends that sentence at “over a steaming tray.”
 
@@ -103,7 +103,7 @@ Not on the public Facebook page as of that date:
 
 ## Look
 
-A later pass put Jesse’s real food photos in a large grid (sandwich tray, charcuterie, plated photos, vegetable board, tart) and set Signature Specials on a dark board with gold prices. No Wix stock photos. No new prices or dish names.
+The veggie board is a portrait file and is shown at its own shape, not cropped by the short feast tiles and not rotated. Chef Andrew’s portrait and the Wix bio sit together under Our Chef, linked in the nav.
 
 ## Booking demo (rebuilt)
 
