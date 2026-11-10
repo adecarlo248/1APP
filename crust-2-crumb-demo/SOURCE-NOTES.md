@@ -55,7 +55,8 @@ Tony: “Here is photos Jesse sent over for the site.” Jesse is the sender’s
 | `veggie-cups.jpg` | Individual vegetable cups. Shown in full in a smaller mosaic tile. Photo label only. No package name or price. |
 | `sliced-steak.jpg` | On 10 Nov 2026 Tony identified this photo as pork, not steak. Caption and alt text say “Sliced pork.” Filename unchanged. Photo label only. No official dish name and no price. |
 | `veggie-board.jpg` | Vegetable / crudité board, 2048×1536. Tony asked for the tray rotated so the celery glass is at the top. The file is Jesse’s photo turned 90° counter-clockwise and shown uncropped. Not the meat-and-cheese charcuterie board. No price or package name. |
-| `truck-event.jpg` | Hero and catering truck/event photo. |
+| `truck-event.jpg` | Original event photo. Still used on the booking plan card. The homepage header uses `truck-event-header.jpg` instead. |
+| `truck-event-header.jpg` | Crop of `truck-event.jpg` for the homepage header only: the truck, the A-frame, and a little grass. The wide sky, the yellow flag, and the neighboring trailer are outside this crop. |
 | `chef-portrait.jpg` | Same portrait as the Wix “Our Chef” section. Captioned Chef Andrew. |
 
 `truck-event.jpg` includes another business’s white trailer, PEC Glass & Window. A phone number and “County Road 22 - Picton, ON” are visible on that trailer. They are not copied into the demo and are not Crust 2 Crumb contact or location info.

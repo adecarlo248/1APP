@@ -738,7 +738,7 @@ body.is-booking { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px))
   .feast .wide { grid-column: auto; grid-row: span 2; }
   .feast .wide img { height: 100%; min-height: 520px; }
   .feast img { height: 256px; }
-  .hero-photo { border-radius: 22px 22px 0 0; height: auto; min-height: 0; max-height: none; padding-bottom: 0; }
+  .hero-photo { align-self: start; border-radius: 22px; height: auto; min-height: 0; max-height: none; padding-bottom: 0; background: transparent; }
   .hero-photo img { width: 100%; max-width: 100%; height: auto; object-fit: contain; }
   .hero-card { margin: 0; align-content: center; box-shadow: none; background: transparent; border-radius: 0; padding: 8px 0 36px; }
   .stack { flex-direction: row; flex-wrap: wrap; }
