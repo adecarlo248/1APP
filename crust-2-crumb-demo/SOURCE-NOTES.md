@@ -52,7 +52,7 @@ Tony: “Here is photos Jesse sent over for the site.” Jesse is the sender’s
 | `gourmet-sandwiches-menu.jpg` | Menu source of truth. Displayed and transcribed. |
 | `sandwich-tray.jpg` | Sandwich-tray photo. No price or serving size invented. |
 | `charcuterie-board.jpg` | Charcuterie photo. No price or formal item list invented. |
-| `veggie-board.jpg` | Full vegetable / crudité board, shown uncropped. Not the meat-and-cheese charcuterie board. No price or package name. |
+| `veggie-board.jpg` | Vegetable / crudité board, 2048×1536. Tony asked for the tray rotated so the celery glass is at the top. The file is Jesse’s photo turned 90° counter-clockwise and shown uncropped. Not the meat-and-cheese charcuterie board. No price or package name. |
 | `truck-event.jpg` | Hero and catering truck/event photo. |
 | `chef-portrait.jpg` | Same portrait as the Wix “Our Chef” section. Captioned Chef Andrew. |
 
