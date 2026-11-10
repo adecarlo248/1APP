@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#c4162c">
+  <title>Inquire (demo) | Crust 2 Crumb Food Truck</title>
+  <meta name="description" content="A demo inquiry for Crust 2 Crumb catering. Nothing is booked, emailed, or charged.">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <p class="demo-banner">Preview. An inquiry on this site is not sent, and nothing is charged.</p>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="../">
+        <img src="../assets/logo.jpg" alt="" width="58" height="58">
+        <span class="brand-name">Crust <span class="two">2</span> Crumb<small>Food Truck</small></span>
+      </a>
+      <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav-panel" aria-label="Primary" hidden>
+        <button type="button" class="menu-toggle nav-close" data-menu-close>Close</button>
+        <a href="../">Home</a>
+        <a href="../menu/">Menus</a>
+        <a href="../catering/">Catering</a>
+        <a href="./" aria-current="page">Inquire</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="book-shell">
+      <div class="wrap">
+        <div class="page-intro">
+          <p class="kicker">Demo only</p>
+          <h1>Inquire</h1>
+          <p class="lede">This walks through a booking sample. It does not hold a date, send a message, or take payment.</p>
+        </div>
+        <ol class="progress" aria-label="Inquiry steps">
+          <li><button type="button" data-goto="1">1 Ask</button></li>
+          <li><button type="button" data-goto="2">2 When</button></li>
+          <li><button type="button" data-goto="3">3 Deposit</button></li>
+          <li><button type="button" data-goto="4">4 Note</button></li>
+          <li><button type="button" data-goto="5">5 Review</button></li>
+        </ol>
+        <div id="book-flow" class="book-card">
+          <p id="book-error" class="error" role="alert"></p>
+          <section class="step" data-step="1">
+            <h2 tabindex="-1">What is this about?</h2>
+            <div class="choices" role="radiogroup" aria-label="Sample request">
+              <button type="button" class="choice" data-type="christmas" role="radio" aria-checked="false">
+                <strong>Christmas party catering</strong>
+                <small>Requested · demo. No package or price is published. Nothing is booked.</small>
+              </button>
+              <button type="button" class="choice" data-type="trays" role="radio" aria-checked="false">
+                <strong>Sandwich trays</strong>
+                <small>Requested · demo. A photo is on the catering page. No price is listed.</small>
+              </button>
+              <button type="button" class="choice" data-type="boards" role="radio" aria-checked="false">
+                <strong>Charcuterie boards</strong>
+                <small>Requested · demo. A photo is on the catering page. No price is listed.</small>
+              </button>
+              <button type="button" class="choice" data-type="events" role="radio" aria-checked="false">
+                <strong>Wedding, corporate, festival, or private event</strong>
+                <small>These event types are on the sidewalk sign. No package or price is published.</small>
+              </button>
+              <button type="button" class="choice" data-type="menu" role="radio" aria-checked="false">
+                <strong>A question about the truck menu</strong>
+                <small>The Gourmet Sandwiches menu lists names, descriptions, and prices. This still sends nothing.</small>
+              </button>
+            </div>
+            <div class="book-nav"><span></span><button type="button" class="btn" data-next>Continue</button></div>
+          </section>
+          <section class="step" data-step="2" hidden>
+            <h2 tabindex="-1">Day or night, and a sample date</h2>
+            <p class="caution">Sample only. Hours were not published. These are not open slots, and nothing is held.</p>
+            <div class="choices" role="radiogroup" aria-label="Day or night">
+              <button type="button" class="choice" data-when="day" role="radio" aria-checked="false">
+                <strong>Day</strong>
+                <small>Illustrative. No hours are listed.</small>
+              </button>
+              <button type="button" class="choice" data-when="night" role="radio" aria-checked="false">
+                <strong>Night</strong>
+                <small>Illustrative. No hours are listed.</small>
+              </button>
+            </div>
+            <h3 style="margin:14px 0 8px">Sample date</h3>
+            <div id="date-choices" class="date-grid" role="radiogroup" aria-label="Sample dates"></div>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Continue</button></div>
+          </section>
+          <section class="step" data-step="3" hidden>
+            <h2 tabindex="-1">Deposit choices</h2>
+            <p class="caution">Illustrative only. Crust 2 Crumb has not published a deposit amount or a deposit policy. The September mac-and-cheese poster asked for EMT within 24 hours to secure that order. That line is not a deposit, and it is not applied here. Nothing is charged.</p>
+            <div class="choices" role="radiogroup" aria-label="Illustrative deposit">
+              <button type="button" class="choice" data-deposit="none" role="radio" aria-checked="false">
+                <strong>No deposit in this sample</strong>
+                <small>Illustrative. Not a published policy.</small>
+              </button>
+              <button type="button" class="choice" data-deposit="hold" role="radio" aria-checked="false">
+                <strong>A deposit to hold a date — amount not set</strong>
+                <small>Illustrative. No amount has been published. Nothing is charged.</small>
+              </button>
+              <button type="button" class="choice" data-deposit="later" role="radio" aria-checked="false">
+                <strong>Balance later — terms not set</strong>
+                <small>Illustrative. No payment terms have been published. Nothing is charged.</small>
+              </button>
+            </div>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Continue</button></div>
+          </section>
+          <section class="step" data-step="4" hidden>
+            <h2 tabindex="-1">A note, if you want one</h2>
+            <p>Optional. These fields stay in this browser. They are not emailed or saved. Example details are filled in so the sample can be tried.</p>
+            <div class="inline-actions">
+              <button type="button" class="btn-ghost" data-example>Use example details</button>
+              <button type="button" class="text-btn" data-clear-contact>Leave contact blank</button>
+            </div>
+            <div class="field"><label for="guest-name">Name</label><input id="guest-name" autocomplete="off" value="Alex Example"></div>
+            <div class="field"><label for="guest-email">Email</label><input id="guest-email" type="email" autocomplete="off" inputmode="email" value="alex@example.com"></div>
+            <div class="field"><label for="guest-phone">Phone</label><input id="guest-phone" type="tel" autocomplete="off" value="555-0100"></div>
+            <div class="field"><label for="guest-note">Note</label><textarea id="guest-note" autocomplete="off">Example note only. Not a real request.</textarea></div>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-next>Review</button></div>
+          </section>
+          <section class="step" data-step="5" hidden>
+            <h2 tabindex="-1">Review the sample</h2>
+            <p class="caution">Finishing keeps this on the screen only. No email, no charge, no saved contact. The deposit line is illustrative.</p>
+            <div class="summary">
+              <article><div><strong>Request</strong><div id="sum-type"></div></div><button type="button" class="text-btn" data-edit="1">Edit</button></article>
+              <article><div><strong>Day or night</strong><div id="sum-when"></div></div><button type="button" class="text-btn" data-edit="2">Edit</button></article>
+              <article><div><strong>Sample date</strong><div id="sum-date"></div></div><button type="button" class="text-btn" data-edit="2">Edit</button></article>
+              <article><div><strong>Deposit choice</strong><div id="sum-deposit"></div></div><button type="button" class="text-btn" data-edit="3">Edit</button></article>
+              <article><div><strong>Name</strong><div id="sum-name"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+              <article><div><strong>Email</strong><div id="sum-email"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+              <article><div><strong>Phone</strong><div id="sum-phone"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+              <article><div><strong>Note</strong><div id="sum-note"></div></div><button type="button" class="text-btn" data-edit="4">Edit</button></article>
+            </div>
+            <div class="book-nav"><button type="button" class="btn-ghost" data-back>Back</button><button type="button" class="btn" data-finish>Finish demo</button></div>
+          </section>
+          <section class="step" data-step="6" hidden>
+            <div class="final">
+              <p class="kicker">End of the sample</p>
+              <h2 tabindex="-1">Demo complete — no booking made</h2>
+              <p id="done-copy">Demo complete — no booking made. Nothing was emailed, charged, or saved.</p>
+            </div>
+            <div class="summary">
+              <article><div><strong>Request</strong><div id="done-type"></div></div></article>
+              <article><div><strong>Day or night</strong><div id="done-when"></div></div></article>
+              <article><div><strong>Sample date</strong><div id="done-date"></div></div></article>
+              <article><div><strong>Deposit choice</strong><div id="done-deposit"></div></div></article>
+              <article><div><strong>Name</strong><div id="done-name"></div></div></article>
+              <article><div><strong>Email</strong><div id="done-email"></div></div></article>
+              <article><div><strong>Phone</strong><div id="done-phone"></div></div></article>
+              <article><div><strong>Note</strong><div id="done-note"></div></div></article>
+            </div>
+            <div class="book-nav">
+              <button type="button" class="btn" data-restart>Start the sample again</button>
+              <a class="btn-ghost" href="../">Back to the truck</a>
+            </div>
+          </section>
+        </div>
+        <noscript><p class="caution">This preview steps through in the browser and needs JavaScript for the buttons. It still does not send a booking.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img src="../assets/logo.jpg" alt="" width="72" height="72">
+        <p class="footer-mark">Crust <span class="two">2</span> Crumb</p>
+        <p>Food Truck &amp; Catering</p>
+        <p>Mobile Food Truck and catering service.</p>
+      </div>
+      <div>
+        <h2>Published email</h2>
+        <p><a href="mailto:Crust2crumbft@gmail.com">Crust2crumbft@gmail.com</a></p>
+        <p class="fine">Printed on the 14 Sep 2026 mac-and-cheese poster. This preview does not send email.</p>
+        <p><a href="https://www.facebook.com/p/Crust-2-Crumb-Food-Truck-61586349067280/" target="_blank" rel="noopener noreferrer">Facebook page</a></p>
+        <p><a href="/r/crust2crumb/">Review link</a></p>
+      </div>
+      <div>
+        <h2>On this preview</h2>
+        <p><a href="../menu/">Menus</a></p>
+        <p><a href="../catering/">Catering</a></p>
+        <p><a href="./">Inquire (demo)</a></p>
+        <p class="fine">Location, hours, and a phone number were not published, so they are not listed. Nothing here is charged.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/site.js"></script>
+  <script src="../js/book.js"></script>
+</body>
+</html>
