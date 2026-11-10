@@ -103,7 +103,7 @@ Not on the public Facebook page as of that date:
 
 ## Look
 
-The veggie board is a portrait file and is shown at its own shape, not cropped by the short feast tiles and not rotated. Chef Andrew’s portrait and the Wix bio sit together under Our Chef, linked in the nav.
+Food photos are grouped once per page: Trays & Boards (veggie board full and uncropped, sandwich tray, charcuterie, veggie cups) and From the plate (steak, sliced steak, fish, tart). Plate labels are photo labels only. The veggie board file is 2048×1536, celery glass at the top. The Catering heading sits 96px below the chef band.
 
 ## Booking demo (rebuilt)
 

@@ -236,6 +236,49 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
   padding: 6px 12px;
   border-radius: 999px;
 }
+.food-band {
+  background: #2a120c;
+  color: #fff6ea;
+  padding: 16px 6px 8px;
+}
+.food-band h2 {
+  color: var(--gold);
+  padding: 0 8px 10px;
+  font-size: clamp(2.1rem, 8vw, 3.4rem);
+}
+.board-mosaic, .plate-grid { display: grid; gap: 6px; }
+.board-mosaic { grid-template-columns: 1fr 1fr; }
+.board-mosaic .feature, .board-mosaic .cups { grid-column: 1 / -1; }
+.food-band figure { position: relative; margin: 0; overflow: hidden; background: #1a0c09; }
+.board-mosaic .feature img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.board-mosaic .tile img, .plate-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.board-mosaic .tile { min-height: 148px; }
+.board-mosaic .tile img { position: absolute; inset: 0; }
+.board-mosaic .cups { min-height: 190px; }
+.plate-grid { grid-template-columns: 1fr 1fr; }
+.plate-grid figure { aspect-ratio: 1 / 1; }
+.food-band figcaption {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  margin: 0;
+  background: var(--gold);
+  color: var(--brown);
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
 .chef-story {
   background: #2a120c;
   color: #fff6ea;
@@ -250,6 +293,10 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
 .chef-photo figcaption { margin-top: 8px; font-weight: 800; letter-spacing: 0.04em; }
 .chef-bio { margin-top: 28px; max-width: 46rem; }
 .chef-bio p { margin: 0 0 14px; }
+#catering-cards { padding-bottom: 40px; }
+#catering-cards .specials { margin-top: 20px; }
+#catering-cards .entry-links { margin-top: 20px; }
+#catering-cards .kicker { margin-top: 28px; }
 .feast .wide { grid-column: 1 / -1; }
 .feast .wide img { height: 280px; object-position: center 45%; }
 .feast figcaption {
@@ -296,6 +343,8 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
 .stack .btn, .stack .btn-ghost { width: 100%; }
 
 .section { padding: 36px 0; }
+.after-band { padding-top: 72px; }
+.entry-links a { min-height: 44px; display: inline-flex; align-items: center; }
 .band-red {
   background: var(--red);
   color: #fffaf4;
@@ -361,7 +410,10 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
   background: #fff;
   border: 1.5px solid var(--line);
   border-radius: 999px;
+  min-height: 44px;
   padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
   font-weight: 800;
 }
 
@@ -621,6 +673,11 @@ body.is-booking { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px))
   .date-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
   .split.two { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+  .after-band { padding-top: 96px; }
+  .board-mosaic { grid-template-columns: 1.45fr 1fr 1fr; }
+  .board-mosaic .feature { grid-column: 1; grid-row: 1 / span 2; }
+  .board-mosaic .cups { grid-column: 2 / span 2; min-height: 200px; }
+  .plate-grid figure { aspect-ratio: 5 / 4; }
   .chef-layout { grid-template-columns: 1.15fr 0.85fr; }
   .chef-photo { justify-self: end; order: 0; }
   .menu-layout { grid-template-columns: minmax(260px, 0.72fr) 1.28fr; align-items: start; }
@@ -671,6 +728,7 @@ body.is-booking { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px))
   .book-nav { flex-direction: row; }
   .book-nav .btn, .book-nav .btn-ghost { width: auto; }
   .section { padding: 56px 0; }
+  .after-band { padding-top: 96px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
