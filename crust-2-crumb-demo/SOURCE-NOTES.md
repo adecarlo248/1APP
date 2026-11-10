@@ -105,6 +105,12 @@ Not on the public Facebook page as of that date:
 
 A later pass put Jesse’s real food photos in a large grid (sandwich tray, charcuterie, plated photos, vegetable board, tart) and set Signature Specials on a dark board with gold prices. No Wix stock photos. No new prices or dish names.
 
+## Booking demo (rebuilt)
+
+Seven screens, one group each: plan, when, where, menu, extras, contact, review. Entry `?plan=` preselects Christmas, the truck, trays, or corporate. Nothing is posted.
+
+Placeholders, not policies: deposit amount and shape, notice days, truck duration, parking dimensions, tray/board sizes, response time. Deposit choices are labelled “example, not Crust 2 Crumb’s policy.” The September mac-and-cheese e-transfer is not used as a deposit rule. Competitor prices, package names, and wording are not on the pages. Guest chips 20 / 50 / 100 / 200+ are shortcuts; only “20 to 200+” is from the Wix corporate line. Menu picks and add-ons are the verified board items and are not totaled into an event quote.
+
 ## Demo behaviour
 
 - Files live only in `crust-2-crumb-demo/`. `noindex, nofollow` on every HTML page. Not added to `sitemap.xml`. Nothing under `r/` was changed.
