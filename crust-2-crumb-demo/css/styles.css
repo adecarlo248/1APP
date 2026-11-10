@@ -194,7 +194,9 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
   width: 100%;
   max-width: 100%;
   height: auto;
+  max-height: none;
   object-fit: contain;
+  object-position: center;
 }
 .hero-card {
   margin: -40px 0 0;
@@ -248,33 +250,13 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
   font-size: clamp(2.1rem, 8vw, 3.4rem);
 }
 .board-mosaic, .plate-grid { display: grid; gap: 6px; }
-.board-mosaic { grid-template-columns: 1fr 1fr; }
-.board-mosaic .feature, .board-mosaic .wide { grid-column: 1 / -1; }
+.board-mosaic { grid-template-columns: 1fr; gap: 4px; }
+.side, .pair { display: grid; gap: 4px; }
+.pair { grid-template-columns: 1fr 1fr; }
 .food-band figure { position: relative; margin: 0; overflow: hidden; background: #2a120c; }
-.board-mosaic .feature img {
+.board-mosaic img {
   width: 100%;
   height: auto;
-  object-fit: contain;
-  display: block;
-}
-.board-mosaic .tile {
-  container-type: size;
-  display: grid;
-  place-items: center;
-  min-height: 148px;
-}
-.board-mosaic .tile figure {
-  aspect-ratio: var(--ar);
-  width: min(100cqw, calc(100cqh * var(--ar)));
-  max-width: 100%;
-  max-height: 100%;
-}
-.board-mosaic .tile img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
   display: block;
 }
 .plate-grid img {
@@ -283,7 +265,6 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
   object-fit: cover;
   display: block;
 }
-.board-mosaic .wide { min-height: 190px; }
 .plate-grid { grid-template-columns: 1fr 1fr; }
 .plate-grid figure { aspect-ratio: 1 / 1; }
 .food-band figcaption {
@@ -693,9 +674,7 @@ body.is-booking { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px))
   .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
   .split.two { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
   .after-band { padding-top: 96px; }
-  .board-mosaic { grid-template-columns: 1.45fr 1fr 1fr; }
-  .board-mosaic .feature { grid-column: 1; grid-row: 1 / span 2; }
-  .board-mosaic .wide { grid-column: 2 / span 2; min-height: 200px; }
+  .board-mosaic { grid-template-columns: 1.36fr 1fr; align-items: start; }
   .plate-grid figure { aspect-ratio: 5 / 4; }
   .chef-layout { grid-template-columns: 1.15fr 0.85fr; }
   .chef-photo { justify-self: end; order: 0; }

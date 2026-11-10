@@ -50,13 +50,18 @@ Tony: “Here is photos Jesse sent over for the site.” Jesse is the sender’s
 | File | Use on the site |
 |---|---|
 | `gourmet-sandwiches-menu.jpg` | Menu source of truth. Displayed and transcribed. |
-| `sandwich-tray.jpg` | Sandwich-tray photo. No price or serving size invented. |
-| `charcuterie-board.jpg` | Charcuterie photo. Shown in full in the wide mosaic slot. No price or formal item list invented. |
-| `veggie-cups.jpg` | Individual vegetable cups. Shown in full in a smaller mosaic tile. Photo label only. No package name or price. |
+| `sandwich-tray.jpg` | Original sandwich-tray photo. No price or serving size invented. The mosaic uses `sandwich-tray-mosaic.jpg`. |
+| `sandwich-tray-mosaic.jpg` | Tighter crop of `sandwich-tray.jpg` for Trays & Boards. The whole tray and the packets stay in frame. Less empty black backdrop. |
+| `charcuterie-board.jpg` | Original charcuterie photo. No price or formal item list invented. The mosaic uses `charcuterie-board-mosaic.jpg`. |
+| `charcuterie-board-mosaic.jpg` | Tighter crop of `charcuterie-board.jpg`. The whole board stays in frame. Less empty table. |
+| `veggie-cups.jpg` | Original vegetable-cups photo. Photo label only. No package name or price. The mosaic uses `veggie-cups-mosaic.jpg`. |
+| `veggie-cups-mosaic.jpg` | Tighter crop of `veggie-cups.jpg`. The cups and sticks stay in frame. Less kitchen and counter. |
 | `sliced-steak.jpg` | On 10 Nov 2026 Tony identified this photo as pork, not steak. Caption and alt text say “Sliced pork.” Filename unchanged. Photo label only. No official dish name and no price. |
 | `veggie-board.jpg` | Vegetable / crudité board, 2048×1536. Tony asked for the tray rotated so the celery glass is at the top. The file is Jesse’s photo turned 90° counter-clockwise and shown uncropped. Not the meat-and-cheese charcuterie board. No price or package name. |
 | `truck-event.jpg` | Original event photo. Still used on the booking plan card. The homepage header uses `truck-event-header.jpg` instead. |
-| `truck-event-header.jpg` | Crop of `truck-event.jpg` for the homepage header only: the truck, the A-frame, and a little grass. The wide sky, the yellow flag, and the neighboring trailer are outside this crop. |
+| `truck-event-header.jpg` | Earlier header crop of `truck-event.jpg` (truck, A-frame, more grass). Kept as source history. The homepage header now uses `truck-event-header-truck.jpg`. |
+| `truck-event-header-truck.jpg` | Tighter crop of `truck-event.jpg`. The truck fills the frame. The A-frame stays in front of the truck. The building, the wide lawn, the yellow flag, and the neighboring trailer are outside this crop. Used for the homepage hero and the catering intro photo. |
+| `sidewalk-sign.jpg` | The A-frame on the lawn, with the building behind and only a sliver of the truck. Kept for the homepage sign caption. Not used as the header or the catering intro photo. |
 | `chef-portrait.jpg` | Same portrait as the Wix “Our Chef” section. Captioned Chef Andrew. |
 
 `truck-event.jpg` includes another business’s white trailer, PEC Glass & Window. A phone number and “County Road 22 - Picton, ON” are visible on that trailer. They are not copied into the demo and are not Crust 2 Crumb contact or location info.
@@ -106,7 +111,7 @@ Not on the public Facebook page as of that date:
 
 ## Look
 
-Food photos are grouped once per page: Trays & Boards (veggie board full and uncropped in the tall feature, sandwich trays and veggie cups as tiles, charcuterie in the wide slot) and From the plate (steak, sliced pork, fish, tart). Tray and board photos use object-fit: contain inside the same slot sizes, so the whole product shows on the dark brown background instead of a tight crop. Plate photos stay cover-cropped. Plate labels are photo labels only. The veggie board file is 2048×1536, celery glass at the top, and was not replaced. The Catering heading sits 96px below the chef band from 720px up, and 72px on smaller screens.
+Food photos are grouped once per page: Trays & Boards (veggie board, sandwich trays, veggie cups, charcuterie) and From the plate (steak, sliced pork, fish, tart). The tray mosaic is a tight collage: each photo fills its cell, with a 4px gutter. Sandwich, cups, and charcuterie use the mosaic crops above so empty backdrop is smaller and the full product still shows. The veggie board file is the original 2048×1536, celery glass at the top, and was not replaced. Plate photos stay cover-cropped. Plate labels are photo labels only. The Catering heading sits 96px below the chef band from 720px up, and 72px on smaller screens.
 
 ## Booking demo (rebuilt)
 
