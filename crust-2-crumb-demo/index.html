@@ -56,26 +56,27 @@
       </div>
     </section>
 
-    <section class="feast" aria-label="Food from the truck and catering photos">
-      <figure class="wide">
-        <img src="assets/sandwich-tray.jpg" width="1024" height="1024" alt="A round tray of triangle sandwiches under a clear lid, with Crust 2 Crumb packets beside it.">
-        <figcaption>Sandwich trays</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/charcuterie-board.jpg" width="2048" height="1536" alt="A large board of sliced meats, cheeses, fruit, and crackers.">
-        <figcaption>Charcuterie</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/plated-steak.jpg" width="2048" height="1536" alt="A plated grilled steak. No dish name was provided.">
-      </figure>
-      <figure>
-        <img src="assets/chocolate-tart.jpg" width="2048" height="1536" alt="A plated tart with berries. No dessert name was provided.">
-      </figure>
+    <section class="food-band" id="trays" aria-labelledby="trays-title">
+      <h2 id="trays-title">Trays &amp; Boards</h2>
+      <div class="board-mosaic">
+        <figure class="feature">
+          <img src="assets/veggie-board.jpg" width="2048" height="1536" alt="A full vegetable crudité board. The celery glass is at the top. No price or package name was published.">
+          <figcaption>Veggie board</figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="assets/sandwich-tray.jpg" width="1024" height="1024" alt="A round tray of triangle sandwiches under a clear lid, with Crust 2 Crumb packets beside it.">
+          <figcaption>Sandwich trays</figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="assets/charcuterie-board.jpg" width="2048" height="1536" alt="A large board of sliced meats, cheeses, fruit, and crackers.">
+          <figcaption>Charcuterie</figcaption>
+        </figure>
+        <figure class="tile cups">
+          <img src="assets/veggie-cups.jpg" width="1536" height="2048" alt="Individual cups of cut vegetables in a dip. A photo label, not a named package or price.">
+          <figcaption>Veggie cups</figcaption>
+        </figure>
+      </div>
     </section>
-    <figure class="full-board">
-      <img src="assets/veggie-board.jpg" width="2048" height="1536" alt="A full vegetable crudité board with peppers, cauliflower, cucumbers, radishes, tomatoes, and dips. The celery glass is at the top.">
-      <figcaption>Veggie board</figcaption>
-    </figure>
 
     <section class="band-red" id="christmas">
       <div class="wrap">
@@ -88,11 +89,33 @@
       </div>
     </section>
 
+    <section class="food-band" id="plates" aria-labelledby="plates-title">
+      <h2 id="plates-title">From the plate</h2>
+      <div class="plate-grid">
+        <figure>
+          <img src="assets/plated-steak.jpg" width="2048" height="1536" alt="A plated steak. Photo label only. No official dish name or price was published.">
+          <figcaption>Steak</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/sliced-steak.jpg" width="2048" height="1536" alt="Sliced steak on a plate. Photo label only. No official dish name or price was published.">
+          <figcaption>Sliced steak</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/plated-fish.jpg" width="2048" height="1536" alt="A plated fish. Photo label only. No official dish name or price was published.">
+          <figcaption>Fish</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/chocolate-tart.jpg" width="2048" height="1536" alt="A plated tart. Photo label only. No official dessert name or price was published.">
+          <figcaption>Tart</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="board-specials" id="specials">
       <div class="wrap">
         <p class="kicker">From the menu</p>
         <h2>Our Signature Specials</h2>
-        <p class="lede" style="margin:12px 0 16px">Explore our seasonal curation of handcrafted signature delights, prepared fresh from our truck to your table.</p>
+        <p class="lede" style="margin:12px 0 16px">Mac &amp; Cheese. Get Smashed. Sweet Tooth. On the board.</p>
         <div class="specials">
           <article class="offer">
             <h3>Mac &amp; Cheese</h3>
@@ -117,7 +140,7 @@
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section after-band">
       <div class="wrap split two">
         <div>
           <h2>Elevate Your Private Events</h2>
@@ -154,7 +177,7 @@
       </div>
     </section>
 
-    <section class="section" id="catering-cards" style="padding-top:0">
+    <section class="section after-band" id="catering-cards">
       <div class="wrap">
         <h2>Catering</h2>
         <div class="specials" style="margin-top:16px">
@@ -183,20 +206,10 @@
           <li>Festivals</li>
           <li>Private Events &amp; more!</li>
         </ul>
-        <div class="offer-grid" style="margin-top:16px">
-          <article class="offer">
-            <h3>Sandwich trays</h3>
-            <img src="assets/sandwich-tray.jpg" width="1024" height="1024" alt="A round tray of triangle sandwiches under a clear lid, with Crust 2 Crumb packets beside it." loading="lazy">
-          </article>
-          <article class="offer">
-            <h3>Charcuterie boards</h3>
-            <img src="assets/charcuterie-board.jpg" width="2048" height="1536" alt="A large board of sliced meats, cheeses, fruit, and crackers." loading="lazy">
-          </article>
-        </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0">
+    <section class="section">
       <div class="wrap split two">
         <figure class="photo-frame">
           <img src="assets/oct28-truck.jpg" width="2048" height="2048" alt="Crust 2 Crumb food truck photographed for the 28 Oct 2026 post." loading="lazy">
@@ -216,11 +229,9 @@
       </div>
     </section>
 
-    <section class="section" id="photos" style="padding-top:0">
+    <section class="section" id="photos">
       <div class="wrap">
-        <p class="kicker">Photos</p>
-        <h2>The truck and the food</h2>
-        <div class="gallery" style="margin-top:16px">
+        <div class="gallery">
           <figure>
             <img src="assets/sidewalk-sign.jpg" width="900" height="1500" alt="A-frame sign with the Crust 2 Crumb logo, a QR code, and the line From Crust 2 Crumb, We Got You Covered." loading="lazy">
             <figcaption class="caption">“From Crust 2 Crumb, We Got You Covered!”</figcaption>
@@ -228,12 +239,6 @@
           <figure>
             <img src="assets/mac-and-cheese-pans.jpg" width="1024" height="1536" alt="Poster for mac and cheese pans, small $40 and large $100, for a 24 September 2026 pickup." loading="lazy">
             <figcaption class="caption">Mac and cheese pans poster, posted 14 Sep 2026. <a href="menu/#pans">Dated offer</a></figcaption>
-          </figure>
-          <figure>
-            <img src="assets/sandwich-tray.jpg" width="1024" height="1024" alt="A round tray of triangle sandwiches under a clear lid, with Crust 2 Crumb packets beside it." loading="lazy">
-          </figure>
-          <figure>
-            <img src="assets/charcuterie-board.jpg" width="2048" height="1536" alt="A large board of sliced meats, cheeses, fruit, and crackers." loading="lazy">
           </figure>
         </div>
       </div>
