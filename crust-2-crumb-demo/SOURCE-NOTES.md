@@ -82,7 +82,7 @@ The OPEN A-frame in the truck photos is part of those photos. It is not treated 
 
 Tony: “This is what he had on his wix site so make sure the information stays consistent but on the crust 2 crumb food truck them.” Phone photos of a Wix Editor X site preview. The editor URL was visible and was not opened or edited. Wix stock photos were not reused: no bakery loaves, no black stock truck, no stock mac bowl, smash burger, or doughnut photos. Signature Specials use the official names Mac & Cheese, Get Smashed, and Sweet Tooth, with prices from Jesse’s menu graphic, and the menu graphic itself. There is no official doughnut photo.
 
-Sections kept, in the client’s wording except the edits below: Our Signature Specials; Elevate Your Private Events; Born on the Streets, Crafted for the Soul; Our Chef; Private Parties; Corporate Catering; Custom Menus; Inquire or Book Now (demo booking). Nav is Home, Menus, Catering, Our Chef, plus Inquire. Our Chef links to `#chef`, where the portrait sits with the story and the three bio paragraphs follow. Christmas party catering stays the primary call to action. It is not on these Wix screenshots.
+Sections kept, in the client’s wording except the edits below: Our Signature Specials; Elevate Your Private Events; Born on the Streets, Crafted for the Soul; Our Chef; Private Parties; Corporate Catering; Custom Menus; Inquire or Book Now (demo booking). Nav is Home, Menus, Catering, Our Chef, Contact Us, plus Inquire. Contact Us is a general-message page (`contact/`). Inquire stays the booking flow. Our Chef links to `#chef`, where the portrait sits with the story and the three bio paragraphs follow. Christmas party catering stays the primary call to action. It is not on these Wix screenshots.
 
 Story paragraph 1 is cut off in the screenshot after “steaming tray of”. The missing words were not invented. The page ends that sentence at “over a steaming tray.”
 
@@ -118,6 +118,16 @@ Food photos are grouped once per page: Trays & Boards (veggie board, sandwich tr
 Seven screens, one group each: plan, when, where, menu, extras, contact, review. Entry `?plan=` preselects Christmas, the truck, trays, or corporate. Nothing is posted.
 
 Placeholders, not policies: deposit amount and shape, notice days, truck duration, parking dimensions, tray/board sizes, response time. Deposit choices are labelled “example, not Crust 2 Crumb’s policy.” The September mac-and-cheese e-transfer is not used as a deposit rule. Competitor prices, package names, and wording are not on the pages. Guest chips 20 / 50 / 100 / 200+ are shortcuts; only “20 to 200+” is from the Wix corporate line. Menu picks and add-ons are the verified board items and are not totaled into an event quote.
+
+## Contact Us
+
+`contact/` is a general-message page, not a second booking wizard. Nav on every demo page includes Contact Us. Footers link to it. Inquire still opens `book/`.
+
+- Email Crust2crumbft@gmail.com is the address printed on the 14 Sep 2026 mac-and-cheese poster. The poster line “Orders are taken through email only!!!” is quoted there as that offer, not as a current rule for every order. The page says this preview does not send email.
+- Facebook is the official page already used in the footer.
+- Review link stays `/r/crust2crumb/`. That folder was not edited.
+- Phone, location, and hours are shown as `[PLACEHOLDER]` with the line that they were not published. No sample number or address was added. The PEC Glass & Window trailer details were not used.
+- The contact form has no `method="post"` and the submit handler calls `preventDefault`. Finish shows “Demo complete — no message sent.” Nothing is emailed, charged, or saved. A catering topic points at the existing Inquire flow, including Christmas party catering.
 
 ## Demo behaviour
 
