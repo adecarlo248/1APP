@@ -179,7 +179,10 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
 .nav-panel a[aria-current="page"] { color: var(--red-deep); }
 .nav-close { align-self: flex-end; }
 
-.hero { padding: 0 0 8px; }
+.hero {
+  padding: 0;
+  background: linear-gradient(#2a120c, #2a120c) bottom / 100% 28px no-repeat;
+}
 .hero-photo {
   position: relative;
   background: var(--brown);
@@ -202,7 +205,7 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
   background: var(--paper);
   border-radius: 22px;
   padding: 16px 16px 18px;
-  box-shadow: 0 16px 0 var(--red), 0 20px 0 var(--gold);
+  box-shadow: none;
   display: grid;
   gap: 10px;
 }
@@ -726,7 +729,8 @@ body.is-booking { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px))
   }
   .hero {
     width: min(var(--max), calc(100% - 28px));
-    margin: 18px auto 8px;
+    margin: 18px auto 0;
+    background: none;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 22px;
