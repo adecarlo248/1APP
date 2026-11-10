@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#c4162c">
+  <title>Book (demo) | Crust 2 Crumb Food Truck</title>
+  <meta name="description" content="Demo request for Crust 2 Crumb. Nothing is booked, emailed, or charged.">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="is-booking">
+  <a class="skip" href="#main">Skip to content</a>
+  <p class="demo-banner">Preview. An inquiry on this site is not sent, and nothing is charged.</p>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="../">
+        <img src="../assets/logo.jpg" alt="" width="58" height="58">
+        <span class="brand-name">Crust <span class="two">2</span> Crumb<small>Food Truck</small></span>
+      </a>
+      <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav-panel" aria-label="Primary" hidden>
+        <button type="button" class="menu-toggle nav-close" data-menu-close>Close</button>
+        <a href="../">Home</a>
+        <a href="../menu/">Menus</a>
+        <a href="../catering/">Catering</a>
+        <a href="./" aria-current="page">Inquire</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="book-shell">
+      <div class="wrap">
+        <div class="page-intro">
+          <p class="kicker">Crust 2 Crumb</p>
+          <h1>Book it</h1>
+        </div>
+        <ol class="progress" aria-label="Booking steps">
+          <li><button type="button" data-goto="1">1 Plan</button></li>
+          <li><button type="button" data-goto="2">2 When</button></li>
+          <li><button type="button" data-goto="3">3 Where</button></li>
+          <li><button type="button" data-goto="4">4 Menu</button></li>
+          <li><button type="button" data-goto="5">5 Extras</button></li>
+          <li><button type="button" data-goto="6">6 You</button></li>
+          <li><button type="button" data-goto="7">7 Review</button></li>
+        </ol>
+        <div id="book-flow" class="book-card">
+          <section class="step" data-step="1">
+            <h2 tabindex="-1">What are you planning?</h2>
+            <div class="plan-grid" role="radiogroup" aria-label="What are you planning">
+              <button type="button" class="plan-card featured" data-plan="christmas" role="radio" aria-checked="false">
+                <img src="../assets/truck-event.jpg" alt="">
+                <span><strong>Christmas / Holiday Party</strong><small>Book early for December. Notice: <span class="ph">[PLACEHOLDER]</span></small></span>
+              </button>
+              <button type="button" class="plan-card" data-plan="truck" role="radio" aria-checked="false">
+                <img src="../assets/cover.jpg" alt="">
+                <span><strong>Truck at Your Event</strong><small>On site, made to order.</small></span>
+              </button>
+              <button type="button" class="plan-card" data-plan="trays" role="radio" aria-checked="false">
+                <img src="../assets/sandwich-tray.jpg" alt="">
+                <span><strong>Sandwich Trays</strong><small>Pickup or delivery.</small></span>
+              </button>
+              <button type="button" class="plan-card" data-plan="boards" role="radio" aria-checked="false">
+                <img src="../assets/charcuterie-board.jpg" alt="">
+                <span><strong>Charcuterie Boards</strong><small>Pickup or delivery.</small></span>
+              </button>
+              <button type="button" class="plan-card" data-plan="corporate" role="radio" aria-checked="false">
+                <img src="../assets/veggie-board.jpg" alt="">
+                <span><strong>Corporate Catering</strong><small>Groups of 20 to 200+.</small></span>
+              </button>
+              <button type="button" class="plan-card" data-plan="private" role="radio" aria-checked="false">
+                <img src="../assets/sidewalk-sign.jpg" alt="">
+                <span><strong>Private Party / Wedding / Festival</strong><small>From the sidewalk sign.</small></span>
+              </button>
+              <button type="button" class="plan-card" data-plan="custom" role="radio" aria-checked="false">
+                <img src="../assets/gourmet-sandwiches-menu.jpg" alt="">
+                <span><strong>Custom</strong><small>Not sure? Help me choose.</small></span>
+              </button>
+            </div>
+          </section>
+
+          <section class="step" data-step="2" hidden>
+            <h2 tabindex="-1">When</h2>
+            <p class="caution">Demo: availability confirmed by Justin. This is not a live calendar.</p>
+            <div class="field"><label for="event-date">Date</label><input id="event-date" type="date"></div>
+            <p style="margin:8px 0">Daypart</p>
+            <div class="chips" role="radiogroup" aria-label="Daypart">
+              <button type="button" class="chip" data-daypart="lunch" role="radio" aria-checked="false">Lunch</button>
+              <button type="button" class="chip" data-daypart="evening" role="radio" aria-checked="false">Evening</button>
+              <button type="button" class="chip" data-daypart="late" role="radio" aria-checked="false">Late-night</button>
+            </div>
+            <div class="field"><label for="event-time">Start time</label><input id="event-time" type="time"></div>
+            <div class="field" id="duration-field" hidden>
+              <label for="event-duration">Duration, truck only</label>
+              <input id="event-duration" value="[PLACEHOLDER]">
+              <p class="fine">Default is <span class="ph">[PLACEHOLDER]</span>. Not a published service length.</p>
+            </div>
+          </section>
+
+          <section class="step" data-step="3" hidden>
+            <h2 tabindex="-1">Where and how many</h2>
+            <p style="margin:0 0 8px">Guests</p>
+            <div class="stepper">
+              <button type="button" id="guest-minus" aria-label="Fewer guests">−</button>
+              <input id="guest-count" type="number" inputmode="numeric" min="1" value="20" aria-label="Guest count">
+              <button type="button" id="guest-plus" aria-label="More guests">+</button>
+            </div>
+            <div class="chips" style="margin-top:10px" aria-label="Guest shortcuts">
+              <button type="button" class="chip" data-guests="20">20</button>
+              <button type="button" class="chip" data-guests="50">50</button>
+              <button type="button" class="chip" data-guests="100">100</button>
+              <button type="button" class="chip" data-guests="200">200+</button>
+            </div>
+            <div id="serve-field" hidden>
+              <p style="margin:14px 0 8px">How should it show up?</p>
+              <div class="chips" role="radiogroup" aria-label="Truck or drop-off">
+                <button type="button" class="chip" data-serve="truck" role="radio" aria-checked="false">Truck on site</button>
+                <button type="button" class="chip" data-serve="dropoff" role="radio" aria-checked="false">Drop-off</button>
+                <button type="button" class="chip" data-serve="unsure" role="radio" aria-checked="false">Not sure</button>
+              </div>
+            </div>
+            <div id="truck-where" hidden>
+              <div class="field"><label for="venue">Venue address</label><input id="venue" autocomplete="street-address"></div>
+              <p style="margin:8px 0">Parking. Dimensions are <span class="ph">[PLACEHOLDER]</span>.</p>
+              <div class="check-list">
+                <label><input type="checkbox" id="park-level"> Level spot</label>
+                <label><input type="checkbox" id="park-clear"> Overhead clearance <span class="ph">[PLACEHOLDER]</span></label>
+                <label><input type="checkbox" id="park-room"> Room at the window <span class="ph">[PLACEHOLDER]</span></label>
+                <label><input type="checkbox" id="park-ok"> OK to park there</label>
+              </div>
+            </div>
+            <div id="drop-where" hidden>
+              <p style="margin:14px 0 8px">Pickup or delivery</p>
+              <div class="chips" role="radiogroup" aria-label="Pickup or delivery">
+                <button type="button" class="chip" data-fulfill="pickup" role="radio" aria-checked="false">Pickup</button>
+                <button type="button" class="chip" data-fulfill="delivery" role="radio" aria-checked="false">Delivery</button>
+              </div>
+              <div class="field"><label for="drop-address">Address or postal code</label><input id="drop-address" autocomplete="postal-code"></div>
+            </div>
+          </section>
+
+          <section class="step" data-step="4" hidden>
+            <h2 tabindex="-1">Menu</h2>
+            <div id="truck-menu">
+              <p>Sandwiches from the truck board. These are menu prices, not an event quote.</p>
+              <div class="menu-picks" id="sandwich-picks">
+                <label><span><input type="checkbox" value="Italian Stallion"> Italian Stallion</span><span class="price">$15</span></label>
+                <label><span><input type="checkbox" value="Get Smashed"> Get Smashed</span><span class="price">$14</span></label>
+                <label><span><input type="checkbox" value="Midnight Jerk"> Midnight Jerk</span><span class="price">$15</span></label>
+                <label><span><input type="checkbox" value="Porky Pig"> Porky Pig</span><span class="price">$15</span></label>
+                <label><span><input type="checkbox" value="Bacon Me Crazy BLT"> Bacon Me Crazy BLT</span><span class="price">$13</span></label>
+                <label><span><input type="checkbox" value="Hammie Sammie"> Hammie Sammie</span><span class="price">$14</span></label>
+              </div>
+            </div>
+            <div id="tray-sizes" hidden>
+              <p>Size isn’t published. Price: quoted by Justin.</p>
+              <div class="choices" role="radiogroup" aria-label="Tray or board size">
+                <button type="button" class="choice" data-size="smaller" role="radio" aria-checked="false"><strong>Smaller spread</strong><small>Price: quoted by Justin. <span class="ph">[PLACEHOLDER]</span> size.</small></button>
+                <button type="button" class="choice" data-size="larger" role="radio" aria-checked="false"><strong>Larger spread</strong><small>Price: quoted by Justin. <span class="ph">[PLACEHOLDER]</span> size.</small></button>
+                <button type="button" class="choice" data-size="help" role="radio" aria-checked="false"><strong>Not sure? Help me choose.</strong><small>Price: quoted by Justin.</small></button>
+              </div>
+            </div>
+            <div class="field"><label for="diet">Dietary notes</label><textarea id="diet"></textarea></div>
+            <label class="check-list"><span><input type="checkbox" id="help-choose"> Not sure? Help me choose.</span></label>
+          </section>
+
+          <section class="step" data-step="5" hidden>
+            <h2 tabindex="-1">Add-ons</h2>
+            <p>Menu-board extras only. Not an event quote.</p>
+            <div class="menu-picks" id="extra-picks">
+              <label><span><input type="checkbox" value="French Fries"> French Fries</span><span class="price">$7</span></label>
+              <label><span><input type="checkbox" value="Kettle Chips"> Kettle Chips</span><span class="price">$6</span></label>
+              <label><span><input type="checkbox" value="Mac & Cheese"> Mac &amp; Cheese</span><span class="price">$8.50</span></label>
+              <label><span><input type="checkbox" value="Sweet Tooth"> Sweet Tooth</span><span class="price">6/$6 or 12/$10</span></label>
+              <label><span><input type="checkbox" value="Coca-Cola"> Coca-Cola</span><span class="price">$2</span></label>
+              <label><span><input type="checkbox" value="Diet Coke"> Diet Coke</span><span class="price">$2</span></label>
+              <label><span><input type="checkbox" value="Ginger ale"> Ginger ale</span><span class="price">$2</span></label>
+              <label><span><input type="checkbox" value="Iced Tea"> Iced Tea</span><span class="price">$2</span></label>
+              <label><span><input type="checkbox" value="Water"> Water</span><span class="price">$1.50</span></label>
+              <label><span><input type="checkbox" value="Add aioli"> ADD Aioli</span><span class="price">$2</span></label>
+            </div>
+            <div class="chips" style="margin-top:12px" role="radiogroup" aria-label="Cutlery">
+              <button type="button" class="chip" data-cutlery="yes" role="radio" aria-checked="false">Cutlery: yes</button>
+              <button type="button" class="chip" data-cutlery="no" role="radio" aria-checked="false">Cutlery: no</button>
+            </div>
+            <div class="chips" style="margin-top:8px" role="radiogroup" aria-label="Serving help">
+              <button type="button" class="chip" data-staff="yes" role="radio" aria-checked="false">Serving help: yes</button>
+              <button type="button" class="chip" data-staff="no" role="radio" aria-checked="false">Serving help: no</button>
+            </div>
+            <p class="fine">Serving help has no published fee.</p>
+            <div class="field"><label for="budget">Budget, optional</label><input id="budget" inputmode="text" placeholder="Optional"></div>
+            <div class="field"><label for="event-notes">Notes</label><textarea id="event-notes" placeholder="Who meets the truck, elevator, power…"></textarea></div>
+          </section>
+
+          <section class="step" data-step="6" hidden>
+            <h2 tabindex="-1">Contact</h2>
+            <p>Stays on this page. Nothing is emailed.</p>
+            <div class="field"><label for="guest-name">Name</label><input id="guest-name" autocomplete="name"></div>
+            <div class="field"><label for="guest-phone">Phone</label><input id="guest-phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+            <div class="field"><label for="guest-email">Email</label><input id="guest-email" type="email" autocomplete="email" inputmode="email"></div>
+            <div class="field"><label for="guest-company">Company, optional</label><input id="guest-company" autocomplete="organization"></div>
+            <div class="field"><label for="guest-heard">How you heard about Crust 2 Crumb</label><input id="guest-heard"></div>
+          </section>
+
+          <section class="step" data-step="7" hidden>
+            <h2 tabindex="-1">Review</h2>
+            <div class="summary" id="review-summary"></div>
+            <h3 style="margin:16px 0 8px">How a date could get held</h3>
+            <p class="caution">Example, not Crust 2 Crumb’s policy. Nothing here is charged. The September mac-and-cheese e-transfer was a one-time offer, not a deposit rule.</p>
+            <div class="choices" role="radiogroup" aria-label="Illustrative deposit">
+              <button type="button" class="choice" data-deposit="flat" role="radio" aria-checked="false"><strong>A. Flat date-hold</strong><small><span class="ph">[PLACEHOLDER]</span> to hold the date.</small></button>
+              <button type="button" class="choice" data-deposit="percent" role="radio" aria-checked="false"><strong>B. Percentage up front</strong><small><span class="ph">[PLACEHOLDER]</span>% now, balance later <span class="ph">[PLACEHOLDER]</span>.</small></button>
+              <button type="button" class="choice" data-deposit="size" role="radio" aria-checked="false"><strong>C. Deposit on larger orders or the truck</strong><small>Smaller trays quoted as they are. Deposit only over <span class="ph">[PLACEHOLDER]</span>, or for truck bookings.</small></button>
+            </div>
+            <p class="caution" id="notice-line">Larger orders, evening or weekend, and December dates need <span class="ph">[PLACEHOLDER]</span> days’ notice.</p>
+          </section>
+
+          <section class="step" data-step="8" hidden>
+            <div class="final">
+              <p class="kicker">End of the sample</p>
+              <h2 tabindex="-1">Demo complete — no booking made</h2>
+              <p>Demo complete — no booking made. Nothing was emailed, charged, or saved.</p>
+              <p>Justin would confirm availability, menu, and quote within <span class="ph">[PLACEHOLDER]</span> hours.</p>
+            </div>
+            <div class="summary" id="done-summary"></div>
+            <p style="margin-top:12px"><a class="btn-ghost" href="../">Back to the truck</a></p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="book-sticky" id="book-sticky">
+    <p id="book-error" class="error" role="alert"></p>
+    <div class="row">
+      <button type="button" class="btn-ghost" id="sticky-back" data-back>Back</button>
+      <button type="button" class="btn" id="sticky-next" data-next>Next</button>
+    </div>
+  </div>
+  <script src="../js/site.js"></script>
+  <script src="../js/book.js"></script>
+</body>
+</html>
