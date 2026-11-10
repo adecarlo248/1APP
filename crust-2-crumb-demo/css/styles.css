@@ -179,10 +179,7 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
 .nav-panel a[aria-current="page"] { color: var(--red-deep); }
 .nav-close { align-self: flex-end; }
 
-.hero {
-  padding: 0;
-  background: linear-gradient(#2a120c, #2a120c) bottom / 100% 28px no-repeat;
-}
+.hero { padding: 0; }
 .hero-photo {
   position: relative;
   background: var(--brown);
@@ -200,15 +197,16 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
   transform: translateY(-46%);
 }
 .hero-card {
-  margin: -40px 12px 0;
+  margin: -40px 0 0;
   position: relative;
   background: var(--paper);
-  border-radius: 22px;
-  padding: 16px 16px 18px;
+  border-radius: 22px 22px 0 0;
+  padding: 16px 28px 32px;
   box-shadow: none;
   display: grid;
   gap: 10px;
 }
+.hero + .food-band { padding-top: 28px; }
 .feast {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -740,9 +738,9 @@ body.is-booking { padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px))
   .feast .wide { grid-column: auto; grid-row: span 2; }
   .feast .wide img { height: 100%; min-height: 520px; }
   .feast img { height: 256px; }
-  .hero-photo { border-radius: 22px; height: auto; min-height: 560px; max-height: none; }
+  .hero-photo { border-radius: 22px 22px 0 0; height: auto; min-height: 560px; max-height: none; }
   .hero-photo img { width: 150%; left: -4%; top: 42%; transform: translateY(-42%); }
-  .hero-card { margin: 0; align-content: center; box-shadow: none; background: transparent; padding: 8px 0; }
+  .hero-card { margin: 0; align-content: center; box-shadow: none; background: transparent; border-radius: 0; padding: 8px 0 36px; }
   .stack { flex-direction: row; flex-wrap: wrap; }
   .stack .btn, .stack .btn-ghost { width: auto; }
   .sticky-cta { display: none; }
