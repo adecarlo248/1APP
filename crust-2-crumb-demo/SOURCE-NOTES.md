@@ -18,6 +18,7 @@ Collected 10 Nov 2026. Identity checked against Facebook page **Crust 2 Crumb Fo
 - Sidewalk sign: “From Crust 2 Crumb, We Got You Covered!” Events: Weddings, Corporate Events, Festivals, Private Events & more. The QR code is visible in the photo. Its destination is not stated. The separate review link is `/r/crust2crumb/`.
 - Public tagline on the pages is the sign line, “From Crust 2 Crumb, We Got You Covered!” The client Wix hero reads “FROM CRUST 2 CRUMB WE HAVE YOU COVERED”. That “HAVE” wording is not used on the customer-facing pages.
 - Published order email on the 14 Sep 2026 mac-and-cheese post and poster: Crust2crumbft@gmail.com. Orders for that offer were email only and were to include name, phone number, and any allergies.
+- Phone confirmed by Tony on 10 Nov 2026: (289) 356-1449, labeled Mobile in the screenshot he sent. The email in that screenshot is the same poster address.
 - Mac-and-cheese pans, as a dated past offer: orders until Sunday, 20 Sep 2026 at 8pm (time is from the post); pickup Thursday, 24 Sep 2026; Small 4–6 people (12x12) $40.00; Large 10+ people (12x34) $100.00. Poster line: “EMT MUST BE SENT WITHIN 24 HOURS OF PLACING ORDER, TO SECURE YOUR ORDER.” Shown as that offer only. Not described as a deposit or a year-round policy.
 - Truck-board mac and cheese remains $8.50, separate from the pan offer.
 
@@ -82,7 +83,7 @@ The OPEN A-frame in the truck photos is part of those photos. It is not treated 
 
 Tony: “This is what he had on his wix site so make sure the information stays consistent but on the crust 2 crumb food truck them.” Phone photos of a Wix Editor X site preview. The editor URL was visible and was not opened or edited. Wix stock photos were not reused: no bakery loaves, no black stock truck, no stock mac bowl, smash burger, or doughnut photos. Signature Specials use the official names Mac & Cheese, Get Smashed, and Sweet Tooth, with prices from Jesse’s menu graphic, and the menu graphic itself. There is no official doughnut photo.
 
-Sections kept, in the client’s wording except the edits below: Our Signature Specials; Elevate Your Private Events; Born on the Streets, Crafted for the Soul; Our Chef; Private Parties; Corporate Catering; Custom Menus; Inquire or Book Now (demo booking). Nav is Home, Menus, Catering, Our Chef, plus Inquire. Our Chef links to `#chef`, where the portrait sits with the story and the three bio paragraphs follow. Christmas party catering stays the primary call to action. It is not on these Wix screenshots.
+Sections kept, in the client’s wording except the edits below: Our Signature Specials; Elevate Your Private Events; Born on the Streets, Crafted for the Soul; Our Chef; Private Parties; Corporate Catering; Custom Menus; Inquire or Book Now (demo booking). Nav is Home, Menus, Catering, Our Chef, Contact Us, plus Inquire. Contact Us is a general-message page (`contact/`). Inquire stays the booking flow. Our Chef links to `#chef`, where the portrait sits with the story and the three bio paragraphs follow. Christmas party catering stays the primary call to action. It is not on these Wix screenshots.
 
 Story paragraph 1 is cut off in the screenshot after “steaming tray of”. The missing words were not invented. The page ends that sentence at “over a steaming tray.”
 
@@ -98,7 +99,7 @@ Not on the public Facebook page as of that date:
 
 ## Omitted
 
-- Location, service area, hours, and phone for Crust 2 Crumb. A footer line says they were not published.
+- Location, service area, and hours for Crust 2 Crumb. They are left off the customer-facing pages. Phone is the number Tony confirmed.
 - Bumper text on the truck (not legible). Not guessed.
 - Community centre in the cover photo. Not used as an address.
 - PEC Glass & Window phone and Picton address. Not used as contact.
@@ -118,6 +119,17 @@ Food photos are grouped once per page: Trays & Boards (veggie board, sandwich tr
 Seven screens, one group each: plan, when, where, menu, extras, contact, review. Entry `?plan=` preselects Christmas, the truck, trays, or corporate. Nothing is posted.
 
 Placeholders, not policies: deposit amount and shape, notice days, truck duration, parking dimensions, tray/board sizes, response time. Deposit choices are labelled “example, not Crust 2 Crumb’s policy.” The September mac-and-cheese e-transfer is not used as a deposit rule. Competitor prices, package names, and wording are not on the pages. Guest chips 20 / 50 / 100 / 200+ are shortcuts; only “20 to 200+” is from the Wix corporate line. Menu picks and add-ons are the verified board items and are not totaled into an event quote.
+
+## Contact Us
+
+`contact/` is a general-message page, not a second booking wizard. Nav on every demo page includes Contact Us. Footers link to it. Inquire still opens `book/`.
+
+- Tony confirmed the phone number on 10 Nov 2026: (289) 356-1449. The customer-facing pages show that exact formatting as a `tel:` link, with the screenshot’s Mobile label. The email was already on the 14 Sep 2026 mac-and-cheese poster: Crust2crumbft@gmail.com, shown as a `mailto:` link. The poster line “Orders are taken through email only!!!” stays that dated offer, on the menu page with the poster, not a standing rule on Contact Us.
+- Facebook is the official page already used in the footer.
+- Review link stays `/r/crust2crumb/`. That folder was not edited.
+- Location and hours are omitted from Contact Us, the footers, and the other demo pages. They are not shown as placeholders. The PEC Glass & Window trailer details were not used.
+- The contact form fields came from Andrew Parks, forwarded by Tony on 10 Nov 2026: Name, Phone number, Email, Details of event, Location of event, Time and date, Allergies or dietary concerns. Name, phone, and email are required. Details, location, and time and date are required too. Allergies can be left blank. The same message also asked how to update an events calendar for 2027. This demo does not add that calendar.
+- The contact form has no `method="post"` and the submit handler calls `preventDefault`. Finish shows “Demo complete — no message sent.” Nothing is emailed, charged, or saved. The page still points a full booking, including Christmas party catering, at Inquire.
 
 ## Demo behaviour
 
