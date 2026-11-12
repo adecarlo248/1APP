@@ -33,11 +33,11 @@ Instagram logged-out crops, about 640 pixels square. Committed as the original J
 | `amanda.jpg` | Amanda, 12 Oct 2026. Romantic soft glam, glitter setting spray. https://www.instagram.com/desireemastersmua/p/DeZZyVFkRRJ/ |
 | `rebecca-preview.jpg` | Rebecca’s bridal preview, 15 Sep 2026. Soft and bronzed, cat-eye lashes, for an October wedding. Before and after. https://www.instagram.com/desireemastersmua/p/DdUyK2EH_Tn/ |
 | `mother-of-bride.jpg` | Mother of the bride, 30 Aug 2026. Soft bronzed glam, defined darker brows, eyes made to pop, colours for a rusty dress. https://www.instagram.com/desireemastersmua/p/Dcq0_4nkQwq/ |
-| `bridal-2024-01.jpg`, `bridal-2024-02.jpg`, `bridal-2024-03.jpg` | Bridal photographs from October 2024. The visible captions did not name the clients. The community-vote hashtags on one of those posts are not mentioned, and the page does not say she won anything. |
+Removed, not shown: `bridal-2024-01`, `bridal-2024-02`, and `bridal-2024-03` (JPEG and WebP). Those three files were 640×640 slices of wider composites, so a person was cut through the middle in the file itself. They are not in the gallery, services, lightbox, or `og.jpg`.
 
 `og.jpg` is a preview card made from Desiree’s own portrait. `favicon.svg` / `favicon.png` are a plain double-line mark for the browser tab, not her logo.
 
-Photographs are shown at their natural shape. Frames wrap the image box. Nothing is cropped or stretched.
+The four client photographs and Desiree’s portrait are shown at their natural shape: `width: 100%` and `height: auto`. Gallery frames are at most 340px wide on small screens and 420px on desktop. Nothing uses `object-fit: cover`.
 
 ### Kind words, verbatim
 
