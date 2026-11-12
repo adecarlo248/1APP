@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /quote-builder/
 Disallow: /quote-workspace-preview/
+Disallow: /windsor-rfq/
 
 Sitemap: https://use1app.com/sitemap.xml
