@@ -29,10 +29,19 @@ Instagram logged-out crops, about 640 pixels square. Committed as the original J
 | File | What it is |
 |---|---|
 | `desiree.jpg` | Desiree herself. Sent by Tony 12 Nov 2026, 1206×1205, black bars already cropped off. Used for the hero, the About portrait, and `og.jpg`. | 
-| `abbie.jpg` | Bridal client Abbie, 3 Nov 2026. Post https://www.instagram.com/desireemastersmua/p/DfSsefHnxZj/ . She is described as a fellow tradeswoman in the beauty industry. Hair that morning was credited to another artist; the handle is not printed. Shown in the gallery, not as Desiree. |
-| `amanda.jpg` | Amanda, 12 Oct 2026. Romantic soft glam, glitter setting spray. https://www.instagram.com/desireemastersmua/p/DeZZyVFkRRJ/ |
-| `rebecca-preview.jpg` | Rebecca’s bridal preview, 15 Sep 2026. Soft and bronzed, cat-eye lashes, for an October wedding. Before and after. https://www.instagram.com/desireemastersmua/p/DdUyK2EH_Tn/ |
-| `mother-of-bride.jpg` | Mother of the bride, 30 Aug 2026. Soft bronzed glam, defined darker brows, eyes made to pop, colours for a rusty dress. https://www.instagram.com/desireemastersmua/p/Dcq0_4nkQwq/ |
+| `bride-groom-gold-glam` | From Desiree’s public Instagram, sent by Tony on 12 Nov 2026. No client name was supplied. Caption on the page is “Bridal, couple portrait.” |
+| `bride-soft-glam-couple` | Same source and date. No client name. Caption: “Bridal, couple portrait.” |
+| `bride-willow-portrait` | Same source and date. No client name. Caption: “Bridal.” |
+| `before-after-curls` | Same source and date. A fuller frame of Rebecca’s 15 Sep 2026 bridal preview (the old `rebecca-preview` crop). The page keeps that caption, date, and Instagram link. |
+| `mother-of-bride-glam` | Same source and date. A fuller frame of the 30 Aug 2026 mother of the bride (the old `mother-of-bride` crop). The page keeps that caption, date, and Instagram link. |
+| `mother-of-bride-before-after` | Same source, date, and client as `mother-of-bride-glam`. Caption keeps the 30 Aug 2026 facts and says the frame is her before and after. |
+| `bridal-blonde-glam` | Same source and date. No client name. Caption: “Bridal glam.” |
+| `bridal-blonde-closeup` | Same source and date. No client name. Caption: “Bridal.” |
+| `abbie.jpg` | Bridal client Abbie, 3 Nov 2026. Post https://www.instagram.com/desireemastersmua/p/DfSsefHnxZj/ . She is described as a fellow tradeswoman in the beauty industry. Hair that morning was credited to another artist; the handle is not printed. Shown in the gallery after the eight newer frames, not as Desiree. |
+| `amanda.jpg` | Amanda, 12 Oct 2026. Romantic soft glam, glitter setting spray. https://www.instagram.com/desireemastersmua/p/DeZZyVFkRRJ/ . Shown in the gallery after the eight newer frames. |
+
+`rebecca-preview` and `mother-of-bride` stay in the folder as the earlier small crops. The pages use the fuller files above instead.
+
 Removed, not shown: `bridal-2024-01`, `bridal-2024-02`, and `bridal-2024-03` (JPEG and WebP). Those three files were 640×640 slices of wider composites, so a person was cut through the middle in the file itself. They are not in the gallery, services, lightbox, or `og.jpg`.
 
 `og.jpg` is a preview card made from Desiree’s own portrait. `favicon.svg` / `favicon.png` are a plain double-line mark for the browser tab, not her logo.
