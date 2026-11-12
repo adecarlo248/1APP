@@ -38,7 +38,8 @@
     .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:28px; }
     .primary-cta { box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-radius:11px; padding:12px 19px; background:linear-gradient(135deg,#f2cd57,#d4a72c); color:#062653; font-weight:800; text-decoration:none; box-shadow:0 8px 24px rgba(212,167,44,.28); transition:transform .2s ease,box-shadow .2s ease; }
     .primary-cta:hover { transform:translateY(-2px); box-shadow:0 16px 38px rgba(212,167,44,.44); color:#062653; }
-    .hero-trial-note { margin-top:14px; max-width:520px; color:rgba(255,255,255,.88); font-size:.95rem; line-height:1.45; font-weight:700; }
+    .hero-price { margin-top:18px; max-width:680px; color:#fff; font-size:1.05rem; line-height:1.5; font-weight:800; }
+    .hero-trial-note { margin-top:14px; max-width:640px; color:rgba(255,255,255,.88); font-size:.95rem; line-height:1.45; font-weight:700; }
     .secondary-cta { color:#fff; font-weight:800; text-decoration:none; padding:14px 4px; }
     .hero-proof { display:flex; flex-wrap:wrap; gap:9px; margin-top:24px; }
     .hero-proof span { padding:7px 11px; border:1px solid rgba(255,255,255,.18); border-radius:999px; background:rgba(255,255,255,.07); color:rgba(255,255,255,.88); font-size:.8rem; font-weight:700; }
@@ -83,13 +84,14 @@
         <div class="badge">14-Day Revenue Reactivation Sprint</div>
         <h1>Turn old leads and past customers into <span>new estimate opportunities.</span></h1>
         <p>1APP re-engages at least 50 client-authorized past leads and customers with approved offers such as unfinished estimates, winter inspections, seasonal maintenance, or new services—then qualifies interested replies and books estimate opportunities directly into your calendar.</p>
+        <p class="hero-price">$0 setup. Texting included. 5% of an agreed margin on each verified job, credited toward your setup fee up to $2,000.</p>
         <div class="hero-actions">
           <a class="primary-cta" href="https://buy.stripe.com/fZuaEWgXZ8DqgRM6Mv6oo0m">Start free 14-day trial</a>
           <a class="secondary-cta" href="#how-it-works">See How It Works ↓</a>
         </div>
-        <p class="hero-trial-note">Free 14-day trial. Card saved on file; you're only billed for what you approve. The Sprint free trial never bills automatically.</p>
+        <p class="hero-trial-note">Free 14-day trial. Card saved on file; you're only billed for Verified Jobs under the signed Sprint Fee Agreement. The Sprint free trial never bills automatically.</p>
         <div class="hero-proof" aria-label="Sprint highlights">
-          <span>50-contact minimum</span><span>$0 setup</span><span>Texting included</span><span>Fixed fee per verified estimate</span>
+          <span>50-contact minimum</span><span>No usage fee</span><span>No cap on Sprint fees</span><span>Setup credit up to $2,000</span>
         </div>
       </div>
       <div class="flow-card" id="how-it-works">
@@ -98,7 +100,7 @@
         <div class="flow-steps">
           <div class="flow-step"><div class="flow-number">50+</div><div><strong>Your authorized past contacts</strong><small>Past leads and customers your business is permitted to contact.</small></div></div>
           <div class="flow-step"><div class="flow-number">AI</div><div><strong>1APP starts the conversation</strong><small>Client-branded messages go out from a dedicated local number.</small></div></div>
-          <div class="flow-step"><div class="flow-number">✓</div><div><strong>Qualified prospects reach your calendar</strong><small>Your team handles the estimate. You pay only for verified estimates.</small></div></div>
+          <div class="flow-step"><div class="flow-number">✓</div><div><strong>Qualified prospects reach your calendar</strong><small>Your team handles the estimate and the job. The Sprint fee is 5% of the agreed margin on each verified job.</small></div></div>
         </div>
       </div>
     </div>
@@ -111,12 +113,15 @@
         <li>Review and segmentation of client-authorized past leads and customers</li>
         <li>A dedicated local number, connected calendar, and 14-day AI-assisted messaging window</li>
         <li>Client-branded messages, reply qualification, booking, human takeover, stop rules, opt-out handling, and campaign tracking</li>
-        <li>Setup is $0. Free 14-day trial. Card saved on file; you're only billed for what you approve. The Sprint free trial never bills automatically.</li>
+        <li>$0 setup. Texting included. 5% of an agreed margin on each verified job, credited toward your setup fee up to $2,000.</li>
+        <li>Free 14-day trial. Card saved on file; you're only billed for Verified Jobs under the signed Sprint Fee Agreement. The Sprint free trial never bills automatically.</li>
         <li>Texting and messaging are included at no charge. There is no usage fee during the Sprint.</li>
-        <li>A fixed fee per verified estimate, up to a written maximum agreed before launch</li>
+        <li>The agreed margin is fixed in writing at signing for your trade. The fee is that percentage of the pre-tax invoice, including progress invoices and change orders. The invoice is the only proof. There is no cap on Sprint fees.</li>
+        <li>Every Sprint fee paid is credited toward the setup fee of a later 1APP package, up to $2,000. The credit never expires and applies to setup only, not monthly fees.</li>
         <li>The 14-day window starts when the list, number, calendar, messages, and testing are ready</li>
         <li>Appointments booked during the Sprint stay active after day 14</li>
         <li>No new contacts are texted after day 14, and the Sprint does not automatically roll into a monthly plan</li>
+        <li>1APP does not guarantee replies, appointments, jobs, or revenue.</li>
         <li>A results review and recommendation for any broader 1APP automation</li>
       </ul>
     </div>
@@ -125,13 +130,13 @@
       <ul>
         <li>A usable list of at least 50 client-authorized past leads or customers</li>
         <li>A clear offer and capacity to answer, quote, and close resulting opportunities</li>
-        <li>Written confirmation that the contacts may lawfully be messaged</li>
-        <li>Agreement to document kept qualified appointments and written estimates during weekly reconciliation</li>
+        <li>Written confirmation that the contacts may lawfully be messaged. The client is responsible for consent to contact under CASL and must honour opt-outs.</li>
+        <li>Agreement to report each verified job within 7 days, a final report 14 days after the 90-day window, and to review invoices within 7 days</li>
         <li>Regulated industries require a separate compliance review before launch</li>
       </ul>
     </div>
   </section>
-  <p class="trial-note"><strong>What counts as a verified estimate:</strong> the contact keeps the agreed qualified appointment, meets the written qualification rules, and the business issues an evidenced written estimate—normally within 48 hours. A booking, no-show, cancellation, duplicate, active pre-Sprint opportunity, verbal price, or undocumented estimate is not billable. Setup is $0. Texting and messaging are included at no charge, and there is no usage fee during the Sprint. The fixed fee per verified estimate, up to a written maximum, is agreed before launch. The 14-day window starts when the list, number, calendar, messages, and testing are ready. Appointments booked during the Sprint stay active after day 14. No new contacts are texted after day 14, and the Sprint does not automatically roll into a monthly plan.</p>
+  <p class="trial-note"><strong>What counts as a verified job:</strong> a signed contract or a paid invoice from a contact the Sprint reached, within 90 days after the end of the 14-day campaign. A contract signed in that window still counts if it is invoiced later, but only invoices issued within 12 months after the campaign ends are billable. Bookings, no-shows, or estimates that do not become jobs are not billable. Cancelled or fully refunded jobs are not charged, and a fee already invoiced is credited. The agreed margin is fixed in writing at signing for your trade. The fee is 5% of that margin on the pre-tax invoice, including progress invoices and change orders. The invoice is the only proof. There is no cap on Sprint fees. Every Sprint fee paid is credited toward a later 1APP setup fee, up to $2,000. The credit never expires, applies to setup only, and is not cash, not a gift card, not refundable, and not transferable. It is applied before HST. Setup is $0. Texting and messaging are included at no charge, and there is no usage fee during the Sprint. The 14-day window starts when the list, number, calendar, messages, and testing are ready. Appointments booked during the Sprint stay active after day 14. No new contacts are texted after day 14, and the Sprint does not automatically roll into a monthly plan. A signed Sprint Fee Agreement is required before launch. The client is responsible for consent to contact under CASL. 1APP does not guarantee replies, appointments, jobs, or revenue.</p>
 
   <div class="form-wrap" id="sprint-form">
     <iframe

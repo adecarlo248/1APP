@@ -119,7 +119,7 @@
     confirmation.setAttribute('data-oneapp-lead-confirmation', 'true');
     confirmation.setAttribute('role', 'status');
     confirmation.style.cssText = 'background:#fff;border:1px solid #d9e1ec;border-radius:12px;padding:40px 28px;text-align:center;color:#062653;box-shadow:0 8px 30px rgba(6,38,83,.08);';
-    confirmation.innerHTML = '<h2 style="font-size:1.5rem;margin:0 0 12px;">Thank you!</h2><p style="font-size:1rem;line-height:1.6;margin:0;">Someone from 1APP will contact you within one business day to confirm your Revenue Reactivation Sprint eligibility, authorized-contact requirements, verified-estimate fee, campaign ceiling, and launch availability.</p>';
+    confirmation.innerHTML = '<h2 style="font-size:1.5rem;margin:0 0 12px;">Thank you!</h2><p style="font-size:1rem;line-height:1.6;margin:0;">Someone from 1APP will contact you within one business day to confirm your Revenue Reactivation Sprint eligibility, authorized-contact requirements, agreed margin, verified-job fee, and launch availability.</p>';
     wrapper.appendChild(confirmation);
   }
 
