@@ -105,8 +105,8 @@
     var img = shot.querySelector("img");
     lbImg.src = img.currentSrc || img.getAttribute("src");
     lbImg.alt = img.getAttribute("alt") || "";
-    lbImg.width = img.getAttribute("width") || 640;
-    lbImg.height = img.getAttribute("height") || 640;
+    lbImg.removeAttribute("width");
+    lbImg.removeAttribute("height");
     lbKicker.textContent = shot.getAttribute("data-kicker") || "";
     lbCaption.textContent = shot.getAttribute("data-caption") || "";
     var link = shot.getAttribute("data-link");
