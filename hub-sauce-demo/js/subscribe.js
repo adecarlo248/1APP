@@ -110,9 +110,9 @@
         qty: repeat ? String(jarCount()) : "—",
         cadence: repeat ? cadenceLabel() : "Not a refill",
         shelf: repeat ? "$" + shelfTotal().toFixed(2) + " CAD" : "See the live Square shop",
-        recurring: "Pricing to be confirmed",
-        ship: "Pricing to be confirmed",
-        first: "Pricing to be confirmed"
+        recurring: "Price isn’t set on this demo",
+        ship: "Price isn’t set on this demo",
+        first: "Price isn’t set on this demo"
       };
       Object.keys(nodes).forEach(function (key) {
         var node = document.getElementById(prefix + "-" + key);

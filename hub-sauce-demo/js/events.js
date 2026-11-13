@@ -17,7 +17,7 @@ window.HUB_eventUpcoming = function (event, now) {
     return window.HUB_eventUpcoming(event, now);
   }).sort(function (a, b) { return new Date(a.start) - new Date(b.start); });
   if (!upcoming.length) {
-    mount.innerHTML = "<p class=\"display\" style=\"font-size:clamp(28px,7vw,44px)\">Our next market dates will appear here once confirmed.</p>";
+    mount.innerHTML = "<p class=\"display\" style=\"font-size:clamp(28px,7vw,44px)\">Our next market dates will show up here.</p>";
     return;
   }
   mount.innerHTML = "";
