@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-CA">
 <head>
-  <script src="/assets/google-tag.js"></script>
+  <script src="/assets/google-tag.js" defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
@@ -19,7 +19,7 @@
   <header class="site-header">
     <p class="demo-banner">Concept demo by 1APP — not the live store. <a href="https://www.thehubsauceco.com/">thehubsauceco.com</a></p>
     <div class="nav">
-      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co."></a>
+      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co." width="522" height="269"></a>
       <button type="button" class="icon-btn" data-open-cart>Basket <span class="count" id="cart-count">0</span></button>
       <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav-panel" aria-label="Primary" hidden>
@@ -32,10 +32,39 @@
 
     <section class="section">
       <div class="wrap">
+
         <div class="page-intro">
+          <p class="kicker">Seen around</p>
+          <h2>Places you may have seen them.</h2>
+          <p class="lede">Named in their posts. These are not confirmed upcoming dates.</p>
+        </div>
+        <div class="reel places">
+          <figure class="place-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-480.avif 480w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.avif 960w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-1600.avif 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-480.webp 480w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp 960w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-1600.webp 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp" alt="The owner with sauce jars under a tent." width="1800" height="1200" decoding="async" loading="lazy">
+</picture><figcaption>Kawartha Ribfest</figcaption></figure>
+          <figure class="place-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/sauce-shop-display-480.avif 480w, /hub-sauce-demo/assets/social/sauce-shop-display-960.avif 960w, /hub-sauce-demo/assets/social/sauce-shop-display-1600.avif 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/sauce-shop-display-480.webp 480w, /hub-sauce-demo/assets/social/sauce-shop-display-960.webp 960w, /hub-sauce-demo/assets/social/sauce-shop-display-1600.webp 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/sauce-shop-display-960.webp" alt="Jars on a market shelf." width="1800" height="1350" decoding="async" loading="lazy">
+</picture><figcaption>542 The Big Red Barn</figcaption></figure>
+          <figure class="place-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-480.avif 480w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-960.avif 960w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-1350.avif 1350w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-480.webp 480w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-960.webp 960w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-1350.webp 1350w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-960.webp" alt="A booth with sauce jars." width="1350" height="1800" decoding="async" loading="lazy">
+</picture><figcaption>Hastings Waterfront Festival</figcaption></figure>
+          <figure class="place-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-480.avif 480w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-960.avif 960w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-1440.avif 1440w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-480.webp 480w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-960.webp 960w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-1440.webp 1440w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-960.webp" alt="Jars on a shop shelf." width="1440" height="1080" decoding="async" loading="lazy">
+</picture><figcaption>On the shelves at Sharpe’s</figcaption></figure>
+        </div>
+        <div class="page-intro" style="margin-top:36px">
           <p class="kicker">Find us next</p>
           <h1>Markets, when they’re confirmed.</h1>
         </div>
+
         <div id="confirmed-events"></div>
         <aside class="sample-event">
           <p class="kicker">Illustrative layout — not a confirmed event</p>
@@ -62,7 +91,7 @@
         <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="140">
         <p class="footer-label">Mail</p>
         <p>Box 566, Hastings, ON K0L 1Y0</p>
-        <p class="fine">Concept demo by 1APP — not the live store. No orders are taken here.</p>
+        <p class="fine">Photos: The Hub Sauce Co. Concept demo by 1APP — not the live store. No orders are taken here.</p>
       </div>
       <div>
         <h2>Order</h2>
@@ -102,7 +131,7 @@
 </div>
 <dialog id="quick" aria-labelledby="quick-title">
   <div class="quick">
-    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="">
+    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="" width="522" height="269">
     <div>
       <p class="heat" data-q-heat></p>
       <h2 id="quick-title" data-q-name tabindex="-1"></h2>

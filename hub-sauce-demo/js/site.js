@@ -310,7 +310,7 @@
   document.querySelectorAll("#product-actions, #quick .stack-actions").forEach(mountStepper);
 
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
-    var cards = document.querySelectorAll(".sauce-row");
+    var cards = document.querySelectorAll(".sauce-row, .food-card, .place-card");
     if (cards.length) {
       var reveal = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
