@@ -23,16 +23,23 @@
     renderCart();
   }
 
-  function add(id) {
+  function clampQty(qty, min, max) {
+    qty = Math.round(Number(qty) || 0);
+    return Math.max(min, Math.min(max, qty));
+  }
+
+  function add(id, qty) {
+    qty = clampQty(qty || 1, 1, 12);
     var lines = readCart();
     var found = lines.find(function (line) { return line.id === id; });
-    if (found) found.qty += 1;
-    else lines.push({ id: id, qty: 1 });
+    if (found) found.qty = Math.min(24, found.qty + qty);
+    else lines.push({ id: id, qty: qty });
     writeCart(lines);
     openDrawer();
   }
 
   function setQty(id, qty) {
+    qty = clampQty(qty, 0, 24);
     var lines = readCart().map(function (line) {
       return line.id === id ? { id: id, qty: qty } : line;
     }).filter(function (line) { return line.qty > 0; });
@@ -67,7 +74,7 @@
         '<img src="' + product.image + '" alt="">' +
         '<div><strong>' + product.name + '</strong><div>' + money(product.price) + '</div>' +
         '<div class="qty"><button type="button" data-dec="' + product.id + '" aria-label="Decrease ' + product.name + '">−</button>' +
-        '<span aria-live="polite">' + line.qty + '</span>' +
+        '<input class="qty-input" type="number" inputmode="numeric" min="0" max="24" value="' + line.qty + '" data-qty-for="' + product.id + '" aria-label="Quantity for ' + product.name + '">' +
         '<button type="button" data-inc="' + product.id + '" aria-label="Increase ' + product.name + '">+</button></div></div>' +
         '<button type="button" class="text-btn" data-remove="' + product.id + '">Remove</button>';
       cartList.appendChild(row);
@@ -87,9 +94,20 @@
   }
 
   document.addEventListener("click", function (event) {
+    var stepBtn = event.target.closest("[data-step]");
+    if (stepBtn) {
+      var field = stepBtn.closest(".qty").querySelector(".qty-input");
+      if (field && !field.hasAttribute("data-qty-for") && !field.hasAttribute("data-sub-qty")) {
+        var next = clampQty(Number(field.value) + Number(stepBtn.getAttribute("data-step")), Number(field.min || 0), Number(field.max || 12));
+        field.value = String(next);
+      }
+      return;
+    }
     var addBtn = event.target.closest("[data-add]");
     if (addBtn) {
-      add(addBtn.getAttribute("data-add"));
+      var scope = addBtn.closest("#product-actions, #quick") || document;
+      var input = scope.querySelector(".qty-input");
+      add(addBtn.getAttribute("data-add"), input ? input.value : 1);
       var quickDialog = document.getElementById("quick");
       if (quickDialog && quickDialog.open) quickDialog.close();
       return;
@@ -144,7 +162,7 @@
       if (dialog && dialog.open) dialog.close();
       var panel = document.getElementById("site-nav");
       var opener = document.querySelector("[data-menu]");
-      if (panel && !panel.hidden && window.matchMedia("(max-width: 979px)").matches) {
+      if (panel && !panel.hidden && window.matchMedia("(max-width: 1359px)").matches) {
         panel.hidden = true;
         if (opener) opener.setAttribute("aria-expanded", "false");
       }
@@ -178,6 +196,8 @@
     if (live && product.live) live.href = product.live;
     dialog.querySelector("[data-q-link]").href = product.href;
     dialog.querySelector("[data-q-add]").setAttribute("data-add", product.id);
+    var qtyInput = dialog.querySelector(".qty-input");
+    if (qtyInput) qtyInput.value = "1";
     if (typeof dialog.showModal === "function") {
       dialog.showModal();
       var title = dialog.querySelector("#quick-title");
@@ -269,6 +289,50 @@
   }
   bindRevealBar(document.getElementById("shop-sticky"), document.getElementById("hero"), "show-shop-sticky");
   bindRevealBar(document.querySelector(".sticky-action"), document.getElementById("product-hero"), "show-sticky");
+
+  function mountStepper(box) {
+    if (!box || box.querySelector(".qty")) return;
+    var add = box.querySelector("[data-add]");
+    var name = "quantity";
+    if (add) {
+      var product = catalog[add.getAttribute("data-add")];
+      if (product) name = product.name;
+    }
+    var el = document.createElement("div");
+    el.className = "qty";
+    el.innerHTML =
+      '<button type="button" data-step="-1" aria-label="Decrease ' + name + '">−</button>' +
+      '<input class="qty-input" type="number" inputmode="numeric" min="1" max="12" value="1" aria-label="Quantity for ' + name + '">' +
+      '<button type="button" data-step="1" aria-label="Increase ' + name + '">+</button>';
+    if (add) box.insertBefore(el, add);
+    else box.appendChild(el);
+  }
+  document.querySelectorAll("#product-actions, #quick .stack-actions").forEach(mountStepper);
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    var cards = document.querySelectorAll(".sauce-row");
+    if (cards.length) {
+      var reveal = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          reveal.unobserve(entry.target);
+        });
+      }, { threshold: 0.18 });
+      cards.forEach(function (card) {
+        card.classList.add("reveal");
+        reveal.observe(card);
+      });
+    }
+  }
+
+  document.addEventListener("change", function (event) {
+    var input = event.target.closest(".qty-input");
+    if (!input) return;
+    var next = clampQty(input.value, Number(input.min || 0), Number(input.max || 24));
+    input.value = String(next);
+    if (input.hasAttribute("data-qty-for")) setQty(input.getAttribute("data-qty-for"), next);
+  });
 
   renderCart();
 })();

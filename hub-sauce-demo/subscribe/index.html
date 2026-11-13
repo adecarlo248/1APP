@@ -34,7 +34,7 @@
       <div class="wrap page-intro">
         <p class="kicker">Proposed concept</p>
         <h1>Pantry Refill</h1>
-        <p class="lede">The same sauce, sent again on a rhythm you pick. Pricing to be confirmed. Nothing here enrols you.</p>
+        <p class="lede">The sauces you pick, sent again on a rhythm you choose. Pricing to be confirmed. Nothing here enrols you.</p>
       </div>
     </section>
     <section class="section">
@@ -53,15 +53,15 @@
             <p>Neither path is selected. Pantry Refill is a concept, not a live plan.</p>
             <div class="choices" role="radiogroup" aria-label="Purchase path">
               <button type="button" class="choice" data-mode="once" role="radio" aria-checked="false"><strong>One-time</strong><small>Order in the live Square store. This basket does not transfer.</small></button>
-              <button type="button" class="choice" data-mode="repeat" role="radio" aria-checked="false"><strong>Pantry Refill</strong><small>Proposed. Same item, illustrative cadence. Pricing to be confirmed.</small></button>
+              <button type="button" class="choice" data-mode="repeat" role="radio" aria-checked="false"><strong>Pantry Refill</strong><small>Proposed. Mix any sauces. Illustrative cadence. Pricing to be confirmed.</small></button>
             </div>
             <div class="flow-nav"><span></span><button type="button" class="btn" data-sub-next>Continue</button></div>
           </section>
           <section data-sub-step="2" hidden>
             <h2 tabindex="-1">Choose the sauce</h2>
-            <p>No product is preselected.</p>
-            <div id="sub-products" class="choices" role="radiogroup" aria-label="Product"></div>
-            <p style="display:flex;align-items:center;gap:8px">Quantity <span class="qty"><button type="button" data-qty-dec aria-label="Decrease quantity">−</button><span id="sub-qty">1</span><button type="button" data-qty-inc aria-label="Increase quantity">+</button></span></p>
+            <p>Each sauce starts at zero. Raise the ones you want. Nothing is preselected.</p>
+            <div id="sub-products" class="sauce-picks"></div>
+            <p class="refill-summary" id="sub-live" aria-live="polite" aria-atomic="true">No sauces selected. Shelf subtotal $0.00 CAD.</p>
             <div class="flow-nav"><button type="button" class="btn-ghost" data-sub-back>Back</button><button type="button" class="btn" data-sub-next>Continue</button></div>
           </section>
           <section data-sub-step="3" hidden>
@@ -77,10 +77,10 @@
             <h2 tabindex="-1">Review the concept</h2>
             <div class="summary">
               <article><div><strong>Path</strong><div id="sum-mode"></div></div><button type="button" class="text-btn" data-sub-edit="1">Edit</button></article>
-              <article><div><strong>Sauce</strong><div id="sum-item"></div></div><button type="button" class="text-btn" data-sub-edit="2">Edit</button></article>
-              <article><div><strong>Quantity</strong><div id="sum-qty"></div></div><button type="button" class="text-btn" data-sub-edit="2">Edit</button></article>
+              <article><div><strong>Sauces</strong><div id="sum-item"></div></div><button type="button" class="text-btn" data-sub-edit="2">Edit</button></article>
+              <article><div><strong>Jars</strong><div id="sum-qty"></div></div><button type="button" class="text-btn" data-sub-edit="2">Edit</button></article>
               <article><div><strong>Rhythm</strong><div id="sum-cadence"></div></div><button type="button" class="text-btn" data-sub-edit="3">Edit</button></article>
-              <article><div><strong>Shelf price</strong><div id="sum-shelf"></div></div></article>
+              <article><div><strong>Shelf subtotal</strong><div id="sum-shelf"></div></div></article>
               <article><div><strong>Recurring price</strong><div id="sum-recurring"></div></div></article>
               <article><div><strong>Shipping and tax</strong><div id="sum-ship"></div></div></article>
               <article><div><strong>First charge</strong><div id="sum-first"></div></div></article>
@@ -100,10 +100,10 @@
             <p id="sub-done-copy" tabindex="-1"></p>
             <div class="summary">
               <article><div><strong>Path</strong><div id="done-mode"></div></div></article>
-              <article><div><strong>Sauce</strong><div id="done-item"></div></div></article>
-              <article><div><strong>Quantity</strong><div id="done-qty"></div></div></article>
+              <article><div><strong>Sauces</strong><div id="done-item"></div></div></article>
+              <article><div><strong>Jars</strong><div id="done-qty"></div></div></article>
               <article><div><strong>Rhythm</strong><div id="done-cadence"></div></div></article>
-              <article><div><strong>Shelf price</strong><div id="done-shelf"></div></div></article>
+              <article><div><strong>Shelf subtotal</strong><div id="done-shelf"></div></div></article>
               <article><div><strong>Recurring price</strong><div id="done-recurring"></div></div></article>
               <article><div><strong>Shipping and tax</strong><div id="done-ship"></div></div></article>
               <article><div><strong>First charge</strong><div id="done-first"></div></div></article>

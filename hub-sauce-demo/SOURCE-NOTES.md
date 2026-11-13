@@ -86,6 +86,8 @@ A later copy pass removed research narration from prominent homepage headings. T
 
 ## Flagship redesign boundaries
 
+Pantry Refill can mix several catalog sauces. Each starts at quantity 0, with a maximum of 12. The running total is the shelf price only. Recurring price, shipping, and tax stay “Pricing to be confirmed.” Nothing is charged.
+
 Visual rebuild keeps the 7 Nov 2026 catalog. Campaign line “Big flavour. Pull up a chair.” is proposed copy, not a Hub quotation. Pantry Refill is a proposed name. No cadence, price, shipping, tax, or cancellation terms are confirmed, so the flow shows “Pricing to be confirmed” and ends with “Demo complete — no subscription started.” Nothing is preselected. No discount and no “cancel anytime” line. Square’s published docs allow fixed shipped item subscriptions; this demo does not connect to Square, and pickup or a rotating box is not assumed. Preview basket contents do not transfer. Live orders use https://www.thehubsauceco.com/s/order and each product’s published URL.
 
 Events: no Hub date after 7 Nov 2026 was verified. Confirmed list is empty. The dashed panel is labeled illustrative, with directions and calendar disabled. Box 566 is a mailing line, not a venue. Sample booking remains at `/hub-sauce-demo/book/` and is not a primary shop action. Sold-out badges are not used as urgency.
