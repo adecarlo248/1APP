@@ -48,7 +48,11 @@ a { color: inherit; }
   display: flex; align-items: center; gap: 12px;
 }
 .brand { margin-right: auto; display: flex; align-items: center; }
-.brand img { width: auto; height: 48px; max-height: 56px; }
+.brand img {
+  width: 48px; height: 48px; max-width: 75px; max-height: 75px;
+  border-radius: 50%; border: 2px solid var(--mustard); object-fit: cover; background: #fff;
+}
+.footer-badge { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; background: #fff; }
 .icon-btn, .menu-toggle, .btn, .btn-ghost, .text-btn, .square-link {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 48px; padding: 0 16px; border-radius: 999px;
@@ -342,6 +346,7 @@ dialog::backdrop { background: rgba(24,13,13,.55); }
   .story-copy { padding-top: 40px; padding-bottom: 48px; }
 }
 @media (min-width: 720px) {
+  .brand img { width: 64px; height: 64px; }
   .story-copy { padding-top: 72px; padding-bottom: 80px; }
   .story-copy h1 { margin-bottom: 32px; }
   .story-band { gap: 36px; }
@@ -379,7 +384,7 @@ dialog::backdrop { background: rgba(24,13,13,.55); }
 @media (min-width: 1360px) {
   .nav { width: min(1280px, calc(100% - 40px)); }
   .menu-toggle, .nav-close { display: none; }
-  .brand img { height: 64px; max-height: 72px; }
+  .brand img { width: 64px; height: 64px; }
   #site-nav {
     display: flex !important; position: static; inset: auto; background: transparent; color: var(--cream);
     flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-end;
