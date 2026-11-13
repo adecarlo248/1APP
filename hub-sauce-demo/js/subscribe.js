@@ -1,23 +1,68 @@
 (function () {
   var catalog = window.HUB_CATALOG || [];
-  var state = { mode: "", id: "", qty: 1, cadence: "", step: 1 };
+  var MAX = 12;
+  var state = { mode: "", qtys: {}, cadence: "", step: 1 };
+  catalog.forEach(function (product) { state.qtys[product.id] = 0; });
   var error = document.getElementById("sub-error");
   var steps = Array.prototype.slice.call(document.querySelectorAll("[data-sub-step]"));
   var productBox = document.getElementById("sub-products");
+  var live = document.getElementById("sub-live");
 
   catalog.forEach(function (product) {
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "choice";
-    btn.setAttribute("data-product", product.id);
-    btn.setAttribute("role", "radio");
-    btn.setAttribute("aria-checked", "false");
-    btn.innerHTML = "<strong>" + product.name + "</strong><small>" + product.blurb + " · $" + product.price.toFixed(2) + " CAD shelf price</small>";
-    productBox.appendChild(btn);
+    var row = document.createElement("article");
+    row.className = "sauce-pick";
+    row.innerHTML =
+      "<div><strong>" + product.name + "</strong><p>" + product.blurb + " · $" + product.price.toFixed(2) + " CAD shelf price</p></div>" +
+      '<div class="qty">' +
+      '<button type="button" data-sub-dec="' + product.id + '" aria-label="Decrease ' + product.name + '">−</button>' +
+      '<input class="qty-input" type="number" inputmode="numeric" min="0" max="' + MAX + '" value="0" data-sub-qty="' + product.id + '" aria-label="Quantity for ' + product.name + '">' +
+      '<button type="button" data-sub-inc="' + product.id + '" aria-label="Increase ' + product.name + '">+</button>' +
+      "</div>";
+    productBox.appendChild(row);
   });
 
   function showError(message) {
     error.textContent = message || "";
+  }
+
+  function clamp(n) {
+    n = Math.round(Number(n) || 0);
+    return Math.max(0, Math.min(MAX, n));
+  }
+
+  function setQty(id, qty) {
+    state.qtys[id] = clamp(qty);
+    var input = productBox.querySelector('[data-sub-qty="' + id + '"]');
+    if (input) input.value = String(state.qtys[id]);
+    paintLive();
+  }
+
+  function chosen() {
+    return catalog.filter(function (product) { return state.qtys[product.id] > 0; });
+  }
+
+  function jarCount() {
+    return chosen().reduce(function (sum, product) { return sum + state.qtys[product.id]; }, 0);
+  }
+
+  function shelfTotal() {
+    return chosen().reduce(function (sum, product) { return sum + product.price * state.qtys[product.id]; }, 0);
+  }
+
+  function itemsLabel() {
+    var items = chosen();
+    if (!items.length) return "No sauces selected.";
+    return items.map(function (product) {
+      return product.name + " × " + state.qtys[product.id];
+    }).join(", ");
+  }
+
+  function paintLive() {
+    if (!live) return;
+    var items = chosen();
+    live.textContent = items.length
+      ? itemsLabel() + ". Shelf subtotal $" + shelfTotal().toFixed(2) + " CAD."
+      : "No sauces selected. Shelf subtotal $0.00 CAD.";
   }
 
   function paint() {
@@ -26,18 +71,12 @@
       btn.classList.toggle("selected", on);
       btn.setAttribute("aria-checked", on ? "true" : "false");
     });
-    document.querySelectorAll("[data-product]").forEach(function (btn) {
-      var on = btn.getAttribute("data-product") === state.id;
-      btn.classList.toggle("selected", on);
-      btn.setAttribute("aria-checked", on ? "true" : "false");
-    });
     document.querySelectorAll("[data-cadence]").forEach(function (btn) {
       var on = btn.getAttribute("data-cadence") === state.cadence;
       btn.classList.toggle("selected", on);
       btn.setAttribute("aria-checked", on ? "true" : "false");
     });
-    var qty = document.getElementById("sub-qty");
-    if (qty) qty.textContent = String(state.qty);
+    paintLive();
   }
 
   function go(step) {
@@ -53,11 +92,7 @@
     showError("");
     var heading = document.querySelector('[data-sub-step="' + step + '"] h2');
     if (heading) heading.focus();
-    if (step === 4 || step === 5) fill();
-  }
-
-  function product() {
-    return catalog.find(function (item) { return item.id === state.id; });
+    if (step === 4 || step === 5 || step === 6) fill();
   }
 
   function cadenceLabel() {
@@ -67,16 +102,14 @@
   }
 
   function fill() {
-    var item = product();
-    var name = item ? item.name : "—";
-    var shelf = item ? "$" + (item.price * state.qty).toFixed(2) + " CAD" : "—";
+    var repeat = state.mode === "repeat";
     ["sum", "done"].forEach(function (prefix) {
       var nodes = {
-        mode: state.mode === "repeat" ? "Pantry Refill · proposed concept" : "One-time, in the live Square store",
-        item: name,
-        qty: String(state.qty),
-        cadence: state.mode === "repeat" ? cadenceLabel() : "Not a refill",
-        shelf: state.mode === "repeat" ? shelf : "See the live Square shop",
+        mode: repeat ? "Pantry Refill · proposed concept" : "One-time, in the live Square store",
+        item: repeat ? itemsLabel() : "Order in the live Square store",
+        qty: repeat ? String(jarCount()) : "—",
+        cadence: repeat ? cadenceLabel() : "Not a refill",
+        shelf: repeat ? "$" + shelfTotal().toFixed(2) + " CAD" : "See the live Square shop",
         recurring: "Pricing to be confirmed",
         ship: "Pricing to be confirmed",
         first: "Pricing to be confirmed"
@@ -90,8 +123,7 @@
 
   function validate(step) {
     if (step === 1 && !state.mode) return "Choose one-time or Pantry Refill to continue.";
-    if (step === 2 && !state.id) return "Choose a product. Nothing is selected for you.";
-    if (step === 2 && state.qty < 1) return "Quantity needs to be at least 1.";
+    if (step === 2 && !chosen().length) return "Add at least one sauce. Each quantity starts at zero.";
     if (step === 3 && !state.cadence) return "Choose an illustrative cadence. Neither one is preselected.";
     return "";
   }
@@ -103,12 +135,12 @@
   document.body.addEventListener("click", function (event) {
     var mode = event.target.closest("[data-mode]");
     if (mode) { state.mode = mode.getAttribute("data-mode"); paint(); showError(""); }
-    var picked = event.target.closest("[data-product]");
-    if (picked) { state.id = picked.getAttribute("data-product"); paint(); showError(""); }
     var cadence = event.target.closest("[data-cadence]");
     if (cadence) { state.cadence = cadence.getAttribute("data-cadence"); paint(); showError(""); }
-    if (event.target.closest("[data-qty-inc]")) { state.qty += 1; paint(); }
-    if (event.target.closest("[data-qty-dec]")) { state.qty = Math.max(1, state.qty - 1); paint(); }
+    var inc = event.target.closest("[data-sub-inc]");
+    if (inc) { setQty(inc.getAttribute("data-sub-inc"), state.qtys[inc.getAttribute("data-sub-inc")] + 1); showError(""); }
+    var dec = event.target.closest("[data-sub-dec]");
+    if (dec) { setQty(dec.getAttribute("data-sub-dec"), state.qtys[dec.getAttribute("data-sub-dec")] - 1); showError(""); }
     if (event.target.closest("[data-sub-next]")) {
       var problem = validate(state.step);
       if (problem) { showError(problem); return; }
@@ -138,6 +170,13 @@
       copy.focus();
     }
     if (event.target.closest("[data-sub-restart]")) window.location.reload();
+  });
+
+  document.body.addEventListener("change", function (event) {
+    var input = event.target.closest("[data-sub-qty]");
+    if (!input) return;
+    setQty(input.getAttribute("data-sub-qty"), input.value);
+    showError("");
   });
 
   go(1);
