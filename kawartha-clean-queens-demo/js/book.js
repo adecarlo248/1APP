@@ -182,11 +182,11 @@
     }
     if (n === 6) {
       if (!text("town")) return "Choose a town.";
-      if (text("town") === "other" && text("townother").length < 2) return "Type the town so she can confirm it.";
+      if (text("town") === "other" && text("townother").length < 2) return "Type the town so we can confirm it.";
       if (text("address").length < 5) return "Add the street address for the clean.";
     }
     if (n === 7) {
-      if (!checked("pets")) return "Let her know whether there are pets.";
+      if (!checked("pets")) return "Let us know whether there are pets.";
       if (!checked("entry")) return "Choose how the team should get in.";
       var notes = text("entrynote") + " " + text("petnote");
       if (secretish(notes)) return "Please take alarm codes, lockbox codes, and passwords out of the note. This preview does not send them, and they do not belong on this form.";
