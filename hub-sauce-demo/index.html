@@ -8,7 +8,9 @@
   <meta name="theme-color" content="#180d0d">
   <title>The Hub Sauce Co.</title>
   <meta name="description" content="Big flavour from The Hub Sauce Co. Six sauces, a proposed Pantry Refill, and market dates when they are confirmed.">
-  <link rel="icon" href="/hub-sauce-demo/assets/favicon.png">
+  <link rel="icon" href="/hub-sauce-demo/assets/logo-badge.webp" type="image/webp">
+  <link rel="icon" href="/hub-sauce-demo/assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/hub-sauce-demo/assets/logo-badge.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,560&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +22,7 @@
   <header class="site-header">
     <p class="demo-banner">Concept demo by 1APP — not the live store. <a href="https://www.thehubsauceco.com/">thehubsauceco.com</a></p>
     <div class="nav">
-      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co." width="522" height="269"></a>
+      <a class="brand" href="/hub-sauce-demo/"><picture><source srcset="/hub-sauce-demo/assets/logo-badge.webp" type="image/webp"><img src="/hub-sauce-demo/assets/logo-badge.jpg" alt="The Hub Sauce Co." width="150" height="150"></picture></a>
       <button type="button" class="icon-btn" data-open-cart>Basket <span class="count" id="cart-count">0</span></button>
       <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav-panel" aria-label="Primary" hidden>
@@ -41,16 +43,10 @@
       <div class="wrap hero-copy">
           <p class="kicker">The Hub Sauce Co.</p>
           <h1>Big flavour. Pull up a chair.</h1>
-          <p class="lede">Gold Metal Mustard. Tangy, sweet, and spicy. Heat 5/10.</p>
-          <div class="hero-meta">
-            <p class="price">$15.00 CAD</p>
-            <p class="heat">Flagship mustard</p>
-          </div>
           <div class="stack-actions">
             <a class="btn" id="hero-shop" href="/hub-sauce-demo/shop/">Shop sauces</a>
             <a class="btn-ghost" href="/hub-sauce-demo/story/">Our story</a>
           </div>
-          <p class="fine hero-note">Pictured at Kawartha Ribfest. No date is listed.</p>
       </div>
     </section>
 
@@ -270,7 +266,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="140">
+        <img class="footer-badge" src="/hub-sauce-demo/assets/logo-badge-color.webp" alt="The Hub Sauce Co." width="240" height="240">
         <p class="footer-label">Mail</p>
         <p>Box 566, Hastings, ON K0L 1Y0</p>
         <p class="fine">Photos: The Hub Sauce Co. Concept demo by 1APP — not the live store. No orders are taken here.</p>
@@ -313,7 +309,7 @@
 </div>
 <dialog id="quick" aria-labelledby="quick-title">
   <div class="quick">
-    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="" width="522" height="269">
+    <img data-q-img src="/hub-sauce-demo/assets/logo-badge.webp" alt="" width="150" height="150">
     <div>
       <p class="heat" data-q-heat></p>
       <h2 id="quick-title" data-q-name tabindex="-1"></h2>
