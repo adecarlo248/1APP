@@ -90,7 +90,6 @@
   var lbImg = document.getElementById("lb-img");
   var lbKicker = document.getElementById("lb-kicker");
   var lbCaption = document.getElementById("lb-caption");
-  var lbLink = document.getElementById("lb-link");
   var lbCount = document.getElementById("lb-count");
   var current = 0;
   var openerBtn = null;
@@ -109,14 +108,6 @@
     lbImg.alt = img.getAttribute("alt") || "";
     lbKicker.textContent = shot.getAttribute("data-kicker") || "";
     lbCaption.textContent = shot.getAttribute("data-caption") || "";
-    var link = shot.getAttribute("data-link");
-    if (link) {
-      lbLink.hidden = false;
-      lbLink.href = link;
-    } else {
-      lbLink.hidden = true;
-      lbLink.removeAttribute("href");
-    }
     lbCount.textContent = (current + 1) + " of " + list.length;
   }
 

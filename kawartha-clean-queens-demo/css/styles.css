@@ -440,9 +440,14 @@ h3 {
 .trust {
   display: grid;
   gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .trust-item {
+  list-style: none;
+  margin: 0;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
