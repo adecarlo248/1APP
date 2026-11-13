@@ -82,7 +82,7 @@ window.HUB_CATALOG = [
     href: "/hub-sauce-demo/product/starter-set/",
     live: "https://www.thehubsauceco.com/product/starter-set/38",
     blurb: 'Includes Gold Metal Mustard, Twister Sister, Canadian Cue, Pixie Dust, and SPG+.',
-    heatLabel: "Heat not listed",
+    heatLabel: "Mixed heats",
   },
 ];
 window.HUB_BY_ID = Object.fromEntries(window.HUB_CATALOG.map(function (p) { return [p.id, p]; }));

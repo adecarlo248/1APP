@@ -318,8 +318,14 @@
           entry.target.classList.add("is-in");
           reveal.unobserve(entry.target);
         });
-      }, { threshold: 0.18 });
+      }, { threshold: 0, rootMargin: "80px 40px" });
       cards.forEach(function (card) {
+        var rect = card.getBoundingClientRect();
+        var seen = rect.bottom > 0 && rect.right > 0 && rect.top < window.innerHeight && rect.left < window.innerWidth;
+        if (seen) {
+          card.classList.add("is-in");
+          return;
+        }
         card.classList.add("reveal");
         reveal.observe(card);
       });
