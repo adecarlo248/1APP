@@ -103,13 +103,28 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(246, 241, 232, 0.96);
+  background: transparent;
   border-bottom: 1px solid var(--line);
   box-shadow: 0 1px 0 var(--gold-line);
+}
+
+/* Blur sits on the pseudo, not the header. backdrop-filter on an ancestor
+   becomes the containing block for position:fixed, which trapped the mobile
+   menu inside the header bar. */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(246, 241, 232, 0.96);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
+  pointer-events: none;
 }
 
 .nav {
+  position: relative;
+  z-index: 1;
   width: min(var(--max), calc(100% - 28px));
   margin: 0 auto;
   min-height: var(--header);
@@ -223,9 +238,18 @@ a { color: inherit; }
     display: flex;
     flex-direction: column;
     gap: 2px;
-    padding: 18px 22px 32px;
+    width: 100%;
+    min-height: 100%;
+    min-height: 100dvh;
+    padding:
+      calc(18px + env(safe-area-inset-top, 0px))
+      calc(22px + env(safe-area-inset-right, 0px))
+      calc(32px + env(safe-area-inset-bottom, 0px))
+      calc(22px + env(safe-area-inset-left, 0px));
     background: var(--ivory);
     overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   #site-nav a {
@@ -244,6 +268,8 @@ a { color: inherit; }
     margin-top: 12px;
     align-self: flex-start;
   }
+
+  #site-nav .nav-call { margin-top: 8px; }
 
   .nav-close { align-self: flex-end; margin-bottom: 8px; }
 }
@@ -285,9 +311,19 @@ a { color: inherit; }
     padding: 0 14px;
     font-size: 0.95rem;
   }
+
+  #site-nav .nav-call { display: none; }
 }
 
+html.nav-open,
 body.nav-open { overflow: hidden; }
+
+body.nav-open {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
 
 .kicker {
   display: flex;

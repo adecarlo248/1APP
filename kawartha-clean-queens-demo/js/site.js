@@ -1,16 +1,54 @@
 (function () {
   var nav = document.getElementById("site-nav");
   var opener = document.querySelector("[data-menu]");
+  var scrollY = 0;
+  var scrollLocked = false;
 
   function narrow() {
     return window.matchMedia("(max-width: 959px)").matches;
   }
 
+  function setBackgroundInert(on) {
+    var kids = document.body.children;
+    for (var i = 0; i < kids.length; i++) {
+      var el = kids[i];
+      if (el.classList.contains("site-header") || el.tagName === "SCRIPT") continue;
+      el.inert = on;
+    }
+  }
+
+  function setScrollLock(on) {
+    if (on === scrollLocked) return;
+    var root = document.documentElement;
+    if (on) {
+      scrollY = window.scrollY || root.scrollTop || 0;
+      scrollLocked = true;
+      root.classList.add("nav-open");
+      document.body.classList.add("nav-open");
+      document.body.style.top = "-" + scrollY + "px";
+      setBackgroundInert(true);
+      return;
+    }
+    scrollLocked = false;
+    setBackgroundInert(false);
+    root.classList.remove("nav-open");
+    document.body.classList.remove("nav-open");
+    document.body.style.top = "";
+    root.style.scrollBehavior = "auto";
+    window.scrollTo(0, scrollY);
+    root.style.scrollBehavior = "";
+  }
+
+  document.addEventListener("touchmove", function (event) {
+    if (!scrollLocked || !nav || nav.contains(event.target)) return;
+    event.preventDefault();
+  }, { passive: false });
+
   if (nav && opener) {
     function setOpen(open, moveFocus) {
       nav.hidden = !open;
       opener.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.classList.toggle("nav-open", open && narrow());
+      setScrollLock(open && narrow());
       if (!moveFocus) return;
       if (open) {
         var closeBtn = nav.querySelector("[data-menu-close]");
