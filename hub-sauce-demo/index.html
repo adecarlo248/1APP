@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-CA">
 <head>
-  <script src="/assets/google-tag.js"></script>
+  <script src="/assets/google-tag.js" defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,560&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp" imagesrcset="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-480.webp 480w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp 960w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-1600.webp 1600w" imagesizes="100vw" type="image/webp">
   <link rel="stylesheet" href="/hub-sauce-demo/css/styles.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
   <header class="site-header">
     <p class="demo-banner">Concept demo by 1APP — not the live store. <a href="https://www.thehubsauceco.com/">thehubsauceco.com</a></p>
     <div class="nav">
-      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co."></a>
+      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co." width="522" height="269"></a>
       <button type="button" class="icon-btn" data-open-cart>Basket <span class="count" id="cart-count">0</span></button>
       <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav-panel" aria-label="Primary" hidden>
@@ -30,9 +31,14 @@
   </header>
   <main id="main">
 
-    <section class="hero" id="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
+    <section class="hero hero-bleed" id="hero">
+      <picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-480.avif 480w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.avif 960w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-1600.avif 1600w" sizes="100vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-480.webp 480w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp 960w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-1600.webp 1600w" sizes="100vw">
+  <img class="hero-photo" src="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp" alt="The owner at a booth, holding a Da Kine jar and a Gold Metal Mustard jar." width="1800" height="1200" decoding="async" fetchpriority="high">
+</picture>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap hero-copy">
           <p class="kicker">The Hub Sauce Co.</p>
           <h1>Big flavour. Pull up a chair.</h1>
           <p class="lede">Gold Metal Mustard. Tangy, sweet, and spicy. Heat 5/10.</p>
@@ -44,10 +50,11 @@
             <a class="btn" id="hero-shop" href="/hub-sauce-demo/shop/">Shop sauces</a>
             <a class="btn-ghost" href="/hub-sauce-demo/story/">Our story</a>
           </div>
-        </div>
-        <a class="hero-poster" href="/hub-sauce-demo/product/gold-metal-mustard/"><span class="hero-art"><img src="/hub-sauce-demo/assets/gold.webp" alt="Illustrated sugar skull with a yellow rose for Gold Metal Mustard."></span></a>
+          <p class="fine hero-note">Pictured at Kawartha Ribfest. No date is listed.</p>
       </div>
     </section>
+
+
     <section class="section">
       <div class="wrap">
         <div class="page-intro">
@@ -55,9 +62,12 @@
           <p class="lede">Six products from the shop. Prices in Canadian dollars.</p>
         </div>
         <div class="lineup">
-          
 <article class="sauce-row" data-kind="sauce" data-heat="5" data-tone="gold" data-name="gold metal mustard" data-price="15" data-order="1">
-  <a class="poster " href="/hub-sauce-demo/product/gold-metal-mustard/"><img src="/hub-sauce-demo/assets/gold.webp" alt="Illustrated sugar skull with a yellow rose for Gold Metal Mustard."></a>
+  <a class="poster " href="/hub-sauce-demo/product/gold-metal-mustard/"><img src="/hub-sauce-demo/assets/gold.webp" alt="Illustrated sugar skull with a yellow rose for Gold Metal Mustard." width="733" height="1100" loading="lazy"><picture class="live-thumb">
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/gold-metal-mustard-jar-lineup-480.avif 480w, /hub-sauce-demo/assets/social/gold-metal-mustard-jar-lineup-960.avif 960w, /hub-sauce-demo/assets/social/gold-metal-mustard-jar-lineup-1440.avif 1440w" sizes="140px">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/gold-metal-mustard-jar-lineup-480.webp 480w, /hub-sauce-demo/assets/social/gold-metal-mustard-jar-lineup-960.webp 960w, /hub-sauce-demo/assets/social/gold-metal-mustard-jar-lineup-1440.webp 1440w" sizes="140px">
+  <img src="/hub-sauce-demo/assets/social/gold-metal-mustard-jar-lineup-960.webp" alt="Rows of Gold Metal Mustard jars." width="1440" height="1080" decoding="async" loading="lazy">
+</picture></a>
   <div class="row-copy">
     <p class="heat">5/10</p>
     <h2><a href="/hub-sauce-demo/product/gold-metal-mustard/">Gold Metal Mustard</a></h2>
@@ -71,7 +81,11 @@
   </div>
 </article>
 <article class="sauce-row" data-kind="sauce" data-heat="2" data-tone="dakine" data-name="da kine!" data-price="15" data-order="2">
-  <a class="poster " href="/hub-sauce-demo/product/da-kine/"><img src="/hub-sauce-demo/assets/dakine.webp" alt="Illustrated cowboy in a hat with hibiscus flowers for Da Kine."></a>
+  <a class="poster " href="/hub-sauce-demo/product/da-kine/"><img src="/hub-sauce-demo/assets/dakine.webp" alt="Illustrated cowboy in a hat with hibiscus flowers for Da Kine." width="1024" height="1024" loading="lazy"><picture class="live-thumb">
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-480.avif 480w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-960.avif 960w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-1350.avif 1350w" sizes="140px">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-480.webp 480w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-960.webp 960w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-1350.webp 1350w" sizes="140px">
+  <img src="/hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-960.webp" alt="A hot dog with Pineapple Cowboy Candy." width="1350" height="1800" decoding="async" loading="lazy">
+</picture></a>
   <div class="row-copy">
     <p class="heat">2/10</p>
     <h2><a href="/hub-sauce-demo/product/da-kine/">Da Kine!</a></h2>
@@ -85,7 +99,11 @@
   </div>
 </article>
 <article class="sauce-row" data-kind="seasoning" data-heat="3" data-tone="pixie" data-name="pixie dust" data-price="12" data-order="3">
-  <a class="poster mat-mustard" href="/hub-sauce-demo/product/pixie-dust/"><img src="/hub-sauce-demo/assets/pixie.webp" alt="Pixie Dust label art with a fairy, the words Spicy Everything Bagel Seasoning, and 100g."></a>
+  <a class="poster mat-mustard" href="/hub-sauce-demo/product/pixie-dust/"><img src="/hub-sauce-demo/assets/pixie.webp" alt="Pixie Dust label art with a fairy, the words Spicy Everything Bagel Seasoning, and 100g." width="872" height="725" loading="lazy"><picture class="live-thumb">
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/pixie-dust-seasoning-480.avif 480w, /hub-sauce-demo/assets/social/pixie-dust-seasoning-960.avif 960w, /hub-sauce-demo/assets/social/pixie-dust-seasoning-1440.avif 1440w" sizes="140px">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/pixie-dust-seasoning-480.webp 480w, /hub-sauce-demo/assets/social/pixie-dust-seasoning-960.webp 960w, /hub-sauce-demo/assets/social/pixie-dust-seasoning-1440.webp 1440w" sizes="140px">
+  <img src="/hub-sauce-demo/assets/social/pixie-dust-seasoning-960.webp" alt="Pixie Dust spicy everything seasoning." width="1440" height="1440" decoding="async" loading="lazy">
+</picture></a>
   <div class="row-copy">
     <p class="heat">3/10</p>
     <h2><a href="/hub-sauce-demo/product/pixie-dust/">Pixie Dust</a></h2>
@@ -99,7 +117,11 @@
   </div>
 </article>
 <article class="sauce-row" data-kind="sauce" data-heat="3" data-tone="twister" data-name="twister sister" data-price="15" data-order="4">
-  <a class="poster " href="/hub-sauce-demo/product/twister-sister/"><img src="/hub-sauce-demo/assets/twister.webp" alt="Illustrated twin profiles with flowers for Twister Sister."></a>
+  <a class="poster " href="/hub-sauce-demo/product/twister-sister/"><img src="/hub-sauce-demo/assets/twister.webp" alt="Illustrated twin profiles with flowers for Twister Sister." width="1024" height="1024" loading="lazy"><picture class="live-thumb">
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/pizza-and-twister-sister-480.avif 480w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-960.avif 960w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-1440.avif 1440w" sizes="140px">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/pizza-and-twister-sister-480.webp 480w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-960.webp 960w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-1440.webp 1440w" sizes="140px">
+  <img src="/hub-sauce-demo/assets/social/pizza-and-twister-sister-960.webp" alt="Pizza with Twister Sister." width="1440" height="1800" decoding="async" loading="lazy">
+</picture></a>
   <div class="row-copy">
     <p class="heat">3/10</p>
     <h2><a href="/hub-sauce-demo/product/twister-sister/">Twister Sister</a></h2>
@@ -113,7 +135,11 @@
   </div>
 </article>
 <article class="sauce-row" data-kind="sauce" data-heat="3" data-tone="canadian" data-name="canadian cue!" data-price="15" data-order="5">
-  <a class="poster mat-chilli" href="/hub-sauce-demo/product/canadian-cue/"><img src="/hub-sauce-demo/assets/canadian.webp" alt="Illustrated portrait in orange and brown for Canadian Cue."></a>
+  <a class="poster mat-chilli" href="/hub-sauce-demo/product/canadian-cue/"><img src="/hub-sauce-demo/assets/canadian.webp" alt="Illustrated portrait in orange and brown for Canadian Cue." width="733" height="1100" loading="lazy"><picture class="live-thumb">
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-480.avif 480w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-960.avif 960w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-1440.avif 1440w" sizes="140px">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-480.webp 480w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-960.webp 960w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-1440.webp 1440w" sizes="140px">
+  <img src="/hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-960.webp" alt="A jar of Canadian Cue maple BBQ sauce." width="1440" height="1440" decoding="async" loading="lazy">
+</picture></a>
   <div class="row-copy">
     <p class="heat">3/10</p>
     <h2><a href="/hub-sauce-demo/product/canadian-cue/">Canadian Cue!</a></h2>
@@ -127,7 +153,7 @@
   </div>
 </article>
 <article class="sauce-row" data-kind="set" data-heat="none" data-tone="starter" data-name="starter set" data-price="100" data-order="6">
-  <a class="poster mat-mustard" href="/hub-sauce-demo/product/starter-set/"><img src="/hub-sauce-demo/assets/starter.webp" alt="The Hub Sauce Co. gold wordmark for the Starter Set."></a>
+  <a class="poster mat-mustard" href="/hub-sauce-demo/product/starter-set/"><img src="/hub-sauce-demo/assets/starter.webp" alt="The Hub Sauce Co. gold wordmark for the Starter Set." width="573" height="353" loading="lazy"></a>
   <div class="row-copy">
     <p class="heat">Heat not listed</p>
     <h2><a href="/hub-sauce-demo/product/starter-set/">Starter Set</a></h2>
@@ -143,10 +169,48 @@
         </div>
       </div>
     </section>
+
+    <section class="section grill-section">
+      <div class="wrap">
+        <div class="page-intro">
+          <p class="kicker">On the plate</p>
+          <h2>Made for the grill. And the table.</h2>
+          <p class="lede">From their posts. Tags follow the caption, including blends that are not in the six-product shop.</p>
+        </div>
+        <div class="reel grill">
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/braised-short-ribs-480.avif 480w, /hub-sauce-demo/assets/social/braised-short-ribs-960.avif 960w, /hub-sauce-demo/assets/social/braised-short-ribs-1600.avif 1600w" sizes="(min-width: 900px) 40vw, 84vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/braised-short-ribs-480.webp 480w, /hub-sauce-demo/assets/social/braised-short-ribs-960.webp 960w, /hub-sauce-demo/assets/social/braised-short-ribs-1600.webp 1600w" sizes="(min-width: 900px) 40vw, 84vw">
+  <img src="/hub-sauce-demo/assets/social/braised-short-ribs-960.webp" alt="Braised short ribs with smoked carrots and mash." width="1800" height="1800" decoding="async" loading="lazy">
+</picture><figcaption>Smokehouse Herb and SPG+</figcaption></figure>
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/italian-subs-with-smokehouse-herb-480.avif 480w, /hub-sauce-demo/assets/social/italian-subs-with-smokehouse-herb-960.avif 960w, /hub-sauce-demo/assets/social/italian-subs-with-smokehouse-herb-1600.avif 1600w" sizes="(min-width: 900px) 28vw, 84vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/italian-subs-with-smokehouse-herb-480.webp 480w, /hub-sauce-demo/assets/social/italian-subs-with-smokehouse-herb-960.webp 960w, /hub-sauce-demo/assets/social/italian-subs-with-smokehouse-herb-1600.webp 1600w" sizes="(min-width: 900px) 28vw, 84vw">
+  <img src="/hub-sauce-demo/assets/social/italian-subs-with-smokehouse-herb-960.webp" alt="An Italian sub." width="1800" height="1800" decoding="async" loading="lazy">
+</picture><figcaption>Smokehouse Herb Blend</figcaption></figure>
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-480.avif 480w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-960.avif 960w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-1350.avif 1350w" sizes="(min-width: 900px) 28vw, 84vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-480.webp 480w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-960.webp 960w, /hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-1350.webp 1350w" sizes="(min-width: 900px) 28vw, 84vw">
+  <img src="/hub-sauce-demo/assets/social/pineapple-cowboy-candy-hotdog-960.webp" alt="A hot dog with Pineapple Cowboy Candy." width="1350" height="1800" decoding="async" loading="lazy">
+</picture><figcaption><a href="/hub-sauce-demo/product/da-kine/">Pineapple Cowboy Candy</a></figcaption></figure>
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/pizza-and-twister-sister-480.avif 480w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-960.avif 960w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-1440.avif 1440w" sizes="(min-width: 900px) 28vw, 84vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/pizza-and-twister-sister-480.webp 480w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-960.webp 960w, /hub-sauce-demo/assets/social/pizza-and-twister-sister-1440.webp 1440w" sizes="(min-width: 900px) 28vw, 84vw">
+  <img src="/hub-sauce-demo/assets/social/pizza-and-twister-sister-960.webp" alt="Pizza with Twister Sister." width="1440" height="1800" decoding="async" loading="lazy">
+</picture><figcaption><a href="/hub-sauce-demo/product/twister-sister/">Twister Sister</a></figcaption></figure>
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/burger-gold-metal-mustard-480.avif 480w, /hub-sauce-demo/assets/social/burger-gold-metal-mustard-960.avif 960w, /hub-sauce-demo/assets/social/burger-gold-metal-mustard-1283.avif 1283w" sizes="(min-width: 900px) 28vw, 84vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/burger-gold-metal-mustard-480.webp 480w, /hub-sauce-demo/assets/social/burger-gold-metal-mustard-960.webp 960w, /hub-sauce-demo/assets/social/burger-gold-metal-mustard-1283.webp 1283w" sizes="(min-width: 900px) 28vw, 84vw">
+  <img src="/hub-sauce-demo/assets/social/burger-gold-metal-mustard-960.webp" alt="A burger with mustard." width="1283" height="1288" decoding="async" loading="lazy">
+</picture><figcaption><a href="/hub-sauce-demo/product/gold-metal-mustard/">Gold Metal Mustard</a></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
     <section class="band-ink">
       <div class="wrap story-band">
         <figure class="family-frame">
-          <img src="/hub-sauce-demo/assets/about.jpg" alt="Adults and children outdoors, one holding a berry basket.">
+          <img src="/hub-sauce-demo/assets/about.jpg" alt="Adults and children outdoors, one holding a berry basket." width="1120" height="840" loading="lazy">
         </figure>
         <blockquote class="quote"><p>“This sauce started off as a gift from my son for fathers day and has morphed into the creation you see today.”</p><footer>Canadian Cue</footer></blockquote>
         <p><a class="btn" href="/hub-sauce-demo/story/">Our story</a></p>
@@ -160,13 +224,40 @@
         <p><a class="btn" href="/hub-sauce-demo/subscribe/" style="background:#fffaf4;color:#180d0d;border-color:#fffaf4">See Pantry Refill</a></p>
       </div>
     </section>
+
     <section class="section">
-      <div class="wrap page-intro">
-        <p class="kicker">Find us next</p>
-        <h2>Our next market dates will appear here once confirmed.</h2>
-        <p><a class="btn" href="/hub-sauce-demo/events/">Market dates</a></p>
+      <div class="wrap">
+        <div class="page-intro">
+          <p class="kicker">Find us</p>
+          <h2>Places you may have seen them.</h2>
+          <p class="lede">Named in their posts. No dates, and not an upcoming schedule.</p>
+        </div>
+        <div class="reel places">
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-480.avif 480w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.avif 960w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-1600.avif 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-480.webp 480w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp 960w, /hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-1600.webp 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/owner-at-ribfest-with-sauces-960.webp" alt="The owner with sauce jars under a tent." width="1800" height="1200" decoding="async" loading="lazy">
+</picture><figcaption>Kawartha Ribfest</figcaption></figure>
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/sauce-shop-display-480.avif 480w, /hub-sauce-demo/assets/social/sauce-shop-display-960.avif 960w, /hub-sauce-demo/assets/social/sauce-shop-display-1600.avif 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/sauce-shop-display-480.webp 480w, /hub-sauce-demo/assets/social/sauce-shop-display-960.webp 960w, /hub-sauce-demo/assets/social/sauce-shop-display-1600.webp 1600w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/sauce-shop-display-960.webp" alt="Jars arranged on a market shelf." width="1800" height="1350" decoding="async" loading="lazy">
+</picture><figcaption>542 The Big Red Barn</figcaption></figure>
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-480.avif 480w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-960.avif 960w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-1350.avif 1350w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-480.webp 480w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-960.webp 960w, /hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-1350.webp 1350w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/hastings-waterfront-festival-booth-960.webp" alt="A market booth with sauce jars." width="1350" height="1800" decoding="async" loading="lazy">
+</picture><figcaption>Hastings Waterfront Festival</figcaption></figure>
+          <figure class="food-card zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-480.avif 480w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-960.avif 960w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-1440.avif 1440w" sizes="(min-width: 900px) 22vw, 78vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-480.webp 480w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-960.webp 960w, /hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-1440.webp 1440w" sizes="(min-width: 900px) 22vw, 78vw">
+  <img src="/hub-sauce-demo/assets/social/sauces-on-sharpes-retail-shelf-960.webp" alt="Sauce jars on a shop shelf." width="1440" height="1080" decoding="async" loading="lazy">
+</picture><figcaption>Sharpe’s shelves</figcaption></figure>
+        </div>
+        <p class="section-cta"><a class="btn" href="/hub-sauce-demo/events/">Market dates</a></p>
       </div>
     </section>
+
     <section class="band-mustard">
       <div class="wrap page-intro">
         <h2>Where it goes</h2>
@@ -182,7 +273,7 @@
         <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="140">
         <p class="footer-label">Mail</p>
         <p>Box 566, Hastings, ON K0L 1Y0</p>
-        <p class="fine">Concept demo by 1APP — not the live store. No orders are taken here.</p>
+        <p class="fine">Photos: The Hub Sauce Co. Concept demo by 1APP — not the live store. No orders are taken here.</p>
       </div>
       <div>
         <h2>Order</h2>
@@ -222,7 +313,7 @@
 </div>
 <dialog id="quick" aria-labelledby="quick-title">
   <div class="quick">
-    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="">
+    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="" width="522" height="269">
     <div>
       <p class="heat" data-q-heat></p>
       <h2 id="quick-title" data-q-name tabindex="-1"></h2>

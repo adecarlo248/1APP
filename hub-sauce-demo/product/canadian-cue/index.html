@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-CA">
 <head>
-  <script src="/assets/google-tag.js"></script>
+  <script src="/assets/google-tag.js" defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
@@ -19,7 +19,7 @@
   <header class="site-header">
     <p class="demo-banner">Concept demo by 1APP — not the live store. <a href="https://www.thehubsauceco.com/">thehubsauceco.com</a></p>
     <div class="nav">
-      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co."></a>
+      <a class="brand" href="/hub-sauce-demo/"><img src="/hub-sauce-demo/assets/logo.webp" alt="The Hub Sauce Co." width="522" height="269"></a>
       <button type="button" class="icon-btn" data-open-cart>Basket <span class="count" id="cart-count">0</span></button>
       <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="nav-panel" aria-label="Primary" hidden>
@@ -32,7 +32,11 @@
 
     <article class="section product-page">
       <div class="wrap product-layout">
-        <a class="poster mat-chilli" href="https://www.thehubsauceco.com/product/canadian-cue-/37"><img src="/hub-sauce-demo/assets/canadian.webp" alt="Illustrated portrait in orange and brown for Canadian Cue."></a>
+        <div class="product-gallery"><a class="poster mat-chilli" href="https://www.thehubsauceco.com/product/canadian-cue-/37"><img src="/hub-sauce-demo/assets/canadian.webp" alt="Illustrated portrait in orange and brown for Canadian Cue." width="733" height="1100"></a><figure class="real-shot zoom"><picture>
+  <source type="image/avif" srcset="/hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-480.avif 480w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-960.avif 960w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-1440.avif 1440w" sizes="(min-width: 980px) 22vw, 100vw">
+  <source type="image/webp" srcset="/hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-480.webp 480w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-960.webp 960w, /hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-1440.webp 1440w" sizes="(min-width: 980px) 22vw, 100vw">
+  <img src="/hub-sauce-demo/assets/social/canadian-cue-bbq-sauce-960.webp" alt="Canadian Cue, a maple BBQ sauce." width="1440" height="1440" decoding="async" loading="lazy">
+</picture><figcaption>Canadian Cue, their maple BBQ sauce.</figcaption></figure></div>
         <div class="product-intro" id="product-hero">
           <p class="crumbs"><a href="/hub-sauce-demo/shop/">Shop</a> / Canadian Cue!</p>
           <p class="heat">3/10</p>
@@ -64,7 +68,7 @@
         <img src="/hub-sauce-demo/assets/logo.webp" alt="" width="140">
         <p class="footer-label">Mail</p>
         <p>Box 566, Hastings, ON K0L 1Y0</p>
-        <p class="fine">Concept demo by 1APP — not the live store. No orders are taken here.</p>
+        <p class="fine">Photos: The Hub Sauce Co. Concept demo by 1APP — not the live store. No orders are taken here.</p>
       </div>
       <div>
         <h2>Order</h2>
@@ -104,7 +108,7 @@
 </div>
 <dialog id="quick" aria-labelledby="quick-title">
   <div class="quick">
-    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="">
+    <img data-q-img src="/hub-sauce-demo/assets/logo.webp" alt="" width="522" height="269">
     <div>
       <p class="heat" data-q-heat></p>
       <h2 id="quick-title" data-q-name tabindex="-1"></h2>
