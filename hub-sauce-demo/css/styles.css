@@ -89,11 +89,29 @@ h2 { font-size: clamp(32px, 7vw, 56px); }
 .page-intro > .lede:last-child { margin-bottom: 0; }
 .hero .kicker { color: var(--mustard); }
 .hero-poster {
-  margin: 12px 0; background: #24160f; display: flex; align-items: center; justify-content: center;
-  min-height: 180px; padding: 8px;
+  justify-self: center; align-self: center;
+  margin: 8px 0 0; padding: 0; background: transparent;
+  display: flex; text-decoration: none;
+}
+.hero-art {
+  position: relative; display: inline-grid; place-items: center; isolation: isolate;
+}
+.hero-art::before {
+  content: "";
+  position: absolute; z-index: 0; pointer-events: none;
+  inset: 8% -6% 14%;
+  background: radial-gradient(ellipse at 46% 46%,
+    rgba(228, 178, 58, 0.38) 0%,
+    rgba(150, 74, 28, 0.16) 34%,
+    rgba(24, 13, 13, 0) 70%);
+  filter: blur(10px);
 }
 .hero-poster img, .poster img { width: auto; max-width: 100%; height: auto; object-fit: contain; }
-.hero-poster img { max-height: min(34vh, 280px); }
+.hero-art img {
+  position: relative; z-index: 1;
+  max-height: min(42vh, 340px);
+  background: transparent;
+}
 .hero-meta { display: flex; justify-content: space-between; gap: 12px; align-items: end; margin: 0; }
 .price { font-weight: 700; margin: 0; }
 .hero .price { color: var(--mustard); font-size: 20px; }
@@ -336,7 +354,7 @@ dialog::backdrop { background: rgba(24,13,13,.55); }
 }
 @media (min-width: 980px) {
   .hero { padding: 18px 0 48px; }
-  .hero-poster img { max-height: 460px; }
+  .hero-art img { max-height: 520px; }
   .product-layout {
     grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
     column-gap: 40px;
@@ -374,6 +392,7 @@ dialog::backdrop { background: rgba(24,13,13,.55); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 @media (prefers-reduced-motion: no-preference) {
+  .hero-art { animation: hero-float 8s ease-in-out infinite; }
   .rise { animation: rise 0.7s ease both; }
   .sauce-row { transition: transform 0.35s ease, box-shadow 0.35s ease; }
   .sauce-row.reveal { opacity: 0; transform: translateY(18px); }
@@ -382,5 +401,9 @@ dialog::backdrop { background: rgba(24,13,13,.55); }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .sauce-row:hover,
   .sauce-row.reveal.is-in:hover { transform: translateY(-6px); box-shadow: 0 22px 40px rgba(24, 13, 13, 0.14); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
