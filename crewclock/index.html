@@ -16,6 +16,7 @@
   <meta name="theme-color" content="#070a14">
   <link rel="icon" href="/assets/crewclock/favicon.png">
   <link rel="apple-touch-icon" href="/assets/crewclock/icon-180.png">
+  <meta name="apple-itunes-app" content="app-id=6823686520">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -27,7 +28,8 @@
     "name":"1APP CrewClock",
     "applicationCategory":"BusinessApplication",
     "operatingSystem":"Web, iOS, Android",
-    "description":"GPS time clock for trades and service crews. The business subscribes and sets up the company on the web. Employees sign in with a crew code, name and 4-digit PIN.",
+    "description":"GPS time clock for trades and service crews. The business subscribes and sets up the company on the web. Employees sign in with a crew code, name and 4-digit PIN. The iPhone app is on the App Store; the Android app is coming soon to Google Play.",
+    "downloadUrl":"https://apps.apple.com/ca/app/1app-crewclock/id6823686520",
     "publisher":{"@type":"Organization","name":"1APP Technologies Inc.","url":"https://use1app.com/"},
     "offers":[
       {"@type":"Offer","name":"Crew","price":"29.99","priceCurrency":"CAD","description":"Up to 5 users per company, billed monthly"},
@@ -92,6 +94,12 @@
     .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;max-width:100%}
     .cta-row .btn{min-width:0}
     .soon{margin-top:18px;max-width:540px;color:var(--muted);font-size:.95rem;font-weight:600}
+    .store-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:16px;max-width:100%}
+    .store-badge{display:inline-flex;flex:0 0 auto;line-height:0}
+    .store-badge img{width:162px;height:auto;max-width:100%}
+    .store-row p.android-soon{margin:0;flex:0 1 auto;max-width:16rem;color:var(--muted);font-size:.82rem;font-weight:600;line-height:1.35}
+    .step .store-row{margin-top:18px}
+    .final-card .store-row{justify-content:center;margin-top:22px}
     .how-note{margin-top:28px;text-align:center;color:var(--muted);font-size:.98rem;max-width:720px;margin-left:auto;margin-right:auto}
     .soon a,.how-note a,details a{color:var(--gold-hi);overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}
     .trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:var(--muted);font-size:.9rem;font-weight:600}
@@ -293,11 +301,17 @@
           <span class="label">GPS time clock for trades crews</span>
           <h1>Stop paying for hours <span class="gold">nobody can prove.</span></h1>
           <p class="lead">CrewClock puts a GPS-stamped punch clock in every crew member's pocket. Hours, overtime and pay estimates add themselves up — and the weekly timesheet lands with your payroll person in one tap.</p>
-          <p class="soon">You set up the company and subscribe on the web. Employees only sign in on the phone app with your crew code, their name and a 4-digit PIN. Coming soon to iPhone and Android — not on the App Store or Google Play yet.</p>
-          <p class="soon">Employees can use CrewClock in their phone browser today. Sign in at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
+          <p class="soon">You set up the company and subscribe on the web. Employees only sign in on the phone app with your crew code, their name and a 4-digit PIN. The iPhone app is available now on the App Store in Canada and the US. The Android app is coming soon to Google Play.</p>
+          <p class="soon">Until then, Android crew members can sign in in their phone browser at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
           <div class="cta-row">
             <a href="#pricing" class="btn btn-gold">Set up your company</a>
             <a href="#features" class="btn btn-ghost">See it in action</a>
+          </div>
+          <div class="store-row">
+            <a class="store-badge" href="https://apps.apple.com/ca/app/1app-crewclock/id6823686520" target="_blank" rel="noopener">
+              <img src="/assets/crewclock/app-store-badge.svg" alt="Download on the App Store" width="120" height="40">
+            </a>
+            <p class="android-soon">Android: coming soon to Google Play</p>
           </div>
           <div class="trust">
             <span>One price for the whole company</span>
@@ -454,9 +468,16 @@
         <div class="steps">
           <div class="step reveal"><h3>Subscribe on the web</h3><p>Choose the plan that fits your crew and start your trial through secure Stripe checkout on the CrewClock website.</p></div>
           <div class="step reveal"><h3>Create your company</h3><p>Come back to CrewClock in the same browser, set up your company, and get your crew code.</p></div>
-          <div class="step reveal"><h3>Crew signs in on the app</h3><p>Add your people and share the code. Each person signs in on the phone app with your crew code, their name and a 4-digit PIN. They don't create a company or pay in the app.</p></div>
+          <div class="step reveal"><h3>Crew signs in on the app</h3><p>Add your people and share the code. Each person signs in on the phone app with your crew code, their name and a 4-digit PIN. They don't create a company or pay in the app.</p>
+            <div class="store-row">
+              <a class="store-badge" href="https://apps.apple.com/ca/app/1app-crewclock/id6823686520" target="_blank" rel="noopener">
+                <img src="/assets/crewclock/app-store-badge.svg" alt="Download on the App Store" width="120" height="40">
+              </a>
+              <p class="android-soon">Android: coming soon to Google Play</p>
+            </div>
+          </div>
         </div>
-        <p class="how-note">Coming soon to iPhone and Android. The crew apps are not on the App Store or Google Play yet, so this page has no store badges or store links. Employees can use CrewClock in their phone browser today. Sign in at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
+        <p class="how-note">The iPhone app is available now on the App Store in Canada and the US. The Android app is coming soon to Google Play. Until then, Android crew members can sign in in their phone browser at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
 
         <div class="privacy-band reveal" style="margin-top:46px">
           <div class="shield" aria-hidden="true">🛡️</div>
@@ -539,7 +560,7 @@
           <details class="reveal"><summary>How does the free trial work?</summary><p>Checkout on the CrewClock website currently includes a 14-day trial with a card required. After checkout, return to CrewClock in the same browser to create your company — we verify your subscription with Stripe before opening access. Please don't pay twice; if anything looks off, contact support. The phone apps don't show prices or take payment.</p></details>
           <details class="reveal"><summary>Can I cancel or change plans?</summary><p>Yes. Owners can open Manage billing from the CrewClock web app to update or cancel the existing subscription. Cancellation takes effect at the end of the current billing or trial period.</p></details>
           <details class="reveal"><summary>Does CrewClock replace my payroll software?</summary><p>No. CrewClock organizes accurate hours, overtime and gross-pay estimates and sends timesheets to your payroll person. Your payroll provider or bookkeeper still handles deductions, remittances and paying your team.</p></details>
-          <details class="reveal"><summary>What phones does it work on?</summary><p>The iPhone and Android apps are coming soon. They are not on the App Store or Google Play yet. Employees can use CrewClock in their phone browser today by signing in at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN. When the apps are released, they sign in the same way. Company setup, plans and billing stay on the CrewClock website.</p></details>
+          <details class="reveal"><summary>What phones does it work on?</summary><p>The iPhone app is available now on the App Store in Canada and the US. The Android app is coming soon to Google Play. Until then, Android crew members can sign in in their phone browser at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN. They sign in the same way in the app. Company setup, plans and billing stay on the CrewClock website.</p></details>
         </div>
       </div>
     </section>
@@ -554,6 +575,12 @@
           <div class="cta-row">
             <a href="#pricing" class="btn btn-gold">Set up your company</a>
             <a href="/book-demo/" class="btn btn-ghost">Talk to the 1APP team</a>
+          </div>
+          <div class="store-row">
+            <a class="store-badge" href="https://apps.apple.com/ca/app/1app-crewclock/id6823686520" target="_blank" rel="noopener">
+              <img src="/assets/crewclock/app-store-badge.svg" alt="Download on the App Store" width="120" height="40">
+            </a>
+            <p class="android-soon">Android: coming soon to Google Play</p>
           </div>
         </div>
       </div>
