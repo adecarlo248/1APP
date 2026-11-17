@@ -181,7 +181,7 @@
         wasOpen = open;
       }, 300);
 
-      button.addEventListener('click', function () {
+      function openDemoChat() {
         if (pending) return;
         if (isOpen()) {
           button.setAttribute('aria-expanded', 'true');
@@ -201,7 +201,19 @@
             finish(result);
           }
         }, 300);
-      });
+      }
+
+      function shouldOpenFromUrl() {
+        var chat = '';
+        try {
+          chat = new URLSearchParams(window.location.search).get('chat') || '';
+        } catch (err) {}
+        return chat === 'open' || window.location.hash === '#chat';
+      }
+
+      button.addEventListener('click', openDemoChat);
+
+      if (shouldOpenFromUrl()) openDemoChat();
     })();
   </script>
   <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
