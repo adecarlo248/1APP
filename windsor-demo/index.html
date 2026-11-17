@@ -18,8 +18,8 @@
     .booth-header{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--brand-border);background:rgba(250,251,252,.92);backdrop-filter:blur(16px)}
     .booth-header-inner,.booth-wrap{width:min(640px,calc(100% - 32px));margin-inline:auto}
     .booth-header-inner{min-height:72px;display:flex;align-items:center}
-    .booth-brand{position:relative;display:block;width:176px;height:74px;overflow:hidden;flex:0 0 auto}
-    .booth-brand img{position:absolute;width:256px;max-width:none;height:256px;left:-43px;top:-86px}
+    .booth-brand{display:block;width:168px;line-height:0;flex:0 0 auto}
+    .booth-brand img{display:block;width:100%;height:auto}
     .booth-main{flex:1;padding:28px 0 128px}
     .booth-kicker{display:inline-flex;align-items:center;gap:8px;margin:0;color:#9b7419;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
     .booth-kicker:before{content:"";width:8px;height:8px;border-radius:999px;background:#10b981;box-shadow:0 0 0 6px rgba(16,185,129,.14)}
@@ -31,24 +31,26 @@
     .booth-status:empty{min-height:0;margin-top:0}
     .booth-next{margin:18px 0 0;color:var(--brand-text-muted);font-size:.875rem;line-height:1.55;overflow-wrap:anywhere}
     .booth-next a{color:var(--brand-navy);font-weight:700}
+    .booth-audit{margin-top:32px;max-width:100%;min-width:0}
+    .booth-audit h2{margin:0 0 14px;color:var(--brand-navy);font-size:clamp(1.35rem,5vw,1.75rem);line-height:1.2}
+    .booth-audit iframe{display:block;width:100%!important;max-width:100%;box-sizing:border-box}
     .booth-footer{border-top:1px solid var(--brand-border);background:#fff;padding:28px 0 24px}
     .booth-footer p,.booth-footer a{color:var(--brand-text-secondary);font-size:.875rem;line-height:1.55;text-decoration:none}
-    .booth-footer-brand p{max-width:36ch;margin:8px 0 0}
+    .booth-footer-brand p{max-width:36ch;margin:0}
     .booth-footer-bottom{display:flex;flex-direction:column;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--brand-border);color:var(--brand-text-muted);font-size:.75rem}
     .booth-footer-bottom div{display:flex;flex-wrap:wrap;gap:8px 14px}
     .booth-footer-bottom a{color:inherit;font-size:.75rem}
     .booth-footer-bottom a:hover,.booth-next a:hover{color:var(--brand-navy)}
     @media(max-width:640px){
       .booth-header-inner{min-height:64px}
-      .booth-brand{width:156px;height:66px}
-      .booth-brand img{width:227px;height:227px;left:-38px;top:-76px}
+      .booth-brand{width:148px}
     }
   </style>
 </head>
 <body>
   <header class="booth-header">
     <div class="booth-header-inner">
-      <a class="booth-brand" href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
+      <a class="booth-brand" href="/" aria-label="1APP home"><img src="/windsor-demo/1app-wordmark.png" alt="1APP" width="852" height="284"></a>
     </div>
   </header>
 
@@ -60,13 +62,23 @@
       <button type="button" class="btn-gold booth-open" id="open-demo-chat" aria-controls="booth-status">Manufacturing &amp; supply chain</button>
       <p class="booth-status" id="booth-status" role="status" aria-live="polite"></p>
       <p class="booth-next">Want this for your business? Book a demo at <a href="https://use1app.com/book-demo">use1app.com/book-demo</a></p>
+      <section class="booth-audit" aria-labelledby="booth-audit-title">
+        <h2 id="booth-audit-title">Book your free audit</h2>
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/bookings/1app-free-demo"
+          style="width:100%;min-height:760px;border:none;border-radius:12px;background:#fff;"
+          id="inline-1app-free-demo"
+          data-oneapp-conversion-source="demo-booked"
+          data-oneapp-conversion-mode="booking"
+          title="Book a free 15-minute audit"
+        ></iframe>
+      </section>
     </div>
   </main>
 
   <footer class="booth-footer">
     <div class="booth-wrap">
       <div class="booth-footer-brand">
-        <a class="booth-brand" href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
         <p>AI automation for small businesses.</p>
       </div>
       <div class="booth-footer-bottom">
@@ -85,6 +97,31 @@
       var status = document.getElementById('booth-status');
       var pending = false;
       var label = button.textContent;
+      var launcherCss = '.lc_text-widget--prompt,.lc_text-widget--bubble{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important}';
+
+      function hideLauncher(widget) {
+        var root = widget && widget.shadowRoot;
+        if (!root || root.getElementById('booth-hide-launcher')) return !!root;
+        var style = document.createElement('style');
+        style.id = 'booth-hide-launcher';
+        style.textContent = launcherCss;
+        root.appendChild(style);
+        return true;
+      }
+
+      function watchLauncher() {
+        var widget = document.querySelector('chat-widget');
+        if (!widget || widget.dataset.boothLauncher === '1') return;
+        if (!hideLauncher(widget)) return;
+        widget.dataset.boothLauncher = '1';
+        new MutationObserver(function () { hideLauncher(widget); }).observe(widget.shadowRoot, { childList: true, subtree: true });
+      }
+
+      var launcherTimer = setInterval(function () {
+        watchLauncher();
+        var widget = document.querySelector('chat-widget');
+        if (widget && widget.dataset.boothLauncher === '1') clearInterval(launcherTimer);
+      }, 200);
 
       function setStatus(message) {
         status.textContent = message;
@@ -134,6 +171,16 @@
         setStatus('The chat is still loading. Tap the button again in a moment.');
       }
 
+      var wasOpen = false;
+      setInterval(function () {
+        var open = isOpen();
+        if (wasOpen && !open && !pending) {
+          button.setAttribute('aria-expanded', 'false');
+          if (status.textContent === 'The chat is open.') setStatus('');
+        }
+        wasOpen = open;
+      }, 300);
+
       button.addEventListener('click', function () {
         if (pending) return;
         if (isOpen()) {
@@ -157,6 +204,7 @@
       });
     })();
   </script>
+  <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6afc88f6a68c8c5d03614731"></script>
 </body>
 </html>
