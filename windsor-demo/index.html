@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default-light" style="color-scheme:light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Try the live demo | 1APP</title>
+  <meta name="description" content="Demo of a sample shop, Northshore Precision (DEMO), built on 1APP.">
+  <link rel="icon" href="/assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles--qyy-a2O.css">
+  <style>
+    html{overflow-x:clip}
+    body{margin:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;overflow-x:clip}
+    button{font-family:inherit}
+    .booth-header{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--brand-border);background:rgba(250,251,252,.92);backdrop-filter:blur(16px)}
+    .booth-header-inner,.booth-wrap{width:min(640px,calc(100% - 32px));margin-inline:auto}
+    .booth-header-inner{min-height:72px;display:flex;align-items:center}
+    .booth-brand{position:relative;display:block;width:176px;height:74px;overflow:hidden;flex:0 0 auto}
+    .booth-brand img{position:absolute;width:256px;max-width:none;height:256px;left:-43px;top:-86px}
+    .booth-main{flex:1;padding:28px 0 128px}
+    .booth-kicker{display:inline-flex;align-items:center;gap:8px;margin:0;color:#9b7419;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .booth-kicker:before{content:"";width:8px;height:8px;border-radius:999px;background:#10b981;box-shadow:0 0 0 6px rgba(16,185,129,.14)}
+    .booth-main h1{margin:14px 0 0;color:var(--brand-navy);font-size:clamp(2rem,8vw,2.75rem);line-height:1.08;overflow-wrap:anywhere}
+    .booth-copy{margin:16px 0 0;color:var(--brand-text-secondary);font-size:1.05rem;line-height:1.65;overflow-wrap:anywhere}
+    .booth-open{width:100%;max-width:100%;box-sizing:border-box;min-height:64px;margin-top:28px;padding:18px 20px;border-radius:16px;justify-content:center;text-align:center;font-size:1.125rem;line-height:1.3;white-space:normal;touch-action:manipulation}
+    .booth-open:focus-visible,.booth-header a:focus-visible,.booth-footer a:focus-visible,.booth-next a:focus-visible{outline:3px solid var(--brand-gold);outline-offset:3px}
+    .booth-status{min-height:1.4em;margin:14px 0 0;color:var(--brand-text-secondary);font-size:.95rem;line-height:1.5}
+    .booth-status:empty{min-height:0;margin-top:0}
+    .booth-next{margin:18px 0 0;color:var(--brand-text-muted);font-size:.875rem;line-height:1.55;overflow-wrap:anywhere}
+    .booth-next a{color:var(--brand-navy);font-weight:700}
+    .booth-footer{border-top:1px solid var(--brand-border);background:#fff;padding:28px 0 24px}
+    .booth-footer p,.booth-footer a{color:var(--brand-text-secondary);font-size:.875rem;line-height:1.55;text-decoration:none}
+    .booth-footer-brand p{max-width:36ch;margin:8px 0 0}
+    .booth-footer-bottom{display:flex;flex-direction:column;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--brand-border);color:var(--brand-text-muted);font-size:.75rem}
+    .booth-footer-bottom div{display:flex;flex-wrap:wrap;gap:8px 14px}
+    .booth-footer-bottom a{color:inherit;font-size:.75rem}
+    .booth-footer-bottom a:hover,.booth-next a:hover{color:var(--brand-navy)}
+    @media(max-width:640px){
+      .booth-header-inner{min-height:64px}
+      .booth-brand{width:156px;height:66px}
+      .booth-brand img{width:227px;height:227px;left:-38px;top:-76px}
+    }
+  </style>
+</head>
+<body>
+  <header class="booth-header">
+    <div class="booth-header-inner">
+      <a class="booth-brand" href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
+    </div>
+  </header>
+
+  <main class="booth-main">
+    <div class="booth-wrap">
+      <p class="booth-kicker">Demo</p>
+      <h1>Try the live demo</h1>
+      <p class="booth-copy">This is a demo of a sample shop, Northshore Precision (DEMO), built on 1APP, so you can see how the chat answers customers.</p>
+      <button type="button" class="btn-gold booth-open" id="open-demo-chat" aria-controls="booth-status">Manufacturing &amp; supply chain</button>
+      <p class="booth-status" id="booth-status" role="status" aria-live="polite"></p>
+      <p class="booth-next">Want this for your business? Book a demo at <a href="https://use1app.com/book-demo">use1app.com/book-demo</a></p>
+    </div>
+  </main>
+
+  <footer class="booth-footer">
+    <div class="booth-wrap">
+      <div class="booth-footer-brand">
+        <a class="booth-brand" href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
+        <p>AI automation for small businesses.</p>
+      </div>
+      <div class="booth-footer-bottom">
+        <span>1APP. AI Automation for Small Businesses.</span>
+        <div>
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var button = document.getElementById('open-demo-chat');
+      var status = document.getElementById('booth-status');
+      var pending = false;
+      var label = button.textContent;
+
+      function setStatus(message) {
+        status.textContent = message;
+      }
+
+      function widgetApi() {
+        return window.leadConnector && window.leadConnector.chatWidget;
+      }
+
+      function isOpen() {
+        var api = widgetApi();
+        if (api && typeof api.isActive === 'function') {
+          try { if (api.isActive()) return true; } catch (err) {}
+        }
+        var widget = document.querySelector('chat-widget');
+        return !!(widget && widget.getAttribute('data-active') === 'true');
+      }
+
+      function tryOpen() {
+        if (isOpen()) return 'opened';
+        var api = widgetApi();
+        if (api && typeof api.openWidget === 'function') {
+          try { api.openWidget(); } catch (err) {}
+          if (isOpen()) return 'opened';
+          return 'waiting';
+        }
+        var widget = document.querySelector('chat-widget');
+        var bubble = widget && widget.shadowRoot && widget.shadowRoot.querySelector('.lc_text-widget--bubble');
+        if (bubble) {
+          var name = (bubble.getAttribute('aria-label') || '').toLowerCase();
+          if (name.indexOf('close') === -1) bubble.click();
+          if (isOpen()) return 'opened';
+          return 'waiting';
+        }
+        return widget ? 'waiting' : 'missing';
+      }
+
+      function finish(result) {
+        pending = false;
+        button.disabled = false;
+        button.textContent = label;
+        button.setAttribute('aria-expanded', result === 'opened' ? 'true' : 'false');
+        if (result === 'opened') {
+          setStatus('The chat is open.');
+          return;
+        }
+        setStatus('The chat is still loading. Tap the button again in a moment.');
+      }
+
+      button.addEventListener('click', function () {
+        if (pending) return;
+        if (isOpen()) {
+          button.setAttribute('aria-expanded', 'true');
+          setStatus('The chat is open.');
+          return;
+        }
+        pending = true;
+        button.disabled = true;
+        button.textContent = 'Opening…';
+        setStatus('Opening the chat.');
+        var attempts = 0;
+        var timer = setInterval(function () {
+          attempts += 1;
+          var result = tryOpen();
+          if (result === 'opened' || attempts >= 30) {
+            clearInterval(timer);
+            finish(result);
+          }
+        }, 300);
+      });
+    })();
+  </script>
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6afc88f6a68c8c5d03614731"></script>
+</body>
+</html>
