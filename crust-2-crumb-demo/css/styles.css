@@ -582,7 +582,7 @@ h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
 .book-nav { display: flex; flex-direction: column-reverse; gap: 8px; margin-top: 14px; }
 .book-nav .btn, .book-nav .btn-ghost { width: 100%; }
 .field { display: grid; gap: 6px; margin: 10px 0; }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   width: 100%;
   min-height: 48px;
   border: 1.5px solid var(--line);
