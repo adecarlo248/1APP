@@ -1,5 +1,12 @@
 <!DOCTYPE html><html lang="en" data-theme="default-light" style="color-scheme:light"><head>
-  <script src="/assets/google-tag.js"></script><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/assets/logo.png"/><link rel="stylesheet" href="/assets/styles--qyy-a2O.css?v=20260828T1602" data-precedence="default"/><title>1APP | AI Automation for Small Businesses</title><meta name="description" content="1APP answers and texts back missed calls, follows up leads before they go cold, and books jobs for Ontario trades businesses."/><meta property="og:title" content="1APP | AI Automation for Small Businesses"/><meta property="og:description" content="1APP answers and texts back missed calls, follows up leads before they go cold, and books jobs for Ontario trades businesses."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@Higgsfield"/><meta property="og:image" content="/assets/hero-bg.png"/><meta name="twitter:image" content="/assets/hero-bg.png"/><link rel="modulepreload" href="/assets/index-BUtlACHm.js?v=20260828T1602"/><link rel="icon" href="/assets/logo.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><script>(function () {
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18283853824"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18283853824');
+</script><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/assets/logo.png"/><link rel="stylesheet" href="/assets/styles--qyy-a2O.css?v=20260828T1602" data-precedence="default"/><title>1APP | AI Automation for Small Businesses</title><meta name="description" content="1APP answers and texts back missed calls, follows up leads before they go cold, and books jobs for Ontario trades businesses."/><meta property="og:title" content="1APP | AI Automation for Small Businesses"/><meta property="og:description" content="1APP answers and texts back missed calls, follows up leads before they go cold, and books jobs for Ontario trades businesses."/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@Higgsfield"/><meta property="og:image" content="/assets/hero-bg.png"/><meta name="twitter:image" content="/assets/hero-bg.png"/><link rel="modulepreload" href="/assets/index-BUtlACHm.js?v=20260828T1602"/><link rel="icon" href="/assets/logo.png"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><script>(function () {
   var currentScript = document.currentScript;
   var styleNonce = currentScript && currentScript.nonce ? currentScript.nonce : "";
 
@@ -770,4 +777,46 @@
   }
 })();
 </script>
+<script id="oneapp-google-tag-keep">
+(function () {
+  var SRC = 'https://www.googletagmanager.com/gtag/js?id=AW-18283853824';
+  var AW = 'AW-18283853824';
+  function hasLoader() {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      if ((scripts[i].getAttribute('src') || '') === SRC) return true;
+    }
+    return false;
+  }
+  function hasConfig() {
+    var layer = window.dataLayer || [];
+    for (var i = 0; i < layer.length; i++) {
+      var args = layer[i];
+      if (args && args[0] === 'config' && args[1] === AW) return true;
+    }
+    return false;
+  }
+  function ensure() {
+    if (hasConfig()) window.__oneappAwConfigured = true;
+    if (!window.__oneappAwConfigured) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', AW);
+      window.__oneappAwConfigured = true;
+    }
+    if (hasLoader()) return;
+    if (window.google_tag_manager && window.google_tag_manager[AW]) return;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = SRC;
+    document.head.appendChild(script);
+  }
+  ensure();
+  if (window.MutationObserver && document.head) {
+    new MutationObserver(function () { ensure(); }).observe(document.head, { childList: true });
+  }
+})();
+</script>
+
 </body></html>

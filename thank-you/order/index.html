@@ -1,7 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="/assets/google-tag.js"></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18283853824"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18283853824');
+</script>
+<script>
+(function () {
+  var ITEM = 'revenue-reactivation-sprint';
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('item') !== ITEM) return;
+
+  function readParam() {
+    var keys = ['session_id', 'checkout_session_id', 'checkout_id'];
+    for (var i = 0; i < keys.length; i++) {
+      var value = params.get(keys[i]);
+      if (!value) continue;
+      value = String(value).trim();
+      if (!value || value.charAt(0) === '{') continue;
+      return value;
+    }
+    return '';
+  }
+  function getItem(store, key) {
+    try { return store.getItem(key) || ''; } catch (error) { return ''; }
+  }
+  function setItem(store, key, value) {
+    try { store.setItem(key, value); } catch (error) {}
+  }
+  function newId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    return 'txn-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 12);
+  }
+
+  var txnKey = 'oneapp-sprint-trial-txn';
+  var transactionId = readParam();
+  if (!transactionId) {
+    transactionId = getItem(window.sessionStorage, txnKey) || getItem(window.localStorage, txnKey);
+    if (!transactionId) {
+      transactionId = newId();
+      setItem(window.sessionStorage, txnKey, transactionId);
+      setItem(window.localStorage, txnKey, transactionId);
+    }
+  }
+
+  var firedKey = 'oneapp-sprint-trial-fired:' + transactionId;
+  if (getItem(window.sessionStorage, firedKey) === '1' || getItem(window.localStorage, firedKey) === '1') return;
+  setItem(window.sessionStorage, firedKey, '1');
+  setItem(window.localStorage, firedKey, '1');
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  window.gtag('event', 'conversion', {
+    'send_to': 'AW-18283853824/1UoNCPC527kdEIDwtY5E',
+    'value': 1.0,
+    'currency': 'CAD',
+    'transaction_id': transactionId
+  });
+})();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
