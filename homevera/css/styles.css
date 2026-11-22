@@ -386,16 +386,50 @@ h1 {
 
 .checks li { margin: 8px 0; }
 
+.price-grid {
+  display: grid;
+  gap: 14px;
+}
+
 .price-card {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 22px 18px;
   box-shadow: var(--shadow);
-  max-width: 720px;
 }
 
-.price-card .soon { margin-top: 16px; }
+.price-card h3 { margin: 0 0 8px; font-size: 1.45rem; }
+
+.price-card .amt {
+  margin: 8px 0;
+  font-size: 1.85rem;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.price-card .amt small {
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.price-card ul {
+  margin: 12px 0;
+  padding-left: 1.15rem;
+}
+
+.price-card li { margin: 6px 0; }
+
+.tier {
+  display: inline-block;
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
 .faq { display: grid; gap: 10px; }
 
@@ -483,7 +517,7 @@ h1 {
   .hero-grid { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
   .hero-actions { flex-direction: row; flex-wrap: wrap; align-items: center; }
   .hero-actions .btn { width: auto; }
-  .cards, .phones { grid-template-columns: 1fr 1fr; }
+  .cards, .phones, .price-grid { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 1.1fr 0.9fr; }
   .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; }
