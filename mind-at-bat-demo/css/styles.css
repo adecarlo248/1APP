@@ -435,3 +435,11 @@ textarea{min-height:140px;resize:vertical}
 
 /* even gap around the home marquee */
 .section.after-marquee{padding-top:0}
+
+/* v13: tiles show full square photo (no top crop), copy sits below */
+.tile{display:flex;flex-direction:column;align-items:stretch;min-height:0;background:var(--panel)}
+@media(min-width:760px){.tile{min-height:0}}
+.tile img{position:static;inset:auto;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center top;z-index:auto}
+.tile:hover img{transform:none}
+.tile::after{display:none}
+.tile-body{padding:24px 24px 28px}
