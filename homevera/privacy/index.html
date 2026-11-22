@@ -3,8 +3,7 @@
 <head>
   <!-- Recommend a lawyer review before store submission. Publisher: 1APP Technologies Inc., Ontario, Canada. -->
   <!-- RE-CHECK this subscription wording once Apple and Google billing is built in the app. Listed price: Premium CA$4.99/month or CA$39.99/year, 14-day free trial. -->
-  <!-- OPEN: Do not claim an on-device entitlement check is consistent with Data Not Collected or No data collected or shared until that billing code is reviewed. Google's Data safety guidance says purchase history the app receives from the billing service may need its own declaration, separate from card numbers the app never accesses. -->
-  <!-- SDK note: this disclosure is based on the web app build (Capacitor plugins bundled in app.js, and Tesseract.js under assets/ocr). Native iOS and Android project folders were not in that build. -->
+  <!-- Purchases plugin, from the app team: @capgo/native-purchases 8.9.17 talks directly to StoreKit 2 and Google Play Billing. No RevenueCat or other third-party purchases server. purchaseApiKey is blank. The app has no backend and sends nothing to 1APP. -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b5e7d">
@@ -25,7 +24,7 @@
   <meta name="twitter:description" content="Privacy policy for HomeVera. Records stay on the phone. Published by 1APP Technologies Inc.">
   <meta name="twitter:image" content="https://use1app.com/homevera/assets/og.png">
   <link rel="stylesheet" href="../assets/fonts/fonts.css">
-  <link rel="stylesheet" href="../css/styles.css?v=3">
+  <link rel="stylesheet" href="../css/styles.css?v=4">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -76,7 +75,7 @@
       <p>Your home profile: your name (optional), your home's address, and details you choose to add, such as year built, size, rooms, heating, cooling, and purchase date.</p>
       <p>Equipment: names, manufacturers, models, serial numbers, locations, and purchase, install, and warranty dates. You can also save a service provider's name, phone, and email that you type in. HomeVera does not import contacts.</p>
       <p>Maintenance: tasks, due dates, completion history, notes, service provider names, and costs.</p>
-      <p>Documents: record titles and notes, and any PDF, image, or text file you attach (up to 10 MB each). Document types are receipt, warranty, manual, invoice, quote, insurance, permit, and service record.</p>
+      <p>Documents: record titles and notes, and any PDF, image, or text file you attach (up to 10 MB each). Document types are receipt, warranty, manual, invoice, quote, insurance, permit, service record, photo, and other.</p>
       <p>This information is kept in HomeVera's private storage on your device. We can't see it from the app, and the app does not send it to us or to anyone else.</p>
 
       <h2>Camera and photos</h2>
@@ -87,7 +86,7 @@
       <p>You can attach a PDF, image, or text file to a record. The file stays on the phone. HomeVera does not read the words inside a PDF. You fill in the record title and notes yourself.</p>
 
       <h2>Notifications</h2>
-      <p>If you allow notifications, HomeVera schedules reminders on your phone. Maintenance reminders are for the day before a task is due and the morning it is due. Warranty alerts are 60, 30, and 7 days before the end date you entered. They are not sent through a push service or from a server. Timing is approximate. A reminder shows the task or warranty name, and depending on your phone's settings it may appear on your lock screen. You can turn notifications off in your phone's settings. You can keep using the schedule if you decline them.</p>
+      <p>If you allow notifications, HomeVera schedules reminders on your phone. Maintenance reminders are included with Free. They are for the day before a task is due and the morning it is due. Warranty alert notifications, 60, 30, and 7 days before the end date you entered, are part of Premium. They are not sent through a push service or from a server. Timing is approximate. A reminder shows the task or warranty name, and depending on your phone's settings it may appear on your lock screen. You can turn notifications off in your phone's settings. You can keep using the schedule if you decline them. The Expiring soon list is included with Free and does not require a notification.</p>
 
       <h2>Book service</h2>
       <p>Book service does not send a message. Text or Email opens the Messages or Mail app on your phone, with equipment details filled in, addressed to the provider you typed in. HomeVera does not send that message and does not receive the reply. Add to calendar creates an .ics file for you to save. The provider's name, phone, and email stay in the equipment record on your phone.</p>
@@ -97,10 +96,10 @@
 
       <h2>What we don't do</h2>
       <p>We don't collect, sell, rent, or share your personal information from the app. HomeVera doesn't show ads, use analytics or tracking tools, or track you across other apps and websites. It doesn't access your location, contacts, or microphone.</p>
-      <p>The app does not send your records over the internet. Android lists an internet permission because it is included by the framework the app is built on. HomeVera does not use it to send your records.</p>
+      <p>The app does not send your home records over the internet. Android lists an internet permission because it is included by the framework the app is built on. HomeVera uses a network connection only to reach Apple or Google for subscription status, and does not use it to send your records.</p>
 
       <h2>Purchases</h2>
-      <p>HomeVera is free to start, with an optional Premium subscription. Free is one home, up to 10 equipment items and documents combined, maintenance reminders, and manual entry. Premium is $4.99 CAD a month or $39.99 CAD a year. Prices are in Canadian dollars. Taxes may apply where required. Premium is not available to buy on this website. Coming soon to the App Store and Google Play.</p>
+      <p>HomeVera is free to start, with an optional Premium subscription. Free is one home, up to 10 equipment items and documents combined, maintenance reminders, manual entry, and the Expiring soon list. Premium is $4.99 CAD a month or $39.99 CAD a year and adds unlimited equipment items and documents, photo scan, warranty reminder notifications 60, 30 and 7 days before the end date, Book service, and calendar export. Prices are in Canadian dollars. Taxes may apply where required. Premium is not available to buy on this website. Coming soon to the App Store and Google Play.</p>
       <p>Premium is an auto-renewing subscription. When the app is listed, it will be billed through Apple (the App Store) or Google Play. It renews automatically unless cancelled at least 24 hours before the end of the current period. The store account is charged for renewal within 24 hours before the period ends. Subscriptions are managed and cancelled in the device's App Store or Google Play subscription settings.</p>
       <p>Premium includes a 14-day free trial. The trial converts to a paid subscription unless it is cancelled before it ends. Any unused portion of a free trial is forfeited when a subscription is purchased, where that applies.</p>
       <p>Refunds are handled by Apple or Google under their policies. 1APP Technologies Inc. does not receive payment card details. Purchase and subscription status is processed by Apple or Google. HomeVera does not keep a copy of the payment card or the purchase for its own records.</p>
@@ -110,8 +109,9 @@
       <ul>
         <li>Capacitor, including its filesystem, camera, local notifications, app, and splash screen plugins. These run on the phone to store files, open the camera or photo picker, schedule local reminders, and show the launch screen.</li>
         <li>Tesseract.js, bundled with the app, including its English text data. It reads the text in a label photo on the phone. The photo is not sent to the authors of that library.</li>
+        <li>@capgo/native-purchases. It contacts Apple or Google only to buy, restore, and check Premium status. It sends no home records.</li>
       </ul>
-      <p>HomeVera does not use these libraries to send your records, photos, or files off the phone. The app allows network connections only to its own files.</p>
+      <p>HomeVera does not use these libraries to send your records, photos, or files off the phone. The app connects only to Apple or Google for subscription status.</p>
 
       <h2>Information we receive outside the app</h2>
       <p>If you email <a href="mailto:support@use1app.com">support@use1app.com</a> or <a href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a>, we receive your email address and whatever you include in the message. We use it only to reply to you and to handle a request you make, such as a request to delete that email. We keep it only as long as needed for that purpose.</p>
