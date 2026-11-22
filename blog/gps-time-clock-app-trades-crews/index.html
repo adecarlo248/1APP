@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="/assets/google-tag.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPS Time Clock App for Trades Crews: Meet 1APP CrewClock | 1APP</title>
+  <meta name="description" content="1APP CrewClock is a GPS time clock app for trades crews in Canada and the US: punch in by phone, see weekly hours and OT, and send timesheets to payroll." />
+  <meta name="keywords" content="GPS time clock app, CrewClock, trades crew time clock, timesheets for contractors, GPS punch clock Canada" />
+  <link rel="canonical" href="https://use1app.com/blog/gps-time-clock-app-trades-crews/" />
+  <link rel="icon" href="/assets/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GPS Time Clock App for Trades Crews: Meet 1APP CrewClock" />
+  <meta property="og:description" content="1APP CrewClock is a GPS time clock app for trades crews in Canada and the US: punch in by phone, see weekly hours and OT, and send timesheets to payroll." />
+  <meta property="og:image" content="https://use1app.com/assets/blog/gps-time-clock-app-trades-crews.jpg" />
+  <meta property="og:url" content="https://use1app.com/blog/gps-time-clock-app-trades-crews/" />
+  <meta property="og:type" content="article" />
+
+  <!-- Schema.org BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "GPS Time Clock App for Trades Crews: Meet 1APP CrewClock",
+    "description": "1APP CrewClock is a GPS time clock app for trades crews in Canada and the US: punch in by phone, see weekly hours and OT, and send timesheets to payroll.",
+    "author": {"@type": "Organization", "name": "1APP Technologies Inc."},
+    "publisher": {"@type": "Organization", "name": "1APP", "url": "https://use1app.com"},
+    "datePublished": "2026-11-23",
+    "mainEntityOfPage": "https://use1app.com/blog/gps-time-clock-app-trades-crews/",
+    "image": "https://use1app.com/assets/blog/gps-time-clock-app-trades-crews.jpg"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #062653;
+      --navy-deep: #031a3a;
+      --blue: #1597ff;
+      --gold: #c99a2e;
+      --gold-dark: #936a15;
+      --gold-light: #f4d980;
+      --ink: #142033;
+      --muted: #647084;
+      --line: #dfe5ee;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --radius: 8px;
+    }
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--navy); }
+    a:hover { color: var(--gold-dark); }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(223,229,238,0.9);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 2px 20px rgba(6,38,83,0.06);
+    }
+    .nav {
+      width: min(1080px, calc(100% - 40px));
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    .nav-logo { font-size: 1.4rem; font-weight: 900; color: var(--navy); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-back { font-size: 0.875rem; color: var(--muted); text-decoration: none; }
+    .nav-back:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-dark); color: var(--white); }
+
+    /* HERO */
+    .post-hero {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #0d3a6e 100%);
+      color: var(--white);
+      padding: 64px 20px 56px;
+    }
+    .post-hero-inner { max-width: 800px; margin: 0 auto; }
+    .post-tag {
+      display: inline-block;
+      background: rgba(201,154,46,0.25);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .post-hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .post-meta { color: rgba(255,255,255,0.65); font-size: 0.875rem; }
+
+    /* CONTENT */
+    .post-layout {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+    .post-content h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 48px 0 16px;
+      line-height: 1.25;
+    }
+    .post-content h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 32px 0 12px;
+    }
+    .post-content p { margin-bottom: 20px; color: var(--ink); font-size: 1.05rem; }
+    .post-content ul, .post-content ol {
+      margin: 0 0 20px 24px;
+    }
+    .post-content li { margin-bottom: 8px; font-size: 1.05rem; }
+    .post-content strong { color: var(--navy); }
+
+    /* INLINE CTA BOX */
+    .cta-box {
+      background: linear-gradient(135deg, #f0f6ff 0%, #fdf8ee 100%);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 40px 0;
+    }
+    .cta-box p { margin-bottom: 12px; font-weight: 600; color: var(--navy); }
+    .cta-box a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px 24px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-box a:hover { background: var(--gold-dark); color: var(--white); }
+
+    /* STEP BOX */
+    .step-list { list-style: none; margin: 0 0 28px 0; counter-reset: steps; }
+    .step-list li {
+      counter-increment: steps;
+      padding: 20px 20px 20px 68px;
+      background: var(--paper);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      position: relative;
+      font-size: 1.05rem;
+      border: 1px solid var(--line);
+    }
+    .step-list li::before {
+      content: counter(steps);
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 32px 0;
+    }
+    .highlight-box p { color: rgba(255,255,255,0.9); margin-bottom: 0; font-size: 1.1rem; }
+    .highlight-box strong { color: var(--gold-light); }
+
+    /* STAT GRID */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .stat-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* SEQUENCE TABLE */
+    .sequence-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.95rem;
+    }
+    .sequence-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .sequence-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .sequence-table tr:nth-child(even) td { background: var(--paper); }
+    .sequence-table tr:last-child td { border-bottom: none; }
+    .tag-sms {
+      display: inline-block;
+      background: rgba(6,38,83,0.1);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .tag-email {
+      display: inline-block;
+      background: rgba(201,154,46,0.15);
+      color: var(--gold-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* TRADE EXAMPLES */
+    .trade-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .trade-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .trade-card .trade-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .trade-card .trade-name { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+    .trade-card .trade-desc { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 700; color: var(--navy); font-size: 1.05rem; margin-bottom: 10px; }
+    .faq-a { color: var(--ink); margin-bottom: 0; }
+
+    /* FINAL CTA */
+    .post-cta {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 48px 40px;
+      text-align: center;
+      margin-top: 56px;
+    }
+    .post-cta h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; }
+    .post-cta p { color: rgba(255,255,255,0.8); margin-bottom: 28px; font-size: 1.05rem; }
+    .post-cta a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .post-cta a:hover { background: var(--gold-dark); color: var(--white); }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.875rem;
+    }
+    .site-footer a { color: var(--gold); text-decoration: none; }
+
+    /* HERO IMAGE */
+    .post-hero-image {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 0 0 28px;
+    }
+
+    /* PRICING TABLE */
+    .price-table {
+      width: 100%;
+      max-width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.95rem;
+      table-layout: fixed;
+    }
+    .price-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .price-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      overflow-wrap: break-word;
+    }
+    .price-table tr:nth-child(even) td { background: var(--paper); }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table th:nth-child(1),
+    .price-table td:nth-child(1) { width: 26%; }
+    .price-table th:nth-child(2),
+    .price-table td:nth-child(2) { width: 32%; }
+    .price-table th:nth-child(3),
+    .price-table td:nth-child(3) { width: 42%; }
+
+    .post-content .post-cta h2 { color: var(--white); margin-top: 0; }
+    .cta-box a,
+    .post-cta a {
+      max-width: 100%;
+      white-space: normal;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 520px) {
+      .nav {
+        width: min(1080px, calc(100% - 20px));
+        gap: 8px;
+      }
+      .nav-right { gap: 8px; }
+      .nav-logo { font-size: 1.15rem; }
+      .nav-back { font-size: 0.75rem; }
+      .nav-cta { font-size: 0.75rem; padding: 8px 10px; }
+      .price-table { font-size: 0.8rem; }
+      .price-table th,
+      .price-table td { padding: 10px 6px; }
+      .post-cta { padding: 32px 16px; }
+      .cta-box { padding: 20px 16px; }
+      .post-layout { padding-left: 16px; padding-right: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-logo"><span>1APP</span></a>
+      <div class="nav-right">
+        <a href="/blog/" class="nav-back">← Back to Blog</a>
+        <a href="https://use1app.com/book-demo/" target="_blank" rel="noopener" class="nav-cta">Book Free Demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="post-hero">
+    <div class="post-hero-inner">
+      <span class="post-tag">Crew Time Tracking</span>
+      <h1>GPS Time Clock App for Trades Crews: Meet 1APP CrewClock</h1>
+      <p class="post-meta">November 23, 2026 &nbsp;·&nbsp; 6 min read &nbsp;·&nbsp; By 1APP Technologies Inc.</p>
+    </div>
+  </div>
+
+  <div class="post-layout">
+    <div class="post-content">
+
+      <img class="post-hero-image" src="/assets/blog/gps-time-clock-app-trades-crews.jpg" width="1200" height="630" alt="1APP CrewClock graphic with three trades workers on a job site at sunset and a gold clock" />
+
+      <p>If payroll at your shop starts with a group chat, you already know the problem. Somebody texts "worked 7 to 4 Tuesday" on Thursday night. Somebody else forgot to clock out and their sheet says 14 hours. Then Friday comes and you're adding it all up, working out overtime, and re-typing it for whoever does your payroll.</p>
+
+      <p>That's the job we built <strong>1APP CrewClock</strong> for. It's a GPS time clock app for trades and service crews, and it's now on <a href="https://play.google.com/store/apps/details?id=ca.use1app.crewclock" target="_blank" rel="noopener">Google Play</a> and the <a href="https://apps.apple.com/ca/app/1app-crewclock/id6823686520" target="_blank" rel="noopener">App Store</a> in Canada and the US.</p>
+
+      <p>Here's what it does, what it costs, and what it doesn't do.</p>
+
+      <div class="cta-box">
+        <p>Want to see CrewClock running with demo data, or talk through how it fits next to your payroll?</p>
+        <a href="https://use1app.com/book-demo/" target="_blank" rel="noopener">Book a free 15-minute call with the 1APP team</a>
+      </div>
+
+      <h2>Why paper timesheets and texted hours cost you</h2>
+      <p>Paper and texts aren't evil. They just make it hard to check anything. Hours get remembered days later and rounded. A missed clock-out turns into an argument nobody can settle. And whoever runs payroll spends Friday night doing math that a phone could do.</p>
+      <p>None of that needs a big software rollout. It needs a punch clock your crew will actually use, and a weekly total you can trust.</p>
+
+      <h2>How CrewClock works on the job site</h2>
+      <p>The setup is split on purpose:</p>
+      <ul>
+        <li><strong>The owner sets up the company on the web.</strong> You pick a plan, start the trial through Stripe checkout on the CrewClock site, create your company and get a crew code.</li>
+        <li><strong>The crew only signs in on their phone.</strong> Each person signs in with your crew code, their name and a 4-digit PIN. They don't create an account, they don't pay and they never enter a card.</li>
+      </ul>
+      <p>On the job, a crew member picks the job site and taps <strong>Clock In</strong>. CrewClock records the time and, if they allow location permission, the GPS location at that moment. Same thing at <strong>Clock Out</strong>. Managers get a live view of who's on the clock right now, plus job-site attendance flags.</p>
+      <p>Crew members who'd rather not install anything can also sign in from a phone browser with the same crew code, name and PIN.</p>
+
+      <h2>Location at the punch, not all day</h2>
+      <p>This is usually the first question from the crew, so here's the straight answer: <strong>CrewClock does not track anyone in the background.</strong> It records GPS only at clock-in and clock-out (when the crew member allows it), or when a manager deliberately captures a job-site location.</p>
+      <p>That makes it a much easier conversation with your guys. You're not watching where they drive at lunch. You're getting proof of where a shift started and ended.</p>
+
+      <h2>Weekly hours, overtime and pay estimates</h2>
+      <p>Every punch rolls up into the week. You see total hours, overtime and gross-pay estimates for the whole crew on one screen, and each employee sees their own hours and estimated pay. That alone cuts down on "how many hours did I get?" calls.</p>
+      <p>You set your overtime threshold and multiplier once, and CrewClock does the math every week. That matters in Canada because overtime rules depend on where you are and what kind of work you do. In Ontario, for example, most employees get overtime after <a href="https://www.ontario.ca/document/your-guide-employment-standards-act-0/overtime-pay" target="_blank" rel="noopener">44 hours in a work week</a> under the Employment Standards Act. Other provinces and some industries use different rules, so set CrewClock to match what applies to your business. Check with your bookkeeper if you're not sure.</p>
+
+      <h2>Payroll-ready timesheets in one tap</h2>
+      <p>When the week's done, a crew member sends a secure timesheet link straight to the payroll person you choose. The link expires. Nobody re-types hours from a photo of a notebook.</p>
+      <p>To be clear about what this is: <strong>CrewClock doesn't replace your payroll software.</strong> It organizes accurate hours, overtime and gross-pay estimates and gets them to your payroll person. Your payroll provider or bookkeeper still handles deductions, remittances and actually paying your team.</p>
+
+      <h2>Catch the forgotten punch before Friday</h2>
+      <p>You set regular workdays, start and end times, grace periods and a long-shift threshold. From there:</p>
+      <ul>
+        <li>Crew members get reminders when they forget to clock in or out.</li>
+        <li>Long open shifts trigger a warning for the crew member and the manager.</li>
+        <li>Managers see active exceptions so they can fix them before payroll.</li>
+      </ul>
+      <p>Reminders never create or close a punch on their own. A person still decides what the real hours were.</p>
+
+      <h2>Crew messaging that stays with the job</h2>
+      <p>CrewClock also includes private, company-only messaging. Site updates stay out of personal group chats, messages sync across the crew's phones, and block and report controls are built in.</p>
+
+      <h2>What CrewClock costs</h2>
+      <p>One subscription covers the whole company. Every plan includes every feature; you're choosing crew size. User limits include the owner.</p>
+
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Plan</th>
+            <th scope="col">Users</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Crew</td>
+            <td>Up to 5</td>
+            <td>CA$29.99/month</td>
+          </tr>
+          <tr>
+            <td>Team</td>
+            <td>Up to 10</td>
+            <td>CA$39.99/month</td>
+          </tr>
+          <tr>
+            <td>Company</td>
+            <td>Up to 20</td>
+            <td>CA$49.99/month</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Prices are in Canadian dollars, plus applicable taxes. Checkout includes a <strong>14-day free trial with a card required</strong>. You won't be charged until the trial ends, and you can cancel any time before then. Owners can update or cancel from <strong>Manage billing</strong> in the CrewClock web app. The phone apps don't show prices or take payment.</p>
+
+      <h2>Is CrewClock a fit for your crew?</h2>
+      <p>It's probably a good fit if:</p>
+      <ul>
+        <li>Your crew moves between job sites and hours come in by text or paper</li>
+        <li>You or your bookkeeper spend time every week adding up hours and overtime</li>
+        <li>You want proof of when and where shifts started, without tracking people all day</li>
+        <li>You've got 20 people or fewer, owner included</li>
+      </ul>
+      <p>It's probably not the right tool if you need a full payroll system that pays people and handles deductions. CrewClock feeds your payroll; it doesn't run it.</p>
+
+      <h2>See it before you set it up</h2>
+      <p>Want to see CrewClock running with demo data, or talk through how it fits next to your payroll? <a href="https://use1app.com/book-demo/">Book a free 15-minute call with the 1APP team</a>. We'll show you the owner setup, the crew sign-in and a weekly timesheet. Then you decide if it's worth trying.</p>
+      <p>Want to look at the plans first? Everything's on the <a href="https://use1app.com/crewclock/">CrewClock page</a>.</p>
+
+      <div class="post-cta">
+        <h2>See it before you set it up</h2>
+        <p>We'll show you the owner setup, the crew sign-in and a weekly timesheet. Then you decide if it's worth trying.</p>
+        <a href="https://use1app.com/book-demo/" target="_blank" rel="noopener">Book a free 15-minute call with the 1APP team</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 1APP Technologies Inc. — Peterborough, Ontario, Canada</p>
+    <p style="margin-top:8px;"><a href="/">Home</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a> &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a></p>
+  </footer>
+
+  <!-- 1APP Chat Widget -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a983c9507a2e8b0275404d7" data-source="WEB_USER"></script>
+</body>
+</html>
