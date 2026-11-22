@@ -1,0 +1,9 @@
+/* Montserrat variable font, self-hosted. License: OFL-Montserrat.txt (SIL Open Font License 1.1). */
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("Montserrat.ttf") format("truetype");
+}
