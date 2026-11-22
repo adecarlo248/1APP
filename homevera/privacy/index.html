@@ -3,31 +3,32 @@
 <head>
   <!-- Recommend a lawyer review before store submission. Publisher: 1APP Technologies Inc., Ontario, Canada. -->
   <!-- RE-CHECK this subscription wording once Apple and Google billing is built in the app. Listed price: Premium CA$4.99/month or CA$39.99/year, 14-day free trial. -->
-  <!-- Purchases plugin, from the app team: @capgo/native-purchases 8.9.17 talks directly to StoreKit 2 and Google Play Billing. No RevenueCat or other third-party purchases server. purchaseApiKey is blank. The app has no backend and sends nothing to 1APP. -->
+  <!-- Purchases plugin: @capgo/native-purchases 8.9.17 talks directly to StoreKit 2 and Google Play Billing. No RevenueCat or other third-party purchases server. purchaseApiKey is blank. The purchases plugin sends no home records to 1APP. Home data for this cloud draft is stored with Supabase in Canada (Central), ca-central-1. -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b5e7d">
   <title>Privacy policy | HomeVera</title>
-  <meta name="description" content="Privacy policy for HomeVera, published by 1APP Technologies Inc. Records stay on the phone. No account, no ads, no analytics, and no tracking.">
+  <meta name="description" content="Draft privacy policy for the HomeVera cloud version, published by 1APP Technologies Inc. Your home data is stored in Canada.">
   <link rel="canonical" href="https://use1app.com/homevera/privacy/">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
   <link rel="icon" href="../assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:title" content="Privacy policy | HomeVera">
-  <meta property="og:description" content="Privacy policy for HomeVera. Records stay on the phone. Published by 1APP Technologies Inc.">
+  <meta property="og:description" content="Draft privacy policy for the HomeVera cloud version. Your home data is stored in Canada.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://use1app.com/homevera/privacy/">
   <meta property="og:image" content="https://use1app.com/homevera/assets/og.png">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Privacy policy | HomeVera">
-  <meta name="twitter:description" content="Privacy policy for HomeVera. Records stay on the phone. Published by 1APP Technologies Inc.">
+  <meta name="twitter:description" content="Draft privacy policy for the HomeVera cloud version. Your home data is stored in Canada.">
   <meta name="twitter:image" content="https://use1app.com/homevera/assets/og.png">
   <link rel="stylesheet" href="../assets/fonts/fonts.css">
-  <link rel="stylesheet" href="../css/styles.css?v=5">
+  <link rel="stylesheet" href="../css/styles.css?v=6">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <p class="draft-banner">DRAFT – cloud version, not live</p>
   <header class="site-header">
     <div class="nav-bar">
       <a class="brand" href="../" aria-label="HomeVera home">
@@ -68,35 +69,38 @@
       <p>Privacy contact: <a href="mailto:support@use1app.com">support@use1app.com</a>. You can also write to <a href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a>. The support page is <a href="../support/">https://use1app.com/homevera/support/</a>.</p>
 
       <h2>The short version</h2>
-      <p>HomeVera stores your home records on your phone. There is no HomeVera account, and we don't run a server that receives those records. We don't receive your records, photos, or files from the app. The app has no ads, no analytics, and no tracking.</p>
-      <p>The planned Apple App Store privacy label is Data Not Collected. The planned Google Play data-safety label is No data collected or shared. Those labels describe the app. They are the labels planned for the store listings.</p>
+      <p>Your home data is stored in Canada. You sign in to an account. HomeVera does not sell leads or data. The app has no ad or analytics SDKs. The purchase plugin talks only to Apple and Google.</p>
 
-      <h2>What the app stores on your phone</h2>
-      <p>Your home profile: your name (optional), your home's address, and details you choose to add, such as year built, size, rooms, heating, cooling, and purchase date.</p>
-      <p>Equipment: names, manufacturers, models, serial numbers, locations, and purchase, install, and warranty dates. You can also save a service provider's name, phone, and email that you type in. HomeVera does not import contacts.</p>
-      <p>Maintenance: tasks, due dates, completion history, notes, service provider names, and costs.</p>
-      <p>Documents: record titles and notes, and any PDF, image, or text file you attach (up to 10 MB each). Document types are receipt, warranty, manual, invoice, quote, insurance, permit, service record, photo, and other.</p>
-      <p>This information is kept in HomeVera's private storage on your device. We can't see it from the app, and the app does not send it to us or to anyone else.</p>
+      <h2>Sign-in</h2>
+      <p>You can sign in with an emailed magic link. There is no password. You can also use Sign in with Apple or Google sign-in. We receive the email address used for the magic link, and the name and email Apple or Google provides for that sign-in.</p>
+
+      <h2>Information we collect</h2>
+      <p>We collect:</p>
+      <ul>
+        <li>Your email address.</li>
+        <li>Your name, when Apple or Google provides it for sign-in.</li>
+        <li>Home records you add, including the home profile, equipment, maintenance, and warranty dates.</li>
+        <li>Photos and documents you add. Document types are receipt, warranty, manual, invoice, quote, insurance, permit, service record, photo, and other.</li>
+        <li>Purchase status, so the app can tell whether Premium is active. @capgo/native-purchases talks to Apple or Google for that status. HomeVera does not receive your payment card details.</li>
+      </ul>
+      <p>Home profile details you may add include the address, year built, size, rooms, heating, cooling, and purchase date. Equipment details include names, manufacturers, models, serial numbers, locations, and purchase, install, and warranty dates. You can type a service provider's name, phone, and email. HomeVera does not import contacts. Maintenance includes tasks, due dates, completion history, notes, service provider names, and costs.</p>
+      <p>We use this information to run your account, keep the home record, store photos and documents, back up that home data, transfer a home, make an export, show Premium status, and reply to you.</p>
 
       <h2>Camera and photos</h2>
       <p>HomeVera uses the camera only when you tap Take a photo. To choose an existing photo, it opens the system photo picker and receives only the one photo you pick. It does not get access to your whole photo library.</p>
-      <p>The photo is read on your phone by text recognition built into the app. It is for English text in a JPEG, PNG, or WebP image up to 5 MB. It is not sent to us or to any other company. You get an editable review screen. A field is marked “Filled in from your photo” or “Not found in the photo”. Nothing is saved until you tap Confirm &amp; save. The photo is not kept after you confirm or cancel, unless you separately attach it to a record.</p>
+      <p>The photo is read on your phone by text recognition built into the app. It is for English text in a JPEG, PNG, or WebP image up to 5 MB. You get an editable review screen. A field is marked “Filled in from your photo” or “Not found in the photo”. Nothing is saved until you tap Confirm &amp; save. A photo you save with a record is part of your home data.</p>
 
       <h2>Documents and PDFs</h2>
-      <p>You can attach a PDF, image, or text file to a record. The file stays on the phone. HomeVera does not read the words inside a PDF. You fill in the record title and notes yourself.</p>
+      <p>You can attach a PDF, image, or text file to a record, up to 10 MB each. HomeVera does not read the words inside a PDF. You fill in the record title and notes yourself. Saved files are part of your home data.</p>
 
       <h2>Notifications</h2>
-      <p>If you allow notifications, HomeVera schedules reminders on your phone. Maintenance reminders are included with Free. They are for the day before a task is due and the morning it is due. Warranty alert notifications, 60, 30, and 7 days before the end date you entered, are part of Premium. They are not sent through a push service or from a server. Timing is approximate. A reminder shows the task or warranty name, and depending on your phone's settings it may appear on your lock screen. You can turn notifications off in your phone's settings. You can keep using the schedule if you decline them. The Expiring soon list is included with Free and does not require a notification.</p>
+      <p>If you allow notifications, HomeVera schedules reminders. Maintenance reminders are included with Free. They are for the day before a task is due and the morning it is due. Warranty alert notifications, 60, 30, and 7 days before the end date you entered, are part of Premium. Timing is approximate. A reminder shows the task or warranty name, and depending on your phone's settings it may appear on your lock screen. You can turn notifications off in your phone's settings. You can keep using the schedule if you decline them. The Expiring soon list is included with Free and does not require a notification.</p>
 
       <h2>Book service</h2>
-      <p>Book service does not send a message. Text or Email opens the Messages or Mail app on your phone, with equipment details filled in, addressed to the provider you typed in. HomeVera does not send that message and does not receive the reply. Add to calendar creates an .ics file for you to save. The provider's name, phone, and email stay in the equipment record on your phone.</p>
-
-      <h2>Questions about your records</h2>
-      <p>If you type a question about the records saved on your phone, HomeVera looks up those records on the phone. The question is not sent off the phone.</p>
+      <p>Book service does not send a message. Text or Email opens the Messages or Mail app on your phone, with equipment details filled in, addressed to the provider you typed in. HomeVera does not send that message and does not receive the reply. Add to calendar creates an .ics file for you to save. The provider's name, phone, and email stay in the equipment record.</p>
 
       <h2>What we don't do</h2>
-      <p>We don't collect, sell, rent, or share your personal information from the app. HomeVera doesn't show ads, use analytics or tracking tools, or track you across other apps and websites. It doesn't access your location, contacts, or microphone.</p>
-      <p>The app does not send your home records over the internet. Android lists an internet permission because it is included by the framework the app is built on. HomeVera uses a network connection only to reach Apple or Google for subscription status, and does not use it to send your records.</p>
+      <p>HomeVera does not sell leads or personal information. The app has no ad or analytics SDKs. It does not use advertising or analytics tracking. It does not access your location, contacts, or microphone. HomeVera does not import contacts.</p>
 
       <h2>Purchases</h2>
       <p>HomeVera is free to start, with an optional Premium subscription. Free is one home, up to 10 equipment items and documents combined, maintenance reminders, manual entry, and the Expiring soon list. Premium is $4.99 CAD a month or $39.99 CAD a year and adds unlimited equipment items and documents, photo scan, warranty reminder notifications 60, 30 and 7 days before the end date, Book service, and calendar export. Prices are in Canadian dollars. Taxes may apply where required. Premium is not available to buy on this website. Coming soon to the App Store and Google Play.</p>
@@ -111,36 +115,40 @@
         <li>Tesseract.js, bundled with the app, including its English text data. It reads the text in a label photo on the phone. The photo is not sent to the authors of that library.</li>
         <li>@capgo/native-purchases. It contacts Apple or Google only to buy, restore, and check Premium status. It sends no home records.</li>
       </ul>
-      <p>HomeVera does not use these libraries to send your records, photos, or files off the phone. The app connects only to Apple or Google for subscription status.</p>
+      <p>Those libraries do not sell your home records. @capgo/native-purchases contacts Apple or Google only to buy, restore, and check Premium status. It sends no home records. Your home data is stored with Supabase.</p>
 
-      <h2>Information we receive outside the app</h2>
-      <p>If you email <a href="mailto:support@use1app.com">support@use1app.com</a> or <a href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a>, we receive your email address and whatever you include in the message. We use it only to reply to you and to handle a request you make, such as a request to delete that email. We keep it only as long as needed for that purpose.</p>
-      <p>Apple and Google may show 1APP Technologies Inc. summary figures about the store listing, such as download counts, under their own policies. If you turn on Apple or Google diagnostics on your phone, those companies may receive diagnostic information under their own policies. HomeVera does not add a tool that sends crash reports to us. None of that is a copy of the home records stored in the app. The app itself collects no data and shares no data. The planned Apple privacy label is Data Not Collected. The planned Google Play data-safety label is No data collected or shared.</p>
+      <h2>Who we share information with</h2>
+      <p>Supabase is a service provider. It hosts the database, sign-in, file storage, and backups in Canada (Central), region ca-central-1. Your home data is stored in Canada. Vendor billing, support access, and some platform logs may be processed outside Canada.</p>
+      <p>Apple and Google receive what is needed for Sign in with Apple, Google sign-in, and for the purchase plugin to buy, restore, and check Premium status. The purchase plugin talks only to Apple and Google.</p>
+      <p>We do not sell leads or personal information. There are no ad or analytics SDKs.</p>
 
-      <h2>Backups, new phones, and a new owner</h2>
-      <p>HomeVera does not provide cloud sync or backup. It does not transfer your records to a new phone for you, and it does not transfer them to a new owner. We don't have a copy of your records and can't restore them.</p>
-      <p>iPhone: HomeVera's records are kept in the app's private storage, which iOS can include in an iCloud or computer backup that you control.</p>
-      <p>Android: HomeVera opts out of Android cloud backup and device-to-device transfer, so your records don't move to a new phone automatically.</p>
+      <h2>Support email</h2>
+      <p>If you email <a href="mailto:support@use1app.com">support@use1app.com</a> or <a href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a>, we receive your email address and whatever you include in the message. We use it to reply and to handle a request, including an account-deletion request.</p>
+      <p class="tbd">How long a support email is kept: [TBD retention period]</p>
 
-      <h2>Security</h2>
-      <p>Your records are protected by your phone's operating system and screen lock. HomeVera does not add its own encryption. Anyone who can unlock your phone can open the records. Use a passcode or screen lock on your device.</p>
+      <h2>Transfer and export</h2>
+      <p>You can transfer a home for free. The transfer is complete: the buyer gets the whole home record, and the seller's access ends. Before that, the seller is offered a personal export. No Premium is needed on either side.</p>
+      <p>You can export anytime. The export is a PDF of the home plus a zip of the files and data. If the service shuts down, users get at least 90 days' notice, and export stays available during that notice.</p>
+
+      <h2>Backups</h2>
+      <p>Backups of your home data are hosted with Supabase in Canada (Central). Your home data is stored in Canada.</p>
 
       <h2>Keeping and deleting your information</h2>
-      <p>Home records stay on the device until you delete them. You can delete a record or a file in the app, or use “Erase records on this device” to remove HomeVera's records and attached files on that device. Deleting the app removes what the app stored on that device. Copies you downloaded or exported, and any backup your phone's system made, are outside that delete. There is no HomeVera account to delete.</p>
-      <p>A support email we hold is kept only long enough to handle your message. You can ask us to delete it by writing to <a href="mailto:support@use1app.com">support@use1app.com</a>. We will delete the email and the personal information in it that we hold.</p>
+      <p>While your account is open, your home records, photos, and documents stay until you delete them or you delete the account.</p>
+      <p>You can delete your account in the app. You can also use the <a href="../delete-account/">delete-account page</a>, which opens an email to <a href="mailto:support@use1app.com">support@use1app.com</a> in your own mail app. This website does not store that request.</p>
+      <p class="tbd">How long home data, files, and backups remain after the account is deleted: [TBD retention period]</p>
+      <p>You can also ask to see or correct the personal information we hold, including a support email.</p>
 
-      <h2>Revoking consent and asking for deletion</h2>
-      <p>You decide what to type into HomeVera. You can stop and delete those records on the phone at any time.</p>
+      <h2>Revoking consent</h2>
       <ul>
         <li>Camera: the app uses it only when you tap Take a photo. You can refuse that permission in your phone settings. Choosing a photo uses the system picker and receives only the photo you pick.</li>
-        <li>Notifications: you can turn them off in your phone settings. The schedule in the app still works.</li>
-        <li>Records on the device: delete them in the app, erase HomeVera's records on that device, or delete the app.</li>
-        <li>A support email: write to <a href="mailto:support@use1app.com">support@use1app.com</a> and ask us to delete it. You can also ask to see or correct the personal information in a support email we hold.</li>
+        <li>Notifications: you can turn them off in your phone settings.</li>
+        <li>Account: delete it in the app, or request deletion from the <a href="../delete-account/">delete-account page</a>.</li>
       </ul>
-      <p>We will respond to an access, correction, or deletion request within 30 days.</p>
+      <p>We will respond to an access, correction, or deletion request within 30 days. That timing follows the Personal Information Protection and Electronic Documents Act (PIPEDA). This policy also follows the laws of Ontario, Canada, and applicable Canadian federal law.</p>
 
       <h2>Your privacy rights</h2>
-      <p>Because your records stay on your device, you can view, correct, and delete them yourself in the app. You do not need an account to do that.</p>
+      <p>You can ask to access, correct, or delete personal information we hold. You can delete your account in the app or from the <a href="../delete-account/">delete-account page</a>. You can export a PDF of the home and a zip of the files and data.</p>
       <p>If you live in Canada and are not satisfied with our response, you can contact the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca/">https://www.priv.gc.ca/</a>. If you live elsewhere, you may have similar rights under your local law.</p>
 
       <h2>Children</h2>
@@ -150,7 +158,7 @@
       <p>These HomeVera pages do not add analytics, advertising, or tracking tools, and they do not set analytics cookies. The host that serves the pages may keep ordinary request logs, such as an IP address and the page requested. Your home records are not on this website and are not part of those requests. Email links open your own mail app.</p>
 
       <h2>Changes to this policy</h2>
-      <p>If this policy changes, the page and the effective date will be updated. If a future version of HomeVera adds accounts, cloud sync, or anything else that sends your records off your phone, this policy and the store privacy labels will be updated before that version is released. Where the law requires consent, HomeVera will ask first.</p>
+      <p>If this policy changes, the page and the effective date will be updated. The App Store and Google Play privacy labels for the cloud version will be set to match this policy before that version is released. Where the law requires consent, HomeVera will ask first.</p>
 
       <h2>Contact</h2>
       <p>1APP Technologies Inc., Ontario, Canada.</p>
@@ -175,6 +183,7 @@
         <a href="./" aria-current="page">Privacy</a>
         <a href="../terms/">Terms</a>
         <a href="../support/">Support</a>
+        <a href="../delete-account/">Delete account</a>
       </div>
     </div>
   </footer>

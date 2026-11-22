@@ -57,6 +57,25 @@ a:hover { text-decoration-thickness: 2px; }
   z-index: 100;
 }
 
+.draft-banner {
+  margin: 0;
+  padding: 12px 16px;
+  background: #ffe566;
+  color: #203b42;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.tbd {
+  margin: 12px 0;
+  padding: 12px 14px;
+  background: #fff3bf;
+  border: 2px solid #c89600;
+  color: #203b42;
+  font-weight: 800;
+}
+
 .skip:focus { top: 12px; }
 
 .noscript-nav {
