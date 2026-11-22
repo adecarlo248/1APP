@@ -387,13 +387,47 @@
   .oneapp-profile-contact{display:flex;flex-direction:column;align-items:flex-start;gap:7px}
   .oneapp-profile-contact a{color:var(--brand-navy);font-size:.84rem;font-weight:700;text-decoration:none;overflow-wrap:anywhere}
   .oneapp-profile-contact a:hover{color:#9b7419;text-decoration:underline}
-  .oneapp-process{margin-top:48px;padding:30px;border:1px solid var(--brand-border);border-radius:22px;background:var(--brand-navy);box-shadow:0 18px 44px rgba(0,31,63,.15)}
-  .oneapp-process-title{margin:0 0 22px;text-align:center;font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:1.35rem;color:#fff}
-  .oneapp-process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-  .oneapp-process-step{position:relative;padding:17px 16px;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.055)}
-  .oneapp-process-number{display:flex;width:28px;height:28px;align-items:center;justify-content:center;margin-bottom:11px;border-radius:999px;background:var(--brand-gold);color:var(--brand-navy);font-size:.78rem;font-weight:900}
-  .oneapp-process-step strong{display:block;color:#fff;font-size:.91rem}
-  .oneapp-process-step span{display:block;margin-top:5px;color:rgba(255,255,255,.68);font-size:.78rem;line-height:1.5}
+  .oneapp-process{position:relative;margin-top:48px;padding:34px 28px 30px;border:1px solid rgba(212,175,55,.34);border-radius:22px;background-color:var(--brand-navy);background-image:radial-gradient(ellipse 96% 68% at 50% -14%,color-mix(in srgb,var(--brand-gold) 26%,transparent),transparent 58%),radial-gradient(ellipse 46% 42% at 100% 118%,color-mix(in srgb,var(--brand-blue) 34%,transparent),transparent 64%);box-shadow:0 18px 44px rgba(0,31,63,.15)}
+  .oneapp-process-title{margin:0 0 28px;text-align:center;font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:1.35rem;line-height:1.25;color:#fff;text-wrap:balance}
+  .oneapp-process-flow{position:relative;--process-gap:28px}
+  .oneapp-process-rail{position:absolute;z-index:0;left:calc((100% - 3 * var(--process-gap)) / 8);right:calc((100% - 3 * var(--process-gap)) / 8);top:23px;height:2px;border-radius:999px;background:linear-gradient(90deg,var(--brand-gold) 0%,var(--brand-gold-light) 34%,var(--brand-blue-light) 70%,var(--brand-blue) 100%);pointer-events:none}
+  .oneapp-process-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--process-gap);margin:0;padding:0;list-style:none}
+  .oneapp-process-step{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;height:100%;padding:0;border:0;background:transparent;text-align:center}
+  .oneapp-process-step::before{content:none}
+  .oneapp-process-step > .oneapp-process-number{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px;margin:0;padding:0;border-radius:999px;background:linear-gradient(180deg,var(--brand-gold-light),var(--brand-gold) 58%,var(--brand-gold-dark));color:var(--brand-navy);font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:1.125rem;font-weight:800;line-height:1;letter-spacing:0;text-align:center;box-shadow:0 0 0 5px rgba(212,175,55,.22),0 0 18px rgba(212,175,55,.42);box-shadow:0 0 0 5px color-mix(in srgb,var(--brand-gold) 30%,transparent),0 0 18px color-mix(in srgb,var(--brand-gold) 46%,transparent)}
+  .oneapp-process-copy{display:flex;flex-direction:column;align-items:center;width:100%;min-width:0;flex:1 1 auto;margin-top:16px;padding:13px 12px 12px;border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(255,255,255,.045)}
+  .oneapp-process-kicker{display:block;margin:0 0 6px;color:var(--brand-gold-light);font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;line-height:1.2;text-transform:uppercase}
+  .oneapp-process-step strong{display:block;margin:0;color:#fff;font-family:Sora,Plus Jakarta Sans,sans-serif;font-size:.95rem;font-weight:700;line-height:1.3;text-wrap:balance;overflow-wrap:break-word}
+  .oneapp-process-detail{display:block;margin-top:6px;color:rgba(255,255,255,.72);font-size:.8rem;line-height:1.55;overflow-wrap:break-word}
+  @media (prefers-reduced-motion:no-preference){
+    .oneapp-process-step{animation:oneapp-process-in .55s ease both}
+    .oneapp-process-step:nth-child(2){animation-delay:.07s}
+    .oneapp-process-step:nth-child(3){animation-delay:.14s}
+    .oneapp-process-step:nth-child(4){animation-delay:.21s}
+  }
+  @keyframes oneapp-process-in{from{opacity:0}to{opacity:1}}
+  @media (max-width:899px){
+    .oneapp-process{padding:28px 22px 24px}
+    .oneapp-process-title{margin-bottom:22px}
+    .oneapp-process-flow{--process-gap:0px}
+    .oneapp-process-rail{display:none}
+    .oneapp-process-grid{display:flex;flex-direction:column;gap:0}
+    .oneapp-process-step{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:14px;align-items:start;height:auto;padding:0 0 30px;text-align:left}
+    .oneapp-process-step:last-child{padding-bottom:0}
+    .oneapp-process-step:not(:last-child)::before{content:"";position:absolute;z-index:0;left:23px;top:20px;bottom:-28px;width:2px;border-radius:999px;pointer-events:none}
+    .oneapp-process-step:nth-child(1)::before{background:linear-gradient(180deg,var(--brand-gold),var(--brand-gold-light))}
+    .oneapp-process-step:nth-child(2)::before{background:linear-gradient(180deg,var(--brand-gold-light),var(--brand-blue-light))}
+    .oneapp-process-step:nth-child(3)::before{background:linear-gradient(180deg,var(--brand-blue-light),var(--brand-blue))}
+    .oneapp-process-copy{align-items:flex-start;flex:none;margin-top:2px;padding:4px 0 0;border:0;border-radius:0;background:transparent}
+  }
+  @media (max-width:599px){
+    .oneapp-process{padding:22px 16px}
+    .oneapp-process-title{margin-bottom:18px;font-size:1.22rem}
+    .oneapp-process-step{column-gap:12px;padding-bottom:26px}
+    .oneapp-process-kicker{font-size:.7rem;letter-spacing:.12em}
+    .oneapp-process-step strong{font-size:1rem}
+    .oneapp-process-detail{font-size:.84rem}
+  }
   .oneapp-trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:24px 0 0}
   .oneapp-trust-strip span{padding:8px 12px;border:1px solid var(--brand-border);border-radius:999px;background:#fff;color:var(--brand-navy);font-size:.76rem;font-weight:800}
   .oneapp-team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;max-width:760px;margin:2rem auto 0;text-align:left}
@@ -412,7 +446,7 @@
   .oneapp-footer-person strong{color:var(--brand-navy)}
   .oneapp-footer-link{color:var(--brand-text-secondary);text-decoration:none}
   .oneapp-footer-link:hover{color:var(--brand-navy)}
-  @media(max-width:900px){.oneapp-profile-grid{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}.oneapp-profile-card{display:grid;grid-template-columns:minmax(180px,42%) 1fr}.oneapp-process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:900px){.oneapp-profile-grid{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}.oneapp-profile-card{display:grid;grid-template-columns:minmax(180px,42%) 1fr}}
   .oneapp-story-section{position:relative;overflow:hidden;padding:88px 24px;background:#fff;border-top:1px solid var(--brand-border)}
   .oneapp-story-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:28px;margin-top:36px;align-items:stretch}
   .oneapp-story-player{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:22px;background:#062653}
@@ -432,7 +466,7 @@
   .oneapp-story-disclosure{margin:16px 0 0;padding:12px 14px;border:1px solid #ead7a1;border-radius:12px;background:#fff8e8;color:#5c4810;font-size:.9rem;line-height:1.5}
   .oneapp-story-note{margin:12px 0 0;color:var(--brand-text-secondary);font-size:.88rem;line-height:1.55}
   @media(max-width:800px){.oneapp-story-section{padding:64px 18px}.oneapp-story-grid{grid-template-columns:1fr}.oneapp-story-facts li{grid-template-columns:1fr;gap:3px}}
-  @media(max-width:640px){.oneapp-trust-section{padding:64px 18px}.oneapp-profile-card{display:block}.oneapp-profile-photo{aspect-ratio:4/3}.oneapp-profile-body{padding:21px}.oneapp-process{padding:22px 16px}.oneapp-process-grid{grid-template-columns:1fr}.oneapp-team-grid{grid-template-columns:1fr}.oneapp-team-card{padding:16px}header nav{height:auto;min-height:4rem;flex-wrap:wrap;row-gap:.6rem;padding-top:.75rem;padding-bottom:.75rem}header .btn-gold{padding:.7rem .95rem;font-size:.84rem;line-height:1.25;white-space:normal;text-align:center}}
+  @media(max-width:640px){.oneapp-trust-section{padding:64px 18px}.oneapp-profile-card{display:block}.oneapp-profile-photo{aspect-ratio:4/3}.oneapp-profile-body{padding:21px}.oneapp-team-grid{grid-template-columns:1fr}.oneapp-team-card{padding:16px}header nav{height:auto;min-height:4rem;flex-wrap:wrap;row-gap:.6rem;padding-top:.75rem;padding-bottom:.75rem}header .btn-gold{padding:.7rem .95rem;font-size:.84rem;line-height:1.25;white-space:normal;text-align:center}}
 </style>
 <script id="oneapp-team-contact">
 (function(){
@@ -457,12 +491,15 @@
           '</article>'+
         '</div>'+
         '<div class="oneapp-process">'+
-          '<h3 class="oneapp-process-title">What happens after you book</h3>'+
-          '<div class="oneapp-process-grid">'+
-            '<div class="oneapp-process-step"><span class="oneapp-process-number">1</span><strong>Discovery call</strong><span>We identify the lead, follow-up, booking, or communication problem costing you opportunities.</span></div>'+
-            '<div class="oneapp-process-step"><span class="oneapp-process-number">2</span><strong>Written scope &amp; pricing</strong><span>You see what is included, what it costs, and what success means before work begins.</span></div>'+
-            '<div class="oneapp-process-step"><span class="oneapp-process-number">3</span><strong>Setup &amp; testing</strong><span>Tony configures the system, connects the required tools, and tests the complete customer journey.</span></div>'+
-            '<div class="oneapp-process-step"><span class="oneapp-process-number">4</span><strong>Launch &amp; support</strong><span>We monitor the launch, make agreed adjustments, and remain available when your team needs help.</span></div>'+
+          '<h3 class="oneapp-process-title" id="oneapp-process-title">What happens after you book</h3>'+
+          '<div class="oneapp-process-flow">'+
+            '<div class="oneapp-process-rail" aria-hidden="true"></div>'+
+            '<ol class="oneapp-process-grid" aria-labelledby="oneapp-process-title">'+
+            '<li class="oneapp-process-step"><span class="oneapp-process-number" aria-hidden="true">1</span><div class="oneapp-process-copy"><span class="oneapp-process-kicker">Step 1</span><strong>Discovery call</strong><span class="oneapp-process-detail">We identify the lead, follow-up, booking, or communication problem costing you opportunities.</span></div></li>'+
+            '<li class="oneapp-process-step"><span class="oneapp-process-number" aria-hidden="true">2</span><div class="oneapp-process-copy"><span class="oneapp-process-kicker">Step 2</span><strong>Written scope &amp; pricing</strong><span class="oneapp-process-detail">You see what is included, what it costs, and what success means before work begins.</span></div></li>'+
+            '<li class="oneapp-process-step"><span class="oneapp-process-number" aria-hidden="true">3</span><div class="oneapp-process-copy"><span class="oneapp-process-kicker">Step 3</span><strong>Setup &amp; testing</strong><span class="oneapp-process-detail">Tony configures the system, connects the required tools, and tests the complete customer journey.</span></div></li>'+
+            '<li class="oneapp-process-step"><span class="oneapp-process-number" aria-hidden="true">4</span><div class="oneapp-process-copy"><span class="oneapp-process-kicker">Step 4</span><strong>Launch &amp; support</strong><span class="oneapp-process-detail">We monitor the launch, make agreed adjustments, and remain available when your team needs help.</span></div></li>'+
+            '</ol>'+
           '</div>'+
         '</div>'+
         '<div class="oneapp-trust-strip" aria-label="1APP trust commitments"><span>Ontario-based team</span><span>Written scope and pricing</span><span>Secure onboarding</span><span>Human support</span></div>'+
