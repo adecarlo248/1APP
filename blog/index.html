@@ -16,625 +16,323 @@
   <link rel="icon" href="/assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #062653;
-      --navy-deep: #031a3a;
-      --blue: #1597ff;
-      --gold: #c99a2e;
-      --gold-dark: #936a15;
-      --gold-light: #f4d980;
-      --ink: #142033;
-      --muted: #647084;
-      --line: #dfe5ee;
-      --paper: #f7f9fc;
-      --white: #ffffff;
-      --shadow: 0 24px 80px rgba(6, 38, 83, 0.16);
-      --radius: 8px;
-    }
-    body {
-      min-height: 100vh;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Inter, Arial, sans-serif;
-      line-height: 1.7;
-    }
-    a { color: inherit; text-decoration: none; }
-
-    /* NAV */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(223,229,238,0.9);
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 10px 34px rgba(6,38,83,0.04);
-    }
-    .nav {
-      width: min(1080px, calc(100% - 40px));
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 auto;
-    }
-    .nav-logo { font-size: 1.4rem; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
-    .nav-logo span { color: var(--gold); }
-    .nav-cta {
-      background: var(--gold);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 10px 22px;
-      border-radius: var(--radius);
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--gold-dark); }
-
-    /* HERO */
-    .blog-hero {
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #0d3a6e 100%);
-      color: var(--white);
-      padding: 72px 20px;
-      text-align: center;
-    }
-    .blog-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; margin-bottom: 16px; }
-    .blog-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
-
-    /* BLOG GRID */
-    .blog-section {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 64px 20px;
-    }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 32px;
-      margin-top: 40px;
-    }
-    .blog-card {
-      background: var(--white);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(6,38,83,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(6,38,83,0.14); }
-    .card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      background: linear-gradient(135deg, var(--navy) 0%, #0d3a6e 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-    }
-    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-    .card-tag {
-      display: inline-block;
-      background: rgba(201,154,46,0.12);
-      color: var(--gold-dark);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 4px 10px;
-      border-radius: 4px;
-      margin-bottom: 12px;
-    }
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 10px;
-      line-height: 1.35;
-    }
-    .card-excerpt { color: var(--muted); font-size: 0.95rem; line-height: 1.6; flex: 1; }
-    .card-meta { margin-top: 16px; font-size: 0.8rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
-    .card-read-more {
-      display: inline-block;
-      margin-top: 20px;
-      background: var(--navy);
-      color: var(--white);
-      font-weight: 700;
-      font-size: 0.875rem;
-      padding: 10px 20px;
-      border-radius: var(--radius);
-      transition: background 0.2s;
-    }
-    .card-read-more:hover { background: #0d3a6e; }
-
-    /* CTA BANNER */
-    .cta-banner {
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-      color: var(--white);
-      text-align: center;
-      padding: 72px 20px;
-    }
-    .cta-banner h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; margin-bottom: 12px; }
-    .cta-banner p { color: rgba(255,255,255,0.8); margin-bottom: 28px; font-size: 1.05rem; }
-    .cta-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--white);
-      font-weight: 800;
-      font-size: 1rem;
-      padding: 16px 36px;
-      border-radius: var(--radius);
-      transition: background 0.2s;
-    }
-    .cta-btn:hover { background: var(--gold-dark); }
-
-    /* FOOTER */
-    .site-footer {
-      background: var(--navy-deep);
-      color: rgba(255,255,255,0.6);
-      text-align: center;
-      padding: 32px 20px;
-      font-size: 0.875rem;
-    }
-    .site-footer a { color: var(--gold); }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles--qyy-a2O.css?v=20260828T1602" />
+  <link rel="stylesheet" href="/assets/blog/blog.css?v=20261123" />
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "1APP Blog", "url": "https://use1app.com/blog/", "publisher": {"@type": "Organization", "name": "1APP Technologies Inc.", "url": "https://use1app.com"}}</script>
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
-<body>
+<body class="b-page">
+  <header class="sticky top-0 z-50 border-b border-[var(--brand-border)] bg-[var(--brand-bg)]/85 backdrop-blur-lg"><nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8"><a href="/" class="flex items-center gap-2.5" aria-label="1APP home"><img alt="1APP" class="blog-logo" src="/assets/blog/logo-1app.png" width="843" height="346"></a><div class="hidden items-center gap-8 md:flex"><a href="/#features" class="text-sm font-medium text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">Features</a><a href="/#how-it-works" class="text-sm font-medium text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">How It Works</a><a href="/demo/" data-oneapp-live-demo-nav="true" class="text-sm font-medium text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]" style="white-space: nowrap;">Live demo</a><a href="/pricing/" class="text-sm font-medium text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">Pricing</a><a href="/#faq" class="text-sm font-medium text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">FAQ</a><a href="/blog/" class="text-sm font-medium text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)] b-nav-active" aria-current="page">Blog</a></div><div class="flex items-center gap-3"><a href="/book-demo/" class="btn-gold">Book a free 15-minute audit</a></div></nav></header>
 
-  <header class="site-header">
-    <nav class="nav">
-      <a href="/" class="nav-logo"><span>1APP</span></a>
-      <a href="/book-demo/" target="_blank" class="nav-cta">Book Free Demo</a>
-    </nav>
-  </header>
-
-  <section class="blog-hero">
-    <h1>AI Automation for Small Businesses</h1>
-    <p>Practical guides, tips, and strategies to help contractors and small business owners automate their leads, follow-ups, and bookings.</p>
-  </section>
-
-  <section class="blog-section">
-    <h2 style="font-size:1.5rem;font-weight:800;color:var(--navy);">Latest Articles</h2>
-
-    <div class="blog-grid">
-
-
-      <article class="blog-card">
-        <div class="card-img">🔄</div>
-        <div class="card-body">
-          <span class="card-tag">CRM Automation</span>
-          <h2 class="card-title">CRM Automation for Home Services: From New Lead to Completed Job</h2>
-          <p class="card-excerpt">Connect lead response, booking, estimates, job updates, and review requests with clear human handoffs and Canadian privacy safeguards.</p>
-          <div class="card-meta">
-            <span>November 2, 2026</span>
-            <span>12 min read</span>
-          </div>
-          <a href="/blog/crm-automation-home-service-businesses/" class="card-read-more">Read More →</a>
+  <section class="b-hero b-grid-bg">
+    <div class="b-wrap">
+      <p class="b-eyebrow">The 1APP Blog</p>
+      <h1>AI Automation for Small Businesses</h1>
+      <p class="b-hero-lead">Practical guides, tips, and strategies to help contractors and small business owners automate their leads, follow-ups, and bookings.</p>
+      <a class="b-feature" href="/blog/gps-time-clock-app-trades-crews/" data-cat="crew">
+        <div class="b-feature-img"><img src="/assets/blog/gps-time-clock-app-trades-crews.jpg" width="1200" height="630" alt="1APP CrewClock app screens: team payroll, time clock and my pay" fetchpriority="high" decoding="async"></div>
+        <div class="b-feature-body">
+          <div><span class="b-tag">Crew Time Tracking</span><span class="b-new">New</span></div>
+          <h2>GPS Time Clock App for Trades Crews: Meet 1APP CrewClock</h2>
+          <p>CrewClock puts a GPS-stamped punch clock in every crew member's phone and turns the week into a payroll-ready timesheet. Here's how it works, what it costs, and what it doesn't do.</p>
+          <div class="b-meta">November 23, 2026 · 6 min read</div>
+          <span class="b-more">Read the article <span aria-hidden="true">→</span></span>
         </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">⭐</div>
-        <div class="card-body">
-          <span class="card-tag">Review Automation</span>
-          <h2 class="card-title">Automated Review Requests for Service Businesses: A Practical Guide</h2>
-          <p class="card-excerpt">Build a fair, timely Google review workflow with reliable completion triggers, neutral messaging, policy safeguards, and human follow-up.</p>
-          <div class="card-meta">
-            <span>October 26, 2026</span>
-            <span>12 min read</span>
-          </div>
-          <a href="/blog/review-automation-service-businesses/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">📅</div>
-        <div class="card-body">
-          <span class="card-tag">Scheduling Automation</span>
-          <h2 class="card-title">Appointment Scheduling Automation for Service Businesses</h2>
-          <p class="card-excerpt">A practical guide to booking rules, intake, reminders, rescheduling, staff handoffs, and privacy for Canadian service businesses.</p>
-          <div class="card-meta">
-            <span>October 19, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <a href="/blog/appointment-scheduling-automation-service-businesses/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">☎️</div>
-        <div class="card-body">
-          <span class="card-tag">Call Automation</span>
-          <h2 class="card-title">AI Answering Service for Home Service Companies: What It Can and Cannot Do</h2>
-          <p class="card-excerpt">A practical guide to answering calls, qualifying requests, booking approved appointments, protecting privacy, and handing risky decisions to a person.</p>
-          <div class="card-meta">
-            <span>October 12, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <a href="/blog/ai-answering-service-home-services/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">💬</div>
-        <div class="card-body">
-          <span class="card-tag">Lead Response</span>
-          <h2 class="card-title">AI Lead Follow-Up for Service Businesses: Respond Faster Without Hiring</h2>
-          <p class="card-excerpt">A practical workflow for acknowledging inquiries, qualifying requests, routing replies, booking the right next step, and handing exceptions to a person.</p>
-          <div class="card-meta">
-            <span>October 5, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <a href="/blog/ai-lead-follow-up-service-businesses/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">📋</div>
-        <div class="card-body">
-          <span class="card-tag">Quote Follow-Up</span>
-          <h2 class="card-title">Estimate Follow-Up Automation: How Contractors Close More Quotes</h2>
-          <p class="card-excerpt">A practical workflow for confirming quote delivery, answering questions, creating call tasks, and stopping follow-up at the right time.</p>
-          <div class="card-meta">
-            <span>September 28, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <a href="/blog/estimate-follow-up-automation/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">🏠</div>
-        <div class="card-body">
-          <span class="card-tag">Home Service Operations</span>
-          <h2 class="card-title">Home Service Automation: A Practical Guide for Owners in 2026</h2>
-          <p class="card-excerpt">A practical plan for automating lead response, scheduling, estimate follow-up, customer updates, reviews, and repeat service.</p>
-          <div class="card-meta">
-            <span>September 21, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <a href="/blog/home-service-automation-guide/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">⚙️</div>
-        <div class="card-body">
-          <span class="card-tag">Service Business Automation</span>
-          <h2 class="card-title">AI Automation for Service Businesses: 12 Workflows That Save Time and Win More Jobs</h2>
-          <p class="card-excerpt">A practical guide to 12 workflows for missed calls, lead capture, booking, estimates, reminders, reviews, and customer reactivation.</p>
-          <div class="card-meta">
-            <span>September 14, 2026</span>
-            <span>11 min read</span>
-          </div>
-          <a href="/blog/ai-automation-service-businesses/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">📞</div>
-        <div class="card-body">
-          <span class="card-tag">AI Voice Automation</span>
-          <h2 class="card-title">AI Voice Agent for Small Business: Answer Calls 24/7 in 2026</h2>
-          <p class="card-excerpt">An AI voice agent for small business helps local companies answer calls, qualify leads, book appointments, and follow up after hours.</p>
-          <div class="card-meta">
-            <span>August 17, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <a href="/blog/ai-voice-agent-small-business/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">🤖</div>
-        <div class="card-body">
-          <span class="card-tag">Trades Automation</span>
-          <h2 class="card-title">AI for Trades Business: How Contractors Automate Leads, Calls, and Bookings in 2026</h2>
-          <p class="card-excerpt">AI for trades business is not about replacing the owner, the dispatcher, or the person who actually knows how to talk to customers. It is about fixing...</p>
-          <div class="card-meta">
-            <span>August 10, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/ai-for-trades-business/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">⭐</div>
-        <div class="card-body">
-          <span class="card-tag">Reputation &amp; Reviews</span>
-          <h2 class="card-title">How to Get More Google Reviews Without Asking Manually</h2>
-          <p class="card-excerpt">Automated Google review requests send the ask at the perfect moment — right after a job is done. See how contractors collect more 5-star reviews on autopilot.</p>
-          <div class="card-meta">
-            <span>August 9, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <a href="/blog/automated-google-review-requests/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-
-
-      <article class="blog-card">
-        <div class="card-img">🛠️</div>
-        <div class="card-body">
-          <span class="card-tag">Contractor CRM</span>
-          <h2 class="card-title">CRM for Contractors: What Ontario Trades Should Look For in 2026</h2>
-          <p class="card-excerpt">A CRM for contractors should capture leads, book estimates, automate follow-up, send reminders, and help Ontario trades turn more inquiries into paid jobs.</p>
-          <div class="card-meta">
-            <span>August 6, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/crm-for-contractors-ontario-trades/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">⚡</div>
-        <div class="card-body">
-          <span class="card-tag">Electrical Contractors</span>
-          <h2 class="card-title">AI Receptionist for Electricians: Book More Service Calls After Hours</h2>
-          <p class="card-excerpt">An AI receptionist for electricians captures urgent service calls, books estimates, and follows up automatically so after-hours leads do not disappear into voicemail.</p>
-          <div class="card-meta">
-            <span>August 5, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <a href="/blog/ai-receptionist-electricians/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-
-      <article class="blog-card">
-        <div class="card-img">🇨🇦</div>
-        <div class="card-body">
-          <span class="card-tag">Canada Guide</span>
-          <h2 class="card-title">AI Automation for Small Business in Canada: What You Need to Know</h2>
-          <p class="card-excerpt">AI automation for small business in Canada is becoming the practical way owners capture missed leads, book appointments, and follow up faster without hiring extra admin staff.</p>
-          <div class="card-meta">
-            <span>August 1, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/ai-automation-small-business-canada/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">🤖</div>
-        <div class="card-body">
-          <span class="card-tag">AI Tools</span>
-          <h2 class="card-title">The 5 Best AI Tools for Small Business in 2026</h2>
-          <p class="card-excerpt">The best AI tools for small business in 2026 are not the flashiest apps. They are the tools that save time, capture leads, book jobs, reduce admin, an</p>
-          <div class="card-meta">
-            <span>July 31, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/best-ai-tools-small-business-2026/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">🧰</div>
-        <div class="card-body">
-          <span class="card-tag">Trades Automation</span>
-          <h2 class="card-title">All-in-One Software for Trades Businesses: Is It Worth It?</h2>
-          <p class="card-excerpt">All-in-one software for trades businesses promises CRM, automation, and lead follow-up in one platform. Here's the honest breakdown of what it does well, where raw tools fall short, and when 1APP is the better fit.</p>
-          <div class="card-meta">
-            <span>July 31, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/all-in-one-software-trades-businesses/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">💰</div>
-        <div class="card-body">
-          <span class="card-tag">Cost Comparison</span>
-          <h2 class="card-title">1APP vs. Hiring a Receptionist: The Real Cost Comparison</h2>
-          <p class="card-excerpt">Small business automation software is not just a cheaper receptionist. For many trades businesses, it is a better first hire because it captures missed calls.</p>
-          <div class="card-meta">
-            <span>July 30, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/1app-vs-receptionist-cost/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">🌱</div>
-        <div class="card-body">
-          <span class="card-tag">Lawn Care Automation</span>
-          <h2 class="card-title">Automated Follow Up for Lawn Care Business: Automate the Busy Season</h2>
-          <p class="card-excerpt">Automated follow up for lawn care business is not a fancy add-on anymore. It is the difference between a spring rush that turns into recurring revenue.</p>
-          <div class="card-meta">
-            <span>July 29, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/ai-automation-lawn-care-business/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">📍</div>
-        <div class="card-body">
-          <span class="card-tag">Peterborough Trades</span>
-          <h2 class="card-title">How Peterborough Trades Businesses Are Using Local SEO + AI Automation to Compete</h2>
-          <p class="card-excerpt">Peterborough trades businesses do not need a massive marketing department to compete with bigger contractors. They need local SEO + AI automation: a simple system that helps them get found and respond faster.</p>
-          <div class="card-meta">
-            <span>July 28, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/peterborough-trades-ai-automation/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">⚙️</div>
-        <div class="card-body">
-          <span class="card-tag">Business Automation Canada</span>
-          <h2 class="card-title">Best Business Automation Tools for Ontario Contractors in 2026</h2>
-          <p class="card-excerpt">Ontario contractors are competing in a market where the fastest, most responsive business wins the job. Here's the complete breakdown of the best business automation tools for trades businesses in Ontario.</p>
-          <div class="card-meta">
-            <span>July 27, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/business-automation-ontario-contractors/" class="card-read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">📬</div>
-        <div class="card-body">
-          <span class="card-tag">Lead Follow-Up</span>
-          <h2 class="card-title">Automated Lead Follow-Up: The System That Books Jobs While You Sleep</h2>
-          <p class="card-excerpt">Most contractors don't lose jobs because they're bad at their trade — they lose them because they don't follow up fast enough. Here's the system that fixes that.</p>
-          <div class="card-meta">
-            <span>July 25, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/automated-lead-follow-up/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">📅</div>
-        <div class="card-body">
-          <span class="card-tag">Appointment Booking</span>
-          <h2 class="card-title">Automated Appointment Booking: Stop Playing Phone Tag</h2>
-          <p class="card-excerpt">Automated appointment booking lets customers book 24/7 without calling — and sends reminders that cut no-shows by up to 80%. Here's how it works.</p>
-          <div class="card-meta">
-            <span>August 7, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <a href="/blog/automated-appointment-booking/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">🤖</div>
-        <div class="card-body">
-          <span class="card-tag">AI Automation</span>
-          <h2 class="card-title">AI Automation for Small Business: The Complete 2026 Guide</h2>
-          <p class="card-excerpt">Everything you need to know about AI automation for small business — what to automate first, what it costs, and what results you can expect in 2026.</p>
-          <div class="card-meta">
-            <span>July 19, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/ai-automation-small-business-guide/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">📱</div>
-        <div class="card-body">
-          <span class="card-tag">Lead Recovery</span>
-          <h2 class="card-title">Never Miss Another Lead: How Missed Call Text Back Works</h2>
-          <p class="card-excerpt">Every missed call is a missed job. Learn how missed call text back automation recovers lost leads automatically — and how much revenue it could save your business.</p>
-          <div class="card-meta">
-            <span>July 19, 2026</span>
-            <span>7 min read</span>
-          </div>
-          <a href="/blog/missed-call-text-back/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">🔧</div>
-        <div class="card-body">
-          <span class="card-tag">Trades</span>
-          <h2 class="card-title">AI Automation for Contractors: How Trades Businesses Win More Jobs</h2>
-          <p class="card-excerpt">HVAC, plumbing, roofing, electrical — AI automation is changing how trades businesses get and keep customers. Here's how contractors are using it to win more jobs in 2026.</p>
-          <div class="card-meta">
-            <span>July 19, 2026</span>
-            <span>10 min read</span>
-          </div>
-          <a href="/blog/ai-automation-for-contractors/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">❄️</div>
-        <div class="card-body">
-          <span class="card-tag">Trades</span>
-          <h2 class="card-title">AI Automation for HVAC Companies: Never Miss an Emergency Call</h2>
-          <p class="card-excerpt">AI automation for HVAC companies handles missed calls, follow-up, and booking automatically — so you never lose a job to a faster competitor. See how it works.</p>
-          <div class="card-meta">
-            <span>July 20, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <a href="/blog/ai-automation-hvac-companies/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">🔩</div>
-        <div class="card-body">
-          <span class="card-tag">Trades</span>
-          <h2 class="card-title">How Plumbers Are Using AI to Win More Emergency Calls</h2>
-          <p class="card-excerpt">Learn how to automate lead follow-up for plumbers — recover missed emergency calls, book jobs automatically, and stop losing work to competitors who pick up the phone.</p>
-          <div class="card-meta">
-            <span>July 20, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <a href="/blog/ai-automation-plumbers/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">🏠</div>
-        <div class="card-body">
-          <span class="card-tag">Trades</span>
-          <h2 class="card-title">AI Tools for Roofing Companies: Fill Your Calendar After Every Storm</h2>
-          <p class="card-excerpt">Discover the best AI tools for roofing companies — automate missed calls, follow-up, and booking so you capture every storm lead before competitors do.</p>
-          <div class="card-meta">
-            <span>July 21, 2026</span>
-            <span>9 min read</span>
-          </div>
-          <a href="/blog/ai-tools-roofing-companies/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card">
-        <div class="card-img">📞</div>
-        <div class="card-body">
-          <span class="card-tag">AI Receptionist</span>
-          <h2 class="card-title">What Is an AI Receptionist? (And Why Small Businesses Are Switching)</h2>
-          <p class="card-excerpt">An AI receptionist for small business answers calls, books appointments, and follows up with leads 24/7 — without the cost of a full-time hire. Here's how it works.</p>
-          <div class="card-meta">
-            <span>August 4, 2026</span>
-            <span>8 min read</span>
-          </div>
-          <a href="/blog/ai-receptionist-small-business/" class="card-read-more">Read More →</a>
-        </div>
-      </article>
-
+      </a>
     </div>
   </section>
 
-  <section class="cta-banner">
-    <h2>Ready to Automate Your Business?</h2>
-    <p>Stop losing leads to competitors who respond faster. Book a free demo and see 1APP in action.</p>
-    <a href="/book-demo/" target="_blank" class="cta-btn">Book Your Free Demo →</a>
+  <section class="b-list" aria-labelledby="latest">
+    <div class="b-wrap">
+      <div class="b-list-head"><h2 id="latest">Latest articles</h2></div>
+      <ul class="b-chips" aria-label="Filter articles by topic"><li><button type="button" class="b-chip" data-filter="all" aria-pressed="true">All articles</button></li><li><button type="button" class="b-chip" data-filter="crew" aria-pressed="false">Crew time tracking</button></li><li><button type="button" class="b-chip" data-filter="calls" aria-pressed="false">Calls &amp; reception</button></li><li><button type="button" class="b-chip" data-filter="leads" aria-pressed="false">Leads &amp; follow-up</button></li><li><button type="button" class="b-chip" data-filter="booking" aria-pressed="false">Booking &amp; scheduling</button></li><li><button type="button" class="b-chip" data-filter="reviews" aria-pressed="false">Reviews</button></li><li><button type="button" class="b-chip" data-filter="trades" aria-pressed="false">Trades</button></li><li><button type="button" class="b-chip" data-filter="ops" aria-pressed="false">CRM &amp; operations</button></li><li><button type="button" class="b-chip" data-filter="canada" aria-pressed="false">Canada &amp; Ontario</button></li><li><button type="button" class="b-chip" data-filter="guides" aria-pressed="false">Guides &amp; tools</button></li></ul>
+      <div class="b-cards" id="b-cards">
+      <a class="b-card" href="/blog/crm-automation-home-service-businesses/" data-cat="ops">
+        <div class="b-card-img"><img src="/assets/blog/crm-automation-home-service-businesses-card.jpg" width="800" height="450" alt="Two homeowners reviewing a renovation plan together" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">CRM Automation</span>
+          <h3>CRM Automation for Home Services: From New Lead to Completed Job</h3>
+          <p>Connect lead response, booking, estimates, job updates, and review requests with clear human handoffs and Canadian privacy safeguards.</p>
+          <div class="b-meta"><span>November 2, 2026</span><span>12 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/review-automation-service-businesses/" data-cat="reviews">
+        <div class="b-card-img"><img src="/assets/blog/review-automation-service-businesses-card.jpg" width="800" height="450" alt="Customer smiling while talking on the phone at home" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Review Automation</span>
+          <h3>Automated Review Requests for Service Businesses: A Practical Guide</h3>
+          <p>Build a fair, timely Google review workflow with reliable completion triggers, neutral messaging, policy safeguards, and human follow-up.</p>
+          <div class="b-meta"><span>October 26, 2026</span><span>12 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/appointment-scheduling-automation-service-businesses/" data-cat="booking">
+        <div class="b-card-img"><img src="/assets/blog/appointment-scheduling-automation-service-businesses-card.jpg" width="800" height="450" alt="Person writing appointments in a planner next to two phones" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Scheduling Automation</span>
+          <h3>Appointment Scheduling Automation for Service Businesses</h3>
+          <p>A practical guide to booking rules, intake, reminders, rescheduling, staff handoffs, and privacy for Canadian service businesses.</p>
+          <div class="b-meta"><span>October 19, 2026</span><span>11 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-answering-service-home-services/" data-cat="calls">
+        <div class="b-card-img"><img src="/assets/blog/ai-answering-service-home-services-card.jpg" width="800" height="450" alt="Call-centre agent with a headset taking a customer call" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Call Automation</span>
+          <h3>AI Answering Service for Home Service Companies: What It Can and Cannot Do</h3>
+          <p>A practical guide to answering calls, qualifying requests, booking approved appointments, protecting privacy, and handing risky decisions to a person.</p>
+          <div class="b-meta"><span>October 12, 2026</span><span>11 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-lead-follow-up-service-businesses/" data-cat="leads">
+        <div class="b-card-img"><img src="/assets/blog/ai-lead-follow-up-service-businesses-card.jpg" width="800" height="450" alt="Construction worker in a hard hat and safety vest checking his phone on site" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Lead Response</span>
+          <h3>AI Lead Follow-Up for Service Businesses: Respond Faster Without Hiring</h3>
+          <p>A practical workflow for acknowledging inquiries, qualifying requests, routing replies, booking the right next step, and handing exceptions to a person.</p>
+          <div class="b-meta"><span>October 5, 2026</span><span>11 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/estimate-follow-up-automation/" data-cat="leads">
+        <div class="b-card-img"><img src="/assets/blog/estimate-follow-up-automation-card.jpg" width="800" height="450" alt="Contractor walking a family through a printed project plan in their kitchen" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Quote Follow-Up</span>
+          <h3>Estimate Follow-Up Automation: How Contractors Close More Quotes</h3>
+          <p>A practical workflow for confirming quote delivery, answering questions, creating call tasks, and stopping follow-up at the right time.</p>
+          <div class="b-meta"><span>September 28, 2026</span><span>10 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/home-service-automation-guide/" data-cat="ops">
+        <div class="b-card-img"><img src="/assets/blog/home-service-automation-guide-card.jpg" width="800" height="450" alt="Organised equipment inside a home-service van" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Home Service Operations</span>
+          <h3>Home Service Automation: A Practical Guide for Owners in 2026</h3>
+          <p>A practical plan for automating lead response, scheduling, estimate follow-up, customer updates, reviews, and repeat service.</p>
+          <div class="b-meta"><span>September 21, 2026</span><span>10 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-automation-service-businesses/" data-cat="ops">
+        <div class="b-card-img"><img src="/assets/blog/ai-automation-service-businesses-card.jpg" width="800" height="450" alt="Office manager taking notes during a phone call" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Service Business Automation</span>
+          <h3>AI Automation for Service Businesses: 12 Workflows That Save Time and Win More Jobs</h3>
+          <p>A practical guide to 12 workflows for missed calls, lead capture, booking, estimates, reminders, reviews, and customer reactivation.</p>
+          <div class="b-meta"><span>September 14, 2026</span><span>11 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-voice-agent-small-business/" data-cat="calls">
+        <div class="b-card-img"><img src="/assets/blog/ai-voice-agent-small-business-card.jpg" width="800" height="450" alt="Office worker answering a call on a headset at her desk" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">AI Voice Automation</span>
+          <h3>AI Voice Agent for Small Business: Answer Calls 24/7 in 2026</h3>
+          <p>An AI voice agent for small business helps local companies answer calls, qualify leads, book appointments, and follow up after hours.</p>
+          <div class="b-meta"><span>August 17, 2026</span><span>8 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-for-trades-business/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/ai-for-trades-business-card.jpg" width="800" height="450" alt="HVAC technician servicing an outdoor air-conditioning unit" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Trades Automation</span>
+          <h3>AI for Trades Business: How Contractors Automate Leads, Calls, and Bookings in 2026</h3>
+          <p>AI for trades business is not about replacing the owner, the dispatcher, or the person who actually knows how to talk to customers. It is about fixing...</p>
+          <div class="b-meta"><span>August 10, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/automated-google-review-requests/" data-cat="reviews">
+        <div class="b-card-img"><img src="/assets/blog/automated-google-review-requests-card.jpg" width="800" height="450" alt="Customer reading a text message on her phone at home" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Reputation &amp; Reviews</span>
+          <h3>How to Get More Google Reviews Without Asking Manually</h3>
+          <p>Automated Google review requests send the ask at the perfect moment — right after a job is done. See how contractors collect more 5-star reviews on autopilot.</p>
+          <div class="b-meta"><span>August 9, 2026</span><span>8 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/crm-for-contractors-ontario-trades/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/crm-for-contractors-ontario-trades-card.jpg" width="800" height="450" alt="Carpenter working on a laptop in his workshop" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Contractor CRM</span>
+          <h3>CRM for Contractors: What Ontario Trades Should Look For in 2026</h3>
+          <p>A CRM for contractors should capture leads, book estimates, automate follow-up, send reminders, and help Ontario trades turn more inquiries into paid jobs.</p>
+          <div class="b-meta"><span>August 6, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-receptionist-electricians/" data-cat="calls">
+        <div class="b-card-img"><img src="/assets/blog/ai-receptionist-electricians-card.jpg" width="800" height="450" alt="Electrician in a hard hat working on an electrical panel" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Electrical Contractors</span>
+          <h3>AI Receptionist for Electricians: Book More Service Calls After Hours</h3>
+          <p>An AI receptionist for electricians captures urgent service calls, books estimates, and follows up automatically so after-hours leads do not disappear into voicemail.</p>
+          <div class="b-meta"><span>August 5, 2026</span><span>8 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-automation-small-business-canada/" data-cat="canada">
+        <div class="b-card-img"><img src="/assets/blog/ai-automation-small-business-canada-card.jpg" width="800" height="450" alt="Shop owner working on a laptop at her store counter" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Canada Guide</span>
+          <h3>AI Automation for Small Business in Canada: What You Need to Know</h3>
+          <p>AI automation for small business in Canada is becoming the practical way owners capture missed leads, book appointments, and follow up faster without hiring extra admin staff.</p>
+          <div class="b-meta"><span>August 1, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/best-ai-tools-small-business-2026/" data-cat="guides">
+        <div class="b-card-img"><img src="/assets/blog/best-ai-tools-small-business-2026-card.jpg" width="800" height="450" alt="Tradesperson using a laptop on a workbench surrounded by tools" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">AI Tools</span>
+          <h3>The 5 Best AI Tools for Small Business in 2026</h3>
+          <p>The best AI tools for small business in 2026 are not the flashiest apps. They are the tools that save time, capture leads, book jobs, reduce admin, an</p>
+          <div class="b-meta"><span>July 31, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/all-in-one-software-trades-businesses/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/all-in-one-software-trades-businesses-card.jpg" width="800" height="450" alt="Mechanic in coveralls checking his phone in the shop" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Trades Automation</span>
+          <h3>All-in-One Software for Trades Businesses: Is It Worth It?</h3>
+          <p>All-in-one software for trades businesses promises CRM, automation, and lead follow-up in one platform. Here's the honest breakdown of what it does well, where raw tools fall short, and when 1APP is the better fit.</p>
+          <div class="b-meta"><span>July 31, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/1app-vs-receptionist-cost/" data-cat="calls">
+        <div class="b-card-img"><img src="/assets/blog/1app-vs-receptionist-cost-card.jpg" width="800" height="450" alt="Receptionist on the phone at a bright office desk" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Cost Comparison</span>
+          <h3>1APP vs. Hiring a Receptionist: The Real Cost Comparison</h3>
+          <p>Small business automation software is not just a cheaper receptionist. For many trades businesses, it is a better first hire because it captures missed calls.</p>
+          <div class="b-meta"><span>July 30, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-automation-lawn-care-business/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/ai-automation-lawn-care-business-card.jpg" width="800" height="450" alt="Landscaper cutting a lawn on a ride-on mower" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Lawn Care Automation</span>
+          <h3>Automated Follow Up for Lawn Care Business: Automate the Busy Season</h3>
+          <p>Automated follow-up helps lawn care businesses capture spring rush leads, book recurring jobs, send reminders, and ask for reviews.</p>
+          <div class="b-meta"><span>July 29, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/peterborough-trades-ai-automation/" data-cat="canada">
+        <div class="b-card-img"><img src="/assets/blog/peterborough-trades-ai-automation-card.jpg" width="800" height="450" alt="Aerial view of a snowy Ontario construction site" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Peterborough Trades</span>
+          <h3>How Peterborough Trades Businesses Are Using Local SEO + AI Automation to Compete</h3>
+          <p>Peterborough trades businesses do not need a massive marketing department to compete with bigger contractors. They need local SEO + AI automation: a simple system that helps them get found and respond faster.</p>
+          <div class="b-meta"><span>July 28, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/business-automation-ontario-contractors/" data-cat="canada">
+        <div class="b-card-img"><img src="/assets/blog/business-automation-ontario-contractors-card.jpg" width="800" height="450" alt="Crew clearing snow from a roof in winter" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Business Automation Canada</span>
+          <h3>Best Business Automation Tools for Ontario Contractors in 2026</h3>
+          <p>Ontario contractors are competing in a market where the fastest, most responsive business wins the job. Here's the complete breakdown of the best business automation tools for trades businesses in Ontario.</p>
+          <div class="b-meta"><span>July 27, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/automated-lead-follow-up/" data-cat="leads">
+        <div class="b-card-img"><img src="/assets/blog/automated-lead-follow-up-card.jpg" width="800" height="450" alt="Tradeswoman in a hard hat taking a call" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Lead Follow-Up</span>
+          <h3>Automated Lead Follow-Up: The System That Books Jobs While You Sleep</h3>
+          <p>Most contractors don't lose jobs because they're bad at their trade — they lose them because they don't follow up fast enough. Here's the system that fixes that.</p>
+          <div class="b-meta"><span>July 25, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/automated-appointment-booking/" data-cat="booking">
+        <div class="b-card-img"><img src="/assets/blog/automated-appointment-booking-card.jpg" width="800" height="450" alt="Business owner writing in a notebook while holding her phone" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Appointment Booking</span>
+          <h3>Automated Appointment Booking: Stop Playing Phone Tag</h3>
+          <p>Automated appointment booking lets customers book 24/7 without calling, and sends reminders that help cut no-shows. Here's how it works.</p>
+          <div class="b-meta"><span>August 7, 2026</span><span>8 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-automation-small-business-guide/" data-cat="guides">
+        <div class="b-card-img"><img src="/assets/blog/ai-automation-small-business-guide-card.jpg" width="800" height="450" alt="Shop owner hanging an open sign on the door" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">AI Automation</span>
+          <h3>AI Automation for Small Business: The Complete 2026 Guide</h3>
+          <p>Everything you need to know about AI automation for small business: what to automate first, what it costs, and what to expect in 2026.</p>
+          <div class="b-meta"><span>July 19, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/missed-call-text-back/" data-cat="calls">
+        <div class="b-card-img"><img src="/assets/blog/missed-call-text-back-card.jpg" width="800" height="450" alt="Contractor in a hard hat answering his phone" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Lead Recovery</span>
+          <h3>Never Miss Another Lead: How Missed Call Text Back Works</h3>
+          <p>Every missed call is a missed job. Learn how missed call text back automation follows up with callers automatically, and what it costs.</p>
+          <div class="b-meta"><span>July 19, 2026</span><span>7 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-automation-for-contractors/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/ai-automation-for-contractors-card.jpg" width="800" height="450" alt="Painter rolling a wall during a renovation" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Trades</span>
+          <h3>AI Automation for Contractors: How Trades Businesses Win More Jobs</h3>
+          <p>HVAC, plumbing, roofing, electrical — AI automation is changing how trades businesses get and keep customers. Here's how contractors are using it to win more jobs in 2026.</p>
+          <div class="b-meta"><span>July 19, 2026</span><span>10 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-automation-hvac-companies/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/ai-automation-hvac-companies-card.jpg" width="800" height="450" alt="HVAC technician reading refrigerant gauges" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Trades</span>
+          <h3>AI Automation for HVAC Companies: Never Miss an Emergency Call</h3>
+          <p>AI automation for HVAC companies handles missed calls, follow-up, and booking automatically, so fewer jobs slip to a faster competitor. See how it works.</p>
+          <div class="b-meta"><span>July 20, 2026</span><span>8 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-automation-plumbers/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/ai-automation-plumbers-card.jpg" width="800" height="450" alt="Plumber holding a pipe wrench" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Trades</span>
+          <h3>How Plumbers Are Using AI to Win More Emergency Calls</h3>
+          <p>Learn how to automate lead follow-up for plumbers — recover missed emergency calls, book jobs automatically, and stop losing work to competitors who pick up the phone.</p>
+          <div class="b-meta"><span>July 20, 2026</span><span>8 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-tools-roofing-companies/" data-cat="trades">
+        <div class="b-card-img"><img src="/assets/blog/ai-tools-roofing-companies-card.jpg" width="800" height="450" alt="Roofer nailing shingles on a new roof" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">Trades</span>
+          <h3>AI Tools for Roofing Companies: Fill Your Calendar After Every Storm</h3>
+          <p>The AI tools that matter for roofing companies: missed-call text back, follow-up, and booking, so storm leads get a fast reply.</p>
+          <div class="b-meta"><span>July 21, 2026</span><span>9 min read</span></div>
+        </div>
+      </a>
+      <a class="b-card" href="/blog/ai-receptionist-small-business/" data-cat="calls">
+        <div class="b-card-img"><img src="/assets/blog/ai-receptionist-small-business-card.jpg" width="800" height="450" alt="Craftsman checking his phone in his workshop" loading="lazy" decoding="async"></div>
+        <div class="b-card-body">
+          <span class="b-tag">AI Receptionist</span>
+          <h3>What Is an AI Receptionist? (And Why Small Businesses Are Switching)</h3>
+          <p>An AI receptionist for small business answers calls, books appointments, and follows up with leads 24/7 — without the cost of a full-time hire. Here's how it works.</p>
+          <div class="b-meta"><span>August 4, 2026</span><span>8 min read</span></div>
+        </div>
+      </a>
+      </div>
+    </div>
   </section>
 
-  <footer class="site-footer">
-    <p>© 2026 1APP Technologies Inc. — Peterborough, Ontario, Canada</p>
-    <p style="margin-top:8px;"><a href="/">Home</a> &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms-and-conditions.html">Terms</a></p>
-  </footer>
+  <section class="b-cta">
+    <div class="b-cta-inner bg-navy-gradient">
+      <div>
+        <h2>Ready to Automate Your Business?</h2>
+        <p>Stop losing leads to competitors who respond faster. Book a free 15-minute audit and see 1APP in action.</p>
+      </div>
+      <div class="b-cta-btns"><a href="/book-demo/" class="btn-gold">Book a free 15-minute audit</a><a href="/pricing/" class="b-btn-ghost">See pricing</a></div>
+    </div>
+  </section>
+
+  <footer class="border-t border-[var(--brand-border)] bg-white py-12"><div class="mx-auto max-w-7xl px-5 lg:px-8"><div class="grid gap-8 md:grid-cols-3"><div><img alt="1APP" class="b-foot-logo" src="/assets/blog/logo-1app.png" width="843" height="346" loading="lazy"><p class="mt-3 max-w-[30ch] text-sm text-[var(--brand-text-secondary)]">AI automation for small businesses. Missed-call recovery, booking, reminders, reviews, and voice reception.</p></div><div class="flex flex-col gap-3"><p class="text-sm font-bold text-[var(--brand-navy)]">Product</p><a href="/#features" class="text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">Features</a><a href="/#how-it-works" class="text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">How It Works</a><a href="/pricing/" class="text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">Pricing</a><a href="/#faq" class="text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">FAQ</a><a href="/blog/" class="text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">Blog</a><a href="/roi-calculator/" class="text-sm text-[var(--brand-text-secondary)] transition-colors hover:text-[var(--brand-navy)]">ROI Calculator</a></div><div class="flex flex-col gap-3"><p class="text-sm font-bold text-[var(--brand-navy)]">Contact</p><div class="oneapp-footer-team" data-oneapp-footer-team="true"><div class="oneapp-footer-group"><p class="oneapp-footer-group-title">Sales</p><div class="oneapp-footer-person"><strong>Rod Norville</strong><br>Sales Manager · <a class="oneapp-footer-link" href="tel:+12892759420">(289) 275-9420</a><br><a class="oneapp-footer-link" href="mailto:rodnorville@use1app.com">rodnorville@use1app.com</a></div><a class="oneapp-footer-person" href="mailto:justin@use1app.com"><strong>Justin Roffey</strong><br>Co-owner · Director of Sales &amp; Business Development · justin@use1app.com</a></div><div class="oneapp-footer-group"><p class="oneapp-footer-group-title">Technical Support &amp; Service</p><a class="oneapp-footer-person" href="tel:+17052432887"><strong>Tony DeCarlo</strong><br>Director of Technical Support &amp; Service · (705) 243-2887</a><a class="oneapp-footer-person" href="mailto:adecarlo@use1app.com">adecarlo@use1app.com</a></div></div><a href="/book-demo/" class="text-sm font-semibold text-[var(--brand-navy)] transition-colors hover:text-[var(--brand-gold)]">Book a free 15-minute audit</a><div class="mt-2 flex flex-wrap gap-2" data-oneapp-socials="true"><a href="https://www.facebook.com/profile.php?id=61591712212787" target="_blank" rel="noopener" class="rounded-full border border-[var(--brand-border)] px-3 py-2 text-xs font-semibold text-[var(--brand-navy)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold)]">Follow us on Facebook</a><a href="https://www.instagram.com/1apptechnologies/" target="_blank" rel="noopener noreferrer" class="rounded-full border border-[var(--brand-border)] px-3 py-2 text-xs font-semibold text-[var(--brand-navy)] transition-colors hover:border-[var(--brand-gold)] hover:text-[var(--brand-gold)]">Follow us on Instagram</a></div></div></div><div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-[var(--brand-border)] pt-6 sm:flex-row"><p class="text-xs text-[var(--brand-text-muted)]">Built for Ontario trades and local service businesses.</p><div class="flex flex-wrap items-center justify-center gap-4 text-xs text-[var(--brand-text-muted)]"><span>1APP. AI Automation for Small Businesses.</span><a href="/privacy-policy.html" class="transition-colors hover:text-[var(--brand-navy)]">Privacy Policy</a><a href="/terms-and-conditions.html" class="transition-colors hover:text-[var(--brand-navy)]">Terms &amp; Conditions</a></div></div></div></footer>
+
+  <script>
+  (function(){var chips=document.querySelectorAll('.b-chip'),cards=document.querySelectorAll('#b-cards .b-card');
+  chips.forEach(function(ch){ch.addEventListener('click',function(){var f=ch.getAttribute('data-filter');
+  chips.forEach(function(c){c.setAttribute('aria-pressed',c===ch?'true':'false')});
+  if(f==='crew'){location.href='/blog/gps-time-clock-app-trades-crews/';return}
+  cards.forEach(function(c){c.hidden=!(f==='all'||c.getAttribute('data-cat')===f)});});});})();
+  </script>
 
   <!-- 1APP Chat Widget -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a983c9507a2e8b0275404d7" data-source="WEB_USER"></script>
