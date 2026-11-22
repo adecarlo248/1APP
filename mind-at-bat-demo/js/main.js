@@ -42,7 +42,7 @@
       </div>
       <div>
         <h4>EXPLORE</h4>
-        <ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop All</a></li><li><a href="shop.html?f=tee">Rally Tees</a></li><li><a href="shop.html?f=cap">Underdog Caps</a></li><li><a href="about.html">Our Heritage</a></li><li><a href="contact.html">Contact</a></li></ul>
+        <ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop All</a></li><li><a href="shop.html?f=tee">Rally Tees</a></li><li><a href="shop.html?f=hoodie">Hoodies</a></li><li><a href="shop.html?f=trucker">Truckers</a></li><li><a href="shop.html?f=beanie">Beanies</a></li><li><a href="about.html">Our Heritage</a></li><li><a href="contact.html">Contact</a></li></ul>
       </div>
       <div>
         <h4>GET IN TOUCH</h4>
@@ -110,16 +110,15 @@
   /* ---------- product card ---------- */
   function swatch(c){ return c.split ? `background:linear-gradient(135deg,${c.split[0]} 50%,${c.split[1]} 50%)` : `background:${c.hex}`; }
   function typeLabel(p){
-    if(p.type==='tee') return 'Rally · Tee';
-    if(p.type==='hoodie') return 'Rally · Hoodie';
-    if(p.slug && p.slug.startsWith('trucker')) return 'Underdog · Trucker';
-    return 'Underdog · Flat peak';
+    const typ = {tee:'Tee', hoodie:'Hoodie', trucker:'Trucker', beanie:'Beanie', cap:'Cap'}[p.type] || (p.type||'');
+    return p.line ? p.line + ' · ' + typ : typ;
   }
   function card(p){
     const coming = p.status==='coming';
     const alt = (!coming && p.images[1]) ? `<img class="alt" src="${p.images[1]}" alt="" loading="lazy">` : '';
     const sw = p.colors.length ? `<div class="swatches">${p.colors.map(c=>`<span class="sw" title="${esc(c.name)}" style="${swatch(c)}"></span>`).join('')}</div>` : '';
-    const price = coming ? '<span class="price muted">Coming soon</span>' : `<span class="price">${p.type==='tee'?'<small>From</small>':''}${money(p.priceFrom)}</span>`;
+    const hasFrom = p.sizePrices && Object.values(p.sizePrices).some(v=>Number(v)>(p.priceFrom||0));
+    const price = coming ? '<span class="price muted">Coming soon</span>' : `<span class="price">${hasFrom?'<small>From</small>':''}${money(p.priceFrom)}</span>`;
     const tag = coming ? 'Coming' : p.edition;
     const tagClass = coming ? 'amber' : (p.edition==='OG'?'green':'');
     return `<a class="card reveal ${coming?'is-coming':''}" href="product.html?slug=${p.slug}">
@@ -131,15 +130,14 @@
 
   /* ---------- page inits ---------- */
   if(page==='home'){
-    const feat=['unisex-t-shirt','flat-bill-cap','rally-heritage-t-shirt','underdog-heritage','rally-pink-tee','punk-hoodie'];
+    const feat=['unisex-t-shirt','unisex-hoodie-1','all-star-heritage-trucker-hat','rally-heritage-t-shirt','unisex-hoodie','embroidered-beanie'];
     $('#featured').innerHTML = feat.map(s=>bySlug(s)).filter(Boolean).map(card).join('');
   }
 
   if(page==='shop'){
     const grid=$('#shopGrid'); const params=new URLSearchParams(location.search);
     let f=params.get('f')||'all', sort='featured';
-    const counts={all:C.length,tee:C.filter(p=>p.type==='tee').length,cap:C.filter(p=>p.type==='cap').length,hoodie:C.filter(p=>p.type==='hoodie').length};
-    $$('.filter').forEach(b=>{ const n=b.querySelector('.n'); if(n) n.textContent=counts[b.dataset.f]||0; });
+    $$('.filter').forEach(b=>{ const n=b.querySelector('.n'); if(!n) return; const key=b.dataset.f; n.textContent = key==='all' ? C.length : C.filter(p=>p.type===key).length; });
     function draw(){
       let list=C.filter(p=>f==='all'||p.type===f);
       const priceOr=(p,d)=>p.priceFrom==null?d:p.priceFrom;
@@ -167,7 +165,8 @@
     main.alt=p.name; const start=color&&color.image?Math.max(0,p.images.indexOf(color.image)):0; main.src=p.images[start];
     $('#thumbs').innerHTML=p.images.map((src,i)=>`<button class="thumb ${i===start?'active':''}" data-i="${i}" aria-label="Image ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('');
     $$('.thumb').forEach(t=>t.onclick=()=>show(+t.dataset.i));
-    $('#pLine').textContent = p.type==='tee' ? 'Rally Collection · Unisex Tee' : p.type==='hoodie' ? 'Rally Collection · Hoodie' : (p.slug&&p.slug.startsWith('trucker') ? 'Underdog Collection · Trucker' : 'Underdog Collection · Flat peak');
+    const typ = {tee:'Unisex Tee', hoodie:'Hoodie', trucker:'Trucker', beanie:'Beanie', cap:'Cap'}[p.type] || (p.type||'');
+    $('#pLine').textContent = (p.line ? p.line + ' Collection · ' : '') + typ;
     if(p.status==='coming'){
       const note = document.createElement('p');
       note.className = 'coming-banner';
@@ -195,18 +194,21 @@
       if(!p.sizes.length) return;
       $('#sizeWrap').hidden=false;
       $('#sizeOpts').innerHTML=p.sizes.map(s=>{
-        const off=color&&unavailable.has(`${color.name}|${s}`); const up=p.sizePrices[s]>p.priceFrom?`<span class="up">+${(p.sizePrices[s]-p.priceFrom).toFixed(0)}</span>`:'';
-        return `<button class="size-opt ${s===size?'active':''}" data-s="${s}" ${off?'disabled title="Not offered in this colour"':''}>${s}${up}</button>`;}).join('');
-      if(color&&unavailable.has(`${color.name}|${size}`)){size=null;}
+        const off=color?unavailable.has(`${color.name}|${s}`):unavailable.has(s); const up=p.sizePrices[s]>p.priceFrom?`<span class="up">+${(p.sizePrices[s]-p.priceFrom).toFixed(0)}</span>`:'';
+        return `<button class="size-opt ${s===size?'active':''}" data-s="${s}" ${off?'disabled title="'+(color?'Not offered in this colour':'Out of stock')+'"':''}>${s}${up}</button>`;}).join('');
+      if(size && (color?unavailable.has(`${color.name}|${size}`):unavailable.has(size))){size=null;}
       $('#sizeName').textContent=size||'Select';
       $$('.size-opt').forEach(b=>b.onclick=()=>{size=b.dataset.s;drawSizes();drawPrice();});
       drawPrice();
     }
     drawSizes(); drawPrice();
-    if(p.type==='tee'){
+    if(p.sizes.length && p.sizePrices && Object.keys(p.sizePrices).length){
       $('#sizeGuide').hidden=false;
-      $('#sizeTable').innerHTML='<tr><th>Size</th><th>Price (CAD)</th></tr>'+p.sizes.map(s=>`<tr><td>${s}</td><td>${money(p.sizePrices[s])}</td></tr>`).join('');
-    } else { $('#fitNote').hidden=false; }
+      $('#sizeTable').innerHTML='<tr><th>Size</th><th>Price (CAD)</th></tr>'+p.sizes.map(s=>`<tr><td>${s}${unavailable.has(s)?' (not available)':''}</td><td>${money(p.sizePrices[s])}</td></tr>`).join('');
+    } else if(!p.sizes.length){
+      const note = p.type==='beanie' ? 'One size fits most' : 'One size fits most · Adjustable snapback';
+      const b=$('#fitNote'); if(b){ b.hidden=false; const lab=b.querySelector('b'); if(lab) lab.textContent=note; }
+    }
     $('#qMinus').onclick=()=>{qty=Math.max(1,qty-1);$('#qVal').textContent=qty;};
     $('#qPlus').onclick=()=>{qty=Math.min(10,qty+1);$('#qVal').textContent=qty;};
     $('#addBtn').onclick=()=>{
