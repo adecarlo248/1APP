@@ -140,7 +140,8 @@
     .pain{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .pain-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
-    .pain-card .ic{font-size:1.6rem;margin-bottom:14px}
+    .pain-card .ic{width:46px;height:46px;margin-bottom:16px;border-radius:13px;background:rgba(232,181,58,.14);color:var(--gold);display:grid;place-items:center}
+    .pain-card .ic svg{width:24px;height:24px;display:block}
     .pain-card h3{font-size:1.15rem;margin-bottom:8px}
     .pain-card p{color:var(--muted);font-size:.97rem}
     .pain-card .fix{margin-top:16px;padding-top:16px;border-top:1px dashed rgba(255,255,255,.12);color:var(--text);font-weight:600;font-size:.93rem}
@@ -180,7 +181,8 @@
 
     /* Privacy band */
     .privacy-band{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;background:linear-gradient(120deg,rgba(79,140,255,.12),rgba(52,211,153,.07));border:1px solid rgba(79,140,255,.25);border-radius:24px;padding:36px 40px}
-    .privacy-band .shield{width:74px;height:74px;border-radius:20px;background:rgba(79,140,255,.16);display:grid;place-items:center;font-size:2rem}
+    .privacy-band .shield{width:74px;height:74px;border-radius:20px;background:rgba(79,140,255,.16);display:grid;place-items:center;color:var(--gold)}
+    .privacy-band .shield svg{width:34px;height:34px;display:block}
     .privacy-band h3{font-size:1.5rem;margin-bottom:8px}
     .privacy-band p{color:#c6cde3}
     @media(max-width:640px){.privacy-band{grid-template-columns:1fr;padding:28px}}
@@ -308,7 +310,6 @@
           <h1>Stop paying for hours <span class="gold">nobody can prove.</span></h1>
           <p class="lead">CrewClock puts a GPS-stamped punch clock in every crew member's pocket. Hours, overtime and pay estimates add themselves up — and the weekly timesheet lands with your payroll person in one tap.</p>
           <p class="soon">You set up the company and subscribe on the web. Employees only sign in on the phone app with your crew code, their name and a 4-digit PIN. CrewClock is available on the App Store and Google Play in Canada and the US.</p>
-          <p class="soon">Crew members can also sign in from any phone browser at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
           <div class="cta-row">
             <a href="#pricing" class="btn btn-gold">Set up your company</a>
             <a href="#features" class="btn btn-ghost">See it in action</a>
@@ -345,19 +346,19 @@
         </div>
         <div class="pain-grid">
           <div class="pain-card reveal">
-            <div class="ic">📱</div>
+            <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="1.5" width="10" height="21" rx="2.5"/><path d="M10.15 4.15h3.7"/><path d="M9.35 8.15h5.3M9.35 11h5.3M9.35 13.85h3.5"/><path d="M10.7 19.15h2.6"/></svg></div>
             <h3>"Hey, I worked 9–5 Tuesday"</h3>
             <p>Hours texted days later. Rounded up. Hard to check, harder to argue with.</p>
             <div class="fix">Every punch is time-stamped and GPS-stamped when it happens.</div>
           </div>
           <div class="pain-card reveal">
-            <div class="ic">⏰</div>
+            <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.2 8.6c0-2.5 1.8-4.5 4-4.5"/><path d="M19.8 8.6c0-2.5-1.8-4.5-4-4.5"/><circle cx="12" cy="14" r="6"/><path d="M12 14V10.6"/><path d="M12 14h2.7"/><path d="m8 19.2-1.5 2.2"/><path d="m16 19.2 1.5 2.2"/></svg></div>
             <h3>Forgot to clock out — again</h3>
             <p>A 14-hour "shift" lands on the timesheet and you're stuck fixing it from memory.</p>
             <div class="fix">Missed-punch reminders and long-shift warnings flag it early.</div>
           </div>
           <div class="pain-card reveal">
-            <div class="ic">🧮</div>
+            <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4.25" y="2.25" width="15.5" height="19.5" rx="2.25"/><path d="M7.75 6.15h8.5"/><path d="M8 10.7h.01M12 10.7h.01M16 10.7h.01M8 14.45h.01M12 14.45h.01M16 14.45h.01M8 18.2h.01M12 18.2h.01M16 18.2h.01" stroke-width="3"/></svg></div>
             <h3>Friday-night math</h3>
             <p>Adding up hours, working out overtime and re-typing it all for your bookkeeper.</p>
             <div class="fix">Regular, OT and gross-pay estimates calculated for you.</div>
@@ -487,10 +488,10 @@
             </div>
           </div>
         </div>
-        <p class="how-note">CrewClock is available on the App Store and Google Play in Canada and the US. Crew members can also sign in from any phone browser at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN.</p>
+        <p class="how-note">CrewClock is available on the App Store and Google Play in Canada and the US.</p>
 
         <div class="privacy-band reveal" style="margin-top:46px">
-          <div class="shield" aria-hidden="true">🛡️</div>
+          <div class="shield" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.15 5.15 6.05v6.15c0 4.2 2.9 6.75 6.5 8.1.22.07.48.07.7 0 3.6-1.35 6.5-3.9 6.5-8.1V6.05L12 3.15z"/></svg></div>
           <div>
             <h3>Location at the punch. Never in the background.</h3>
             <p>CrewClock records GPS only at clock-in and clock-out (when the crew member allows it), or when a manager deliberately captures a job-site location. It never tracks anyone continuously — which makes it a much easier conversation with your crew.</p>
@@ -570,7 +571,7 @@
           <details class="reveal"><summary>How does the free trial work?</summary><p>Checkout on the CrewClock website currently includes a 14-day trial with a card required. After checkout, return to CrewClock in the same browser to create your company — we verify your subscription with Stripe before opening access. Please don't pay twice; if anything looks off, contact support. The phone apps don't show prices or take payment.</p></details>
           <details class="reveal"><summary>Can I cancel or change plans?</summary><p>Yes. Owners can open Manage billing from the CrewClock web app to update or cancel the existing subscription. Cancellation takes effect at the end of the current billing or trial period.</p></details>
           <details class="reveal"><summary>Does CrewClock replace my payroll software?</summary><p>No. CrewClock organizes accurate hours, overtime and gross-pay estimates and sends timesheets to your payroll person. Your payroll provider or bookkeeper still handles deductions, remittances and paying your team.</p></details>
-          <details class="reveal"><summary>What phones does it work on?</summary><p>CrewClock is available on the App Store and Google Play in Canada and the US. Crew members can also sign in from any phone browser at <a href="https://1app-crewclock.higgsfield.app/">https://1app-crewclock.higgsfield.app/</a> with their crew code, name and PIN. They sign in the same way in the app. Company setup, plans and billing stay on the CrewClock website.</p></details>
+          <details class="reveal"><summary>What phones does it work on?</summary><p>CrewClock is available on the App Store and Google Play in Canada and the US. They sign in the same way in the app. Company setup, plans and billing stay on the CrewClock website.</p></details>
         </div>
       </div>
     </section>
