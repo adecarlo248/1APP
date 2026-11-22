@@ -343,10 +343,17 @@ h1 {
 
 .phone .screen {
   max-height: 540px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   border-radius: 20px;
   background: var(--bg);
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.phone .screen::-webkit-scrollbar {
+  display: none;
 }
 
 .phone img { border-radius: 20px; }
