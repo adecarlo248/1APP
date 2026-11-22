@@ -1,4 +1,4 @@
-/* Mind At Bat catalog — synced from live Wix store 22 Nov 2026 (America/Toronto). Coming SKUs = not on live store yet. Prices CAD. Rally Classic tee omitted per Justin Nov 6 direction. */
+/* Mind At Bat catalog — exact live Wix catalog, synced 22 Nov 2026 (America/Toronto). 14 live products, no coming-soon placeholders. Prices CAD. */
 window.MAB_CATALOG = [
  {
   "slug": "unisex-hoodie-2",
@@ -249,6 +249,86 @@ window.MAB_CATALOG = [
    "assets/products/unisex-t-shirt-4.jpg"
   ],
   "liveUrl": "https://www.mindatbat.ca/product-page/unisex-t-shirt"
+ },
+ {
+  "slug": "unisex-t-shirt-1",
+  "name": "Rally Classic T-Shirt",
+  "type": "tee",
+  "line": "Rally",
+  "edition": "Classic",
+  "priceFrom": 36,
+  "sizePrices": {
+   "XS": 36,
+   "S": 36,
+   "M": 36,
+   "L": 36,
+   "XL": 36,
+   "2XL": 40,
+   "3XL": 45,
+   "4XL": 49,
+   "5XL": 53
+  },
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "2XL",
+   "3XL",
+   "4XL",
+   "5XL"
+  ],
+  "colors": [
+   {
+    "name": "Red",
+    "hex": "#C61515",
+    "split": null,
+    "image": "assets/products/unisex-t-shirt-1-3.jpg"
+   },
+   {
+    "name": "True Royal",
+    "hex": "#01408d",
+    "split": null,
+    "image": "assets/products/unisex-t-shirt-1-4.jpg"
+   },
+   {
+    "name": "Aqua",
+    "hex": "#008db5",
+    "split": null,
+    "image": "assets/products/unisex-t-shirt-1-1.jpg"
+   },
+   {
+    "name": "Athletic Heather",
+    "hex": "#cececc",
+    "split": null,
+    "image": "assets/products/unisex-t-shirt-1-5.jpg"
+   }
+  ],
+  "unavailable": [
+   "Aqua|5XL"
+  ],
+  "hook": "Some things never go out of style.",
+  "body": [
+   "The Rally Classic T-Shirt is built on the idea that showing up matters. Featuring the signature Mind At Bat logo, this tee combines timeless style with a message that reaches beyond the game.",
+   "Available in Red, Blue, Aqua, and Grey, the Rally Classic delivers a clean, comfortable look designed for everyday wear. Whether you're spending time with friends, supporting your team, or taking on life's daily challenges, this tee is a reminder that resilience isn't measured by wins and losses.",
+   "Because the strongest players aren't always the ones in the spotlight."
+  ],
+  "features": [
+   "Soft, comfortable everyday fit",
+   "Lightweight and breathable fabric",
+   "Retail-style unisex fit",
+   "Ribbed crew neck",
+   "Side-seamed construction for lasting shape"
+  ],
+  "images": [
+   "assets/products/unisex-t-shirt-1-1.jpg",
+   "assets/products/unisex-t-shirt-1-2.jpg",
+   "assets/products/unisex-t-shirt-1-3.jpg",
+   "assets/products/unisex-t-shirt-1-4.jpg",
+   "assets/products/unisex-t-shirt-1-5.jpg"
+  ],
+  "liveUrl": "https://www.mindatbat.ca/product-page/unisex-t-shirt-1"
  },
  {
   "slug": "all-star-heritage-trucker-hat",
@@ -711,66 +791,5 @@ window.MAB_CATALOG = [
    "assets/products/pom-pom-beanie-3.jpg"
   ],
   "liveUrl": "https://www.mindatbat.ca/product-page/pom-pom-beanie"
- },
- {
-  "slug": "rally-pink-tee",
-  "name": "Rally Pink Tee (Girl-back graphic)",
-  "type": "tee",
-  "line": "Rally",
-  "edition": "Coming",
-  "status": "coming",
-  "priceFrom": null,
-  "sizePrices": {},
-  "sizes": [],
-  "colors": [
-   {
-    "name": "Pink",
-    "hex": "#e8a0bf",
-    "split": null,
-    "image": null
-   }
-  ],
-  "unavailable": [],
-  "hook": "Pink tee with girl-in-photo graphic on the back.",
-  "body": [
-   "Justin directed a pink tee with a girl photo graphic on the back, to replace the coloured Rally Classic shirt colourways.",
-   "Still not on the live store as of 22 Nov 2026 — demo placeholder only until Belinda's mockups, name, and price land."
-  ],
-  "features": [
-   "Pink colourway",
-   "Girl photo graphic on back",
-   "Photos + price TBD with Belinda"
-  ],
-  "images": [
-   "assets/hero.jpg"
-  ],
-  "liveUrl": ""
- },
- {
-  "slug": "punk-hoodie",
-  "name": "Punk Hoodie",
-  "type": "hoodie",
-  "line": "Rally",
-  "edition": "Coming",
-  "status": "coming",
-  "priceFrom": null,
-  "sizePrices": {},
-  "sizes": [],
-  "colors": [],
-  "unavailable": [],
-  "hook": "New hoodie SKU Justin asked for.",
-  "body": [
-   "Punk hoodie added to the roadmap 6 Nov 2026.",
-   "The live store now has Heritage, Rally, and Diamond hoodies, but nothing named or described as a punk hoodie. Name, art, photos, and price still TBD — demo slot only."
-  ],
-  "features": [
-   "Hoodie",
-   "Punk direction",
-   "Photos + price TBD with Belinda"
-  ],
-  "images": [
-   "assets/hero.jpg"
-  ],
-  "liveUrl": ""
  }
 ];
