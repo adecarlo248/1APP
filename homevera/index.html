@@ -2,7 +2,7 @@
 <html lang="en-CA">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b5e7d">
   <title>HomeVera: Home Maintenance</title>
   <meta name="description" content="Keep your home's equipment, warranties, documents and maintenance in one place. No account, no ads, and your records stay on your phone.">
@@ -10,7 +10,7 @@
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preload" as="font" href="assets/fonts/Montserrat.ttf" type="font/ttf" crossorigin>
+  <link rel="preload" as="image" href="assets/screens/home.webp" type="image/webp" fetchpriority="high">
   <meta property="og:title" content="HomeVera: Home Maintenance">
   <meta property="og:description" content="Equipment, warranties and tasks. No account, no ads, and your records stay on your phone.">
   <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Equipment, warranties and tasks. Records stay on your phone.">
   <meta name="twitter:image" content="https://use1app.com/homevera/assets/og.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=5">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -77,7 +77,10 @@
         <figure>
           <div class="phone">
             <div class="screen">
-              <img src="assets/screens/home.png" width="780" height="2080" alt="App preview – sample data. Home screen for a sample home at 123 Maple Lane, with an organization score and counts of equipment, open maintenance, and warranties ending soon.">
+              <picture>
+                <source srcset="assets/screens/home.webp" type="image/webp">
+                <img src="assets/screens/home.png" width="560" height="1493" alt="App preview – sample data. Home screen for a sample home at 123 Maple Lane, with an organization score and counts of equipment, open maintenance, and warranties ending soon." fetchpriority="high" decoding="async">
+              </picture>
             </div>
           </div>
           <figcaption>
@@ -156,7 +159,10 @@
         <figure>
           <div class="phone">
             <div class="screen">
-              <img src="assets/screens/review.png" width="780" height="2640" alt="App preview – sample data. Review screen titled Review your equipment, marked Not saved yet, with editable sample fields and a Confirm and save button.">
+              <picture>
+                <source srcset="assets/screens/review.webp" type="image/webp">
+                <img src="assets/screens/review.png" width="560" height="1895" alt="App preview – sample data. Review screen titled Review your equipment, marked Not saved yet, with editable sample fields and a Confirm and save button." loading="lazy" decoding="async">
+              </picture>
             </div>
           </div>
           <figcaption class="caption">App preview – sample data</figcaption>
@@ -172,7 +178,10 @@
           <figure>
             <div class="phone">
               <div class="screen">
-                <img src="assets/screens/equipment.png" width="780" height="2080" alt="App preview – sample data. Equipment page for a sample basement furnace, with model, serial, dates, and buttons to add a service provider or book service.">
+                <picture>
+                  <source srcset="assets/screens/equipment.webp" type="image/webp">
+                  <img src="assets/screens/equipment.png" width="560" height="1493" alt="App preview – sample data. Equipment page for a sample basement furnace, with model, serial, dates, and buttons to add a service provider or book service." loading="lazy" decoding="async">
+                </picture>
               </div>
             </div>
             <figcaption class="caption">App preview – sample data</figcaption>
@@ -180,7 +189,10 @@
           <figure>
             <div class="phone">
               <div class="screen">
-                <img src="assets/screens/maintenance.png" width="780" height="2080" alt="App preview – sample data. Maintenance list with sample tasks marked overdue, today, and upcoming.">
+                <picture>
+                  <source srcset="assets/screens/maintenance.webp" type="image/webp">
+                  <img src="assets/screens/maintenance.png" width="560" height="1493" alt="App preview – sample data. Maintenance list with sample tasks marked overdue, today, and upcoming." loading="lazy" decoding="async">
+                </picture>
               </div>
             </div>
             <figcaption class="caption">App preview – sample data</figcaption>
@@ -200,7 +212,10 @@
         <figure>
           <div class="phone">
             <div class="screen">
-              <img src="assets/screens/documents.png" width="780" height="2080" alt="App preview – sample data. Documents screen with a sample warranty record and a warranty overview marked Expires soon and Expired.">
+              <picture>
+                <source srcset="assets/screens/documents.webp" type="image/webp">
+                <img src="assets/screens/documents.png" width="560" height="1493" alt="App preview – sample data. Documents screen with a sample warranty record and a warranty overview marked Expires soon and Expired." loading="lazy" decoding="async">
+              </picture>
             </div>
           </div>
           <figcaption class="caption">App preview – sample data</figcaption>
