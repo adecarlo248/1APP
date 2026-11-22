@@ -21,12 +21,13 @@ python3 -m http.server 8766
 | Our Heritage (story, timeline, founder letter) | `about.html` |
 | Contact (support, demo form, shipping/refund policy) | `contact.html` |
 
-Catalog was synced from the live Wix store on 22 Nov 2026 (America/Toronto). Live product slugs:
+Catalog matches the live Wix store as of 22 Nov 2026 (America/Toronto), 14 products in live All Products order:
 
 - Heritage Hoodie — `product.html?slug=unisex-hoodie-2`
 - Rally Hoodie — `product.html?slug=unisex-hoodie-1`
 - Rally Heritage T-Shirt — `product.html?slug=rally-heritage-t-shirt`
 - Rally OG T-Shirt — `product.html?slug=unisex-t-shirt`
+- Rally Classic T-Shirt — `product.html?slug=unisex-t-shirt-1`
 - All Star Heritage Trucker Hat — `product.html?slug=all-star-heritage-trucker-hat`
 - All Star Rally Trucker Hat — `product.html?slug=all-star-rally-trucker-hat`
 - Bullpen Trucker Hat — `product.html?slug=bullpen-trucker-hat`
@@ -37,9 +38,7 @@ Catalog was synced from the live Wix store on 22 Nov 2026 (America/Toronto). Liv
 - Bullpen Diamond Trucker Hat — `product.html?slug=bullpen-diamond-trucker-hat`
 - Diamond Pom Beanie — `product.html?slug=pom-pom-beanie`
 
-Coming-soon placeholders (not on the live store yet): Rally Pink Tee (`rally-pink-tee`), Punk Hoodie (`punk-hoodie`).
-
-The live Rally Classic T-Shirt (`unisex-t-shirt-1`) is still on mindatbat.ca but is left out of this demo per Justin's 6 Nov 2026 direction. The three Underdog flat-peak caps are gone from the live store (their old URLs 404).
+The three Underdog flat-peak caps are gone from the live store (their old URLs 404) and are not in this demo.
 
 ## What is real vs demo
 - **Real (pulled from the live site, 22 Nov 2026):** product names, CAD prices including per-size upcharges, colour/size options, in-stock flags, descriptions, features, product photos, logo, heritage timeline, founder's letter, shipping/refund policy wording, contact details.
