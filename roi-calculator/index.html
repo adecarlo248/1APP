@@ -108,6 +108,12 @@
     .footer-bottom div{display:flex;gap:15px}
     .footer-bottom a{text-decoration:none}
     @media(max-width:1100px){.nav-links{display:none}}
+    .oneapp-header-cta .oneapp-cta-short{display:none}
+    @media(max-width:700px){
+      .nav .oneapp-header-cta .oneapp-cta-full{display:none}
+      .nav .oneapp-header-cta .oneapp-cta-short{display:inline}
+      .nav .oneapp-header-cta{white-space:nowrap}
+    }
     @media(max-width:700px){
       .nav-inner{min-height:64px}
       .brand img{height:43px}
@@ -133,7 +139,7 @@
       </nav>
       <div class="nav-actions">
         <a class="btn btn-navy" href="tel:+12892759420">Call Rod, Sales: (289) 275-9420</a>
-        <a class="btn btn-gold" data-booking-link href="https://use1app.com/book-demo">Book a free 15-minute audit</a>
+        <a class="btn btn-gold oneapp-header-cta" data-booking-link href="https://use1app.com/book-demo"><span class="oneapp-cta-full">Book a free 15-minute discovery call</span><span class="oneapp-cta-short">Book a discovery call</span></a>
       </div>
     </div>
   </header>
@@ -232,7 +238,7 @@
           </div>
           <p class="disclaimer">These figures are the arithmetic of the numbers you entered. They are not a forecast, a savings claim, or a statement of what 1APP will bring in.</p>
           <div class="result-actions">
-            <a class="btn btn-gold" id="book-audit" data-booking-link href="https://use1app.com/book-demo">Book a free 15-minute audit</a>
+            <a class="btn btn-gold" id="book-audit" data-booking-link href="https://use1app.com/book-demo">Book a free 15-minute discovery call</a>
             <a class="btn btn-navy" href="tel:+12892759420">Call Rod, Sales: (289) 275-9420</a>
           </div>
           <button class="text-btn" id="edit-numbers" type="button">Change the numbers</button>
