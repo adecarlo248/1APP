@@ -13,3 +13,6 @@
 @media (min-width:1100px){.mfg-page .oneapp-mobile-nav{display:none}}
 .demo-header .oneapp-mobile-nav{display:block}
 @media (min-width:981px){.demo-header .oneapp-mobile-nav{display:none}}
+
+.oneapp-header-cta .oneapp-cta-short{display:none}
+@media (max-width:767px){header .oneapp-header-cta .oneapp-cta-full, .mfg-header .oneapp-header-cta .oneapp-cta-full, .demo-header .oneapp-header-cta .oneapp-cta-full{display:none}header .oneapp-header-cta .oneapp-cta-short, .mfg-header .oneapp-header-cta .oneapp-cta-short, .demo-header .oneapp-header-cta .oneapp-cta-short{display:inline}header .oneapp-header-cta, .mfg-header .oneapp-header-cta, .demo-header .oneapp-header-cta{white-space:nowrap}}
