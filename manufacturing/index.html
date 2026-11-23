@@ -340,6 +340,8 @@
     .mfg-footer-grid{display:grid;gap:16px}
     .mfg-card{
       min-width:0;
+      display:flex;
+      flex-direction:column;
       padding:22px 18px;
       border:1px solid var(--brand-border);
       border-radius:20px;
@@ -358,12 +360,24 @@
       font-size:.98rem;
       line-height:1.6;
     }
+    .mfg-card > h3 + p{margin-bottom:18px}
     .mfg-card .btn-gold,
-    .mfg-card .mfg-btn-call{
+    .mfg-card .mfg-btn-call,
+    .mfg-page .mfg-card button.btn-gold{
       width:100%;
-      margin-top:18px;
+      margin-top:auto;
+      justify-content:center;
     }
+    .mfg-page .mfg-card button.btn-gold{
+      border:0;
+      cursor:pointer;
+      color:var(--brand-navy);
+      font-family:inherit;
+    }
+    .mfg-page .mfg-card button.btn-gold:disabled{cursor:wait}
     .mfg-page .mfg-card a.mfg-btn-call{background:#fff;color:var(--brand-navy);border:1.5px solid var(--brand-navy);box-shadow:none}
+    .mfg-voice-status{margin:12px 0 0;color:var(--brand-text-secondary);font-size:.9rem;line-height:1.5}
+    .mfg-voice-status:empty{display:none;margin:0}
     .mfg-systems{
       max-width:760px;
       padding:26px 20px;
@@ -460,9 +474,11 @@
       .mfg-actions{flex-direction:row;flex-wrap:wrap;align-items:center;max-width:none}
       .mfg-actions a{width:auto}
       .mfg-section{padding:72px 0}
-      .mfg-try-grid{grid-template-columns:1fr 1fr;gap:18px}
       .mfg-footer-grid{grid-template-columns:1.2fr .8fr 1fr;gap:36px}
       .mfg-footer-bottom{flex-direction:row;justify-content:space-between;align-items:center}
+    }
+    @media (min-width:900px){
+      .mfg-try-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
     }
     @media (min-width:1100px){
       .mfg-nav-links{display:flex;flex:1 1 auto}
@@ -522,7 +538,7 @@
     }
   </style>
 </head>
-<body class="mfg-page">
+<body class="mfg-page" data-demo="voice">
   <header class="mfg-header">
     <div class="mfg-wrap mfg-header-inner">
       <a class="mfg-brand" href="/" aria-label="1APP home"><img src="/assets/logo.png" alt="1APP"></a>
@@ -619,7 +635,7 @@
       <div class="mfg-wrap">
         <p class="mfg-kicker">Demos</p>
         <h2 id="mfg-try-title">Try it</h2>
-        <p class="mfg-intro">Two sample demos. They are not connected to your records.</p>
+        <p class="mfg-intro">Three sample demos. They are not connected to your records.</p>
         <div class="mfg-try-grid">
           <article class="mfg-card">
             <h3>Try the quote-request demo</h3>
@@ -630,6 +646,12 @@
             <h3>Chat with the demo assistant</h3>
             <p>Open the demo assistant and ask it about a quote or a service request.</p>
             <a class="mfg-btn-call" href="/windsor-demo/">Chat with the demo assistant</a>
+          </article>
+          <article class="mfg-card" id="voice-demo">
+            <h3>Talk to the demo phone assistant</h3>
+            <p>An after-hours phone assistant demo for a made-up fabrication shop that takes a quote request or callback by voice, from the browser (allow microphone).</p>
+            <button type="button" class="btn-gold" id="start-voice">Talk to the demo phone assistant</button>
+            <p class="mfg-voice-status" id="mfg-voice-status" role="status"></p>
           </article>
         </div>
       </div>
@@ -686,5 +708,76 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var mode = document.body.getAttribute('data-demo');
+      var voiceBtn = document.getElementById('start-voice');
+      var status = document.getElementById('mfg-voice-status');
+      var pending = false;
+      var label = voiceBtn.textContent;
+
+      function setStatus(message) {
+        status.textContent = message;
+      }
+
+      function isOpen() {
+        var api = window.leadConnector && window.leadConnector.chatWidget;
+        if (api && typeof api.isActive === 'function' && api.isActive()) return true;
+        var widget = document.querySelector('chat-widget');
+        return !!(widget && widget.getAttribute('data-active') === 'true');
+      }
+
+      function openWidget() {
+        if (isOpen()) return 'opened';
+        var api = window.leadConnector && window.leadConnector.chatWidget;
+        if (api && typeof api.openWidget === 'function') {
+          try { api.openWidget(); } catch (err) {}
+          if (isOpen()) return 'opened';
+        }
+        var widget = document.querySelector('chat-widget');
+        var bubble = widget && widget.shadowRoot && widget.shadowRoot.querySelector('.lc_text-widget--bubble');
+        if (bubble) {
+          var bubbleLabel = bubble.getAttribute('aria-label') || '';
+          if (bubbleLabel.toLowerCase().indexOf('close') === -1) bubble.click();
+          if (isOpen()) return 'opened';
+        }
+        return widget || api ? 'waiting' : 'missing';
+      }
+
+      function finish(result) {
+        pending = false;
+        voiceBtn.disabled = false;
+        voiceBtn.textContent = label;
+        if (result === 'opened') {
+          setStatus('The phone window is open. Press Call us here, then allow your microphone.');
+          return;
+        }
+        setStatus('Use the phone button in the bottom corner of this page. Then press Call us here and allow your microphone.');
+      }
+
+      function begin() {
+        if (pending || mode !== 'voice') return;
+        pending = true;
+        voiceBtn.disabled = true;
+        voiceBtn.textContent = 'Opening…';
+        setStatus('The voice demo is still loading. You can also use the phone button in the bottom corner.');
+        var attempts = 0;
+        var timer = setInterval(function () {
+          attempts += 1;
+          var next = openWidget();
+          if (next === 'opened' || attempts >= 50) {
+            clearInterval(timer);
+            finish(next);
+          }
+        }, 300);
+      }
+
+      voiceBtn.addEventListener('click', begin);
+
+      if (mode === 'voice' && location.hash === '#voice') begin();
+    })();
+  </script>
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6b0448998259d93366ea91d7"></script>
 </body>
 </html>
