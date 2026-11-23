@@ -103,8 +103,8 @@
       min-width:0;
       flex:1 1 auto;
     }
-    .mfg-page .btn-gold,
-    .mfg-btn-call{
+    .mfg-page a.btn-gold,
+    .mfg-page a.mfg-btn-call{
       min-height:48px;
       max-width:100%;
       min-width:0;
@@ -119,8 +119,8 @@
       white-space:normal;
       touch-action:manipulation;
     }
-    .mfg-page .btn-gold{justify-content:center}
-    .mfg-btn-call{
+    .mfg-page a.btn-gold{justify-content:center;color:var(--brand-navy)}
+    .mfg-page a.mfg-btn-call{
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -129,15 +129,15 @@
       color:#fff;
       box-shadow:0 8px 24px rgba(0,31,63,.18);
     }
-    .mfg-btn-call:hover{transform:translateY(-1px)}
-    .mfg-btn-on-dark{
+    .mfg-page a.mfg-btn-call:hover{transform:translateY(-1px)}
+    .mfg-page a.mfg-btn-on-dark{
       border:1px solid rgba(255,255,255,.28);
       background:rgba(255,255,255,.06);
       color:#fff;
       box-shadow:none;
     }
-    .mfg-btn-on-dark:hover{background:rgba(255,255,255,.12)}
-    .mfg-header-call{display:none}
+    .mfg-page a.mfg-btn-on-dark:hover{background:rgba(255,255,255,.12)}
+    .mfg-page a.mfg-header-call{display:none}
     .mfg-hero{
       position:relative;
       overflow:clip;
@@ -363,7 +363,7 @@
       width:100%;
       margin-top:18px;
     }
-    .mfg-card .mfg-btn-call{background:#fff;color:var(--brand-navy);border:1.5px solid var(--brand-navy);box-shadow:none}
+    .mfg-page .mfg-card a.mfg-btn-call{background:#fff;color:var(--brand-navy);border:1.5px solid var(--brand-navy);box-shadow:none}
     .mfg-systems{
       max-width:760px;
       padding:26px 20px;
@@ -467,7 +467,7 @@
     @media (min-width:1100px){
       .mfg-nav-links{display:flex;flex:1 1 auto}
       .mfg-nav-actions{flex:0 0 auto}
-      .mfg-header-call{display:inline-flex}
+      .mfg-page a.mfg-header-call{display:inline-flex}
       .mfg-hero{padding:84px 0 80px}
       .mfg-process{padding:34px 28px 30px}
       .mfg-process-title{margin-bottom:28px}
@@ -516,9 +516,9 @@
       .mfg-process-detail{font-size:.78rem}
     }
     @media (prefers-reduced-motion:reduce){
-      .mfg-page .btn-gold,
-      .mfg-btn-call{transition:none}
-      .mfg-btn-call:hover{transform:none}
+      .mfg-page a.btn-gold,
+      .mfg-page a.mfg-btn-call{transition:none}
+      .mfg-page a.mfg-btn-call:hover{transform:none}
     }
   </style>
 </head>
