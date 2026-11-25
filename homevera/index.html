@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0B3B2E">
+  <meta name="theme-color" content="#082C1E">
   <title>Domoro: Home Maintenance</title>
   <meta name="description" content="Keep your home's equipment, warranties, documents and maintenance in one place. Your home data is stored in Canada.">
   <link rel="canonical" href="https://use1app.com/homevera/">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="assets/icon-512.png" sizes="512x512" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preload" as="image" href="assets/screens/home.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/logo-640.webp" type="image/webp" fetchpriority="high">
   <meta property="og:title" content="Domoro: Home Maintenance">
   <meta property="og:description" content="Equipment, warranties and tasks. Your home data is stored in Canada.">
   <meta property="og:type" content="website">
@@ -18,14 +20,14 @@
   <meta property="og:image" content="https://use1app.com/homevera/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="DOMORO wordmark with a gold house inside a ring, and the line The gold standard for your home.">
+  <meta property="og:image:alt" content="Domoro – The gold standard for your home. Maintain. Manage. Protect.">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Domoro: Home Maintenance">
   <meta name="twitter:description" content="Equipment, warranties and tasks. Your home data is stored in Canada.">
   <meta name="twitter:image" content="https://use1app.com/homevera/assets/og.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="stylesheet" href="css/styles.css?v=9">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -33,7 +35,7 @@
   <header class="site-header">
     <div class="nav-bar">
       <a class="brand" href="./" aria-label="Domoro home">
-        <span class="mark-tile"><img src="assets/logo.svg" width="64" height="64" alt=""></span>
+        <img class="nav-mark" src="assets/icon-80.png" width="40" height="40" alt="">
         <span class="wordmark">DOMORO<span class="tm">™</span></span>
       </a>
       <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -63,14 +65,15 @@
 
   <main id="main">
     <section class="hero">
+      <div class="hero-logo">
+        <h1 class="visually-hidden">Domoro: Home Maintenance</h1>
+        <picture>
+          <source type="image/webp" srcset="assets/logo-640.webp 640w, assets/logo-1280.webp 1280w" sizes="(min-width: 800px) 640px, 100vw">
+          <img src="assets/logo-640.png" srcset="assets/logo-640.png 640w, assets/logo-1280.png 1280w" sizes="(min-width: 800px) 640px, 100vw" width="1024" height="1024" alt="Domoro – The gold standard for your home. Maintain. Manage. Protect." fetchpriority="high" decoding="async">
+        </picture>
+      </div>
       <div class="wrap hero-grid">
         <div>
-          <div class="lockup">
-            <img class="hero-mark" src="assets/logo.svg" width="192" height="180" alt="">
-            <h1 class="wordmark">DOMORO<span class="tm">™</span></h1>
-            <p class="tagline">The gold standard for your home</p>
-            <p class="motto">Maintain. Manage. Protect.</p>
-          </div>
           <p class="listing">Domoro: Home Maintenance</p>
           <p class="subtitle">Equipment, warranties &amp; tasks</p>
           <p class="lead">Keep your home's equipment, warranties, documents and maintenance in one place.</p>
@@ -86,7 +89,7 @@
             <div class="screen">
               <picture>
                 <source srcset="assets/screens/home.webp" type="image/webp">
-                <img src="assets/screens/home.png" width="560" height="1493" alt="App preview – sample data. Home screen for a sample home at 123 Maple Lane, with an organization score and counts of equipment, open maintenance, and warranties ending soon." fetchpriority="high" decoding="async">
+                <img src="assets/screens/home.png" width="560" height="1342" alt="App preview – sample data. Home screen for a sample home at 123 Maple Lane, with an organization score and counts of equipment, open maintenance, and warranties ending soon." decoding="async">
               </picture>
             </div>
           </div>
@@ -196,7 +199,7 @@
             <div class="screen">
               <picture>
                 <source srcset="assets/screens/review.webp" type="image/webp">
-                <img src="assets/screens/review.png" width="560" height="1895" alt="App preview – sample data. Review screen titled Review your equipment, marked Not saved yet, with editable sample fields and a Confirm and save button." loading="lazy" decoding="async">
+                <img src="assets/screens/review.png" width="560" height="1745" alt="App preview – sample data. Review screen titled Review your equipment, marked Not saved yet, with editable sample fields and a Confirm and save button." loading="lazy" decoding="async">
               </picture>
             </div>
           </div>
@@ -218,7 +221,7 @@
               <div class="screen">
                 <picture>
                   <source srcset="assets/screens/equipment.webp" type="image/webp">
-                  <img src="assets/screens/equipment.png" width="560" height="1493" alt="App preview – sample data. Equipment page for a sample basement furnace, with model, serial, dates, and buttons to add a service provider or book service." loading="lazy" decoding="async">
+                  <img src="assets/screens/equipment.png" width="560" height="1342" alt="App preview – sample data. Equipment page for a sample basement furnace, with model, serial, dates, and buttons to add a service provider or book service." loading="lazy" decoding="async">
                 </picture>
               </div>
             </div>
@@ -232,7 +235,7 @@
               <div class="screen">
                 <picture>
                   <source srcset="assets/screens/maintenance.webp" type="image/webp">
-                  <img src="assets/screens/maintenance.png" width="560" height="1493" alt="App preview – sample data. Maintenance list with sample tasks marked overdue, today, and upcoming." loading="lazy" decoding="async">
+                  <img src="assets/screens/maintenance.png" width="560" height="1342" alt="App preview – sample data. Maintenance list with sample tasks marked overdue, today, and upcoming." loading="lazy" decoding="async">
                 </picture>
               </div>
             </div>
@@ -258,7 +261,7 @@
             <div class="screen">
               <picture>
                 <source srcset="assets/screens/documents.webp" type="image/webp">
-                <img src="assets/screens/documents.png" width="560" height="1493" alt="App preview – sample data. Documents screen with a sample warranty record and a warranty overview marked Expires soon and Expired." loading="lazy" decoding="async">
+                <img src="assets/screens/documents.png" width="560" height="1342" alt="App preview – sample data. Documents screen with a sample warranty record and a warranty overview marked Expires soon and Expired." loading="lazy" decoding="async">
               </picture>
             </div>
           </div>
@@ -390,7 +393,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <p class="footer-name"><span class="mark-tile"><img src="assets/logo.svg" width="64" height="64" alt=""></span><span class="wordmark">DOMORO<span class="tm">™</span></span></p>
+        <p class="footer-name"><img class="nav-mark" src="assets/icon-80.png" width="40" height="40" alt=""><span class="wordmark">DOMORO<span class="tm">™</span></span></p>
         <p>Home maintenance for iPhone, iPad and Android.<br>Ontario, Canada</p>
         <p>1APP Technologies Inc.</p>
       </div>
