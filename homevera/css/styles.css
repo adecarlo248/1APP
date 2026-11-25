@@ -249,14 +249,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 .hero-logo {
-  background: linear-gradient(180deg,
-    #092C20 0%,
-    #0A2D20 22%,
-    #092C1D 40%,
-    #04281A 55%,
-    #032618 72%,
-    #012216 86%,
-    #011C13 100%);
+  background: linear-gradient(180deg, #082C1E 0%, #011C13 100%);
 }
 
 .hero-logo img {
@@ -264,6 +257,22 @@ a:hover { text-decoration-thickness: 2px; }
   width: min(640px, 100%);
   height: auto;
   margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .hero-logo {
+    background:
+      radial-gradient(ellipse 340px 340px at 50% 50%,
+        #10382A 0%,
+        #0A3226 58%,
+        #082C1E 94%,
+        #011C13 100%);
+  }
+
+  .hero-logo img {
+    -webkit-mask-image: radial-gradient(closest-side at 50% 50%, #000 90%, transparent 100%);
+    mask-image: radial-gradient(closest-side at 50% 50%, #000 90%, transparent 100%);
+  }
 }
 
 .visually-hidden {
@@ -763,7 +772,7 @@ input, select, textarea { font-size: 16px; }
 }
 
 @media (min-width: 800px) {
-  .hero { padding: 64px 0 72px; }
+  .hero { padding: 0 0 72px; }
   .hero-grid { grid-template-columns: 1.1fr 0.9fr; align-items: center; }
   .hero-actions { flex-direction: row; flex-wrap: wrap; align-items: center; }
   .hero-actions .btn { width: auto; }
