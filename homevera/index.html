@@ -3,44 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0b5e7d">
-  <title>HomeVera: Home Maintenance</title>
-  <meta name="description" content="Keep your home's equipment, warranties, documents and maintenance in one place. No account, no ads, and your records stay on your phone.">
+  <meta name="theme-color" content="#082C1E">
+  <title>Domoro: Home Maintenance</title>
+  <meta name="description" content="Keep your home's equipment, warranties, documents and maintenance in one place. Your home data is stored in Canada.">
   <link rel="canonical" href="https://use1app.com/homevera/">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="assets/icon-512.png" sizes="512x512" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preload" as="image" href="assets/screens/home.webp" type="image/webp" fetchpriority="high">
-  <meta property="og:title" content="HomeVera: Home Maintenance">
-  <meta property="og:description" content="Equipment, warranties and tasks. No account, no ads, and your records stay on your phone.">
+  <link rel="preload" as="image" href="assets/logo-640.webp" type="image/webp" fetchpriority="high">
+  <meta property="og:title" content="Domoro: Home Maintenance">
+  <meta property="og:description" content="Equipment, warranties and tasks. Your home data is stored in Canada.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://use1app.com/homevera/">
   <meta property="og:image" content="https://use1app.com/homevera/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="HomeVera logo and the words HomeVera: Home Maintenance.">
+  <meta property="og:image:alt" content="Domoro – The gold standard for your home. Maintain. Manage. Protect.">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="HomeVera: Home Maintenance">
-  <meta name="twitter:description" content="Equipment, warranties and tasks. Records stay on your phone.">
+  <meta name="twitter:title" content="Domoro: Home Maintenance">
+  <meta name="twitter:description" content="Equipment, warranties and tasks. Your home data is stored in Canada.">
   <meta name="twitter:image" content="https://use1app.com/homevera/assets/og.png">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="css/styles.css?v=5">
+  <link rel="stylesheet" href="css/styles.css?v=10">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <p class="draft-banner">DRAFT – cloud version, not live</p>
   <header class="site-header">
     <div class="nav-bar">
-      <a class="brand" href="./" aria-label="HomeVera home">
-        <img src="assets/logo.svg" width="64" height="64" alt="">
-        <span>Home<span class="vera">Vera</span></span>
+      <a class="brand" href="./" aria-label="Domoro home">
+        <img class="nav-mark" src="assets/icon-80.png" width="40" height="40" alt="">
+        <span class="wordmark">DOMORO<span class="tm">™</span></span>
       </a>
       <button type="button" class="menu-toggle" data-menu aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" aria-label="Primary" hidden>
         <button type="button" class="menu-toggle nav-close" data-menu-close>Close</button>
         <a href="#does">What it does</a>
         <a href="#how">How it works</a>
-        <a href="#private">On your phone</a>
+        <a href="#private">Your home data</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="support/">Support</a>
@@ -55,18 +58,25 @@
         <a href="privacy/">Privacy</a>
         <a href="terms/">Terms</a>
         <a href="support/">Support</a>
+        <a href="delete/">Delete account</a>
       </p>
     </noscript>
   </header>
 
   <main id="main">
     <section class="hero">
+      <div class="hero-logo">
+        <h1 class="visually-hidden">Domoro: Home Maintenance</h1>
+        <picture>
+          <source type="image/webp" srcset="assets/logo-640.webp 640w, assets/logo-1280.webp 1280w" sizes="(min-width: 800px) 640px, 100vw">
+          <img src="assets/logo-640.png" srcset="assets/logo-640.png 640w, assets/logo-1280.png 1280w" sizes="(min-width: 800px) 640px, 100vw" width="1024" height="1024" alt="Domoro – The gold standard for your home. Maintain. Manage. Protect." fetchpriority="high" decoding="async">
+        </picture>
+      </div>
       <div class="wrap hero-grid">
         <div>
-          <p class="kicker">Coming soon</p>
-          <h1>Home<span class="vera">Vera</span>: Home Maintenance</h1>
+          <p class="listing">Domoro: Home Maintenance</p>
           <p class="subtitle">Equipment, warranties &amp; tasks</p>
-          <p class="lead">Keep your home's equipment, warranties, documents and maintenance in one place. No account, no ads, and your records stay on your phone.</p>
+          <p class="lead">Keep your home's equipment, warranties, documents and maintenance in one place.</p>
           <p class="lead">Free to start, with an optional Premium subscription.</p>
           <div class="hero-actions">
             <a class="btn" href="#pricing">Start your free trial</a>
@@ -79,22 +89,50 @@
             <div class="screen">
               <picture>
                 <source srcset="assets/screens/home.webp" type="image/webp">
-                <img src="assets/screens/home.png" width="560" height="1493" alt="App preview – sample data. Home screen for a sample home at 123 Maple Lane, with an organization score and counts of equipment, open maintenance, and warranties ending soon." fetchpriority="high" decoding="async">
+                <img src="assets/screens/home.png" width="560" height="1342" alt="App preview – sample data. Home screen for a sample home at 123 Maple Lane, with an organization score and counts of equipment, open maintenance, and warranties ending soon." decoding="async">
               </picture>
             </div>
           </div>
           <figcaption>
             <p class="caption">App preview – sample data</p>
+            <p class="earlier">Screens show an earlier build.</p>
             <p class="fine">The score on this sample screen starts at 100 and drops for overdue tasks and expired warranties. It is an organization indicator, not a home inspection or a safety assessment.</p>
           </figcaption>
         </figure>
       </div>
     </section>
 
+    <section class="section" id="features">
+      <div class="wrap">
+        <ul class="feature-row">
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="10" width="24" height="28" rx="2"/><path d="M18 18h12M18 24h12M18 30h8"/></svg>
+            Equipment
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 8h12l8 8v24H16z"/><path d="M28 8v8h8"/><path d="M21 26h10M21 32h10"/></svg>
+            Documents and receipts
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8 38 14v10c0 8-6 13-14 16-8-3-14-8-14-16V14z"/></svg>
+            Warranties
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 10a3 3 0 0 1 3 3c4 1 7 5 7 10v5l3 3H11l3-3v-5c0-5 3-9 7-10a3 3 0 0 1 3-3z"/><path d="M20 36a4 4 0 0 0 8 0"/></svg>
+            Maintenance reminders
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="22" cy="22" r="8"/><path d="M28 28 36 36"/></svg>
+            Quick Search
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section" id="does">
       <div class="wrap">
-        <h2>What you can keep in HomeVera</h2>
-        <p class="lede">HomeVera starts empty. Free includes one home, up to 10 equipment items and documents combined, maintenance reminders, and manual entry. Premium adds the items marked below.</p>
+        <h2>What you can keep in Domoro</h2>
+        <p class="lede">Domoro starts empty. Free includes one home, up to 10 equipment items and documents combined, maintenance reminders, and manual entry. Quick Search finds equipment, documents, and tasks you have saved. Premium adds the items marked below.</p>
         <div class="cards">
           <article class="card">
             <h3>Equipment and appliances</h3>
@@ -104,19 +142,19 @@
           <article class="card">
             <h3>Documents</h3>
             <p class="tier">Free, within the combined limit</p>
-            <p>Keep a receipt, warranty, manual, invoice, quote, insurance, permit, or service record, and link it to the equipment it belongs to. You can attach a PDF, image, or text file up to 10 MB. HomeVera does not read the words inside a PDF. Equipment items and documents share one limit of 10 on Free.</p>
+            <p>Keep a receipt, warranty, manual, invoice, quote, insurance, permit, or service record, and link it to the equipment it belongs to. You can attach an image, a text file, or another document file up to 10 MB. Domoro does not read the words inside an attached document file. Equipment items and documents share one limit of 10 on Free.</p>
           </article>
           <article class="card">
             <h3>Maintenance tasks</h3>
             <p class="tier">Free</p>
-            <p>Add a task with a due date. Reschedule it, and mark it complete with notes, the service provider, and the cost. Maintenance reminders are included. The history stays with the home on that phone.</p>
+            <p>Add a task with a due date. Reschedule it, and mark it complete with notes, the service provider, and the cost. Maintenance reminders are included. The history stays with the home.</p>
           </article>
           <article class="card">
             <h3>Expiring soon</h3>
             <p class="tier">Free</p>
             <p>The home screen includes an Expiring soon list for warranties ending within 60 days. That list is included with Free.</p>
             <p class="tier">Premium</p>
-            <p>Premium adds warranty reminder notifications 60, 30, and 7 days before the end date you entered. If you allow notifications, those reminders are scheduled on the phone. They are not sent from a server.</p>
+            <p>Premium adds warranty reminder notifications 60, 30, and 7 days before the end date you entered, if you allow notifications.</p>
           </article>
         </div>
       </div>
@@ -129,7 +167,7 @@
         <ol class="steps">
           <li>
             <strong>Set up your home</strong>
-            Add your name and details such as the address, year built, size, heating, and cooling. There is no account to create. Free is one home.
+            Sign in with an emailed magic link (no password), Sign in with Apple, or Google sign-in. Add your name and details such as the address, year built, size, heating, and cooling. Free is one home.
           </li>
           <li>
             <strong>Add equipment by hand</strong>
@@ -141,7 +179,7 @@
           </li>
           <li>
             <strong>Add maintenance</strong>
-            Add tasks and reminders. Those reminders are included with Free. A service provider is typed in. HomeVera does not import contacts. Book service and calendar export are part of Premium.
+            Add tasks and reminders. Those reminders are included with Free. A service provider is typed in. Domoro does not import contacts. Book service and Add to calendar are part of Premium.
           </li>
         </ol>
       </div>
@@ -152,7 +190,7 @@
         <div>
           <p class="kicker">Premium</p>
           <h2>Photo scan reads text from a photo</h2>
-          <p>Photograph an equipment label, or choose one JPEG, PNG, or WebP photo up to 5 MB. HomeVera reads the printed text on the phone. English labels are the ones it is built to read. The photo is not uploaded.</p>
+          <p>Photograph an equipment label, or choose one JPEG, PNG, or WebP photo up to 5 MB. Domoro reads the printed text on the phone. English labels are the ones it is built to read. A photo you save is part of your home data, which is stored in Canada.</p>
           <p>The review screen is editable. Fields it could read are marked “Filled in from your photo”. Fields it could not read are marked “Not found in the photo”. Leave anything unknown blank. Nothing is saved until you tap Confirm &amp; save. You can cancel instead.</p>
           <p>The label photo is not kept after you confirm or cancel, unless you separately attach a file to a record. Manual entry is always available.</p>
         </div>
@@ -161,11 +199,14 @@
             <div class="screen">
               <picture>
                 <source srcset="assets/screens/review.webp" type="image/webp">
-                <img src="assets/screens/review.png" width="560" height="1895" alt="App preview – sample data. Review screen titled Review your equipment, marked Not saved yet, with editable sample fields and a Confirm and save button." loading="lazy" decoding="async">
+                <img src="assets/screens/review.png" width="560" height="1745" alt="App preview – sample data. Review screen titled Review your equipment, marked Not saved yet, with editable sample fields and a Confirm and save button." loading="lazy" decoding="async">
               </picture>
             </div>
           </div>
-          <figcaption class="caption">App preview – sample data</figcaption>
+          <figcaption>
+            <p class="caption">App preview – sample data</p>
+            <p class="earlier">Screens show an earlier build.</p>
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -173,29 +214,35 @@
     <section class="section band" id="care">
       <div class="wrap">
         <h2>Tasks, reminders, and equipment details</h2>
-        <p class="lede">Maintenance reminders and the Expiring soon list are included with Free. If you allow notifications, HomeVera schedules a maintenance reminder the day before a task is due and on the morning it is due. Timing is approximate. Reminders are scheduled on the phone. They are not sent from a server. You can still use the schedule if you decline notifications. Warranty reminder notifications, 60, 30 and 7 days before the end date, are part of Premium.</p>
+        <p class="lede">Maintenance reminders and the Expiring soon list are included with Free. If you allow notifications, Domoro schedules a maintenance reminder the day before a task is due and on the morning it is due. Timing is approximate. You can still use the schedule if you decline notifications. Warranty reminder notifications, 60, 30 and 7 days before the end date, are part of Premium.</p>
         <div class="phones">
           <figure>
             <div class="phone">
               <div class="screen">
                 <picture>
                   <source srcset="assets/screens/equipment.webp" type="image/webp">
-                  <img src="assets/screens/equipment.png" width="560" height="1493" alt="App preview – sample data. Equipment page for a sample basement furnace, with model, serial, dates, and buttons to add a service provider or book service." loading="lazy" decoding="async">
+                  <img src="assets/screens/equipment.png" width="560" height="1342" alt="App preview – sample data. Equipment page for a sample basement furnace, with model, serial, dates, and buttons to add a service provider or book service." loading="lazy" decoding="async">
                 </picture>
               </div>
             </div>
-            <figcaption class="caption">App preview – sample data</figcaption>
+            <figcaption>
+            <p class="caption">App preview – sample data</p>
+            <p class="earlier">Screens show an earlier build.</p>
+          </figcaption>
           </figure>
           <figure>
             <div class="phone">
               <div class="screen">
                 <picture>
                   <source srcset="assets/screens/maintenance.webp" type="image/webp">
-                  <img src="assets/screens/maintenance.png" width="560" height="1493" alt="App preview – sample data. Maintenance list with sample tasks marked overdue, today, and upcoming." loading="lazy" decoding="async">
+                  <img src="assets/screens/maintenance.png" width="560" height="1342" alt="App preview – sample data. Maintenance list with sample tasks marked overdue, today, and upcoming." loading="lazy" decoding="async">
                 </picture>
               </div>
             </div>
-            <figcaption class="caption">App preview – sample data</figcaption>
+            <figcaption>
+            <p class="caption">App preview – sample data</p>
+            <p class="earlier">Screens show an earlier build.</p>
+          </figcaption>
           </figure>
         </div>
       </div>
@@ -206,19 +253,22 @@
         <div>
           <p class="kicker">Records</p>
           <h2>Documents stay with the equipment</h2>
-          <p>Save the record, link it to a piece of equipment, and attach a PDF, image, or text file up to 10 MB. The file stays on the phone. It is not uploaded.</p>
-          <p>Reading text from a photo is Premium. The words inside a PDF are not read. If you attach a PDF, you fill in the title and notes yourself.</p>
+          <p>Save the record, link it to a piece of equipment, and attach an image, a text file, or another document file up to 10 MB. Saved files are part of your home data, which is stored in Canada.</p>
+          <p>Reading text from a photo is Premium. Domoro does not read the words inside an attached document file. You fill in the title and notes yourself.</p>
         </div>
         <figure>
           <div class="phone">
             <div class="screen">
               <picture>
                 <source srcset="assets/screens/documents.webp" type="image/webp">
-                <img src="assets/screens/documents.png" width="560" height="1493" alt="App preview – sample data. Documents screen with a sample warranty record and a warranty overview marked Expires soon and Expired." loading="lazy" decoding="async">
+                <img src="assets/screens/documents.png" width="560" height="1342" alt="App preview – sample data. Documents screen with a sample warranty record and a warranty overview marked Expires soon and Expired." loading="lazy" decoding="async">
               </picture>
             </div>
           </div>
-          <figcaption class="caption">App preview – sample data</figcaption>
+          <figcaption>
+            <p class="caption">App preview – sample data</p>
+            <p class="earlier">Screens show an earlier build.</p>
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -227,22 +277,20 @@
       <div class="wrap prose">
         <p class="kicker">Premium</p>
         <h2>Book service opens your own Messages or Mail</h2>
-        <p>You save one provider for each piece of equipment by typing the name, phone, and email. HomeVera does not import your contacts, and it does not keep a directory of companies.</p>
-        <p>Text or Email then opens the Messages or Mail app already on your phone, with the equipment details filled in. HomeVera does not send the message and does not receive the reply. Premium also includes calendar export: an .ics file you can add on your phone, and you can mark the task scheduled.</p>
+        <p>You save one provider for each piece of equipment by typing the name, phone, and email. Domoro does not import your contacts, and it does not keep a directory of companies.</p>
+        <p>Text or Email then opens the Messages or Mail app already on your phone, with the equipment details filled in. Domoro does not send the message and does not receive the reply. Premium also includes Add to calendar: an .ics file you can add on your phone, and you can mark the task scheduled.</p>
       </div>
     </section>
 
     <section class="section" id="private">
       <div class="wrap">
         <div class="privacy-band">
-          <h2>Your records stay on the phone</h2>
+          <h2>Your home data is stored in Canada</h2>
           <ul class="checks">
-            <li>No HomeVera account and no sign-in.</li>
-            <li>No ads, no analytics, and no tracking in the app.</li>
-            <li>Home records, photos, and files are stored on the phone. HomeVera does not run a server for them.</li>
-            <li>No cloud sync and no backup from HomeVera. Records are not transferred to a new owner.</li>
-            <li>The planned App Store privacy label is Data Not Collected.</li>
-            <li>The planned Google Play label is No data collected or shared.</li>
+            <li>Your home data is stored in Canada. Supabase hosts the database, sign-in, file storage, and backups in Canada (Central). Vendor billing, support access, and some platform logs may be processed outside Canada.</li>
+            <li>Sign in with an emailed magic link, Sign in with Apple, or Google sign-in, so your home is backed up and restored on a new phone.</li>
+            <li>Privacy first: Domoro does not sell leads or data, and the app has no ad or analytics SDKs.</li>
+            <li>Delete your account anytime, in the app or from the <a href="delete/">deletion page</a>.</li>
           </ul>
           <p><a href="privacy/">Read the privacy policy</a></p>
         </div>
@@ -253,7 +301,7 @@
       <!-- RE-CHECK this subscription wording once Apple and Google billing is built in the app. Listed price: Premium CA$4.99/month or CA$39.99/year, with a 14-day free trial. -->
       <div class="wrap">
         <h2>Free to start, with an optional Premium subscription</h2>
-        <p class="lede">HomeVera is for iPhone, iPad and Android. Coming soon to the App Store and Google Play. Premium is not available to buy on this website.</p>
+        <p class="lede">Domoro is for iPhone, iPad and Android. Coming soon to the App Store and Google Play. Premium is not available to buy on this website.</p>
         <div class="price-grid">
           <article class="price-card">
             <p class="tier">Free</p>
@@ -278,7 +326,7 @@
               <li>Photo scan: reading text from a photo</li>
               <li>Warranty reminder notifications, 60, 30 and 7 days before the end date</li>
               <li>Book service</li>
-              <li>Calendar export</li>
+              <li>Add to calendar</li>
             </ul>
             <p>Prices are in Canadian dollars. Taxes may apply where required.</p>
           </article>
@@ -294,27 +342,31 @@
         <div class="faq">
           <details>
             <summary>Is there an account?</summary>
-            <p>No. There is no sign-in and no HomeVera account. A new install starts empty.</p>
+            <p>Yes. You can sign in with an emailed magic link, and there is no password. You can also use Sign in with Apple or Google sign-in.</p>
           </details>
           <details>
             <summary>Where are the records stored?</summary>
-            <p>On the phone, in the app's private storage. HomeVera does not provide cloud sync or backup, and it cannot restore records or move them to a new owner. Keep your own copies of important documents.</p>
+            <p>Your home data is stored in Canada. Supabase hosts the database, sign-in, file storage, and backups in Canada (Central). Vendor billing, support access, and some platform logs may be processed outside Canada. Sign in with an emailed magic link, Sign in with Apple, or Google sign-in, so your home is backed up and restored on a new phone.</p>
+          </details>
+          <details>
+            <summary>How do I delete my account?</summary>
+            <p>You can delete your account in the app. If you have uninstalled the app, email <a href="mailto:support@use1app.com">support@use1app.com</a> from the <a href="delete/">deletion page</a>.</p>
           </details>
           <details>
             <summary>What does a photo do?</summary>
-            <p>Photo scan is part of Premium. Take a photo or choose a photo. The text is read on the phone, then you review an editable screen. Each field is marked “Filled in from your photo” or “Not found in the photo”. Nothing is saved until Confirm &amp; save. Manual entry is included with Free. The words inside a PDF are not read.</p>
+            <p>Photo scan is part of Premium. Take a photo or choose a photo. The text is read on the phone, then you review an editable screen. Each field is marked “Filled in from your photo” or “Not found in the photo”. Nothing is saved until Confirm &amp; save. Manual entry is included with Free. Domoro does not read the words inside an attached document file.</p>
           </details>
           <details>
             <summary>How do reminders work?</summary>
-            <p>Maintenance reminders and the Expiring soon list are included with Free. Notifications are optional. If you allow them, a maintenance reminder is scheduled on the phone for the day before a task is due and the morning it is due. Warranty reminder notifications are part of Premium: 60, 30, and 7 days before the end date. Timing is approximate. Nothing is sent through a push service.</p>
+            <p>Maintenance reminders and the Expiring soon list are included with Free. Notifications are optional. If you allow them, a maintenance reminder is scheduled for the day before a task is due and the morning it is due. Warranty reminder notifications are part of Premium: 60, 30, and 7 days before the end date. Timing is approximate.</p>
           </details>
           <details>
             <summary>Does Book service send a message?</summary>
-            <p>Book service and calendar export are part of Premium. Text or Email opens your own Messages or Mail app with the equipment details filled in. HomeVera does not send or receive that message. You can also add an .ics calendar file and mark the task scheduled.</p>
+            <p>Book service and Add to calendar are part of Premium. Text or Email opens your own Messages or Mail app with the equipment details filled in. Domoro does not send or receive that message. You can also add an .ics calendar file and mark the task scheduled.</p>
           </details>
           <details>
             <summary>What does it cost?</summary>
-            <p>Free to start, with an optional Premium subscription. Free is one home, up to 10 equipment items and documents combined, maintenance reminders, manual entry, and the Expiring soon list. Premium is $4.99 CAD a month or $39.99 CAD a year, with a 14-day free trial. Premium adds unlimited equipment items and documents, photo scan, warranty reminder notifications 60, 30 and 7 days before the end date, Book service, and calendar export. Prices are in Canadian dollars, and taxes may apply where required. Coming soon to the App Store and Google Play. It is not available to buy on this website.</p>
+            <p>Free to start, with an optional Premium subscription. Free is one home, up to 10 equipment items and documents combined, maintenance reminders, manual entry, and the Expiring soon list. Premium is $4.99 CAD a month or $39.99 CAD a year, with a 14-day free trial. Premium adds unlimited equipment items and documents, photo scan, warranty reminder notifications 60, 30 and 7 days before the end date, Book service, and Add to calendar. Prices are in Canadian dollars, and taxes may apply where required. Coming soon to the App Store and Google Play. It is not available to buy on this website.</p>
           </details>
           <details>
             <summary>Where will I get it?</summary>
@@ -326,9 +378,10 @@
 
     <section class="section closing">
       <div class="wrap">
-        <p class="kicker">HomeVera</p>
+        <p class="kicker wordmark">DOMORO<span class="tm">™</span></p>
+        <p class="motto">Maintain. Manage. Protect.</p>
         <h2>Equipment, warranties &amp; tasks</h2>
-        <p>Keep your home's equipment, warranties, documents and maintenance in one place. No account, no ads, and your records stay on your phone. Free to start, with an optional Premium subscription.</p>
+        <p>Keep your home's equipment, warranties, documents and maintenance in one place. Your home data is stored in Canada. Free to start, with an optional Premium subscription.</p>
         <div class="hero-actions">
           <a class="btn" href="#pricing">Start your free trial</a>
           <p class="soon">Coming soon to the App Store and Google Play</p>
@@ -340,7 +393,7 @@
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div>
-        <p class="footer-name">Home<span class="vera">Vera</span></p>
+        <p class="footer-name"><img class="nav-mark" src="assets/icon-80.png" width="40" height="40" alt=""><span class="wordmark">DOMORO<span class="tm">™</span></span></p>
         <p>Home maintenance for iPhone, iPad and Android.<br>Ontario, Canada</p>
         <p>1APP Technologies Inc.</p>
       </div>
@@ -353,6 +406,7 @@
         <a href="privacy/">Privacy</a>
         <a href="terms/">Terms</a>
         <a href="support/">Support</a>
+        <a href="delete/">Delete account</a>
       </div>
     </div>
   </footer>
