@@ -1,18 +1,23 @@
 :root {
-  --teal: #0b5e7d;
-  --teal-dark: #124e59;
-  --green: #00a884;
-  --sage: #7ed6c1;
-  --vera: #158b7e;
-  --ink: #203b42;
-  --muted: #61767a;
-  --line: #e1e9e7;
-  --bg: #f5f8f6;
+  --teal: #0b3b2e;
+  --teal-dark: #062a20;
+  --green: #c9a14a;
+  --sage: #e9c46a;
+  --vera: #c9a14a;
+  --emerald: #0e4a38;
+  --emerald-deep: #062a20;
+  --gold: #c9a14a;
+  --gold-light: #e9c46a;
+  --gold-deep: #8c6a22;
+  --ink: #10281f;
+  --muted: #3e564c;
+  --line: #e6e0d4;
+  --bg: #f7f5f1;
   --white: #ffffff;
-  --shadow: 0 12px 32px rgba(18, 78, 89, 0.08);
+  --shadow: 0 16px 40px rgba(6, 42, 32, 0.06);
   --radius: 16px;
   --max: 1080px;
-  --header: 68px;
+  --header: 72px;
 }
 
 * { box-sizing: border-box; }
@@ -43,9 +48,11 @@ a { color: var(--teal); }
 a:hover { text-decoration-thickness: 2px; }
 
 :focus-visible {
-  outline: 3px solid var(--teal);
+  outline: 3px solid var(--emerald);
   outline-offset: 3px;
 }
+
+.hero :focus-visible { outline-color: var(--gold-light); }
 
 .skip {
   position: absolute;
@@ -61,7 +68,7 @@ a:hover { text-decoration-thickness: 2px; }
   margin: 0;
   padding: 12px 16px;
   background: #ffe566;
-  color: #203b42;
+  color: #062a20;
   text-align: center;
   font-size: 1rem;
   font-weight: 800;
@@ -72,7 +79,7 @@ a:hover { text-decoration-thickness: 2px; }
   padding: 12px 14px;
   background: #fff3bf;
   border: 2px solid #c89600;
-  color: #203b42;
+  color: #062a20;
   font-weight: 800;
 }
 
@@ -110,16 +117,33 @@ a:hover { text-decoration-thickness: 2px; }
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  color: var(--ink);
+  color: var(--emerald);
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.04em;
+  font-size: 1.05rem;
+  letter-spacing: 0;
 }
 
-.brand img { width: 40px; height: 40px; }
+.mark-tile {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 12px;
+  background: var(--emerald);
+}
 
-.brand .vera { color: var(--vera); }
+.brand img,
+.mark-tile img { width: 36px; height: 36px; }
+
+.wordmark {
+  font-family: Syne, Montserrat, "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
 
 .menu-toggle {
   min-height: 44px;
@@ -201,7 +225,7 @@ a:hover { text-decoration-thickness: 2px; }
   border: 0;
 }
 
-.btn:hover { background: #074c67; }
+.btn:hover { background: var(--emerald-deep); }
 
 #site-nav .btn {
   color: var(--white);
@@ -220,10 +244,10 @@ a:hover { text-decoration-thickness: 2px; }
 
 .hero {
   background:
-    radial-gradient(circle at 90% 10%, rgba(126, 214, 193, 0.2), transparent 32%),
-    var(--teal-dark);
-  color: var(--white);
-  padding: 36px 0 48px;
+    radial-gradient(circle at 50% 18%, #14604a 0%, transparent 42%),
+    linear-gradient(180deg, #0e4a38 0%, #062a20 100%);
+  color: #f7f4ee;
+  padding: 56px 0 72px;
 }
 
 .hero-grid {
@@ -244,7 +268,8 @@ a:hover { text-decoration-thickness: 2px; }
 .closing .kicker { color: var(--sage); }
 
 .hero .caption,
-.hero .fine { color: #d7ebe4; }
+.hero .fine,
+.hero .earlier { color: #f3ead2; }
 
 .hero .caption { color: #fff; }
 
@@ -260,7 +285,42 @@ h1 {
   font-weight: 750;
 }
 
-.hero h1 .vera { color: var(--sage); }
+.hero h1.wordmark,
+.closing .wordmark {
+  margin: 0 0 16px;
+  color: #e9c46a;
+  font-size: clamp(2.5rem, 9vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  background-image: linear-gradient(180deg, #fff1b8 0%, #e9c46a 40%, #c9a14a 74%, #8c6a22 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.closing .wordmark {
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  margin: 0 0 12px;
+}
+
+.tm {
+  font-size: 0.38em;
+  letter-spacing: 0;
+  margin-left: 0.15em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.brand .wordmark,
+.footer-name .wordmark { color: var(--gold-deep); }
+
+.brand .tm,
+.footer-name .tm {
+  font-size: 0.52em;
+  margin-left: 0.2em;
+}
 
 .subtitle {
   margin: 0 0 14px;
@@ -268,7 +328,87 @@ h1 {
   font-weight: 700;
 }
 
-.lead { margin: 0; font-size: 1.05rem; color: #d7ebe4; max-width: 40rem; }
+.lead { margin: 0; font-size: 1.05rem; color: #f7f4ee; max-width: 40rem; }
+
+.lockup { max-width: 40rem; }
+
+.hero-mark {
+  width: min(168px, 52vw);
+  height: auto;
+  margin: 0 0 10px;
+}
+
+.tagline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 10px;
+  color: var(--gold-light);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.tagline::before,
+.tagline::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  flex: 0 0 auto;
+}
+
+.motto {
+  margin: 0 0 22px;
+  color: #f3ead2;
+  font-family: "Montserrat Italic", Montserrat, "Segoe UI", sans-serif;
+  font-style: italic;
+  font-weight: 450;
+  font-size: 1.12rem;
+}
+
+.listing {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 650;
+}
+
+.feature-row {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.feature-row li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.feature-row svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--gold-deep);
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.earlier {
+  margin: 4px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
 
 .hero-actions {
   display: flex;
@@ -280,9 +420,9 @@ h1 {
 
 .hero-actions .btn { width: 100%; }
 
-.hero .btn { background: var(--white); color: var(--teal-dark); }
+.hero .btn { background: var(--gold); color: var(--emerald-deep); }
 
-.hero .btn:hover { background: #e7f6f1; }
+.hero .btn:hover { background: var(--gold-light); }
 
 .soon {
   margin: 0;
@@ -291,7 +431,7 @@ h1 {
 
 .devices {
   margin: 8px 0 0;
-  color: #d7ebe4;
+  color: #f3ead2;
   font-size: 1rem;
 }
 
@@ -341,7 +481,7 @@ h1 {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #e7f3ee;
+  background: #f4efe4;
   color: var(--teal);
   font-weight: 800;
 }
@@ -366,7 +506,7 @@ h1 {
   margin: 0 auto;
   padding: 10px;
   border-radius: 28px;
-  background: #102f36;
+  background: var(--emerald-deep);
   box-shadow: 0 18px 40px rgba(16, 47, 54, 0.18);
 }
 
@@ -410,8 +550,8 @@ h1 {
 }
 
 .privacy-band {
-  background: #e7f3ee;
-  border: 1px solid #cfe3dc;
+  background: #f8f4ea;
+  border: 1px solid #e4d7b8;
   border-radius: 20px;
   padding: 20px;
 }
@@ -493,13 +633,16 @@ h1 {
 .faq details p { margin-top: 0; }
 
 .closing {
-  background: var(--teal-dark);
+  background:
+    radial-gradient(circle at 50% 0%, #0e4a38 0%, #062a20 72%);
   color: var(--white);
 }
 
 .closing h2 { color: var(--white); }
 
-.closing p { color: #d7ebe4; }
+.closing p { color: #f3ead2; }
+
+.closing .motto { margin-bottom: 12px; }
 
 .closing a { color: var(--white); }
 
@@ -514,13 +657,16 @@ h1 {
 .footer-grid { display: grid; gap: 18px; }
 
 .footer-name {
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: 750;
-  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
-.footer-name .vera { color: var(--vera); }
+.footer-name .wordmark { color: var(--emerald); }
 
 .footer-links { display: grid; gap: 8px; }
 
@@ -575,10 +721,18 @@ input, select, textarea { font-size: 16px; }
   .hero-actions { flex-direction: row; flex-wrap: wrap; align-items: center; }
   .hero-actions .btn { width: auto; }
   .cards, .phones, .price-grid { grid-template-columns: 1fr 1fr; }
+  .feature-row { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .steps { grid-template-columns: 1fr 1fr; }
   .split { grid-template-columns: 1.1fr 0.9fr; }
   .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; }
   .section { padding: 80px 0; }
+}
+
+@media (max-width: 420px) {
+  .hero h1.wordmark { letter-spacing: 0.08em; font-size: 2.35rem; }
+  .tagline { letter-spacing: 0.08em; font-size: 0.6rem; gap: 8px; }
+  .tagline::before,
+  .tagline::after { width: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
