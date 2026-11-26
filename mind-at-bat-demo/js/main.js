@@ -161,10 +161,24 @@
     $('#crumbName').textContent=p.name;
     let color=p.colors[0]||null, size=p.sizes.length?(p.sizes.includes('M')?'M':p.sizes[0]):null, qty=1, cur=0;
     const main=$('#galleryMain');
-    function show(i){cur=i;main.style.opacity=.2;setTimeout(()=>{main.src=p.images[i];main.style.opacity=1;},120);$$('.thumb').forEach((t,ix)=>t.classList.toggle('active',ix===i));}
+    let show=function(i){cur=i;main.style.opacity=.2;setTimeout(()=>{main.src=p.images[i];main.style.opacity=1;},120);$$('.thumb').forEach((t,ix)=>t.classList.toggle('active',ix===i));}
     main.alt=p.name; const start=color&&color.image?Math.max(0,p.images.indexOf(color.image)):0; main.src=p.images[start];
     $('#thumbs').innerHTML=p.images.map((src,i)=>`<button class="thumb ${i===start?'active':''}" data-i="${i}" aria-label="Image ${i+1}"><img src="${src}" alt="" loading="lazy"></button>`).join('');
     $$('.thumb').forEach(t=>t.onclick=()=>show(+t.dataset.i));
+    /* v14: swipe + arrows + dots on main gallery */
+    (function(){
+      const g=$('.gallery-main'), n=p.images.length; if(!g||n<2) return;
+      g.insertAdjacentHTML('beforeend',`<button class="g-nav g-prev" aria-label="Previous image">&#8249;</button><button class="g-nav g-next" aria-label="Next image">&#8250;</button><div class="g-dots">${p.images.map((_,i)=>`<span data-i="${i}"></span>`).join('')}</div>`);
+      const dots=()=>g.querySelectorAll('.g-dots span').forEach((d,i)=>d.classList.toggle('on',i===cur));
+      const go=d=>{show((cur+d+n)%n);dots();};
+      const _show=show; show=function(i){_show(i);dots();};
+      g.querySelector('.g-prev').onclick=e=>{e.preventDefault();go(-1);};
+      g.querySelector('.g-next').onclick=e=>{e.preventDefault();go(1);};
+      let x0=null,y0=null;
+      g.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+      g.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1);x0=null;},{passive:true});
+      cur=start; dots();
+    })();
     const typ = {tee:'Unisex Tee', hoodie:'Hoodie', trucker:'Trucker', beanie:'Beanie', cap:'Cap'}[p.type] || (p.type||'');
     $('#pLine').textContent = (p.line ? p.line + ' Collection · ' : '') + typ;
     if(p.status==='coming'){
