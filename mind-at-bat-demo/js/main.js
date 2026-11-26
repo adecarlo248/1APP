@@ -73,17 +73,18 @@
 
   $('#menuBtn').onclick = ()=> $('#mobileNav').classList.toggle('open');
 
-  /* hero background video: respect reduced motion + hide poster once playing */
+  /* v14 hero video: always autoplay + loop, no play button (iOS low-power safe) */
   const hv = $('.hero-video');
   if(hv){
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduce){ try{ hv.pause(); }catch(e){} hv.removeAttribute('autoplay'); hv.style.display='none'; }
-    else {
-      const play = ()=> hv.play && hv.play().catch(()=>{});
-      hv.addEventListener('playing', ()=>{ const fb=$('.hero-fallback'); if(fb) fb.style.opacity='0'; }, {once:true});
-      document.addEventListener('visibilitychange', ()=>{ if(document.hidden) hv.pause(); else play(); });
-      play();
-    }
+    hv.muted=true; hv.defaultMuted=true; hv.loop=true; hv.playsInline=true; hv.controls=false;
+    hv.setAttribute('muted',''); hv.setAttribute('playsinline',''); hv.setAttribute('webkit-playsinline','');
+    const play = ()=> hv.play && hv.play().catch(()=>{});
+    hv.addEventListener('playing', ()=>{ const fb=$('.hero-fallback'); if(fb) fb.style.opacity='0'; }, {once:true});
+    hv.addEventListener('pause', ()=>{ if(!document.hidden) play(); });
+    hv.addEventListener('ended', play);
+    document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) play(); });
+    ['touchstart','click','scroll'].forEach(ev=>window.addEventListener(ev, play, {passive:true, once:true}));
+    play();
   }
 
   /* ---------- cart (localStorage, demo only) ---------- */
