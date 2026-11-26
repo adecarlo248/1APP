@@ -371,7 +371,6 @@ textarea{min-height:140px;resize:vertical}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none}
   .marquee-track,.hero-media .hero-fallback{animation:none}
-  .hero-media .hero-video{display:none}
 }
 [hidden]{display:none!important}
 .hero{min-height:min(calc(100svh - 106px),860px)}
@@ -451,3 +450,7 @@ textarea{min-height:140px;resize:vertical}
 .g-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:7px;z-index:2}
 .g-dots span{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.25);transition:all .2s}
 .g-dots span.on{background:var(--green);width:20px;border-radius:4px}
+
+/* v14: never show native play button on hero video */
+.hero-video{pointer-events:none}
+.hero-video::-webkit-media-controls,.hero-video::-webkit-media-controls-start-playback-button,.hero-video::-webkit-media-controls-overlay-play-button,.hero-video::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none;opacity:0!important}
