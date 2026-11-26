@@ -443,3 +443,11 @@ textarea{min-height:140px;resize:vertical}
 .tile:hover img{transform:none}
 .tile::after{display:none}
 .tile-body{padding:24px 24px 28px}
+
+/* v14: swipeable product gallery */
+.gallery-main{touch-action:pan-y;user-select:none}
+.g-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:26px;line-height:38px;cursor:pointer;z-index:2}
+.g-prev{left:10px}.g-next{right:10px}
+.g-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:7px;z-index:2}
+.g-dots span{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.25);transition:all .2s}
+.g-dots span.on{background:var(--green);width:20px;border-radius:4px}
